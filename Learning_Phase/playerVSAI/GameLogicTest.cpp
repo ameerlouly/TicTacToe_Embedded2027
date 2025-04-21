@@ -4,32 +4,18 @@ using namespace std;
 
 void printgrid(int grid[3][3]);
 int checkWin(int grid[3][3]);
+unsigned short int gameMode=0;
 
 int main() {
 
     int grid [3][3]= {0};  // in qt this will be array of button objects
     float FirstPlayer,SecondPlayer;
-    unsigned short int gameMode=0;
     int GameEnd=0;
 
     cout<<"game started!"<<"\n";
     label1:
     cout<<"select MODE ( AI->1 , PVP -> 2)\n";
     cin>>gameMode;
-    switch (gameMode)
-    {
-    case AI:
-        
-        break;
-    case PVP:
-
-        break;
-    default: {
-        cout<<"invaild Mode !!\n";
-        goto label1;
-    }
-        break;
-    }
     printgrid(grid);
     while(!GameEnd){
 
@@ -46,16 +32,22 @@ int main() {
         if (GameEnd)
         break;
     //  ! problem here i need to take input from AI
-        cout<<"Player O turn choose a block: ";
-        cin>>SecondPlayer;
-        while(grid[int(SecondPlayer/3.5)][int(SecondPlayer-1)%3] != 0){
-            cout<<"Player O turn choose another block: ";
+        if(gameMode==PVP_MODE){
+            cout<<"Player O turn choose a block: ";
             cin>>SecondPlayer;
+            while(grid[int(SecondPlayer/3.5)][int(SecondPlayer-1)%3] != 0){
+                cout<<"Player O turn choose another block: ";
+                cin>>SecondPlayer;
+            }
+            grid[int(SecondPlayer/3.5)][int(SecondPlayer-1)%3]=2;  // in qt we won't use this as we will click on the grid we want
+        } 
+        else {
+            pair<int, int> aiMove = findBestMove(grid);
+            grid[aiMove.first][aiMove.second] = 2;
         }
-    // ! end of challenge
-        grid[int(SecondPlayer/3.5)][int(SecondPlayer-1)%3]=2;  // in qt we won't use this as we will click on the grid we want
+    //   ! end of sellect
+    cout<<"---------------------------------------------\n";
         printgrid(grid);
-    
         GameEnd =checkWin(grid);
 
     }
@@ -91,7 +83,7 @@ int checkWin(int grid [3][3]){
             return 1;
         }
         if(grid[0][0]==2){
-            cout<<"Player O Win!";
+            gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
             return 1;
         }
  
@@ -103,7 +95,7 @@ int checkWin(int grid [3][3]){
             return 1;
         }
         if(grid[1][0]==2){
-            cout<<"Player O Win!";
+            gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
             return 1;
         }
     }
@@ -114,7 +106,7 @@ int checkWin(int grid [3][3]){
             return 1;
         }
         if(grid[2][0]==2){
-            cout<<"Player O Win!";
+            gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
             return 1;
         }
     }
@@ -125,7 +117,7 @@ int checkWin(int grid [3][3]){
             return 1;
         }
         if(grid[0][0]==2){
-            cout<<"Player O Win!";
+            gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
             return 1;
         }
     }
@@ -136,7 +128,7 @@ int checkWin(int grid [3][3]){
             return 1;
         }
         if(grid[0][1]==2){
-            cout<<"Player O Win!";
+            gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
             return 1;
         }
     }
@@ -147,7 +139,7 @@ int checkWin(int grid [3][3]){
             return 1;
         }
         if(grid[0][2]==2){
-            cout<<"Player O Win!";
+            gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
             return 1;
         }
     }
@@ -158,7 +150,7 @@ int checkWin(int grid [3][3]){
             return 1;
         }
         if(grid[0][0]==2){
-            cout<<"Player O Win!";
+            gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
             return 1;
         }
     }
@@ -169,7 +161,7 @@ int checkWin(int grid [3][3]){
             return 1;
         }
         if(grid[0][2]==2){
-            cout<<"Player O Win!";
+            gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
             return 1;
         }
     }
@@ -185,7 +177,7 @@ int checkWin(int grid [3][3]){
     }
 
     if(draw == 9){
-        cout<<"Draw!";
+        cout<<" >>> Draw! <<<";
         return 1;
     }
     
