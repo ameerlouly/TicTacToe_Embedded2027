@@ -44,28 +44,24 @@ int main() {
 }
 
 void printgrid(int grid[3][3]){
-
+short int NumberOfBoxes=1;
     for(int i =0; i<3; i++){
-
         for(int j =0; j<3; j++){
             if(grid[i][j]==0)
-            cout<<" ";
+                cout<<" "<<NumberOfBoxes<<" ";
             else if(grid[i][j]==1)
-            cout<<"X";
+                cout<<" X ";
             else
-            cout<<"O";
+                cout<<" O ";
             if(j!=2)
-            cout<<"|";
-         }
-
-         cout<<"\n";
-         if(i!=2)
-         cout<<"------";
-         cout<<"\n";
+                cout<<" | ";
+        NumberOfBoxes++;     
+        }
+        cout<<"\n";
+        if(i!=2)
+            cout<<"---------------";
+        cout<<"\n";
     }
-     
-
-
 }
 
 int checkWin(int grid [3][3]){
