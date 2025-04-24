@@ -1,4 +1,4 @@
-// new branch
+// added the infinite mode
 
 #include<iostream>
 #include "AItest.h"
