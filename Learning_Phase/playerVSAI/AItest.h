@@ -6,6 +6,7 @@
 
 #define AI_MODE 1
 #define PVP_MODE 2
+#define IPVP_MODE 3
 
 
 int minimax(int board[3][3], int depth, bool isMax);
