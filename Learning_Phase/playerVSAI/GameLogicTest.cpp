@@ -13,6 +13,8 @@ using namespace std;
 void printgrid(int grid[3][3]);
 int checkWin(int grid[3][3]);
 unsigned short int gameMode=0;
+unsigned short int DiffModeForAI=0;
+Difficulty levelMode;
 
 int main() {
 
@@ -33,6 +35,25 @@ int main() {
     cout<<"select MODE ( AI->1 , PVP -> 2 , Infinite PVP -> 3)\n";
     cin>>gameMode;
 
+    if(gameMode==AI_MODE){
+        for (int i = 0; i < 3; i++)
+        {
+            cout<<"Choose difficulty:\n1. Easy\n2. Medium\n3. Hard\n > ";
+            cin>>DiffModeForAI;
+            if(DiffModeForAI !=1 && DiffModeForAI !=2 && DiffModeForAI !=3 ){
+                cout<<"Enter a Vailed Mode\n > ";
+                cin>>DiffModeForAI;
+            }
+            else 
+            break;
+        }
+        if(DiffModeForAI !=1 && DiffModeForAI !=2 && DiffModeForAI !=3 ){
+            DiffModeForAI==3;
+            cout<<"Your Mode Forced to be hard HAHAHAHA\n";
+        }
+        levelMode=static_cast<Difficulty>(DiffModeForAI);
+    }
+    
     printgrid(grid);
 
     while(!GameEnd){
@@ -43,7 +64,8 @@ int main() {
             cout<<"Player X turn choose another block: ";
             cin>>FirstPlayer;
         }
-
+        // ! this line should be in PVP MODE INF onlyyyyyyyyyy
+        if(gameMode==IPVP_MODE){
         x = xq.push(FirstPlayer);
         
         if (x>0)
@@ -53,7 +75,7 @@ int main() {
             xq.debug();
             cout<<"oq :";
             oq.debug();
-
+        }
         grid[int(FirstPlayer/3.5)][int(FirstPlayer-1)%3] = 1;  // in qt we won't use this as we will click on the grid we want
         printgrid(grid);
         GameEnd =checkWin(grid);
@@ -71,7 +93,7 @@ int main() {
             grid[int(SecondPlayer/3.5)][int(SecondPlayer-1)%3]=2;  // in qt we won't use this as we will click on the grid we want
         } 
         else if (gameMode==AI_MODE){
-            pair<int, int> aiMove = findBestMove(grid);
+            pair<int, int> aiMove = findBestMove(grid ,levelMode);
             grid[aiMove.first][aiMove.second] = 2;
         }
         else{

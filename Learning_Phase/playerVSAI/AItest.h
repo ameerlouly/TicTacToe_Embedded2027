@@ -8,11 +8,15 @@
 #define PVP_MODE 2
 #define IPVP_MODE 3
 
+// Difficulty levels
+enum Difficulty {
+    EASY=1,
+    MEDIUM,
+    HARD
+};
 
-int minimax(int board[3][3], int depth, bool isMax);
-int evaluate(int board[3][3]);
-bool isMovesLeft(int board[3][3]);
-std::pair<int, int> findBestMove(int board[3][3]);
 
+
+std::pair<int, int> findBestMove(int board[3][3], Difficulty level);
 
 #endif /* C2690D40_52F0_4909_82F9_C64668A5665E */
