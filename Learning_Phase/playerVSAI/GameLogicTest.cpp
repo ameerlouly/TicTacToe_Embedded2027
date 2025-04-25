@@ -12,6 +12,7 @@ using namespace std;
 
 void printgrid(int grid[3][3]);
 int checkWin(int grid[3][3]);
+
 unsigned short int gameMode=0;
 unsigned short int DiffModeForAI=0;
 Difficulty levelMode;
@@ -21,19 +22,22 @@ int main() {
     int grid [3][3]= {0};  // in qt this will be array of button objects
     float FirstPlayer,SecondPlayer;
     int GameEnd=0;
-    
     queue xq;
     queue oq;
     int x ;
-    cout<<"xq :" ;
-    xq.debug();
-    cout<<"oq :";
-    oq.debug();
-
+    
     cout<<"game started!"<<"\n";
     label1:                            // ? Mohamed : I think I will remove it later .
     cout<<"select MODE ( AI->1 , PVP -> 2 , Infinite PVP -> 3)\n";
     cin>>gameMode;
+    
+    if(gameMode==IPVP_MODE){
+        cout<<"xq :" ;
+        xq.debug();
+        cout<<"oq :";
+        oq.debug();
+    }
+
 
     if(gameMode==AI_MODE){
         for (int i = 0; i < 3; i++)
