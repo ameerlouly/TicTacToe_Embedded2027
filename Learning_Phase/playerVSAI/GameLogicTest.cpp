@@ -29,7 +29,7 @@ int main() {
     oq.debug();
 
     cout<<"game started!"<<"\n";
-    label1:                            // ? amir: is this useful or we just remove it
+    label1:                            // ? Mohamed : I think I will remove it later .
     cout<<"select MODE ( AI->1 , PVP -> 2 , Infinite PVP -> 3)\n";
     cin>>gameMode;
 
