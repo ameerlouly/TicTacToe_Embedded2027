@@ -1,32 +1,51 @@
-// to easily run the game type this in the terminal:
-//
-//   ./make   (this compiles the program so you need to run this line each time you edit the code)
-//   ./main
+/* to easily run the game type this in the terminal:
 
+  ./make   (this compiles the program so you need to run this line each time you edit the code)
+  ./main
+*/
 
 #include<iostream>
 #include "AItest.h"
 #include "queue.h"
+#include <sqlite3.h>
 
 using namespace std;
 
 void printgrid(int grid[3][3]);
-int checkWin(int grid[3][3]);
+int checkWin(int grid[3][3] , sqlite3 *db);
+void OPEN_PROGRAM(short int &mode);
 
 unsigned short int gameMode=0;
 unsigned short int DiffModeForAI=0;
 Difficulty levelMode;
 
-int main() {
 
+int main() {
+    
     int grid [3][3]= {0};  // in qt this will be array of button objects
     float FirstPlayer,SecondPlayer;
     int GameEnd=0;
     queue xq;
     queue oq;
     int x ;
-    
-    cout<<"game started!"<<"\n";
+    short int REG_Mode=0;
+    bool loginFound=false;
+
+    // ! APP STARTED AND REG PART 
+    sqlite3 *db;
+    sqlite3_open("game_data.db", &db);
+
+    createTables(db);
+    OPEN_PROGRAM(REG_Mode);
+
+    if(REG_Mode==SIGNUP){
+        SIGN_UP(db);
+    }
+    else if(REG_Mode==LOGIN){
+        loginFound=LOG_IN(db);
+    }
+
+    cout<<".......game started!........"<<"\n";
     label1:                            // ? Mohamed : I think I will remove it later .
     cout<<"select MODE ( AI->1 , PVP -> 2 , Infinite PVP -> 3)\n";
     cin>>gameMode;
@@ -68,7 +87,7 @@ int main() {
             cout<<"Player X turn choose another block: ";
             cin>>FirstPlayer;
         }
-        // ! this line should be in PVP MODE INF onlyyyyyyyyyy
+             // ! this line should be in PVP MODE INF onlyyyyyyyyyy
         if(gameMode==IPVP_MODE){
         x = xq.push(FirstPlayer);
         
@@ -82,11 +101,11 @@ int main() {
         }
         grid[int(FirstPlayer/3.5)][int(FirstPlayer-1)%3] = 1;  // in qt we won't use this as we will click on the grid we want
         printgrid(grid);
-        GameEnd =checkWin(grid);
+        GameEnd =checkWin(grid, db);
         
         if (GameEnd)
         break;
-    //  ! problem here i need to take input from AI
+            //  ! problem here i need to take input from AI
         if(gameMode==PVP_MODE){
             cout<<"Player O turn choose a block: ";
             cin>>SecondPlayer;
@@ -122,17 +141,18 @@ int main() {
             grid[int(SecondPlayer/3.5)][int(SecondPlayer-1)%3]=2;
         }
     
-    //   ! end of sellect
+            //   ! end of sellect
     cout<<"---------------------------------------------\n";
         printgrid(grid);
-        GameEnd =checkWin(grid);
+        GameEnd =checkWin(grid , db);
 
     }
-  
+    sqlite3_close(db);
+    return 0;
 }
 
 void printgrid(int grid[3][3]){
-short int NumberOfBoxes=1;
+    short int NumberOfBoxes=1;
     for(int i =0; i<3; i++){
         for(int j =0; j<3; j++){
             if(grid[i][j]==0)
@@ -152,27 +172,31 @@ short int NumberOfBoxes=1;
     }
 }
 
-int checkWin(int grid [3][3]){
+int checkWin(int grid [3][3] ,sqlite3 *db ){
 
     if(grid[0][0] == grid[0][1] && grid[0][1] == grid[0][2]){
         if(grid[0][0]==1){
             cout<<"Player X Win!";
+            saveGameHistory(db, "WIN");
             return 1;
         }
         if(grid[0][0]==2){
             gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
+            saveGameHistory(db, "lOSS");
             return 1;
         }
- 
+        
     }
-
+    
     if(grid[1][0] == grid[1][1] && grid[1][1] == grid[1][2]){
         if(grid[1][0]==1){
             cout<<"Player X Win!";
+            saveGameHistory(db, "WIN");
             return 1;
         }
         if(grid[1][0]==2){
             gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
+            saveGameHistory(db, "lOSS");
             return 1;
         }
     }
@@ -180,10 +204,12 @@ int checkWin(int grid [3][3]){
     if(grid[2][0] == grid[2][1] && grid[2][1] == grid[2][2]){
         if(grid[2][0]==1){
             cout<<"Player X Win!";
+            saveGameHistory(db, "WIN");
             return 1;
         }
         if(grid[2][0]==2){
             gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
+            saveGameHistory(db, "lOSS");
             return 1;
         }
     }
@@ -191,10 +217,12 @@ int checkWin(int grid [3][3]){
     if(grid[0][0] == grid[1][0] && grid[1][0] == grid[2][0]){
         if(grid[0][0]==1){
             cout<<"Player X Win!";
+            saveGameHistory(db, "WIN");
             return 1;
         }
         if(grid[0][0]==2){
             gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
+            saveGameHistory(db, "lOSS");
             return 1;
         }
     }
@@ -202,10 +230,12 @@ int checkWin(int grid [3][3]){
     if(grid[0][1] == grid[1][1] && grid[1][1] == grid[2][1]){
         if(grid[0][1]==1){
             cout<<"Player X Win!";
+            saveGameHistory(db, "WIN");
             return 1;
         }
         if(grid[0][1]==2){
             gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
+            saveGameHistory(db, "lOSS");
             return 1;
         }
     }
@@ -213,10 +243,12 @@ int checkWin(int grid [3][3]){
     if(grid[0][2] == grid[1][2] && grid[1][2] == grid[2][2]){
         if(grid[0][2]==1){
             cout<<"Player X Win!";
+            saveGameHistory(db, "WIN");
             return 1;
         }
         if(grid[0][2]==2){
             gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
+            saveGameHistory(db, "lOSS");
             return 1;
         }
     }
@@ -224,10 +256,12 @@ int checkWin(int grid [3][3]){
     if(grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2]){
         if(grid[0][0]==1){
             cout<<"Player X Win!";
+            saveGameHistory(db, "WIN");
             return 1;
         }
         if(grid[0][0]==2){
             gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
+            saveGameHistory(db, "lOSS");
             return 1;
         }
     }
@@ -236,10 +270,12 @@ int checkWin(int grid [3][3]){
     {
         if(grid[0][2]==1){
             cout<<"Player X Win!";
+            saveGameHistory(db, "WIN");
             return 1;
         }
         if(grid[0][2]==2){
             gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
+            saveGameHistory(db, "lOSS");
             return 1;
         }
     }
@@ -256,8 +292,27 @@ int checkWin(int grid [3][3]){
 
     if(draw == 9){
         cout<<" >>> Draw! <<<";
+        saveGameHistory(db, "DRAW");
         return 1;
     }
     
     return 0;
+}
+void OPEN_PROGRAM(short int &mode){
+    for (int i = 0; i < 3; i++)
+    {
+            cout<<"For Signup Press 1\n For Login Press 2\n > "; 
+            cin>>mode;  
+            if(mode !=1 && mode !=2 ){
+                cout<<"Enter a Vailed reg Mode\n > ";
+                cin>>mode;
+            }
+            else 
+                break;
+    }
+    if(mode !=1 && mode !=2 ){
+        cout<<"pls try again later\n";
+        exit(0);
+    }
+
 }
