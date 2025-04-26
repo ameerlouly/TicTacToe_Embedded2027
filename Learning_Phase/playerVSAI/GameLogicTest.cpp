@@ -29,6 +29,7 @@ int main() {
     queue oq;
     int x ;
     short int REG_Mode=0;
+    short int ret=0;
     bool loginFound=false;
 
     // ! APP STARTED AND REG PART 
@@ -42,9 +43,14 @@ int main() {
         SIGN_UP(db);
     }
     else if(REG_Mode==LOGIN){
-        loginFound=LOG_IN(db);
+        while(!loginFound && ret++<3)
+            loginFound=LOG_IN(db);
     }
-
+    if(!loginFound){
+        exit(1);
+    }
+    // ! end of reg part
+    
     cout<<".......game started!........"<<"\n";
     label1:                            // ? Mohamed : I think I will remove it later .
     cout<<"select MODE ( AI->1 , PVP -> 2 , Infinite PVP -> 3)\n";
