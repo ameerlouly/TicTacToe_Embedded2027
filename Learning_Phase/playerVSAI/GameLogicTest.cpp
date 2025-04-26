@@ -32,6 +32,9 @@ int main() {
     short int ret=0;
     bool loginFound=false;
 
+    int HistoryRecorder[9]={0};  // for detailed game history
+    int MoveFollower=0;
+
     // ! APP STARTED AND REG PART 
     sqlite3 *db;
     sqlite3_open("game_data.db", &db);
@@ -107,6 +110,8 @@ int main() {
         }
         grid[int(FirstPlayer/3.5)][int(FirstPlayer-1)%3] = 1;  // in qt we won't use this as we will click on the grid we want
         printgrid(grid);
+        HistoryRecorder[MoveFollower] = 10+FirstPlayer;  // in qt the selected button index will be stord here
+        MoveFollower++;      
         GameEnd =checkWin(grid, db);
         
         if (GameEnd)
@@ -120,10 +125,13 @@ int main() {
                 cin>>SecondPlayer;
             }
             grid[int(SecondPlayer/3.5)][int(SecondPlayer-1)%3]=2;  // in qt we won't use this as we will click on the grid we want
+            HistoryRecorder[MoveFollower] = 20+SecondPlayer;      // in qt the selected button index will be stord here
+        
         } 
         else if (gameMode==AI_MODE){
             pair<int, int> aiMove = findBestMove(grid ,levelMode);
             grid[aiMove.first][aiMove.second] = 2;
+            HistoryRecorder[MoveFollower] = 20+ aiMove.first*3 + aiMove.second+1;
         }
         else{
 
@@ -145,11 +153,13 @@ int main() {
             oq.debug();
 
             grid[int(SecondPlayer/3.5)][int(SecondPlayer-1)%3]=2;
+            HistoryRecorder[MoveFollower] = 20+SecondPlayer;          // in qt the selected button index will be stord here
         }
     
             //   ! end of sellect
     cout<<"---------------------------------------------\n";
         printgrid(grid);
+        MoveFollower++;
         GameEnd =checkWin(grid , db);
 
     }
