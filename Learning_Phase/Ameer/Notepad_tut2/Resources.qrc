@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/"/>
+    <qresource prefix="/imgs">
+        <file>Symbols/icons8-copy-70.png</file>
+        <file>Symbols/icons8-cut-70.png</file>
+        <file>Symbols/icons8-fire-exit-70.png</file>
+        <file>Symbols/icons8-new-file-70.png</file>
+        <file>Symbols/icons8-open-file-70.png</file>
+        <file>Symbols/icons8-paste-70.png</file>
+        <file>Symbols/icons8-print-70.png</file>
+        <file>Symbols/icons8-redo-70.png</file>
+        <file>Symbols/icons8-save-70.png</file>
+        <file>Symbols/icons8-undo-70.png</file>
+    </qresource>
+</RCC>
