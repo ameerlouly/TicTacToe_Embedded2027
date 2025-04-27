@@ -1,9 +1,8 @@
 /* to easily run the game type this in the terminal:
 
-./make   (this compiles the program so you need to run this line each time you edit the code)
-./main
+  ./make   (this compiles the program so you need to run this line each time you edit the code)
+  ./main
 */
-// -lssl -lcrypto
 
 #include<iostream>
 #include "AItest.h"
@@ -19,7 +18,6 @@ void OPEN_PROGRAM(short int &mode);
 unsigned short int gameMode=0;
 unsigned short int DiffModeForAI=0;
 Difficulty levelMode;
-short int REG_Mode=0;
 
 
 int main() {
@@ -30,6 +28,7 @@ int main() {
     queue xq;
     queue oq;
     int x ;
+    short int REG_Mode=0;
     short int ret=0;
     bool loginFound=false;
 
@@ -38,43 +37,25 @@ int main() {
     sqlite3_open("game_data.db", &db);
     
     createTables(db);
-
-    start_sign_in:
     OPEN_PROGRAM(REG_Mode);
     
     if(REG_Mode==SIGNUP){
         SIGN_UP(db);
-        loginFound=true;
     }
     else if(REG_Mode==LOGIN){
         while(!loginFound && ret++<3)
-            loginFound=LOG_IN(db);
-    }else if(REG_Mode==GUSET){
-        goto start_IF_Guset_MODE;
+        loginFound=LOG_IN(db);
     }
     if(!loginFound){
         exit(1);
     }
     //**************************************************  END OF LOGIN PART *************************************
-
-    start_IF_Guset_MODE:
-
-    cout<<"******************** GAME STARTED !**********************"<<"\n";
-
-    ReTakePlayMode:
-
-    cout<<"SELECT MODE\nAI->1\nPVP -> 2\nInfinite PVP -> 3\nView Game History -> 0\nLOG OUT->9\n";
-        cin>>gameMode;
-        
-    if(!gameMode && REG_Mode!=GUSET ){
-        viewGameHistory(db);
-        exit(0);
-    } 
-    else if(REG_Mode==GUSET && !gameMode){ 
-        cout<<"you are in guset Mode\n";
-        goto ReTakePlayMode;
-    }
-
+    
+    cout<<".......game started!........"<<"\n";
+    label1:                            // ? Mohamed : I think I will remove it later .
+    cout<<"select MODE ( AI->1 , PVP -> 2 , Infinite PVP -> 3)\n";
+    cin>>gameMode;
+    
     if(gameMode==IPVP_MODE){
         cout<<"xq :" ;
         xq.debug();
@@ -82,14 +63,6 @@ int main() {
         oq.debug();
     }
 
-    if(gameMode==LOGOUT && REG_Mode!=GUSET){
-        cout<<"Logout Succesfully\n";
-        loginFound=false;
-        goto start_sign_in;
-    } else if(REG_Mode==GUSET && gameMode==LOGOUT){ 
-        cout<<"you are in guset Mode\nGame EXIT!\n";
-        exit(0);
-    }
 
     if(gameMode==AI_MODE){
         for (int i = 0; i < 3; i++)
@@ -175,13 +148,13 @@ int main() {
         }
     
             //   ! end of sellect
-        cout<<"---------------------------------------------\n";
+    cout<<"---------------------------------------------\n";
         printgrid(grid);
         GameEnd =checkWin(grid , db);
 
-        }
-        sqlite3_close(db);
-        return 0;
+    }
+    sqlite3_close(db);
+    return 0;
 }
 
 void printgrid(int grid[3][3]){
@@ -210,14 +183,12 @@ int checkWin(int grid [3][3] ,sqlite3 *db ){
     if(grid[0][0] == grid[0][1] && grid[0][1] == grid[0][2]){
         if(grid[0][0]==1){
             cout<<"Player X Win!";
-            if(REG_Mode!=GUSET)
-                saveGameHistory(db, "WIN");
+            saveGameHistory(db, "WIN");
             return 1;
         }
         if(grid[0][0]==2){
             gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
-            if(REG_Mode!=GUSET)
-                saveGameHistory(db, "lOSS");
+            saveGameHistory(db, "lOSS");
             return 1;
         }
         
@@ -226,14 +197,12 @@ int checkWin(int grid [3][3] ,sqlite3 *db ){
     if(grid[1][0] == grid[1][1] && grid[1][1] == grid[1][2]){
         if(grid[1][0]==1){
             cout<<"Player X Win!";
-            if(REG_Mode!=GUSET)
-                saveGameHistory(db, "WIN");
+            saveGameHistory(db, "WIN");
             return 1;
         }
         if(grid[1][0]==2){
             gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
-            if(REG_Mode!=GUSET)
-                saveGameHistory(db, "lOSS");
+            saveGameHistory(db, "lOSS");
             return 1;
         }
     }
@@ -241,14 +210,12 @@ int checkWin(int grid [3][3] ,sqlite3 *db ){
     if(grid[2][0] == grid[2][1] && grid[2][1] == grid[2][2]){
         if(grid[2][0]==1){
             cout<<"Player X Win!";
-            if(REG_Mode!=GUSET)    
-                saveGameHistory(db, "WIN");
+            saveGameHistory(db, "WIN");
             return 1;
         }
         if(grid[2][0]==2){
             gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
-            if(REG_Mode!=GUSET)
-                saveGameHistory(db, "lOSS");
+            saveGameHistory(db, "lOSS");
             return 1;
         }
     }
@@ -256,14 +223,12 @@ int checkWin(int grid [3][3] ,sqlite3 *db ){
     if(grid[0][0] == grid[1][0] && grid[1][0] == grid[2][0]){
         if(grid[0][0]==1){
             cout<<"Player X Win!";
-            if(REG_Mode!=GUSET)
-                saveGameHistory(db, "WIN");
+            saveGameHistory(db, "WIN");
             return 1;
         }
         if(grid[0][0]==2){
             gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
-            if(REG_Mode!=GUSET)
-                saveGameHistory(db, "lOSS");
+            saveGameHistory(db, "lOSS");
             return 1;
         }
     }
@@ -271,14 +236,12 @@ int checkWin(int grid [3][3] ,sqlite3 *db ){
     if(grid[0][1] == grid[1][1] && grid[1][1] == grid[2][1]){
         if(grid[0][1]==1){
             cout<<"Player X Win!";
-            if(REG_Mode!=GUSET)
-                saveGameHistory(db, "WIN");
+            saveGameHistory(db, "WIN");
             return 1;
         }
         if(grid[0][1]==2){
             gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
-            if(REG_Mode!=GUSET)
-                saveGameHistory(db, "lOSS");
+            saveGameHistory(db, "lOSS");
             return 1;
         }
     }
@@ -286,14 +249,12 @@ int checkWin(int grid [3][3] ,sqlite3 *db ){
     if(grid[0][2] == grid[1][2] && grid[1][2] == grid[2][2]){
         if(grid[0][2]==1){
             cout<<"Player X Win!";
-            if(REG_Mode!=GUSET)
-                saveGameHistory(db, "WIN");
+            saveGameHistory(db, "WIN");
             return 1;
         }
         if(grid[0][2]==2){
             gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
-            if(REG_Mode!=GUSET)
-                saveGameHistory(db, "lOSS");
+            saveGameHistory(db, "lOSS");
             return 1;
         }
     }
@@ -301,14 +262,12 @@ int checkWin(int grid [3][3] ,sqlite3 *db ){
     if(grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2]){
         if(grid[0][0]==1){
             cout<<"Player X Win!";
-            if(REG_Mode!=GUSET)
-                saveGameHistory(db, "WIN");
+            saveGameHistory(db, "WIN");
             return 1;
         }
         if(grid[0][0]==2){
             gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
-            if(REG_Mode!=GUSET)
-                saveGameHistory(db, "lOSS");
+            saveGameHistory(db, "lOSS");
             return 1;
         }
     }
@@ -317,14 +276,12 @@ int checkWin(int grid [3][3] ,sqlite3 *db ){
     {
         if(grid[0][2]==1){
             cout<<"Player X Win!";
-            if(REG_Mode!=GUSET)
-                saveGameHistory(db, "WIN");
+            saveGameHistory(db, "WIN");
             return 1;
         }
         if(grid[0][2]==2){
             gameMode==AI_MODE ? cout<<" AI Win!" : cout<<"Player O Win!";
-            if(REG_Mode!=GUSET)
-                saveGameHistory(db, "lOSS");
+            saveGameHistory(db, "lOSS");
             return 1;
         }
     }
@@ -341,8 +298,7 @@ int checkWin(int grid [3][3] ,sqlite3 *db ){
 
     if(draw == 9){
         cout<<" >>> Draw! <<<";
-        if(REG_Mode!=GUSET)
-            saveGameHistory(db, "DRAW");
+        saveGameHistory(db, "DRAW");
         return 1;
     }
     
@@ -351,16 +307,16 @@ int checkWin(int grid [3][3] ,sqlite3 *db ){
 void OPEN_PROGRAM(short int &mode){
     for (int i = 0; i < 3; i++)
     {
-        cout<<"For Signup Press 1\nFor Login Press 2\nFor Guset Mode 3\n> "; 
-        cin>>mode;  
-        if(mode !=1 && mode !=2 && mode !=3 ){
-            cout<<"Enter a Vailed reg Mode\n > ";
-            cin>>mode;
-        }
-        else 
-            break;
+            cout<<"For Signup Press 1\n For Login Press 2\n > "; 
+            cin>>mode;  
+            if(mode !=1 && mode !=2 ){
+                cout<<"Enter a Vailed reg Mode\n > ";
+                cin>>mode;
+            }
+            else 
+                break;
     }
-    if(mode !=1 && mode !=2 && mode !=3 ){
+    if(mode !=1 && mode !=2 ){
         cout<<"pls try again later\n";
         exit(0);
     }

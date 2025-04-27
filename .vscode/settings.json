@@ -45,5 +45,6 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "ctime": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "M:/TIC TAC TIO GAME/TicTacToe_Embedded2027/tic_tac_toe_test"
 }
