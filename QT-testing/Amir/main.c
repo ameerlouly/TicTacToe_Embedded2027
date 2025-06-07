@@ -3,6 +3,11 @@
  *
  *  this script holds the game logic for the PvP mode
  *
+ *  contains:
+ *  game history viewer
+ *  game reset (to reset the game after it finishes)
+ *  check winning patterns
+ *
  * ----------------------------------------------------
 */
 
@@ -59,7 +64,9 @@ int main(int argc, char *argv[])
 
     ShowHistory=Button;
     ReMatchButtonG = RematchButtonL;
-     // here we define the grid buttons and ther positions and the fonts and sizes
+
+
+    // here we define the grid buttons and ther positions and the fonts and sizes
 
     Grid[0]->setFixedSize(100, 100);
     Grid[1]->setFixedSize(100, 100);
