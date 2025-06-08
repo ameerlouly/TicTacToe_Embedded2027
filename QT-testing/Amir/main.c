@@ -5,7 +5,7 @@
  *
  *  contains:
  *  game history viewer
- *  game reset (to reset the game after it finishes)
+ *  game reset (to restart the game after it finishes)
  *  check winning patterns
  *
  * ----------------------------------------------------
@@ -19,9 +19,10 @@
 #include <QTimer>
 
 
-///functions for gameplay
+///functions and variables for gameplay
 void onButtonClicked(int *x , QPushButton *button , int num , int clicked[9] , int *MoveNum);
 void CheckWin(int clicked[9]);
+QPushButton *Grid[9];
 
 
 ///functions and variables for detailed history
@@ -37,6 +38,16 @@ void ReMatch(QPushButton* Grid[9],int HistoryRecorder[9],int clicked[9],int *x);
 QPushButton *ReMatchButtonG;
 
 
+///to handle UI
+void PvP();
+void PvAI();
+void normalPvP();
+void infinitePvP();
+QPushButton *PvPButton;
+QPushButton *PvAIButton;
+QPushButton *NormalPvPButton;
+QPushButton *InfinitePvPButton;
+int mode = 0;
 
 
 int main(int argc, char *argv[])
@@ -49,21 +60,29 @@ int main(int argc, char *argv[])
 
     int x=1;  // who can start the game (X -> 1  O -> 2)
 
-    QPushButton *Grid[9];
-
     for (int i = 0; i < 9; ++i)
     {
         Grid[i] = new QPushButton(QString("%1").arg(i+1),&window);
     }
 
-    QPushButton *Button = new QPushButton("review game", &window);
-    QPushButton *RematchButtonL = new QPushButton("Re-match", &window);
+    ShowHistory = new QPushButton("review game", &window);
+    ReMatchButtonG = new QPushButton("Re-match", &window);
 
-    Button->hide();
-    RematchButtonL->hide();
+    PvPButton = new QPushButton("PvP", &window);
+    PvAIButton = new QPushButton("PvAI", &window);
+    NormalPvPButton = new QPushButton("Normal", &window);
+    InfinitePvPButton = new QPushButton("Infinite", &window);
 
-    ShowHistory=Button;
-    ReMatchButtonG = RematchButtonL;
+
+    ShowHistory->hide();
+    ReMatchButtonG->hide();
+    for (int i = 0; i < 9; ++i)
+    {
+        Grid[i]->hide();
+    }
+    NormalPvPButton->hide();
+    InfinitePvPButton->hide();
+
 
 
     // here we define the grid buttons and ther positions and the fonts and sizes
@@ -81,6 +100,12 @@ int main(int argc, char *argv[])
     ShowHistory->setFixedSize(200, 100);
     ReMatchButtonG->setFixedSize(100, 100);
 
+    PvPButton->setFixedSize(200, 100);
+    PvAIButton->setFixedSize(200, 100);
+
+    NormalPvPButton->setFixedSize(200, 100);
+    InfinitePvPButton->setFixedSize(200, 100);
+
     Grid[0]->move(100, 50);
     Grid[1]->move(200, 50);
     Grid[2]->move(300, 50);
@@ -94,7 +119,11 @@ int main(int argc, char *argv[])
     ShowHistory->move(100, 350);
     ReMatchButtonG->move(300,350);
 
+    PvPButton->move(150,50);
+    PvAIButton->move(150, 150);
 
+    NormalPvPButton->move(150, 50);
+    InfinitePvPButton->move(150, 150);
 
     QFont font;
     font.setPointSize(30);
@@ -116,21 +145,26 @@ int main(int argc, char *argv[])
 
     // here we connect each grid button to a function
 
-        QObject::connect(Grid[0], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[0],0, clicked,&MoveNum); });
-        QObject::connect(Grid[1], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[1],1, clicked,&MoveNum); });
-        QObject::connect(Grid[2], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[2],2, clicked,&MoveNum); });
-        QObject::connect(Grid[3], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[3],3, clicked,&MoveNum); });
-        QObject::connect(Grid[4], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[4],4, clicked,&MoveNum); });
-        QObject::connect(Grid[5], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[5],5, clicked,&MoveNum); });
-        QObject::connect(Grid[6], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[6],6, clicked,&MoveNum); });
-        QObject::connect(Grid[7], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[7],7, clicked,&MoveNum); });
-        QObject::connect(Grid[8], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[8],8, clicked,&MoveNum); });
+    QObject::connect(Grid[0], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[0],0, clicked,&MoveNum); });
+    QObject::connect(Grid[1], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[1],1, clicked,&MoveNum); });
+    QObject::connect(Grid[2], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[2],2, clicked,&MoveNum); });
+    QObject::connect(Grid[3], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[3],3, clicked,&MoveNum); });
+    QObject::connect(Grid[4], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[4],4, clicked,&MoveNum); });
+    QObject::connect(Grid[5], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[5],5, clicked,&MoveNum); });
+    QObject::connect(Grid[6], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[6],6, clicked,&MoveNum); });
+    QObject::connect(Grid[7], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[7],7, clicked,&MoveNum); });
+    QObject::connect(Grid[8], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[8],8, clicked,&MoveNum); });
 
-        QObject::connect(ShowHistory, &QPushButton::clicked,[&]() {showhistory(Grid,HistoryRecorder,&window); });
-        QObject::connect(ReMatchButtonG, &QPushButton::clicked,[&]() {ReMatch(Grid,HistoryRecorder,clicked,&x); });
+    QObject::connect(ShowHistory, &QPushButton::clicked,[&]() {showhistory(Grid,HistoryRecorder,&window); });
+    QObject::connect(ReMatchButtonG, &QPushButton::clicked,[&]() {ReMatch(Grid,HistoryRecorder,clicked,&x); });
+
+    QObject::connect(PvPButton, &QPushButton::clicked,[&]() {PvP();});
+    QObject::connect(PvAIButton, &QPushButton::clicked,[&]() {PvAI(); });
+    QObject::connect(NormalPvPButton, &QPushButton::clicked,[&]() {normalPvP(); });
+    QObject::connect(InfinitePvPButton, &QPushButton::clicked,[&]() {infinitePvP(); });
+
 
     window.setLayout(layout);
-
     window.resize(500, 500);
     window.show();
 
@@ -283,6 +317,35 @@ void ReMatch(QPushButton* Grid[9],int HistoryRecorder[9],int clicked[9],int *x){
     ReMatchButtonG->hide();
 }
 
+
+
+void PvP(){
+    PvPButton-> hide();
+    PvAIButton-> hide();
+    NormalPvPButton->show();
+    InfinitePvPButton->show();
+}
+
+void PvAI(){
+    PvPButton-> hide();
+    PvAIButton-> hide();
+}
+
+void normalPvP(){
+    NormalPvPButton->hide();
+    InfinitePvPButton->hide();
+    mode=1;
+    for (int i = 0; i < 9; ++i)
+    {
+        Grid[i]->show();
+    }
+}
+
+void infinitePvP(){
+    NormalPvPButton->hide();
+    InfinitePvPButton->hide();
+     mode=2;
+}
 
 
 
