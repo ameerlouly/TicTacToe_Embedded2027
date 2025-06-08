@@ -1,15 +1,16 @@
 /*
  * ----------------------------------------------------
  *
- *  this script holds the game logic for the PvP mode
+ *  this script holds the game logic for the PvP mode (normal and infinite)
  *
  *  contains:
+ *  some UI handel functions
  *  game history viewer
  *  game reset (to restart the game after it finishes)
  *  check winning patterns
  *
  * ----------------------------------------------------
-*/
+ */
 
 #include <QApplication>
 #include <QPushButton>
@@ -17,12 +18,16 @@
 #include <QWidget>
 #include <QMessageBox>
 #include <QTimer>
+#include "queue.h"
 
 
 ///functions and variables for gameplay
 void onButtonClicked(int *x , QPushButton *button , int num , int clicked[9] , int *MoveNum);
 void CheckWin(int clicked[9]);
+int GridToNum(QPushButton *Button);
 QPushButton *Grid[9];
+queue<QPushButton* ,3> PlayerXQ;
+queue<QPushButton* ,3> PlayerOQ;
 
 
 ///functions and variables for detailed history
@@ -35,10 +40,10 @@ QPushButton *ShowHistory;
 
 ///to restart the game
 void ReMatch(QPushButton* Grid[9],int HistoryRecorder[9],int clicked[9],int *x);
-QPushButton *ReMatchButtonG;
+QPushButton *ReMatchButton;
 
 
-///to handle UI
+///to handle the mainmenu UI
 void PvP();
 void PvAI();
 void normalPvP();
@@ -62,11 +67,11 @@ int main(int argc, char *argv[])
 
     for (int i = 0; i < 9; ++i)
     {
-        Grid[i] = new QPushButton(QString("%1").arg(i+1),&window);
+        Grid[i] = new QPushButton("",&window);
     }
 
     ShowHistory = new QPushButton("review game", &window);
-    ReMatchButtonG = new QPushButton("Re-match", &window);
+    ReMatchButton = new QPushButton("Re-match", &window);
 
     PvPButton = new QPushButton("PvP", &window);
     PvAIButton = new QPushButton("PvAI", &window);
@@ -75,7 +80,7 @@ int main(int argc, char *argv[])
 
 
     ShowHistory->hide();
-    ReMatchButtonG->hide();
+    ReMatchButton->hide();
     for (int i = 0; i < 9; ++i)
     {
         Grid[i]->hide();
@@ -85,7 +90,7 @@ int main(int argc, char *argv[])
 
 
 
-    // here we define the grid buttons and ther positions and the fonts and sizes
+    // here we define the grid buttons and their positions and fonts and sizes
 
     Grid[0]->setFixedSize(100, 100);
     Grid[1]->setFixedSize(100, 100);
@@ -98,7 +103,7 @@ int main(int argc, char *argv[])
     Grid[8]->setFixedSize(100, 100);
 
     ShowHistory->setFixedSize(200, 100);
-    ReMatchButtonG->setFixedSize(100, 100);
+    ReMatchButton->setFixedSize(100, 100);
 
     PvPButton->setFixedSize(200, 100);
     PvAIButton->setFixedSize(200, 100);
@@ -117,7 +122,7 @@ int main(int argc, char *argv[])
     Grid[8]->move(300, 250);
 
     ShowHistory->move(100, 350);
-    ReMatchButtonG->move(300,350);
+    ReMatchButton->move(300,350);
 
     PvPButton->move(150,50);
     PvAIButton->move(150, 150);
@@ -143,7 +148,7 @@ int main(int argc, char *argv[])
 
 
 
-    // here we connect each grid button to a function
+    // here we connect each button to a function
 
     QObject::connect(Grid[0], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[0],0, clicked,&MoveNum); });
     QObject::connect(Grid[1], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[1],1, clicked,&MoveNum); });
@@ -156,7 +161,7 @@ int main(int argc, char *argv[])
     QObject::connect(Grid[8], &QPushButton::clicked, [&]() {onButtonClicked(&x , Grid[8],8, clicked,&MoveNum); });
 
     QObject::connect(ShowHistory, &QPushButton::clicked,[&]() {showhistory(Grid,HistoryRecorder,&window); });
-    QObject::connect(ReMatchButtonG, &QPushButton::clicked,[&]() {ReMatch(Grid,HistoryRecorder,clicked,&x); });
+    QObject::connect(ReMatchButton, &QPushButton::clicked,[&]() {ReMatch(Grid,HistoryRecorder,clicked,&x); });
 
     QObject::connect(PvPButton, &QPushButton::clicked,[&]() {PvP();});
     QObject::connect(PvAIButton, &QPushButton::clicked,[&]() {PvAI(); });
@@ -171,29 +176,81 @@ int main(int argc, char *argv[])
     return app.exec();
 }
 
+/// internal function (don't attach it to any thing)
+int GridToNum(QPushButton *Button){
+
+    for(int i=0; i<9; i++){
+        if(Button == Grid[i]){
+            return i;
+        }
+    }
+    return 404;
+}
 
 
 /// this function must be attached to each button in the game grid
 void onButtonClicked(int *x , QPushButton *button , int num , int clicked[9],int *MoveNum) {
 
-    if(clicked[num]<1){
-
+    if(clicked[num]<1){ // checks if this button is available and wasn't clicked before
         if(*x ==1){
             button ->setText("X");
             clicked[num]=1;
-            HistoryRecorder[*MoveNum]= (10*(*x)) + num;
+
+            if(mode!=2){
+                HistoryRecorder[*MoveNum]= (10*(*x)) + num;
+            }
+
+            if(mode==2){
+
+                if(PlayerOQ.isfull()){ // if the another player has already 3 moves on the grid we need to warn him which move will be removed next time he playes
+                    QPushButton *dash =PlayerOQ.peak();
+                    dash->setEnabled(false);
+                }
+
+               QPushButton *remove = PlayerXQ.push(Grid[num]);
+                if(remove!= nullptr){
+                    remove->setEnabled(true);
+                    // remove->setText(QString("%1").arg(GridToNum(remove)+1));  // used for debuging
+                    remove->setText("");
+                    clicked[GridToNum(remove)] = 0;
+                }
+            }
+
             *x=2;
         }
 
         else if(*x ==2){
             button ->setText("O");
             clicked[num]=2;
-            HistoryRecorder[*MoveNum]= (10*(*x)) + num;
+
+            if(mode!=2){
+                HistoryRecorder[*MoveNum]= (10*(*x)) + num;
+            }
+
+            if(mode==2){
+
+                if(PlayerXQ.isfull()){
+                    QPushButton *dash =PlayerXQ.peak();
+                    dash->setEnabled(false);
+                }
+
+                QPushButton *remove = PlayerOQ.push(Grid[num]);
+                if(remove!= nullptr){
+                    remove->setEnabled(true);
+                    //remove->setText(QString("%1").arg(GridToNum(remove)+1));  // used for debuging
+                    remove->setText("");
+                    clicked[GridToNum(remove)] = 0;
+                }
+            }
+
             *x=1;
         }
 
         (*MoveNum)++;
     }
+
+
+
 
     CheckWin(clicked);
 
@@ -248,23 +305,24 @@ void CheckWin(int clicked[9]){
         if(draw){
             WhoWon=3;
         }
-
     }
 
-    if(WhoWon != 0){ //if some one wins we now need to diable the grid and show some buttons
+    if(WhoWon != 0){ //if someone wins we now need to diable the grid and show some buttons (we don't disable buttons we just don't accept new input)
 
         //TODO: save status in the database
 
-        for(int i=0; i<9; i++){  // this loop will modify all buttons values disabling the players from editing the grid
+        for(int i=0; i<9; i++){  // this loop will modify all buttons values disabling the players from editing the grid (again: we don't disable buttons)
             clicked[i]=3;
         }
 
-        ShowHistory->show();
-        ReMatchButtonG->show();
+        if(mode!=2){
+            ShowHistory->show();
+        }
+
+        ReMatchButton->show();
     }
 
     return;
-
 }
 
 
@@ -305,16 +363,19 @@ void nextHistorymove(int x,QPushButton *Button[9]){
 void ReMatch(QPushButton* Grid[9],int HistoryRecorder[9],int clicked[9],int *x){
 
     for(int i = 0; i<9; i++){
-
-        Grid[i]->setText(QString("%1").arg(i+1));  // to restore numbers on the grid
+       // Grid[i]->setText(QString("%1").arg(i+1));  // to restore numbers on the grid for debugging
+        Grid[i]->setText("");
         HistoryRecorder[i]= 0;  // to reset the history
         clicked[i]=0;  // to enable the grid again
         MoveNum=0;  // to reset the number of moves
+        Grid[i]->setEnabled(true);
     }
 
-    *x=1;  // to start with player x
+    PlayerXQ.clean();
+    PlayerOQ.clean();
+    *x=1;  // to restart with player x playing the first move
     ShowHistory->hide();
-    ReMatchButtonG->hide();
+    ReMatchButton->hide();
 }
 
 
@@ -344,7 +405,11 @@ void normalPvP(){
 void infinitePvP(){
     NormalPvPButton->hide();
     InfinitePvPButton->hide();
-     mode=2;
+    mode=2;
+    for (int i = 0; i < 9; ++i)
+    {
+        Grid[i]->show();
+    }
 }
 
 
