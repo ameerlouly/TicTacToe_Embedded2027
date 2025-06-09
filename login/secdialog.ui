@@ -116,7 +116,7 @@ background-color:white;
     </rect>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">
@@ -163,8 +163,8 @@ background-color:white;
     <widget class="QPushButton" name="startgame">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>200</y>
+       <x>240</x>
+       <y>240</y>
        <width>441</width>
        <height>91</height>
       </rect>
@@ -186,9 +186,9 @@ border-color:black;
     <widget class="QPushButton" name="PVP">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>218</y>
-       <width>131</width>
+       <x>140</x>
+       <y>260</y>
+       <width>281</width>
        <height>51</height>
       </rect>
      </property>
@@ -203,12 +203,12 @@ background-color:white;
       <string>PVP</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="PVE">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>220</y>
-       <width>131</width>
+       <x>550</x>
+       <y>260</y>
+       <width>281</width>
        <height>51</height>
       </rect>
      </property>
@@ -221,6 +221,128 @@ background-color:white;
      </property>
      <property name="text">
       <string>PVE</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="back_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>93</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>back</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_5">
+    <widget class="QPushButton" name="normal">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>140</y>
+       <width>241</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+border-radius:10px;
+background-color:white;
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Normal</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="infinite">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>300</y>
+       <width>241</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+border-radius:10px;
+background-color:white;
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Infinite</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="back_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>0</y>
+       <width>93</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>back</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_6">
+    <widget class="QPushButton" name="easy">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>80</y>
+       <width>251</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Easy</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="medium">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>200</y>
+       <width>251</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Medium</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="hard">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>320</y>
+       <width>251</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Hard</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="back">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>10</y>
+       <width>93</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>back</string>
      </property>
     </widget>
    </widget>
