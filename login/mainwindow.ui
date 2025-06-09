@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>933</width>
-    <height>655</height>
+    <width>976</width>
+    <height>698</height>
    </rect>
   </property>
   <property name="font">
@@ -511,7 +511,7 @@ QLineEdit
                    </spacer>
                   </item>
                   <item row="0" column="1">
-                   <widget class="QPushButton" name="pushButton">
+                   <widget class="QPushButton" name="Login_User_Button">
                     <property name="text">
                      <string>Log In</string>
                     </property>
@@ -629,7 +629,7 @@ QLineEdit
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>933</width>
+     <width>976</width>
      <height>21</height>
     </rect>
    </property>

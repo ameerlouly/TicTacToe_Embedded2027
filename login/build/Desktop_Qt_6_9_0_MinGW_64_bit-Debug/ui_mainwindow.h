@@ -73,7 +73,7 @@ public:
     QLineEdit *password;
     QGridLayout *gridLayout_10;
     QSpacerItem *horizontalSpacer_6;
-    QPushButton *pushButton;
+    QPushButton *Login_User_Button;
     QSpacerItem *horizontalSpacer_5;
     QSpacerItem *horizontalSpacer_7;
     QSpacerItem *verticalSpacer_7;
@@ -88,7 +88,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(933, 655);
+        MainWindow->resize(976, 698);
         QFont font;
         font.setBold(false);
         MainWindow->setFont(font);
@@ -363,10 +363,10 @@ public:
 
         gridLayout_10->addItem(horizontalSpacer_6, 0, 0, 1, 1);
 
-        pushButton = new QPushButton(LoginFormGroup);
-        pushButton->setObjectName("pushButton");
+        Login_User_Button = new QPushButton(LoginFormGroup);
+        Login_User_Button->setObjectName("Login_User_Button");
 
-        gridLayout_10->addWidget(pushButton, 0, 1, 1, 1);
+        gridLayout_10->addWidget(Login_User_Button, 0, 1, 1, 1);
 
         horizontalSpacer_5 = new QSpacerItem(136, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
@@ -415,7 +415,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 933, 21));
+        menubar->setGeometry(QRect(0, 0, 976, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -423,7 +423,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -444,7 +444,7 @@ public:
         BackLogin_button->setText(QCoreApplication::translate("MainWindow", "< Back", nullptr));
         username_2->setText(QCoreApplication::translate("MainWindow", "Username", nullptr));
         password_2->setText(QCoreApplication::translate("MainWindow", "Password", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Log In", nullptr));
+        Login_User_Button->setText(QCoreApplication::translate("MainWindow", "Log In", nullptr));
     } // retranslateUi
 
 };

@@ -12,10 +12,12 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -38,12 +40,28 @@ public:
     QWidget *page_3;
     QPushButton *PVP;
     QPushButton *pushButton_3;
+    QWidget *page_4;
+    QPushButton *pushButton_4;
+    QPushButton *pushButton_6;
+    QPushButton *pushButton_9;
+    QFrame *line_2;
+    QFrame *line_3;
+    QPushButton *pushButton_8;
+    QPushButton *pushButton_5;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QTextEdit *textEdit_2;
+    QTextEdit *textEdit;
+    QPushButton *pushButton_7;
+    QFrame *line_4;
+    QPushButton *pushButton_10;
+    QFrame *line;
 
     void setupUi(QDialog *SecDialog)
     {
         if (SecDialog->objectName().isEmpty())
             SecDialog->setObjectName("SecDialog");
-        SecDialog->resize(731, 459);
+        SecDialog->resize(1081, 715);
         groupBox = new QGroupBox(SecDialog);
         groupBox->setObjectName("groupBox");
         groupBox->setGeometry(QRect(0, 0, 121, 451));
@@ -81,7 +99,7 @@ public:
 "}"));
         stackedWidget = new QStackedWidget(SecDialog);
         stackedWidget->setObjectName("stackedWidget");
-        stackedWidget->setGeometry(QRect(130, 10, 591, 441));
+        stackedWidget->setGeometry(QRect(120, 10, 941, 691));
         page = new QWidget();
         page->setObjectName("page");
         label = new QLabel(page);
@@ -125,10 +143,220 @@ public:
 "\n"
 "}"));
         stackedWidget->addWidget(page_3);
+        page_4 = new QWidget();
+        page_4->setObjectName("page_4");
+        pushButton_4 = new QPushButton(page_4);
+        pushButton_4->setObjectName("pushButton_4");
+        pushButton_4->setGeometry(QRect(170, 490, 201, 131));
+        pushButton_4->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"border :none;\n"
+"color:black;\n"
+"	font: 28pt \"Segoe Fluent Icons\";\n"
+"}\n"
+"QPushButton:Hover\n"
+"{\n"
+"background-color:blue;\n"
+"}\n"
+"QPushButton:pressed\n"
+"{\n"
+"background-color:red;\n"
+"}"));
+        pushButton_6 = new QPushButton(page_4);
+        pushButton_6->setObjectName("pushButton_6");
+        pushButton_6->setGeometry(QRect(580, 350, 201, 131));
+        pushButton_6->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"border :none;\n"
+"color:black;\n"
+"	font: 28pt \"Segoe Fluent Icons\";\n"
+"}\n"
+"QPushButton:Hover\n"
+"{\n"
+"background-color:blue;\n"
+"}\n"
+"QPushButton:pressed\n"
+"{\n"
+"background-color:red;\n"
+"}"));
+        pushButton_9 = new QPushButton(page_4);
+        pushButton_9->setObjectName("pushButton_9");
+        pushButton_9->setGeometry(QRect(580, 200, 201, 131));
+        pushButton_9->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"border :none;\n"
+"color:black;\n"
+"	font: 28pt \"Segoe Fluent Icons\";\n"
+"}\n"
+"QPushButton:Hover\n"
+"{\n"
+"background-color:blue;\n"
+"}\n"
+"QPushButton:pressed\n"
+"{\n"
+"background-color:red;\n"
+"}"));
+        line_2 = new QFrame(page_4);
+        line_2->setObjectName("line_2");
+        line_2->setGeometry(QRect(360, 200, 20, 421));
+        line_2->setLineWidth(5);
+        line_2->setFrameShape(QFrame::Shape::VLine);
+        line_2->setFrameShadow(QFrame::Shadow::Sunken);
+        line_3 = new QFrame(page_4);
+        line_3->setObjectName("line_3");
+        line_3->setGeometry(QRect(190, 480, 601, 20));
+        line_3->setLineWidth(5);
+        line_3->setFrameShape(QFrame::Shape::HLine);
+        line_3->setFrameShadow(QFrame::Shadow::Sunken);
+        pushButton_8 = new QPushButton(page_4);
+        pushButton_8->setObjectName("pushButton_8");
+        pushButton_8->setGeometry(QRect(160, 200, 201, 131));
+        pushButton_8->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"border :none;\n"
+"color:black;\n"
+"	font: 28pt \"Segoe Fluent Icons\";\n"
+"}\n"
+"QPushButton:Hover\n"
+"{\n"
+"background-color:blue;\n"
+"}\n"
+"QPushButton:checked {\n"
+"    background-color: red;\n"
+"}\n"
+""));
+        pushButton_5 = new QPushButton(page_4);
+        pushButton_5->setObjectName("pushButton_5");
+        pushButton_5->setGeometry(QRect(370, 500, 201, 131));
+        pushButton_5->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"border :none;\n"
+"color:black;\n"
+"	font: 28pt \"Segoe Fluent Icons\";\n"
+"}\n"
+"QPushButton:Hover\n"
+"{\n"
+"background-color:blue;\n"
+"}\n"
+"QPushButton:pressed\n"
+"{\n"
+"background-color:red;\n"
+"}"));
+        pushButton = new QPushButton(page_4);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(372, 350, 201, 131));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"border :none;\n"
+"color:black;\n"
+"	font: 28pt \"Segoe Fluent Icons\";\n"
+"}\n"
+"QPushButton:Hover\n"
+"{\n"
+"background-color:blue;\n"
+"}\n"
+"QPushButton:pressed\n"
+"{\n"
+"background-color:red;\n"
+"}"));
+        pushButton_2 = new QPushButton(page_4);
+        pushButton_2->setObjectName("pushButton_2");
+        pushButton_2->setGeometry(QRect(160, 350, 201, 131));
+        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"border :none;\n"
+"color:black;\n"
+"	font: 28pt \"Segoe Fluent Icons\";\n"
+"}\n"
+"QPushButton:Hover\n"
+"{\n"
+"background-color:blue;\n"
+"}\n"
+"QPushButton:pressed\n"
+"{\n"
+"background-color:red;\n"
+"}\n"
+"QPushButton[text=\"O\"] {\n"
+"    color: black;\n"
+"   \n"
+"}\n"
+"QPushButton[text=\"X\"] {\n"
+"    color: white;\n"
+"    }\n"
+""));
+        textEdit_2 = new QTextEdit(page_4);
+        textEdit_2->setObjectName("textEdit_2");
+        textEdit_2->setGeometry(QRect(590, 60, 261, 41));
+        textEdit_2->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+"{\n"
+"border :none;\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
+"font: 700 12pt \"Rockwell\";    \n"
+" border-radius: 20px;\n"
+"}"));
+        textEdit = new QTextEdit(page_4);
+        textEdit->setObjectName("textEdit");
+        textEdit->setGeometry(QRect(80, 60, 261, 41));
+        textEdit->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+"{\n"
+"border :none;\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
+"font: 700 12pt \"Rockwell\";    \n"
+" border-radius: 20px;\n"
+"}"));
+        pushButton_7 = new QPushButton(page_4);
+        pushButton_7->setObjectName("pushButton_7");
+        pushButton_7->setGeometry(QRect(370, 200, 201, 131));
+        pushButton_7->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"border :none;\n"
+"color:black;\n"
+"	font: 28pt \"Segoe Fluent Icons\";\n"
+"}\n"
+"QPushButton:Hover\n"
+"{\n"
+"background-color:blue;\n"
+"}\n"
+"QPushButton:pressed\n"
+"{\n"
+"background-color:red;\n"
+"}"));
+        line_4 = new QFrame(page_4);
+        line_4->setObjectName("line_4");
+        line_4->setGeometry(QRect(180, 330, 611, 20));
+        line_4->setLineWidth(5);
+        line_4->setFrameShape(QFrame::Shape::HLine);
+        line_4->setFrameShadow(QFrame::Shadow::Sunken);
+        pushButton_10 = new QPushButton(page_4);
+        pushButton_10->setObjectName("pushButton_10");
+        pushButton_10->setGeometry(QRect(580, 490, 201, 131));
+        pushButton_10->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"border :none;\n"
+"color:black;\n"
+"	font: 28pt \"Segoe Fluent Icons\";\n"
+"}\n"
+"QPushButton:Hover\n"
+"{\n"
+"background-color:blue;\n"
+"}\n"
+"QPushButton:pressed\n"
+"{\n"
+"background-color:red;\n"
+"}"));
+        line = new QFrame(page_4);
+        line->setObjectName("line");
+        line->setGeometry(QRect(570, 200, 20, 421));
+        line->setLineWidth(5);
+        line->setFrameShape(QFrame::Shape::VLine);
+        line->setFrameShadow(QFrame::Shadow::Sunken);
+        stackedWidget->addWidget(page_4);
 
         retranslateUi(SecDialog);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(SecDialog);
@@ -148,6 +376,31 @@ public:
         startgame->setText(QCoreApplication::translate("SecDialog", "START GAME", nullptr));
         PVP->setText(QCoreApplication::translate("SecDialog", "PVP", nullptr));
         pushButton_3->setText(QCoreApplication::translate("SecDialog", "PVE", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("SecDialog", "7", nullptr));
+        pushButton_6->setText(QCoreApplication::translate("SecDialog", "6", nullptr));
+        pushButton_9->setText(QCoreApplication::translate("SecDialog", "3", nullptr));
+        pushButton_8->setText(QCoreApplication::translate("SecDialog", "1", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("SecDialog", "8", nullptr));
+        pushButton->setText(QCoreApplication::translate("SecDialog", "5", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("SecDialog", "4", nullptr));
+        textEdit_2->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:14pt;\">player2:</span></p></body></html>", nullptr));
+        textEdit->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:14pt;\">player1:</span></p></body></html>", nullptr));
+        pushButton_7->setText(QCoreApplication::translate("SecDialog", "2", nullptr));
+        pushButton_10->setText(QCoreApplication::translate("SecDialog", "9", nullptr));
     } // retranslateUi
 
 };

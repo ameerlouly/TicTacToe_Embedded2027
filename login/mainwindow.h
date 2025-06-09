@@ -28,6 +28,8 @@ private slots:
 
     void on_BackLogin_button_clicked();
 
+    void on_Login_User_Button_clicked();
+
 private:
     Ui::MainWindow *ui;
     SecDialog*secDialog;
