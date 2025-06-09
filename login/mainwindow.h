@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include "secdialog.h"
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -22,7 +22,10 @@ private slots:
 
     void on_Signup_clicked();
 
+    void on_continueasaguest_clicked();
+
 private:
     Ui::MainWindow *ui;
+    SecDialog*secDialog;
 };
 #endif // MAINWINDOW_H
