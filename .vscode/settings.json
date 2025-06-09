@@ -43,6 +43,9 @@
         "ostream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "typeinfo": "cpp"
-    }
+        "typeinfo": "cpp",
+        "sstream": "cpp",
+        "iomanip": "cpp"
+    },
+    "cmake.sourceDirectory": "M:/OMAR_NASR/TicTacToe_Embedded2027/FullTerminalAPP"
 }

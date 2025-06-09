@@ -53,7 +53,8 @@ int main() {
     else if(REG_Mode==LOGIN){
         while(!loginFound && ret++<3)
             loginFound=LOG_IN(db);
-    }else if(REG_Mode==GUSET){
+    }
+    else if(REG_Mode==GUSET){
         goto start_IF_Guset_MODE;
     }
     if(!loginFound){

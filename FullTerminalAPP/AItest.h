@@ -35,6 +35,4 @@ void viewGameHistory(sqlite3* db);
 string sha256(const string& str);
 
 
-
-
 #endif /* C2690D40_52F0_4909_82F9_C64668A5665E */
