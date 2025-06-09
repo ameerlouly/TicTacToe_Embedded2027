@@ -19,21 +19,22 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-img: url(:/Logic/imgs/Login Background.png)</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">#centralWidget
-{
-	border-image: url(:/Logic/imgs/Login Background.png) 0 0 0 0 stretch stretch;
-}
-</string>
+    <string notr="true"/>
    </property>
    <layout class="QGridLayout" name="gridLayout_4">
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="styleSheet">
-       <string notr="true">background-img: url(:/Logic/imgs/Login Background.png)</string>
+       <string notr="true">QStackedWidget
+{
+	border-image: url(:/Logic/imgs/Login Background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}</string>
       </property>
       <property name="currentIndex">
        <number>0</number>
@@ -47,7 +48,7 @@
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>170</width>
+            <width>142</width>
             <height>20</height>
            </size>
           </property>
@@ -61,7 +62,7 @@
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>50</height>
+            <height>19</height>
            </size>
           </property>
          </spacer>
@@ -73,7 +74,7 @@
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>171</width>
+            <width>143</width>
             <height>20</height>
            </size>
           </property>
@@ -169,7 +170,7 @@
                  <number>20</number>
                 </property>
                 <item>
-                 <widget class="QPushButton" name="LOGIN">
+                 <widget class="QPushButton" name="Login_Button">
                   <property name="font">
                    <font>
                     <family>Montserrat</family>
@@ -193,7 +194,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="Signup">
+                 <widget class="QPushButton" name="Signup_Button">
                   <property name="font">
                    <font>
                     <family>Montserrat</family>
@@ -217,7 +218,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="continueasaguest">
+                 <widget class="QPushButton" name="Guest_Button">
                   <property name="font">
                    <font>
                     <family>Montserrat</family>
@@ -282,7 +283,7 @@
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>50</height>
+            <height>19</height>
            </size>
           </property>
          </spacer>
