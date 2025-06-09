@@ -26,6 +26,8 @@ private slots:
 
     void on_Signup_Button_clicked();
 
+    void on_BackLogin_button_clicked();
+
 private:
     Ui::MainWindow *ui;
     SecDialog*secDialog;

@@ -39,3 +39,9 @@ void MainWindow::on_Login_Button_clicked()
     ui->stackedWidget->setCurrentIndex(1);
 }
 
+
+void MainWindow::on_BackLogin_button_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
