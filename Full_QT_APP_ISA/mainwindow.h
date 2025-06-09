@@ -42,6 +42,8 @@ private slots:
 
     void on_Login_PushBottom_clicked();
 
+    void on_ShowResults_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

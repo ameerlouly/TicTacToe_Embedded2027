@@ -86,6 +86,7 @@ int main(int argc, char *argv[])
     AiNormalMode->hide();
     AiHardMode->hide();
     WrongLogin->hide();
+    GameResultLabel->hide();
     QVBoxLayout *layout = new QVBoxLayout();
 
 
@@ -110,6 +111,7 @@ int main(int argc, char *argv[])
     QObject::connect(AiEasyMode, &QPushButton::clicked,[&]() {Setdiff2easy(); });
     QObject::connect(AiNormalMode, &QPushButton::clicked,[&]() {Setdiff2Normal(); });
     QObject::connect(AiHardMode, &QPushButton::clicked,[&]() {Setdiff2Hard(); });
+    QObject::connect(viewresults, &QPushButton::clicked,[&]() {viewGameHistory(db, restable); });
     QObject::connect(InfinitePvPButton, &QPushButton::clicked,[&]() {infinitePvP(); });
     QObject::connect(LoginCheck, &QPushButton::clicked,[&]() {Check_data_forLogin(db); });
 
@@ -134,35 +136,36 @@ int GridToNum(QPushButton *Button){
 
 
 /// this function must be attached to each button in the game grid
-void onButtonClicked(int *x , QPushButton *button , int num , int clicked[9],int *MoveNum ,sqlite3 *db ) {
+void onButtonClicked(int *x , QPushButton *button , int num , int clicked[9], int *MoveNum, sqlite3 *db ) {
 
-    if(clicked[num]<1){ // checks if this button is available and wasn't clicked before
-        if(*x ==1){
-            button ->setText("X");
-            clicked[num]=1;
+    if(clicked[num]<1){
+        if(*x == 1) {  // Human (X)
+            button->setText("X");
+            clicked[num] = 1;
 
-            if(mode!=2){
-                HistoryRecorder[*MoveNum]= (10*(*x)) + num;
+            if (mode != 2) {
+                HistoryRecorder[*MoveNum] = (10 * (*x)) + num;
             }
 
-            if(mode==2){
-
-                if(PlayerOQ.isfull()){ // if the another player has already 3 moves on the grid we need to warn him which move will be removed next time he playes
-                    QPushButton *dash =PlayerOQ.peak();
+            if (mode == 2) {
+                if (PlayerOQ.isfull()) {
+                    QPushButton *dash = PlayerOQ.peak();
                     dash->setEnabled(false);
                 }
 
-               QPushButton *remove = PlayerXQ.push(Grid[num]);
-                if(remove!= nullptr){
+                QPushButton *remove = PlayerXQ.push(Grid[num]);
+                if (remove != nullptr) {
                     remove->setEnabled(true);
-                    // remove->setText(QString("%1").arg(GridToNum(remove)+1));  // used for debuging
                     remove->setText("");
                     clicked[GridToNum(remove)] = 0;
                 }
             }
-            *x=2;
+
+            (*MoveNum)++;
+            *x = 2;
+
             if (mode == 3) {
-                // Create a 2D grid from clicked[]
+                // AI plays immediately
                 int grid[3][3];
                 for (int i = 0; i < 9; ++i) {
                     if (clicked[i] == 1) grid[i / 3][i % 3] = 1;
@@ -170,60 +173,60 @@ void onButtonClicked(int *x , QPushButton *button , int num , int clicked[9],int
                     else grid[i / 3][i % 3] = 0;
                 }
 
-                // Call AI
                 pair<int, int> aiMove = findBestMove(grid, levelMode);
                 int aiIndex = aiMove.first * 3 + aiMove.second;
 
-                // Update UI
                 if (clicked[aiIndex] == 0) {
                     clicked[aiIndex] = 2;
                     Grid[aiIndex]->setText("O");
-                    Grid[aiIndex]->setEnabled(false);  // Optional
+                    Grid[aiIndex]->setEnabled(false);
                     (*MoveNum)++;
 
                     if (mode != 2) {
                         HistoryRecorder[*MoveNum] = (10 * 2) + aiIndex;
                     }
                 }
-            *x=1;
-                CheckWin(clicked,db);
-            }
-        }
 
-        else if(*x ==2){
-            button ->setText("O");
-            clicked[num]=2;
+                *x = 1;
 
-            if(mode!=2){
-                HistoryRecorder[*MoveNum]= (10*(*x)) + num;
+                // Only check after AI moves
+                CheckWin(clicked, db);
+            } else {
+                // In other modes, check after player's move
+                CheckWin(clicked, db);
             }
 
-            if(mode==2){
+        } else if (*x == 2) {  // O turn (e.g., in 2-player mode)
+            button->setText("O");
+            clicked[num] = 2;
 
-                if(PlayerXQ.isfull()){
-                    QPushButton *dash =PlayerXQ.peak();
+            if (mode != 2) {
+                HistoryRecorder[*MoveNum] = (10 * (*x)) + num;
+            }
+
+            if (mode == 2) {
+                if (PlayerXQ.isfull()) {
+                    QPushButton *dash = PlayerXQ.peak();
                     dash->setEnabled(false);
                 }
 
                 QPushButton *remove = PlayerOQ.push(Grid[num]);
-                if(remove!= nullptr){
+                if (remove != nullptr) {
                     remove->setEnabled(true);
-                    //remove->setText(QString("%1").arg(GridToNum(remove)+1));  // used for debuging
                     remove->setText("");
                     clicked[GridToNum(remove)] = 0;
                 }
             }
 
-            *x=1;
+            (*MoveNum)++;
+            *x = 1;
+
+            // Check after O moves in 2-player mode
+            CheckWin(clicked, db);
         }
-
-        (*MoveNum)++;
     }
-
-    CheckWin(clicked ,db);
-
-    return;
 }
+
 
 void CheckWin(int clicked[9] ,sqlite3 *db){
     int WhoWon = 0;  // 0 -> game ongoing, 1 -> X wins, 2 -> O wins, 3 -> draw
@@ -264,96 +267,39 @@ void CheckWin(int clicked[9] ,sqlite3 *db){
     }
 
     if (WhoWon != 0) {
-        // Game ended -> prevent further input
-        for (int i = 0; i < 9; i++) {
-            clicked[i] = 3;
+        // Lock the board
+        for (int i = 0; i < 9; i++) clicked[i] = 3;
+
+        // Save result
+        string result;
+        QString resultText;
+
+        if (WhoWon == 1) {
+            result = "WIN";
+            resultText = "You Win!";
+        }
+        else if (WhoWon == 2) {
+            result = "LOSS";
+            resultText = "You Lost!";
+        }
+        else {
+            result = "Draw";
+            resultText = "Draw!";
         }
 
-        // Save to DB
-        string result;
-        if (WhoWon == 1)
-            result = "X";
-        else if (WhoWon == 2)
-            result = "O";
-        else
-            result = "Draw";
+        if(REG_Mode!=GUSET)
+            saveGameHistory(db, result);
 
-        saveGameHistory(db, result);
-
-        // UI actions
+        GameResultLabel->setText(resultText);
+        GameResultLabel->show();
+        QTimer::singleShot(2000, GameResultLabel, SLOT(hide()));
         if (mode != 2) {
             ShowHistory->show();
         }
+
         ReMatchButton->show();
     }
 }
-
-
-// /// internal function (don't attach it to any thing)
-// void CheckWin(int clicked[9]){
-
-//     int WhoWon =0;  // 0-> game still running ,  1-> X Win  , 2 -> O Win , 3-> Draw
-
-//     if (clicked[0] == clicked[1] && clicked[1] == clicked[2] && clicked[0] != 0) {
-//         WhoWon = clicked[0];
-//     }
-
-//     else if (clicked[3] == clicked[4] && clicked[4] == clicked[5] && clicked[3] != 0) {
-//         WhoWon = clicked[3];
-//     }
-
-//     else if (clicked[6] == clicked[7] && clicked[7] == clicked[8] && clicked[6] != 0) {
-//         WhoWon = clicked[6];
-//     }
-
-//     else if (clicked[0] == clicked[3] && clicked[3] == clicked[6] && clicked[0] != 0) {
-//         WhoWon = clicked[0];
-//     }
-
-//     else if (clicked[1] == clicked[4] && clicked[4] == clicked[7] && clicked[1] != 0) {
-//         WhoWon = clicked[1];
-//     }
-
-//     else if (clicked[2] == clicked[5] && clicked[5] == clicked[8] && clicked[2] != 0) {
-//         WhoWon = clicked[2];
-//     }
-
-//     else if (clicked[0] == clicked[4] && clicked[4] == clicked[8] && clicked[0] != 0) {
-//         WhoWon = clicked[0];
-//     }
-
-//     else if (clicked[2] == clicked[4] && clicked[4] == clicked[6] && clicked[2] != 0) {
-//         WhoWon = clicked[2];
-//     }
-//     else{
-//         bool draw = (clicked[0] != 0);
-
-//         for(int i=1; i<9; i++){
-//             draw &= (clicked[i]!=0);
-//         }
-
-//         if(draw){
-//             WhoWon=3;
-//         }
-//     }
-
-//     if(WhoWon != 0){ //if someone wins we now need to diable the grid and show some buttons (we don't disable buttons we just don't accept new input)
-
-//         //TODO: save status in the database
-
-//         for(int i=0; i<9; i++){  // this loop will modify all buttons values disabling the players from editing the grid (again: we don't disable buttons)
-//             clicked[i]=3;
-//         }
-
-//         if(mode!=2){
-//             ShowHistory->show();
-//         }
-
-//         ReMatchButton->show();
-//     }
-
-//     return;
-// }
 
 
 
@@ -374,7 +320,6 @@ void showhistory(QPushButton *Button[9] , int hitory[9] ,  QWidget *window){
 
     return;
 }
-
 
 
 /// internal function (don't attach it to any thing)

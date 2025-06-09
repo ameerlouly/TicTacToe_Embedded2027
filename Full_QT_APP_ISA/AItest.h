@@ -5,6 +5,8 @@
 #include "sqlite3.h"
 #include <string>
 #include <QString>
+#include <QTableWidget>
+#include <QTableWidgetItem>
 using namespace std;
 
 #define AI_MODE 1
@@ -31,7 +33,7 @@ bool LOG_IN(sqlite3 *db ,string password ,string username );
 void createTables(sqlite3 *db);
 void saveGameHistory(sqlite3* db, string result);
 std::pair<int, int> findBestMove(int board[3][3], Difficulty level);
-void viewGameHistory(sqlite3* db);
+void viewGameHistory(sqlite3* db , QTableWidget* table );
 
 string sha256(const string& str);
 

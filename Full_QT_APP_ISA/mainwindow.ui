@@ -143,6 +143,9 @@
         <height>41</height>
        </rect>
       </property>
+      <property name="echoMode">
+       <enum>QLineEdit::EchoMode::Password</enum>
+      </property>
      </widget>
      <widget class="QLabel" name="label">
       <property name="geometry">
@@ -283,6 +286,12 @@
         <width>181</width>
         <height>91</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>Hard</string>
@@ -453,6 +462,12 @@
         <height>91</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>Normal</string>
       </property>
@@ -468,6 +483,12 @@
         <width>181</width>
         <height>91</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>Easy</string>
@@ -515,6 +536,12 @@
         <width>161</width>
         <height>81</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>PvP</string>
@@ -593,6 +620,12 @@
         <width>161</width>
         <height>81</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>PvAI</string>
@@ -720,6 +753,82 @@
       </property>
       <property name="flat">
        <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="gameResut">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>190</y>
+        <width>351</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>19</pointsize>
+        <italic>true</italic>
+        <underline>true</underline>
+        <strikeout>false</strikeout>
+        <fontweight>Black</fontweight>
+       </font>
+      </property>
+      <property name="text">
+       <string>Winner Winner </string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ShowResults">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>320</y>
+        <width>161</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Show Results</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_3">
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>30</y>
+        <width>371</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>22</pointsize>
+        <italic>true</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>LAST 10 GAME RESULTS</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget_history">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>110</y>
+        <width>691</width>
+        <height>391</height>
+       </rect>
       </property>
      </widget>
     </widget>

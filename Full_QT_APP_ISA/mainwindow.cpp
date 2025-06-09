@@ -34,6 +34,9 @@ void MainWindow::initializeButtons(){
     ShowHistory=ui->showHistory;
     ReMatchButton=ui->rematch;
     WrongLogin=ui->wronginput;
+    GameResultLabel= ui->gameResut;
+    viewresults=ui->ShowResults;
+    restable=ui->tableWidget_history;
     NormalPvPButton = ui->normal_Button;
     InfinitePvPButton = ui->infinite_Button;
     AiEasyMode = ui->PvAI_Button_easy;
@@ -48,6 +51,7 @@ void MainWindow::on_PvP_Button_clicked()
 {
     ui->PvP_Button->hide();
     ui->PvAI_Button->hide();
+    ui->ShowResults->hide();
     ui->normal_Button->show();
     ui->infinite_Button->show();
 }
@@ -56,6 +60,7 @@ void MainWindow::on_PvAI_Button_clicked()
 {
     ui->PvP_Button->hide();
     ui->PvAI_Button->hide();
+    ui->ShowResults->hide();
     ui->PvAI_Button_Normal->show();
     ui->PvAI_Button_easy->show();
     ui->PvAI_Button_hard->show();
@@ -125,5 +130,11 @@ void MainWindow::on_Login_PushBottom_clicked()
     QString Qpassword = ui->passcode_input->text();;
     username = Qusername.toStdString();
     passcode = Qpassword.toStdString();
+}
+
+
+void MainWindow::on_ShowResults_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
 }
 

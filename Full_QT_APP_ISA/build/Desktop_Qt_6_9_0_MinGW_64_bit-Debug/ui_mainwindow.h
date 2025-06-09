@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -18,6 +19,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -60,6 +62,11 @@ public:
     QPushButton *grid4;
     QPushButton *grid2;
     QPushButton *grid5;
+    QLabel *gameResut;
+    QPushButton *ShowResults;
+    QWidget *page_3;
+    QLabel *label_6;
+    QTableWidget *tableWidget_history;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -113,6 +120,7 @@ public:
         passcode_input = new QLineEdit(page_1);
         passcode_input->setObjectName("passcode_input");
         passcode_input->setGeometry(QRect(210, 260, 331, 41));
+        passcode_input->setEchoMode(QLineEdit::EchoMode::Password);
         label = new QLabel(page_1);
         label->setObjectName("label");
         label->setGeometry(QRect(280, 70, 211, 81));
@@ -159,14 +167,18 @@ public:
         PvAI_Button_hard->setObjectName("PvAI_Button_hard");
         PvAI_Button_hard->setEnabled(true);
         PvAI_Button_hard->setGeometry(QRect(270, 300, 181, 91));
+        QFont font7;
+        font7.setPointSize(13);
+        font7.setBold(true);
+        PvAI_Button_hard->setFont(font7);
         rematch = new QPushButton(page_2);
         rematch->setObjectName("rematch");
         rematch->setEnabled(true);
         rematch->setGeometry(QRect(400, 370, 100, 81));
-        QFont font7;
-        font7.setPointSize(10);
-        font7.setBold(true);
-        rematch->setFont(font7);
+        QFont font8;
+        font8.setPointSize(10);
+        font8.setBold(true);
+        rematch->setFont(font8);
         rematch->setAutoDefault(false);
         rematch->setFlat(false);
         grid1 = new QPushButton(page_2);
@@ -180,21 +192,21 @@ public:
         normal_Button->setObjectName("normal_Button");
         normal_Button->setEnabled(true);
         normal_Button->setGeometry(QRect(280, 90, 161, 81));
-        QFont font8;
-        font8.setPointSize(20);
-        font8.setBold(true);
-        normal_Button->setFont(font8);
+        QFont font9;
+        font9.setPointSize(20);
+        font9.setBold(true);
+        normal_Button->setFont(font9);
         normal_Button->setAutoDefault(false);
         normal_Button->setFlat(false);
         grid0 = new QPushButton(page_2);
         grid0->setObjectName("grid0");
         grid0->setEnabled(true);
         grid0->setGeometry(QRect(180, 40, 100, 100));
-        QFont font9;
-        font9.setPointSize(30);
-        font9.setBold(true);
-        font9.setUnderline(false);
-        grid0->setFont(font9);
+        QFont font10;
+        font10.setPointSize(30);
+        font10.setBold(true);
+        font10.setUnderline(false);
+        grid0->setFont(font10);
         grid0->setAutoFillBackground(false);
         grid0->setCheckable(false);
         grid0->setAutoDefault(false);
@@ -203,18 +215,20 @@ public:
         showHistory->setObjectName("showHistory");
         showHistory->setEnabled(true);
         showHistory->setGeometry(QRect(180, 370, 201, 81));
-        QFont font10;
-        font10.setPointSize(15);
-        font10.setBold(true);
-        showHistory->setFont(font10);
+        QFont font11;
+        font11.setPointSize(15);
+        font11.setBold(true);
+        showHistory->setFont(font11);
         PvAI_Button_Normal = new QPushButton(page_2);
         PvAI_Button_Normal->setObjectName("PvAI_Button_Normal");
         PvAI_Button_Normal->setEnabled(true);
         PvAI_Button_Normal->setGeometry(QRect(270, 190, 181, 91));
+        PvAI_Button_Normal->setFont(font7);
         PvAI_Button_easy = new QPushButton(page_2);
         PvAI_Button_easy->setObjectName("PvAI_Button_easy");
         PvAI_Button_easy->setEnabled(true);
         PvAI_Button_easy->setGeometry(QRect(270, 80, 181, 91));
+        PvAI_Button_easy->setFont(font7);
         grid6 = new QPushButton(page_2);
         grid6->setObjectName("grid6");
         grid6->setEnabled(true);
@@ -226,6 +240,7 @@ public:
         PvP_Button->setObjectName("PvP_Button");
         PvP_Button->setEnabled(true);
         PvP_Button->setGeometry(QRect(280, 90, 161, 81));
+        PvP_Button->setFont(font7);
         PvP_Button->setAutoDefault(false);
         PvP_Button->setFlat(false);
         grid7 = new QPushButton(page_2);
@@ -239,11 +254,12 @@ public:
         infinite_Button->setObjectName("infinite_Button");
         infinite_Button->setEnabled(true);
         infinite_Button->setGeometry(QRect(280, 220, 161, 81));
-        infinite_Button->setFont(font8);
+        infinite_Button->setFont(font9);
         PvAI_Button = new QPushButton(page_2);
         PvAI_Button->setObjectName("PvAI_Button");
         PvAI_Button->setEnabled(true);
         PvAI_Button->setGeometry(QRect(280, 220, 161, 81));
+        PvAI_Button->setFont(font7);
         grid3 = new QPushButton(page_2);
         grid3->setObjectName("grid3");
         grid3->setEnabled(true);
@@ -272,7 +288,36 @@ public:
         grid5->setFont(font6);
         grid5->setAutoDefault(false);
         grid5->setFlat(false);
+        gameResut = new QLabel(page_2);
+        gameResut->setObjectName("gameResut");
+        gameResut->setGeometry(QRect(180, 190, 351, 101));
+        QFont font12;
+        font12.setPointSize(19);
+        font12.setWeight(QFont::Black);
+        font12.setItalic(true);
+        font12.setUnderline(true);
+        font12.setStrikeOut(false);
+        gameResut->setFont(font12);
+        ShowResults = new QPushButton(page_2);
+        ShowResults->setObjectName("ShowResults");
+        ShowResults->setEnabled(true);
+        ShowResults->setGeometry(QRect(280, 320, 161, 81));
+        ShowResults->setFont(font7);
         stackedWidget->addWidget(page_2);
+        page_3 = new QWidget();
+        page_3->setObjectName("page_3");
+        label_6 = new QLabel(page_3);
+        label_6->setObjectName("label_6");
+        label_6->setGeometry(QRect(210, 30, 371, 91));
+        QFont font13;
+        font13.setPointSize(22);
+        font13.setBold(true);
+        font13.setItalic(true);
+        label_6->setFont(font13);
+        tableWidget_history = new QTableWidget(page_3);
+        tableWidget_history->setObjectName("tableWidget_history");
+        tableWidget_history->setGeometry(QRect(30, 110, 691, 391));
+        stackedWidget->addWidget(page_3);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -333,6 +378,9 @@ public:
         grid4->setText(QCoreApplication::translate("MainWindow", "5", nullptr));
         grid2->setText(QCoreApplication::translate("MainWindow", "3", nullptr));
         grid5->setText(QCoreApplication::translate("MainWindow", "6", nullptr));
+        gameResut->setText(QCoreApplication::translate("MainWindow", "Winner Winner ", nullptr));
+        ShowResults->setText(QCoreApplication::translate("MainWindow", "Show Results", nullptr));
+        label_6->setText(QCoreApplication::translate("MainWindow", "LAST 10 GAME RESULTS", nullptr));
     } // retranslateUi
 
 };
