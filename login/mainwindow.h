@@ -4,7 +4,8 @@
 #include <QMainWindow>
 #include "secdialog.h"
 QT_BEGIN_NAMESPACE
-namespace Ui {
+namespace Ui
+{
 class MainWindow;
 }
 QT_END_NAMESPACE
@@ -18,11 +19,12 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_LOGIN_clicked();
 
-    void on_Signup_clicked();
+    void on_Login_Button_clicked();
 
-    void on_continueasaguest_clicked();
+    void on_Guest_Button_clicked();
+
+    void on_Signup_Button_clicked();
 
 private:
     Ui::MainWindow *ui;
