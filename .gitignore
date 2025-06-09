@@ -1,6 +1,5 @@
 login/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/debug/login.exe
 login/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/debug/mainwindow.o
-login/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ui_mainwindow.h
 *.o
 *.exe
-/login/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/debug
+/login/build
