@@ -45,9 +45,9 @@ public:
     QLabel *label;
     QGroupBox *groupBox;
     QVBoxLayout *verticalLayout_2;
-    QPushButton *LOGIN;
-    QPushButton *Signup;
-    QPushButton *continueasaguest;
+    QPushButton *Login_Button;
+    QPushButton *Signup_Button;
+    QPushButton *Guest_Button;
     QSpacerItem *horizontalSpacer_2;
     QSpacerItem *verticalSpacer_2;
     QSpacerItem *verticalSpacer_4;
@@ -73,7 +73,10 @@ public:
         QFont font;
         font.setBold(false);
         MainWindow->setFont(font);
-        MainWindow->setStyleSheet(QString::fromUtf8(""));
+        MainWindow->setStyleSheet(QString::fromUtf8("QMainWindow\n"
+"{\n"
+"	border-image: url(:/Logic/imgs/Login Background.png) 0 0 0 0 stretch stretch;\n"
+"}"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         centralwidget->setStyleSheet(QString::fromUtf8(""));
@@ -81,25 +84,20 @@ public:
         gridLayout_4->setObjectName("gridLayout_4");
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName("stackedWidget");
-        stackedWidget->setStyleSheet(QString::fromUtf8("QStackedWidget\n"
-"{\n"
-"	border-image: url(:/Logic/imgs/Login Background.png);\n"
-"    background-repeat: no-repeat;\n"
-"    background-position: center;\n"
-"}"));
+        stackedWidget->setStyleSheet(QString::fromUtf8(""));
         page1 = new QWidget();
         page1->setObjectName("page1");
         gridLayout_5 = new QGridLayout(page1);
         gridLayout_5->setObjectName("gridLayout_5");
-        horizontalSpacer_4 = new QSpacerItem(142, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        horizontalSpacer_4 = new QSpacerItem(140, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         gridLayout_5->addItem(horizontalSpacer_4, 1, 2, 1, 1);
 
-        verticalSpacer_3 = new QSpacerItem(20, 19, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer_3 = new QSpacerItem(20, 15, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
         gridLayout_5->addItem(verticalSpacer_3, 2, 1, 1, 1);
 
-        horizontalSpacer_3 = new QSpacerItem(143, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        horizontalSpacer_3 = new QSpacerItem(141, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         gridLayout_5->addItem(horizontalSpacer_3, 1, 0, 1, 1);
 
@@ -117,7 +115,8 @@ public:
         groupBox_3->setObjectName("groupBox_3");
         groupBox_3->setStyleSheet(QString::fromUtf8("QGroupBox\n"
 "{\n"
-"	border-radius: 0px\n"
+"	border-radius: 0px;\n"
+"	padding: 3px;\n"
 "}"));
         verticalLayout_3 = new QVBoxLayout(groupBox_3);
         verticalLayout_3->setSpacing(0);
@@ -143,15 +142,15 @@ public:
         verticalLayout_2->setSpacing(12);
         verticalLayout_2->setObjectName("verticalLayout_2");
         verticalLayout_2->setContentsMargins(20, 20, 20, 20);
-        LOGIN = new QPushButton(groupBox);
-        LOGIN->setObjectName("LOGIN");
+        Login_Button = new QPushButton(groupBox);
+        Login_Button->setObjectName("Login_Button");
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Montserrat")});
         font1.setPointSize(15);
         font1.setBold(false);
         font1.setItalic(false);
-        LOGIN->setFont(font1);
-        LOGIN->setStyleSheet(QString::fromUtf8("QPushButton\n"
+        Login_Button->setFont(font1);
+        Login_Button->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
 "	font: 15pt \"Montserrat\";\n"
 "	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 211, 255), stop:1 rgba(17, 180, 237, 255));\n"
@@ -159,12 +158,12 @@ public:
 "	height: 40px\n"
 "}"));
 
-        verticalLayout_2->addWidget(LOGIN);
+        verticalLayout_2->addWidget(Login_Button);
 
-        Signup = new QPushButton(groupBox);
-        Signup->setObjectName("Signup");
-        Signup->setFont(font1);
-        Signup->setStyleSheet(QString::fromUtf8("QPushButton\n"
+        Signup_Button = new QPushButton(groupBox);
+        Signup_Button->setObjectName("Signup_Button");
+        Signup_Button->setFont(font1);
+        Signup_Button->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
 "	font: 15pt \"Montserrat\";\n"
 "	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 211, 255), stop:1 rgba(17, 180, 237, 255));\n"
@@ -172,12 +171,12 @@ public:
 "	height: 40px\n"
 "}"));
 
-        verticalLayout_2->addWidget(Signup);
+        verticalLayout_2->addWidget(Signup_Button);
 
-        continueasaguest = new QPushButton(groupBox);
-        continueasaguest->setObjectName("continueasaguest");
-        continueasaguest->setFont(font1);
-        continueasaguest->setStyleSheet(QString::fromUtf8("QPushButton\n"
+        Guest_Button = new QPushButton(groupBox);
+        Guest_Button->setObjectName("Guest_Button");
+        Guest_Button->setFont(font1);
+        Guest_Button->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
 "	font: 15pt \"Montserrat\";\n"
 "	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 211, 255), stop:1 rgba(17, 180, 237, 255));\n"
@@ -185,7 +184,7 @@ public:
 "	height: 40px\n"
 "}"));
 
-        verticalLayout_2->addWidget(continueasaguest);
+        verticalLayout_2->addWidget(Guest_Button);
 
 
         verticalLayout_3->addWidget(groupBox);
@@ -204,7 +203,7 @@ public:
 
         gridLayout_5->addLayout(gridLayout_3, 1, 1, 1, 1);
 
-        verticalSpacer_4 = new QSpacerItem(20, 19, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer_4 = new QSpacerItem(20, 15, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
         gridLayout_5->addItem(verticalSpacer_4, 0, 1, 1, 1);
 
@@ -276,7 +275,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -288,9 +287,9 @@ public:
         groupBox_3->setTitle(QString());
         label->setText(QString());
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "sign in ", nullptr));
-        LOGIN->setText(QCoreApplication::translate("MainWindow", "Log In", nullptr));
-        Signup->setText(QCoreApplication::translate("MainWindow", "Sign up", nullptr));
-        continueasaguest->setText(QCoreApplication::translate("MainWindow", "Continue as a Guest", nullptr));
+        Login_Button->setText(QCoreApplication::translate("MainWindow", "Log In", nullptr));
+        Signup_Button->setText(QCoreApplication::translate("MainWindow", "Sign up", nullptr));
+        Guest_Button->setText(QCoreApplication::translate("MainWindow", "Continue as a Guest", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "sign in ", nullptr));
         username_2->setText(QCoreApplication::translate("MainWindow", "Username or Email", nullptr));
         forgotlabel->setText(QCoreApplication::translate("MainWindow", "<a href=\"#\">Forgot?</a>", nullptr));
