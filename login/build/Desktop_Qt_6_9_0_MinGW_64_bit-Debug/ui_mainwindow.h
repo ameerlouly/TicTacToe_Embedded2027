@@ -75,7 +75,7 @@ public:
         MainWindow->setFont(font);
         MainWindow->setStyleSheet(QString::fromUtf8("QMainWindow\n"
 "{\n"
-"	border-image: url(:/Logic/imgs/Login Background.png) 0 0 0 0 stretch stretch;\n"
+"	border-image: url(:/Logic/Graphics/Ready/Login Background.png) 0 0 0 0 stretch stretch;\n"
 "}"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
@@ -89,15 +89,15 @@ public:
         page1->setObjectName("page1");
         gridLayout_5 = new QGridLayout(page1);
         gridLayout_5->setObjectName("gridLayout_5");
-        horizontalSpacer_4 = new QSpacerItem(140, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        horizontalSpacer_4 = new QSpacerItem(139, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         gridLayout_5->addItem(horizontalSpacer_4, 1, 2, 1, 1);
 
-        verticalSpacer_3 = new QSpacerItem(20, 15, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer_3 = new QSpacerItem(20, 13, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
         gridLayout_5->addItem(verticalSpacer_3, 2, 1, 1, 1);
 
-        horizontalSpacer_3 = new QSpacerItem(141, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        horizontalSpacer_3 = new QSpacerItem(140, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         gridLayout_5->addItem(horizontalSpacer_3, 1, 0, 1, 1);
 
@@ -203,7 +203,7 @@ public:
 
         gridLayout_5->addLayout(gridLayout_3, 1, 1, 1, 1);
 
-        verticalSpacer_4 = new QSpacerItem(20, 15, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer_4 = new QSpacerItem(20, 13, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
         gridLayout_5->addItem(verticalSpacer_4, 0, 1, 1, 1);
 
