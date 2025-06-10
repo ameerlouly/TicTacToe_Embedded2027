@@ -24,14 +24,13 @@ void MainWindow::on_Signup_Button_clicked()
 
 void MainWindow::on_Guest_Button_clicked()
 {
-   hide();
+    this->close();
    // SecDialog secdialog;
   // secdialog.setModal(true);
   //  secdialog.exec();
    secDialog = new SecDialog(this);
    secDialog->show();
 
-   delete ui;
 }
 
 

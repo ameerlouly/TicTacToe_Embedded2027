@@ -64,13 +64,20 @@ public:
     QGridLayout *gridLayout_7;
     QPushButton *BackLogin_button;
     QSpacerItem *horizontalSpacer_11;
-    QGridLayout *gridLayout;
-    QLineEdit *username;
+    QGridLayout *gridLayout_2;
     QLabel *username_2;
+    QGridLayout *gridLayout;
+    QSpacerItem *horizontalSpacer_13;
+    QLineEdit *username;
+    QSpacerItem *horizontalSpacer_12;
     QSpacerItem *verticalSpacer_5;
+    QGridLayout *gridLayout_11;
     QGridLayout *gridLayout_6;
-    QLabel *password_2;
+    QSpacerItem *horizontalSpacer_15;
     QLineEdit *password;
+    QSpacerItem *horizontalSpacer_14;
+    QLabel *password_2;
+    QSpacerItem *verticalSpacer_10;
     QGridLayout *gridLayout_10;
     QSpacerItem *horizontalSpacer_6;
     QPushButton *Login_User_Button;
@@ -164,6 +171,22 @@ public:
 "	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 211, 255), stop:1 rgba(17, 180, 237, 255));\n"
 "	Border-radius: 10px;\n"
 "	height: 40px\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	font: 300 20pt \"Montserrat\";\n"
+"	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 150, 255), stop:1 rgba(17, 180, 237, 255));\n"
+"	Border-radius: 10px;\n"
+"	height: 40px\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	font: 300 20pt \"Montserrat\";\n"
+"	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 150, 255), stop:1 rgba(17, 180, 150, 255));\n"
+"	Border-radius: 10px;\n"
+"	height: 40px;\n"
 "}"));
         verticalLayout_2 = new QVBoxLayout(groupBox);
         verticalLayout_2->setSpacing(12);
@@ -177,13 +200,7 @@ public:
         font1.setWeight(QFont::Light);
         font1.setItalic(false);
         Login_Button->setFont(font1);
-        Login_Button->setStyleSheet(QString::fromUtf8("QPushButton\n"
-"{\n"
-"	font: 300 20pt \"Montserrat\";\n"
-"	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 211, 255), stop:1 rgba(17, 180, 237, 255));\n"
-"	Border-radius: 10px;\n"
-"	height: 40px\n"
-"}"));
+        Login_Button->setStyleSheet(QString::fromUtf8(""));
 
         verticalLayout_2->addWidget(Login_Button);
 
@@ -249,7 +266,25 @@ public:
 "{\n"
 "	font: 300 15pt \"Montserrat\";\n"
 "	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 211, 255), stop:1 rgba(17, 180, 237, 255));\n"
-"	Border-radius: 10px;\n"
+"	Border-radius: 5px;\n"
+"	height: 30px;\n"
+"	width: 100px;\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	font: 300 15pt \"Montserrat\";\n"
+"	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 150, 255), stop:1 rgba(17, 180, 237, 255));\n"
+"	Border-radius: 5px;\n"
+"	height: 30px;\n"
+"	width: 100px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	font: 300 15pt \"Montserrat\";\n"
+"	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 150, 255), stop:1 rgba(17, 180, 150, 255));\n"
+"	Border-radius: 5px;\n"
 "	height: 30px;\n"
 "	width: 100px;\n"
 "}"));
@@ -281,9 +316,21 @@ public:
 "\n"
 "QLineEdit\n"
 "{\n"
-"	\n"
-"	border-color: Green;\n"
-"}"));
+"	color: black;\n"
+"	font: 15pt \"Montserrat\";\n"
+"	border: 2px solid green;\n"
+"	Background-color: white;\n"
+"	font-size: 14px;\n"
+"	selection-background-color: lightgray;\n"
+"	height: 25px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus\n"
+"{\n"
+"    border: 2px solid blue;\n"
+"    background-color: #f0f8ff; /* Light blue */\n"
+"}\n"
+""));
         verticalLayout_4 = new QVBoxLayout(LoginFormGroup);
         verticalLayout_4->setObjectName("verticalLayout_4");
         gridLayout_7 = new QGridLayout();
@@ -294,6 +341,20 @@ public:
 "{\n"
 "	font: 300 13pt \"Montserrat\";\n"
 "	color: grey;\n"
+"	Background: rgba(0, 0, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton#BackLogin_button:hover\n"
+"{\n"
+"	font: 300 13pt \"Montserrat\";\n"
+"	color: rgb(90, 90, 90);\n"
+"	Background: rgba(0, 0, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton#BackLogin_button:pressed\n"
+"{\n"
+"	font: 300 13pt \"Montserrat\";\n"
+"	color: rgb(36, 36, 36)\n"
 "	Background: rgba(0, 0, 0, 0);\n"
 "}"));
         BackLogin_button->setIconSize(QSize(12, 9));
@@ -307,13 +368,8 @@ public:
 
         verticalLayout_4->addLayout(gridLayout_7);
 
-        gridLayout = new QGridLayout();
-        gridLayout->setObjectName("gridLayout");
-        username = new QLineEdit(LoginFormGroup);
-        username->setObjectName("username");
-
-        gridLayout->addWidget(username, 2, 0, 1, 1);
-
+        gridLayout_2 = new QGridLayout();
+        gridLayout_2->setObjectName("gridLayout_2");
         username_2 = new QLabel(LoginFormGroup);
         username_2->setObjectName("username_2");
         QFont font2;
@@ -327,17 +383,54 @@ public:
         username_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
         username_2->setOpenExternalLinks(false);
 
-        gridLayout->addWidget(username_2, 0, 0, 1, 1);
+        gridLayout_2->addWidget(username_2, 0, 0, 1, 1);
+
+        gridLayout = new QGridLayout();
+        gridLayout->setObjectName("gridLayout");
+        horizontalSpacer_13 = new QSpacerItem(35, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_13, 0, 0, 1, 1);
+
+        username = new QLineEdit(LoginFormGroup);
+        username->setObjectName("username");
+
+        gridLayout->addWidget(username, 0, 1, 1, 1);
+
+        horizontalSpacer_12 = new QSpacerItem(35, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_12, 0, 2, 1, 1);
 
 
-        verticalLayout_4->addLayout(gridLayout);
+        gridLayout_2->addLayout(gridLayout, 1, 0, 1, 1);
+
+
+        verticalLayout_4->addLayout(gridLayout_2);
 
         verticalSpacer_5 = new QSpacerItem(10, 22, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
 
         verticalLayout_4->addItem(verticalSpacer_5);
 
+        gridLayout_11 = new QGridLayout();
+        gridLayout_11->setObjectName("gridLayout_11");
         gridLayout_6 = new QGridLayout();
         gridLayout_6->setObjectName("gridLayout_6");
+        horizontalSpacer_15 = new QSpacerItem(35, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer_15, 0, 0, 1, 1);
+
+        password = new QLineEdit(LoginFormGroup);
+        password->setObjectName("password");
+        password->setEchoMode(QLineEdit::EchoMode::Password);
+
+        gridLayout_6->addWidget(password, 0, 1, 1, 1);
+
+        horizontalSpacer_14 = new QSpacerItem(35, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer_14, 0, 2, 1, 1);
+
+
+        gridLayout_11->addLayout(gridLayout_6, 1, 0, 1, 1);
+
         password_2 = new QLabel(LoginFormGroup);
         password_2->setObjectName("password_2");
         password_2->setStyleSheet(QString::fromUtf8("QLabel\n"
@@ -346,16 +439,14 @@ public:
 "}"));
         password_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_6->addWidget(password_2, 0, 0, 1, 1);
-
-        password = new QLineEdit(LoginFormGroup);
-        password->setObjectName("password");
-        password->setEchoMode(QLineEdit::EchoMode::Password);
-
-        gridLayout_6->addWidget(password, 1, 0, 1, 1);
+        gridLayout_11->addWidget(password_2, 0, 0, 1, 1);
 
 
-        verticalLayout_4->addLayout(gridLayout_6);
+        verticalLayout_4->addLayout(gridLayout_11);
+
+        verticalSpacer_10 = new QSpacerItem(5, 10, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
+
+        verticalLayout_4->addItem(verticalSpacer_10);
 
         gridLayout_10 = new QGridLayout();
         gridLayout_10->setObjectName("gridLayout_10");
