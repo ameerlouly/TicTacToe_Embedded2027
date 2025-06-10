@@ -39,7 +39,17 @@ public:
     QPushButton *startgame;
     QWidget *page_3;
     QPushButton *PVP;
-    QPushButton *pushButton_3;
+    QPushButton *PVE;
+    QPushButton *back_3;
+    QWidget *page_5;
+    QPushButton *normal;
+    QPushButton *infinite;
+    QPushButton *back_2;
+    QWidget *page_6;
+    QPushButton *easy;
+    QPushButton *medium;
+    QPushButton *hard;
+    QPushButton *back;
     QWidget *page_4;
     QPushButton *pushButton_4;
     QPushButton *pushButton_6;
@@ -116,7 +126,7 @@ public:
         page_2->setObjectName("page_2");
         startgame = new QPushButton(page_2);
         startgame->setObjectName("startgame");
-        startgame->setGeometry(QRect(50, 200, 441, 91));
+        startgame->setGeometry(QRect(240, 240, 441, 91));
         startgame->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:15px;\n"
 "background-color:white;\n"
@@ -128,21 +138,61 @@ public:
         page_3->setObjectName("page_3");
         PVP = new QPushButton(page_3);
         PVP->setObjectName("PVP");
-        PVP->setGeometry(QRect(80, 218, 131, 51));
+        PVP->setGeometry(QRect(140, 260, 281, 51));
         PVP->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:15px;\n"
 "background-color:white;\n"
 "\n"
 "}"));
-        pushButton_3 = new QPushButton(page_3);
-        pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(330, 220, 131, 51));
-        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        PVE = new QPushButton(page_3);
+        PVE->setObjectName("PVE");
+        PVE->setGeometry(QRect(550, 260, 281, 51));
+        PVE->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:15px;\n"
 "background-color:white;\n"
 "\n"
 "}"));
+        back_3 = new QPushButton(page_3);
+        back_3->setObjectName("back_3");
+        back_3->setGeometry(QRect(10, 0, 93, 29));
         stackedWidget->addWidget(page_3);
+        page_5 = new QWidget();
+        page_5->setObjectName("page_5");
+        normal = new QPushButton(page_5);
+        normal->setObjectName("normal");
+        normal->setGeometry(QRect(370, 140, 241, 81));
+        normal->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"border-radius:10px;\n"
+"background-color:white;\n"
+"\n"
+"}"));
+        infinite = new QPushButton(page_5);
+        infinite->setObjectName("infinite");
+        infinite->setGeometry(QRect(370, 300, 241, 81));
+        infinite->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"border-radius:10px;\n"
+"background-color:white;\n"
+"\n"
+"}"));
+        back_2 = new QPushButton(page_5);
+        back_2->setObjectName("back_2");
+        back_2->setGeometry(QRect(20, 0, 93, 29));
+        stackedWidget->addWidget(page_5);
+        page_6 = new QWidget();
+        page_6->setObjectName("page_6");
+        easy = new QPushButton(page_6);
+        easy->setObjectName("easy");
+        easy->setGeometry(QRect(310, 80, 251, 81));
+        medium = new QPushButton(page_6);
+        medium->setObjectName("medium");
+        medium->setGeometry(QRect(310, 200, 251, 81));
+        hard = new QPushButton(page_6);
+        hard->setObjectName("hard");
+        hard->setGeometry(QRect(310, 320, 251, 81));
+        back = new QPushButton(page_6);
+        back->setObjectName("back");
+        back->setGeometry(QRect(40, 10, 93, 29));
+        stackedWidget->addWidget(page_6);
         page_4 = new QWidget();
         page_4->setObjectName("page_4");
         pushButton_4 = new QPushButton(page_4);
@@ -356,7 +406,7 @@ public:
 
         retranslateUi(SecDialog);
 
-        stackedWidget->setCurrentIndex(3);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(SecDialog);
@@ -375,7 +425,15 @@ public:
         label_3->setText(QCoreApplication::translate("SecDialog", "DRAWS", nullptr));
         startgame->setText(QCoreApplication::translate("SecDialog", "START GAME", nullptr));
         PVP->setText(QCoreApplication::translate("SecDialog", "PVP", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("SecDialog", "PVE", nullptr));
+        PVE->setText(QCoreApplication::translate("SecDialog", "PVE", nullptr));
+        back_3->setText(QCoreApplication::translate("SecDialog", "back", nullptr));
+        normal->setText(QCoreApplication::translate("SecDialog", "Normal", nullptr));
+        infinite->setText(QCoreApplication::translate("SecDialog", "Infinite", nullptr));
+        back_2->setText(QCoreApplication::translate("SecDialog", "back", nullptr));
+        easy->setText(QCoreApplication::translate("SecDialog", "Easy", nullptr));
+        medium->setText(QCoreApplication::translate("SecDialog", "Medium", nullptr));
+        hard->setText(QCoreApplication::translate("SecDialog", "Hard", nullptr));
+        back->setText(QCoreApplication::translate("SecDialog", "back", nullptr));
         pushButton_4->setText(QCoreApplication::translate("SecDialog", "7", nullptr));
         pushButton_6->setText(QCoreApplication::translate("SecDialog", "6", nullptr));
         pushButton_9->setText(QCoreApplication::translate("SecDialog", "3", nullptr));
