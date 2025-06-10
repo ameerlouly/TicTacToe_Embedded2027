@@ -149,6 +149,7 @@
 	border-bottom-right-radius: 10px;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 QPushButton
@@ -173,6 +174,8 @@ QPushButton:pressed
 	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 150, 255), stop:1 rgba(17, 180, 150, 255));
 	Border-radius: 10px;
 	height: 40px;
+=======
+>>>>>>> parent of 3d42cdd (second ui)
 =======
 >>>>>>> parent of 3d42cdd (second ui)
 =======
@@ -359,6 +362,7 @@ QPushButton:pressed
             <property name="lineWidth">
              <number>1</number>
             </property>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
            </spacer>
@@ -728,6 +732,20 @@ QPushButton#BackLogin_button:pressed
              </item>
             </layout>
 =======
+>>>>>>> parent of 3d42cdd (second ui)
+=======
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <property name="text">
+             <string>Username or Email</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+            <property name="openExternalLinks">
+             <bool>false</bool>
+            </property>
 >>>>>>> parent of 3d42cdd (second ui)
 =======
             <property name="midLineWidth">
@@ -4904,8 +4922,13 @@ QPushButton#BackLogin_button:pressed
      <y>0</y>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      <width>976</width>
      <height>21</height>
+=======
+     <width>866</width>
+     <height>26</height>
+>>>>>>> parent of 3d42cdd (second ui)
 =======
      <width>866</width>
      <height>26</height>
