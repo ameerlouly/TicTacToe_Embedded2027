@@ -55,6 +55,7 @@ public:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     QGridLayout *gridLayout_9;
     QGridLayout *gridLayout_8;
     QSpacerItem *verticalSpacer_6;
@@ -86,6 +87,8 @@ public:
 >>>>>>> parent of 3d42cdd (second ui)
 =======
 >>>>>>> parent of 3d42cdd (second ui)
+=======
+>>>>>>> parent of 3d42cdd (second ui)
     QGroupBox *groupBox_2;
     QWidget *layoutWidget;
     QGridLayout *gridLayout;
@@ -101,6 +104,9 @@ public:
     QWidget *page1_3;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 3d42cdd (second ui)
+=======
 >>>>>>> parent of 3d42cdd (second ui)
 =======
 >>>>>>> parent of 3d42cdd (second ui)
@@ -486,6 +492,7 @@ public:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         horizontalSpacer_4 = new QSpacerItem(174, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         gridLayout_5->addItem(horizontalSpacer_4, 1, 2, 1, 1);
@@ -496,6 +503,8 @@ public:
 
         horizontalSpacer_3 = new QSpacerItem(174, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 =======
+=======
+>>>>>>> parent of 3d42cdd (second ui)
 =======
 >>>>>>> parent of 3d42cdd (second ui)
 =======
@@ -935,6 +944,7 @@ public:
         password->setObjectName("password");
         password->setEchoMode(QLineEdit::EchoMode::Password);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         gridLayout_6->addWidget(password, 0, 1, 1, 1);
