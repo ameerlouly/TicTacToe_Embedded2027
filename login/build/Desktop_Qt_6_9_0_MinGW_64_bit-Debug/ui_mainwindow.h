@@ -53,6 +53,7 @@ public:
     QSpacerItem *verticalSpacer_4;
     QWidget *page2;
 <<<<<<< HEAD
+<<<<<<< HEAD
     QGridLayout *gridLayout_9;
     QGridLayout *gridLayout_8;
     QSpacerItem *verticalSpacer_6;
@@ -80,6 +81,8 @@ public:
     QLabel *password_2;
     QSpacerItem *verticalSpacer_10;
 =======
+=======
+>>>>>>> parent of 3d42cdd (second ui)
     QGroupBox *groupBox_2;
     QWidget *layoutWidget;
     QGridLayout *gridLayout;
@@ -93,6 +96,9 @@ public:
     QWidget *page;
     QStackedWidget *stackedWidget_2;
     QWidget *page1_3;
+<<<<<<< HEAD
+>>>>>>> parent of 3d42cdd (second ui)
+=======
 >>>>>>> parent of 3d42cdd (second ui)
     QGridLayout *gridLayout_10;
     QSpacerItem *horizontalSpacer_9;
@@ -472,6 +478,7 @@ public:
         gridLayout_5 = new QGridLayout(page1);
         gridLayout_5->setObjectName("gridLayout_5");
 <<<<<<< HEAD
+<<<<<<< HEAD
         horizontalSpacer_4 = new QSpacerItem(174, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         gridLayout_5->addItem(horizontalSpacer_4, 1, 2, 1, 1);
@@ -482,6 +489,8 @@ public:
 
         horizontalSpacer_3 = new QSpacerItem(174, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 =======
+=======
+>>>>>>> parent of 3d42cdd (second ui)
         horizontalSpacer_4 = new QSpacerItem(142, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         gridLayout_5->addItem(horizontalSpacer_4, 1, 2, 1, 1);
@@ -491,6 +500,9 @@ public:
         gridLayout_5->addItem(verticalSpacer_3, 2, 1, 1, 1);
 
         horizontalSpacer_3 = new QSpacerItem(143, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+<<<<<<< HEAD
+>>>>>>> parent of 3d42cdd (second ui)
+=======
 >>>>>>> parent of 3d42cdd (second ui)
 
         gridLayout_5->addItem(horizontalSpacer_3, 1, 0, 1, 1);
@@ -532,6 +544,7 @@ public:
 "	border-bottom-left-radius: 10px;\n"
 "	border-bottom-right-radius: 10px;\n"
 <<<<<<< HEAD
+<<<<<<< HEAD
 "}\n"
 "\n"
 "QPushButton\n"
@@ -556,6 +569,8 @@ public:
 "	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 150, 255), stop:1 rgba(17, 180, 150, 255));\n"
 "	Border-radius: 10px;\n"
 "	height: 40px;\n"
+=======
+>>>>>>> parent of 3d42cdd (second ui)
 =======
 >>>>>>> parent of 3d42cdd (second ui)
 "}"));
@@ -629,7 +644,11 @@ public:
         gridLayout_5->addLayout(gridLayout_3, 1, 1, 1, 1);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         verticalSpacer_4 = new QSpacerItem(20, 32, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+=======
+        verticalSpacer_4 = new QSpacerItem(20, 19, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+>>>>>>> parent of 3d42cdd (second ui)
 =======
         verticalSpacer_4 = new QSpacerItem(20, 19, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 >>>>>>> parent of 3d42cdd (second ui)
@@ -639,6 +658,7 @@ public:
         stackedWidget->addWidget(page1);
         page2 = new QWidget();
         page2->setObjectName("page2");
+<<<<<<< HEAD
 <<<<<<< HEAD
         gridLayout_9 = new QGridLayout(page2);
         gridLayout_9->setObjectName("gridLayout_9");
@@ -770,6 +790,8 @@ public:
         gridLayout_2->setObjectName("gridLayout_2");
         username_2 = new QLabel(LoginFormGroup);
 =======
+=======
+>>>>>>> parent of 3d42cdd (second ui)
         groupBox_2 = new QGroupBox(page2);
         groupBox_2->setObjectName("groupBox_2");
         groupBox_2->setGeometry(QRect(90, 40, 651, 441));
@@ -785,6 +807,9 @@ public:
         gridLayout->addWidget(username, 2, 0, 1, 1);
 
         username_2 = new QLabel(layoutWidget);
+<<<<<<< HEAD
+>>>>>>> parent of 3d42cdd (second ui)
+=======
 >>>>>>> parent of 3d42cdd (second ui)
         username_2->setObjectName("username_2");
         username_2->setFont(font);
@@ -825,7 +850,19 @@ public:
 <<<<<<< HEAD
         gridLayout_2->addLayout(gridLayout, 1, 0, 1, 1);
 
+        layoutWidget_2 = new QWidget(groupBox_2);
+        layoutWidget_2->setObjectName("layoutWidget_2");
+        layoutWidget_2->setGeometry(QRect(90, 230, 481, 82));
+        gridLayout_2 = new QGridLayout(layoutWidget_2);
+        gridLayout_2->setObjectName("gridLayout_2");
+        gridLayout_2->setContentsMargins(0, 0, 0, 0);
+        forgotlabel = new QLabel(layoutWidget_2);
+        forgotlabel->setObjectName("forgotlabel");
+        forgotlabel->setFrameShape(QFrame::Shape::NoFrame);
+        forgotlabel->setFrameShadow(QFrame::Shadow::Plain);
+        forgotlabel->setTextFormat(Qt::TextFormat::RichText);
 
+<<<<<<< HEAD
         verticalLayout_4->addLayout(gridLayout_2);
 
         verticalSpacer_5 = new QSpacerItem(10, 22, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
@@ -839,11 +876,21 @@ public:
         horizontalSpacer_15 = new QSpacerItem(35, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
 
         gridLayout_6->addItem(horizontalSpacer_15, 0, 0, 1, 1);
+=======
+        gridLayout_2->addWidget(forgotlabel, 0, 1, 1, 1);
 
-        password = new QLineEdit(LoginFormGroup);
+        password_2 = new QLabel(layoutWidget_2);
+        password_2->setObjectName("password_2");
+        password_2->setAlignment(Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter);
+
+        gridLayout_2->addWidget(password_2, 0, 0, 1, 1);
+>>>>>>> parent of 3d42cdd (second ui)
+
+        password = new QLineEdit(layoutWidget_2);
         password->setObjectName("password");
         password->setEchoMode(QLineEdit::EchoMode::Password);
 
+<<<<<<< HEAD
         gridLayout_6->addWidget(password, 0, 1, 1, 1);
 
         horizontalSpacer_14 = new QSpacerItem(35, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
@@ -929,6 +976,9 @@ public:
         password->setObjectName("password");
         password->setEchoMode(QLineEdit::EchoMode::Password);
 
+        gridLayout_2->addWidget(password, 1, 0, 1, 2);
+>>>>>>> parent of 3d42cdd (second ui)
+=======
         gridLayout_2->addWidget(password, 1, 0, 1, 2);
 >>>>>>> parent of 3d42cdd (second ui)
 
@@ -2953,8 +3003,11 @@ public:
         retranslateUi(MainWindow);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         stackedWidget->setCurrentIndex(0);
 =======
+=======
+>>>>>>> parent of 3d42cdd (second ui)
         stackedWidget->setCurrentIndex(2);
         stackedWidget_2->setCurrentIndex(2);
         stackedWidget_3->setCurrentIndex(2);
@@ -2967,6 +3020,9 @@ public:
         stackedWidget_10->setCurrentIndex(2);
         stackedWidget_11->setCurrentIndex(2);
         stackedWidget_12->setCurrentIndex(2);
+<<<<<<< HEAD
+>>>>>>> parent of 3d42cdd (second ui)
+=======
 >>>>>>> parent of 3d42cdd (second ui)
 
 
