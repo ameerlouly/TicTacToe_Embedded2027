@@ -92,7 +92,10 @@ public:
         QFont font;
         font.setBold(false);
         MainWindow->setFont(font);
-        MainWindow->setStyleSheet(QString::fromUtf8(""));
+        MainWindow->setStyleSheet(QString::fromUtf8("QMainWindow\n"
+"{\n"
+"	border-image: url(:/Logic/Graphics/Ready/Login Background.png) 0 0 0 0 stretch stretch;\n"
+"}"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         centralwidget->setStyleSheet(QString::fromUtf8(""));
@@ -100,27 +103,11 @@ public:
         gridLayout_4->setObjectName("gridLayout_4");
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName("stackedWidget");
-        stackedWidget->setStyleSheet(QString::fromUtf8("QStackedWidget\n"
-"{\n"
-"	border-image: url(:/Logic/imgs/Login Background.png);\n"
-"    background-repeat: no-repeat;\n"
-"    background-position: center;\n"
-"}"));
+        stackedWidget->setStyleSheet(QString::fromUtf8(""));
         page1 = new QWidget();
         page1->setObjectName("page1");
         gridLayout_5 = new QGridLayout(page1);
         gridLayout_5->setObjectName("gridLayout_5");
-<<<<<<< HEAD
-        horizontalSpacer_4 = new QSpacerItem(142, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        gridLayout_5->addItem(horizontalSpacer_4, 1, 2, 1, 1);
-
-        verticalSpacer_3 = new QSpacerItem(20, 19, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
-
-        gridLayout_5->addItem(verticalSpacer_3, 2, 1, 1, 1);
-
-        horizontalSpacer_3 = new QSpacerItem(143, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-=======
         horizontalSpacer_4 = new QSpacerItem(174, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         gridLayout_5->addItem(horizontalSpacer_4, 1, 2, 1, 1);
@@ -130,7 +117,6 @@ public:
         gridLayout_5->addItem(verticalSpacer_3, 2, 1, 1, 1);
 
         horizontalSpacer_3 = new QSpacerItem(174, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
->>>>>>> d795b2237c74d8783175502d3ad95063234a41d2
 
         gridLayout_5->addItem(horizontalSpacer_3, 1, 0, 1, 1);
 
@@ -148,7 +134,8 @@ public:
         groupBox_3->setObjectName("groupBox_3");
         groupBox_3->setStyleSheet(QString::fromUtf8("QGroupBox\n"
 "{\n"
-"	border-radius: 0px\n"
+"	border-radius: 0px;\n"
+"	padding: 3px;\n"
 "}"));
         verticalLayout_3 = new QVBoxLayout(groupBox_3);
         verticalLayout_3->setSpacing(0);
@@ -231,11 +218,7 @@ public:
 
         gridLayout_5->addLayout(gridLayout_3, 1, 1, 1, 1);
 
-<<<<<<< HEAD
-        verticalSpacer_4 = new QSpacerItem(20, 19, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
-=======
         verticalSpacer_4 = new QSpacerItem(20, 32, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
->>>>>>> d795b2237c74d8783175502d3ad95063234a41d2
 
         gridLayout_5->addItem(verticalSpacer_4, 0, 1, 1, 1);
 
@@ -440,22 +423,7 @@ public:
 
         retranslateUi(MainWindow);
 
-<<<<<<< HEAD
-        stackedWidget->setCurrentIndex(2);
-        stackedWidget_2->setCurrentIndex(2);
-        stackedWidget_3->setCurrentIndex(2);
-        stackedWidget_4->setCurrentIndex(2);
-        stackedWidget_5->setCurrentIndex(2);
-        stackedWidget_6->setCurrentIndex(2);
-        stackedWidget_7->setCurrentIndex(2);
-        stackedWidget_8->setCurrentIndex(2);
-        stackedWidget_9->setCurrentIndex(2);
-        stackedWidget_10->setCurrentIndex(2);
-        stackedWidget_11->setCurrentIndex(2);
-        stackedWidget_12->setCurrentIndex(2);
-=======
         stackedWidget->setCurrentIndex(0);
->>>>>>> d795b2237c74d8783175502d3ad95063234a41d2
 
 
         QMetaObject::connectSlotsByName(MainWindow);

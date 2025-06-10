@@ -771,13 +771,8 @@ QPushButton#BackLogin_button:pressed
     <rect>
      <x>0</x>
      <y>0</y>
-<<<<<<< HEAD
-     <width>866</width>
-     <height>26</height>
-=======
      <width>976</width>
      <height>21</height>
->>>>>>> d795b2237c74d8783175502d3ad95063234a41d2
     </rect>
    </property>
   </widget>
