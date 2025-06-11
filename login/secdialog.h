@@ -18,6 +18,12 @@ public:
 private slots:
     void on_startgame_clicked();
 
+    void on_pushButton_15_clicked();
+
+    void on_easy_mood_clicked();
+
+    void on_back_clicked();
+
 private:
     Ui::SecDialog *ui;
 };

@@ -19,3 +19,5 @@ void SecDialog::on_startgame_clicked()
 }
 
 
+
+
