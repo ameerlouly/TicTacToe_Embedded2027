@@ -116,7 +116,7 @@ background-color:white;
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label_2">
@@ -201,7 +201,7 @@ border-radius: 30px;
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_5">
+    <widget class="QTextEdit" name="losses_num">
      <property name="geometry">
       <rect>
        <x>340</x>
