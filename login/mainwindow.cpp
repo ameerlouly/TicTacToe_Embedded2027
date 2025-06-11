@@ -7,8 +7,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-
 }
 
 MainWindow::~MainWindow()
@@ -20,22 +18,37 @@ MainWindow::~MainWindow()
 void MainWindow::on_Signup_Button_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+    ui->Login_User_Button->setText("Sign Up");
 }
 
 
 void MainWindow::on_Guest_Button_clicked()
 {
-   hide();
+    this->close();
    // SecDialog secdialog;
   // secdialog.setModal(true);
   //  secdialog.exec();
-   secDialog=new SecDialog(this);
+   secDialog = new SecDialog(this);
    secDialog->show();
+
 }
 
 
 void MainWindow::on_Login_Button_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+    ui->Login_User_Button->setText("Log In");
 }
+
+
+void MainWindow::on_BackLogin_button_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_Login_User_Button_clicked()
+{
+
+}
+
 

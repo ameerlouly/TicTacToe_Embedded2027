@@ -1213,9 +1213,16 @@ debug/secdialog.o: ../../secdialog.cpp ../../secdialog.h \
 		C:/Qt/6.9.0/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qapplication.h \
+<<<<<<< HEAD
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QGroupBox \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qgroupbox.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qframe.h \
+=======
+		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QFrame \
+		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QGroupBox \
+		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qgroupbox.h \
+>>>>>>> 3be898beb9055143cd2ee29797275d6934137c0e
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QLabel \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qlabel.h \
 		C:/Qt/6.9.0/mingw_64/include/QtGui/qpicture.h \
@@ -1225,6 +1232,16 @@ debug/secdialog.o: ../../secdialog.cpp ../../secdialog.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QStackedWidget \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qstackedwidget.h \
+<<<<<<< HEAD
+=======
+		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QTextEdit \
+		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qtextedit.h \
+		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextoption.h \
+		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextcursor.h \
+		C:/Qt/6.9.0/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.9.0/mingw_64/include/QtGui/qpen.h \
+>>>>>>> 3be898beb9055143cd2ee29797275d6934137c0e
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\secdialog.o ..\..\secdialog.cpp
 

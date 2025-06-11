@@ -18,7 +18,10 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
+<<<<<<< HEAD
 #include <QtWidgets/QTableView>
+=======
+>>>>>>> 3be898beb9055143cd2ee29797275d6934137c0e
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
@@ -44,7 +47,21 @@ public:
     QPushButton *startgame;
     QWidget *page_3;
     QPushButton *PVP;
+<<<<<<< HEAD
     QPushButton *pushButton_3;
+=======
+    QPushButton *PVE;
+    QPushButton *back_3;
+    QWidget *page_5;
+    QPushButton *normal;
+    QPushButton *infinite;
+    QPushButton *back_2;
+    QWidget *page_6;
+    QPushButton *easy;
+    QPushButton *medium;
+    QPushButton *hard;
+    QPushButton *back;
+>>>>>>> 3be898beb9055143cd2ee29797275d6934137c0e
     QWidget *page_4;
     QPushButton *pushButton_4;
     QPushButton *pushButton_6;
@@ -55,15 +72,23 @@ public:
     QPushButton *pushButton_5;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
+<<<<<<< HEAD
     QTextEdit *player_2;
     QTextEdit *player_1;
+=======
+    QTextEdit *textEdit_2;
+    QTextEdit *textEdit;
+>>>>>>> 3be898beb9055143cd2ee29797275d6934137c0e
     QPushButton *pushButton_7;
     QFrame *line_4;
     QPushButton *pushButton_10;
     QFrame *line;
+<<<<<<< HEAD
     QPushButton *re_match;
     QPushButton *review_game;
     QPushButton *back;
+=======
+>>>>>>> 3be898beb9055143cd2ee29797275d6934137c0e
 
     void setupUi(QDialog *SecDialog)
     {
@@ -159,7 +184,7 @@ public:
         page_2->setObjectName("page_2");
         startgame = new QPushButton(page_2);
         startgame->setObjectName("startgame");
-        startgame->setGeometry(QRect(50, 200, 441, 91));
+        startgame->setGeometry(QRect(240, 240, 441, 91));
         startgame->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:15px;\n"
 "background-color:white;\n"
@@ -171,21 +196,64 @@ public:
         page_3->setObjectName("page_3");
         PVP = new QPushButton(page_3);
         PVP->setObjectName("PVP");
-        PVP->setGeometry(QRect(80, 218, 131, 51));
+        PVP->setGeometry(QRect(140, 260, 281, 51));
         PVP->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:15px;\n"
 "background-color:white;\n"
 "\n"
 "}"));
-        pushButton_3 = new QPushButton(page_3);
-        pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(330, 220, 131, 51));
-        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        PVE = new QPushButton(page_3);
+        PVE->setObjectName("PVE");
+        PVE->setGeometry(QRect(550, 260, 281, 51));
+        PVE->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:15px;\n"
 "background-color:white;\n"
 "\n"
 "}"));
+        back_3 = new QPushButton(page_3);
+        back_3->setObjectName("back_3");
+        back_3->setGeometry(QRect(10, 0, 93, 29));
         stackedWidget->addWidget(page_3);
+<<<<<<< HEAD
+=======
+        page_5 = new QWidget();
+        page_5->setObjectName("page_5");
+        normal = new QPushButton(page_5);
+        normal->setObjectName("normal");
+        normal->setGeometry(QRect(370, 140, 241, 81));
+        normal->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"border-radius:10px;\n"
+"background-color:white;\n"
+"\n"
+"}"));
+        infinite = new QPushButton(page_5);
+        infinite->setObjectName("infinite");
+        infinite->setGeometry(QRect(370, 300, 241, 81));
+        infinite->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"border-radius:10px;\n"
+"background-color:white;\n"
+"\n"
+"}"));
+        back_2 = new QPushButton(page_5);
+        back_2->setObjectName("back_2");
+        back_2->setGeometry(QRect(20, 0, 93, 29));
+        stackedWidget->addWidget(page_5);
+        page_6 = new QWidget();
+        page_6->setObjectName("page_6");
+        easy = new QPushButton(page_6);
+        easy->setObjectName("easy");
+        easy->setGeometry(QRect(310, 80, 251, 81));
+        medium = new QPushButton(page_6);
+        medium->setObjectName("medium");
+        medium->setGeometry(QRect(310, 200, 251, 81));
+        hard = new QPushButton(page_6);
+        hard->setObjectName("hard");
+        hard->setGeometry(QRect(310, 320, 251, 81));
+        back = new QPushButton(page_6);
+        back->setObjectName("back");
+        back->setGeometry(QRect(40, 10, 93, 29));
+        stackedWidget->addWidget(page_6);
+>>>>>>> 3be898beb9055143cd2ee29797275d6934137c0e
         page_4 = new QWidget();
         page_4->setObjectName("page_4");
         pushButton_4 = new QPushButton(page_4);
@@ -327,10 +395,17 @@ public:
 "    color: white;\n"
 "    }\n"
 ""));
+<<<<<<< HEAD
         player_2 = new QTextEdit(page_4);
         player_2->setObjectName("player_2");
         player_2->setGeometry(QRect(590, 60, 261, 41));
         player_2->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+=======
+        textEdit_2 = new QTextEdit(page_4);
+        textEdit_2->setObjectName("textEdit_2");
+        textEdit_2->setGeometry(QRect(590, 60, 261, 41));
+        textEdit_2->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+>>>>>>> 3be898beb9055143cd2ee29797275d6934137c0e
 "{\n"
 "border :none;\n"
 "color:black;\n"
@@ -338,10 +413,17 @@ public:
 "font: 700 12pt \"Rockwell\";    \n"
 " border-radius: 20px;\n"
 "}"));
+<<<<<<< HEAD
         player_1 = new QTextEdit(page_4);
         player_1->setObjectName("player_1");
         player_1->setGeometry(QRect(80, 60, 261, 41));
         player_1->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+=======
+        textEdit = new QTextEdit(page_4);
+        textEdit->setObjectName("textEdit");
+        textEdit->setGeometry(QRect(80, 60, 261, 41));
+        textEdit->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+>>>>>>> 3be898beb9055143cd2ee29797275d6934137c0e
 "{\n"
 "border :none;\n"
 "color:black;\n"
@@ -395,6 +477,7 @@ public:
         line->setLineWidth(5);
         line->setFrameShape(QFrame::Shape::VLine);
         line->setFrameShadow(QFrame::Shadow::Sunken);
+<<<<<<< HEAD
         re_match = new QPushButton(page_4);
         re_match->setObjectName("re_match");
         re_match->setGeometry(QRect(400, 620, 171, 61));
@@ -428,6 +511,8 @@ public:
 "  font: 700 12pt \"QuickType II\";\n"
 " border-radius: 30px;\n"
 "}"));
+=======
+>>>>>>> 3be898beb9055143cd2ee29797275d6934137c0e
         stackedWidget->addWidget(page_4);
 
         retranslateUi(SecDialog);
@@ -451,7 +536,19 @@ public:
         label_4->setText(QCoreApplication::translate("SecDialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">DRAWS</span></p></body></html>", nullptr));
         startgame->setText(QCoreApplication::translate("SecDialog", "START GAME", nullptr));
         PVP->setText(QCoreApplication::translate("SecDialog", "PVP", nullptr));
+<<<<<<< HEAD
         pushButton_3->setText(QCoreApplication::translate("SecDialog", "PVE", nullptr));
+=======
+        PVE->setText(QCoreApplication::translate("SecDialog", "PVE", nullptr));
+        back_3->setText(QCoreApplication::translate("SecDialog", "back", nullptr));
+        normal->setText(QCoreApplication::translate("SecDialog", "Normal", nullptr));
+        infinite->setText(QCoreApplication::translate("SecDialog", "Infinite", nullptr));
+        back_2->setText(QCoreApplication::translate("SecDialog", "back", nullptr));
+        easy->setText(QCoreApplication::translate("SecDialog", "Easy", nullptr));
+        medium->setText(QCoreApplication::translate("SecDialog", "Medium", nullptr));
+        hard->setText(QCoreApplication::translate("SecDialog", "Hard", nullptr));
+        back->setText(QCoreApplication::translate("SecDialog", "back", nullptr));
+>>>>>>> 3be898beb9055143cd2ee29797275d6934137c0e
         pushButton_4->setText(QCoreApplication::translate("SecDialog", "7", nullptr));
         pushButton_6->setText(QCoreApplication::translate("SecDialog", "6", nullptr));
         pushButton_9->setText(QCoreApplication::translate("SecDialog", "3", nullptr));
@@ -459,7 +556,11 @@ public:
         pushButton_5->setText(QCoreApplication::translate("SecDialog", "8", nullptr));
         pushButton->setText(QCoreApplication::translate("SecDialog", "5", nullptr));
         pushButton_2->setText(QCoreApplication::translate("SecDialog", "4", nullptr));
+<<<<<<< HEAD
         player_2->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+=======
+        textEdit_2->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+>>>>>>> 3be898beb9055143cd2ee29797275d6934137c0e
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
@@ -467,7 +568,11 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:14pt;\">player2:</span></p></body></html>", nullptr));
+<<<<<<< HEAD
         player_1->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+=======
+        textEdit->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+>>>>>>> 3be898beb9055143cd2ee29797275d6934137c0e
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
@@ -477,9 +582,12 @@ public:
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:14pt;\">player1:</span></p></body></html>", nullptr));
         pushButton_7->setText(QCoreApplication::translate("SecDialog", "2", nullptr));
         pushButton_10->setText(QCoreApplication::translate("SecDialog", "9", nullptr));
+<<<<<<< HEAD
         re_match->setText(QCoreApplication::translate("SecDialog", "RE-MATCH", nullptr));
         review_game->setText(QCoreApplication::translate("SecDialog", "REVIEW GAME", nullptr));
         back->setText(QCoreApplication::translate("SecDialog", "BACK", nullptr));
+=======
+>>>>>>> 3be898beb9055143cd2ee29797275d6934137c0e
     } // retranslateUi
 
 };
