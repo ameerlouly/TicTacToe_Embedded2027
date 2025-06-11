@@ -19,7 +19,10 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">QMainWindow
+{
+	border-image: url(:/Logic/Graphics/Ready/Login Background.png) 0 0 0 0 stretch stretch;
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -29,12 +32,7 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="styleSheet">
-       <string notr="true">QStackedWidget
-{
-	border-image: url(:/Logic/imgs/Login Background.png);
-    background-repeat: no-repeat;
-    background-position: center;
-}</string>
+       <string notr="true"/>
       </property>
       <property name="currentIndex">
        <number>2</number>
@@ -48,7 +46,7 @@
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>142</width>
+            <width>139</width>
             <height>20</height>
            </size>
           </property>
@@ -62,7 +60,7 @@
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>19</height>
+            <height>13</height>
            </size>
           </property>
          </spacer>
@@ -74,7 +72,7 @@
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>143</width>
+            <width>140</width>
             <height>20</height>
            </size>
           </property>
@@ -113,7 +111,8 @@
             <property name="styleSheet">
              <string notr="true">QGroupBox
 {
-	border-radius: 0px
+	border-radius: 0px;
+	padding: 3px;
 }</string>
             </property>
             <property name="title">
@@ -283,7 +282,7 @@
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>19</height>
+            <height>13</height>
            </size>
           </property>
          </spacer>

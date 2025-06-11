@@ -16,19 +16,14 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_LOGIN_clicked()
+
+void MainWindow::on_Signup_Button_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
 
 
-void MainWindow::on_Signup_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(1);
-}
-
-
-void MainWindow::on_continueasaguest_clicked()
+void MainWindow::on_Guest_Button_clicked()
 {
    hide();
    // SecDialog secdialog;
@@ -36,5 +31,11 @@ void MainWindow::on_continueasaguest_clicked()
   //  secdialog.exec();
    secDialog=new SecDialog(this);
    secDialog->show();
+}
+
+
+void MainWindow::on_Login_Button_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
 }
 
