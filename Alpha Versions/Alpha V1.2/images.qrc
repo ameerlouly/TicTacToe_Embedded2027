@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/Logic">
+        <file>Graphics/Ready/Login Background.png</file>
+        <file>Graphics/Ready/Login Graphic.png</file>
+        <file>Graphics/Ready/Login Graphic-01.png</file>
+        <file>Graphics/Ready/Login Graphic-02.png</file>
+    </qresource>
+</RCC>
