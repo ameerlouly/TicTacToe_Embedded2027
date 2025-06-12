@@ -35,7 +35,7 @@
        <string notr="true"/>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page1">
        <layout class="QGridLayout" name="gridLayout_5">
@@ -772,7 +772,7 @@ QPushButton#BackLogin_button:pressed
      <x>0</x>
      <y>0</y>
      <width>976</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

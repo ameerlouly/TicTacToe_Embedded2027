@@ -38,6 +38,8 @@ private slots:
 
     void on_back_3_clicked();
 
+    void on_pushButton_17_clicked();
+
 private:
     Ui::SecDialog *ui;
 };

@@ -66,6 +66,9 @@ public:
     QFrame *line_4;
     QPushButton *pushButton_10;
     QFrame *line;
+    QPushButton *pushButton_15;
+    QPushButton *pushButton_16;
+    QPushButton *pushButton_17;
 
     void setupUi(QDialog *SecDialog)
     {
@@ -402,11 +405,43 @@ public:
         line->setLineWidth(5);
         line->setFrameShape(QFrame::Shape::VLine);
         line->setFrameShadow(QFrame::Shadow::Sunken);
+        pushButton_15 = new QPushButton(page_4);
+        pushButton_15->setObjectName("pushButton_15");
+        pushButton_15->setGeometry(QRect(640, 620, 171, 61));
+        pushButton_15->setMaximumSize(QSize(500, 500));
+        pushButton_15->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
+"font: 700 12pt \"Rockwell\";    \n"
+"}"));
+        pushButton_16 = new QPushButton(page_4);
+        pushButton_16->setObjectName("pushButton_16");
+        pushButton_16->setGeometry(QRect(390, 620, 171, 61));
+        pushButton_16->setMaximumSize(QSize(500, 500));
+        pushButton_16->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
+"font: 700 12pt \"Rockwell\";    \n"
+"\n"
+"}"));
+        pushButton_17 = new QPushButton(page_4);
+        pushButton_17->setObjectName("pushButton_17");
+        pushButton_17->setGeometry(QRect(150, 620, 171, 61));
+        pushButton_17->setMaximumSize(QSize(500, 500));
+        pushButton_17->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
+"font: 700 12pt \"Rockwell\";    \n"
+"}"));
         stackedWidget->addWidget(page_4);
 
         retranslateUi(SecDialog);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(5);
 
 
         QMetaObject::connectSlotsByName(SecDialog);
@@ -459,6 +494,9 @@ public:
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:14pt;\">player1:</span></p></body></html>", nullptr));
         pushButton_7->setText(QCoreApplication::translate("SecDialog", "2", nullptr));
         pushButton_10->setText(QCoreApplication::translate("SecDialog", "9", nullptr));
+        pushButton_15->setText(QCoreApplication::translate("SecDialog", "REVIWE GAME", nullptr));
+        pushButton_16->setText(QCoreApplication::translate("SecDialog", "RE_MATCH", nullptr));
+        pushButton_17->setText(QCoreApplication::translate("SecDialog", "BACK", nullptr));
     } // retranslateUi
 
 };

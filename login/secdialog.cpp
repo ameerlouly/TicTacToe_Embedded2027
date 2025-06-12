@@ -80,3 +80,9 @@ void SecDialog::on_back_3_clicked()
       ui->stackedWidget->setCurrentIndex(1);
 }
 
+
+void SecDialog::on_pushButton_17_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
