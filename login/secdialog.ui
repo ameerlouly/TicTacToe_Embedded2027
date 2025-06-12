@@ -128,7 +128,7 @@ background-color:white;
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>5</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">
@@ -836,6 +836,19 @@ font: 700 12pt &quot;Rockwell&quot;;
      </property>
      <property name="text">
       <string>BACK</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>170</y>
+       <width>651</width>
+       <height>441</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>GroupBox</string>
      </property>
     </widget>
    </widget>

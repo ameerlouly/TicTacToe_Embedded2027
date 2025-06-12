@@ -69,15 +69,24 @@ public:
     QPushButton *pushButton_15;
     QPushButton *pushButton_16;
     QPushButton *pushButton_17;
+    QGroupBox *groupBox_2;
 
     void setupUi(QDialog *SecDialog)
     {
         if (SecDialog->objectName().isEmpty())
             SecDialog->setObjectName("SecDialog");
         SecDialog->resize(1081, 715);
+        SecDialog->setStyleSheet(QString::fromUtf8("QDialog\n"
+"{\n"
+"	background-color: rgb(230, 230, 230);\n"
+"}"));
         groupBox = new QGroupBox(SecDialog);
         groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(0, 0, 121, 451));
+        groupBox->setGeometry(QRect(0, 0, 121, 701));
+        groupBox->setStyleSheet(QString::fromUtf8("QGroupBox\n"
+"{\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(186, 200, 224, 255), stop:1 rgba(106, 133, 182, 255));\n"
+"}"));
         profile = new QPushButton(groupBox);
         profile->setObjectName("profile");
         profile->setGeometry(QRect(10, 80, 93, 29));
@@ -130,11 +139,14 @@ public:
         startgame = new QPushButton(page_2);
         startgame->setObjectName("startgame");
         startgame->setGeometry(QRect(240, 240, 441, 91));
-        startgame->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"border-radius:15px;\n"
-"background-color:white;\n"
-"border-color:black;\n"
-"\n"
+        startgame->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:30px;\n"
+"	color: white;\n"
+"	\n"
+"	font: 500 30pt \"Montserrat\";\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(84, 204, 190, 255), stop:1 rgba(164, 227, 207, 255));\n"
+"	border-color:black;\n"
 "}"));
         stackedWidget->addWidget(page_2);
         page_3 = new QWidget();
@@ -437,6 +449,9 @@ public:
 "background-color: rgb(115, 199, 255);\n"
 "font: 700 12pt \"Rockwell\";    \n"
 "}"));
+        groupBox_2 = new QGroupBox(page_4);
+        groupBox_2->setObjectName("groupBox_2");
+        groupBox_2->setGeometry(QRect(160, 170, 651, 441));
         stackedWidget->addWidget(page_4);
 
         retranslateUi(SecDialog);
@@ -497,6 +512,7 @@ public:
         pushButton_15->setText(QCoreApplication::translate("SecDialog", "REVIWE GAME", nullptr));
         pushButton_16->setText(QCoreApplication::translate("SecDialog", "RE_MATCH", nullptr));
         pushButton_17->setText(QCoreApplication::translate("SecDialog", "BACK", nullptr));
+        groupBox_2->setTitle(QCoreApplication::translate("SecDialog", "GroupBox", nullptr));
     } // retranslateUi
 
 };

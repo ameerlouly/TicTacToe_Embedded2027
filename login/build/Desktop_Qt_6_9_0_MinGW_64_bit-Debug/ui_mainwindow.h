@@ -70,13 +70,19 @@ public:
     QSpacerItem *horizontalSpacer_13;
     QLineEdit *username;
     QSpacerItem *horizontalSpacer_12;
-    QSpacerItem *verticalSpacer_5;
     QGridLayout *gridLayout_11;
     QGridLayout *gridLayout_6;
     QSpacerItem *horizontalSpacer_15;
     QLineEdit *password;
     QSpacerItem *horizontalSpacer_14;
     QLabel *password_2;
+    QGridLayout *gridLayout_12;
+    QGridLayout *gridLayout_13;
+    QSpacerItem *horizontalSpacer_16;
+    QLineEdit *ConfirmPassword;
+    QSpacerItem *horizontalSpacer_17;
+    QLabel *ConfirmPassword_Label;
+    QLabel *Warning_Label;
     QSpacerItem *verticalSpacer_10;
     QGridLayout *gridLayout_10;
     QSpacerItem *horizontalSpacer_6;
@@ -95,7 +101,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(976, 698);
+        MainWindow->resize(976, 967);
         QFont font;
         font.setBold(false);
         MainWindow->setFont(font);
@@ -176,7 +182,7 @@ public:
 "QPushButton:hover\n"
 "{\n"
 "	font: 300 20pt \"Montserrat\";\n"
-"	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 150, 255), stop:1 rgba(17, 180, 237, 255));\n"
+"	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(17, 180, 237, 255), stop:1 rgba(17, 180, 237, 255));\n"
 "	Border-radius: 10px;\n"
 "	height: 40px\n"
 "}\n"
@@ -184,7 +190,7 @@ public:
 "QPushButton:pressed\n"
 "{\n"
 "	font: 300 20pt \"Montserrat\";\n"
-"	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 150, 255), stop:1 rgba(17, 180, 150, 255));\n"
+"	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 150, 255), stop:1 rgba(22, 45, 150, 255));\n"
 "	Border-radius: 10px;\n"
 "	height: 40px;\n"
 "}"));
@@ -274,7 +280,7 @@ public:
 "QPushButton:hover\n"
 "{\n"
 "	font: 300 15pt \"Montserrat\";\n"
-"	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 150, 255), stop:1 rgba(17, 180, 237, 255));\n"
+"	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(17, 180, 237, 255), stop:1 rgba(17, 180, 237, 255));\n"
 "	Border-radius: 5px;\n"
 "	height: 30px;\n"
 "	width: 100px;\n"
@@ -283,7 +289,7 @@ public:
 "QPushButton:pressed\n"
 "{\n"
 "	font: 300 15pt \"Montserrat\";\n"
-"	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 150, 255), stop:1 rgba(17, 180, 150, 255));\n"
+"	Background: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(22, 45, 150, 255), stop:1 rgba(22, 45, 150, 255));\n"
 "	Border-radius: 5px;\n"
 "	height: 30px;\n"
 "	width: 100px;\n"
@@ -347,14 +353,14 @@ public:
 "QPushButton#BackLogin_button:hover\n"
 "{\n"
 "	font: 300 13pt \"Montserrat\";\n"
-"	color: rgb(90, 90, 90);\n"
+"	color: rgb(167, 167, 167);\n"
 "	Background: rgba(0, 0, 0, 0);\n"
 "}\n"
 "\n"
 "QPushButton#BackLogin_button:pressed\n"
 "{\n"
 "	font: 300 13pt \"Montserrat\";\n"
-"	color: rgb(36, 36, 36)\n"
+"	color: rgb(0, 0, 0);\n"
 "	Background: rgba(0, 0, 0, 0);\n"
 "}"));
         BackLogin_button->setIconSize(QSize(12, 9));
@@ -406,10 +412,6 @@ public:
 
         verticalLayout_4->addLayout(gridLayout_2);
 
-        verticalSpacer_5 = new QSpacerItem(10, 22, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
-
-        verticalLayout_4->addItem(verticalSpacer_5);
-
         gridLayout_11 = new QGridLayout();
         gridLayout_11->setObjectName("gridLayout_11");
         gridLayout_6 = new QGridLayout();
@@ -443,6 +445,52 @@ public:
 
 
         verticalLayout_4->addLayout(gridLayout_11);
+
+        gridLayout_12 = new QGridLayout();
+        gridLayout_12->setObjectName("gridLayout_12");
+        gridLayout_13 = new QGridLayout();
+        gridLayout_13->setObjectName("gridLayout_13");
+        horizontalSpacer_16 = new QSpacerItem(35, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
+
+        gridLayout_13->addItem(horizontalSpacer_16, 0, 0, 1, 1);
+
+        ConfirmPassword = new QLineEdit(LoginFormGroup);
+        ConfirmPassword->setObjectName("ConfirmPassword");
+        ConfirmPassword->setEchoMode(QLineEdit::EchoMode::Password);
+
+        gridLayout_13->addWidget(ConfirmPassword, 0, 1, 1, 1);
+
+        horizontalSpacer_17 = new QSpacerItem(35, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
+
+        gridLayout_13->addItem(horizontalSpacer_17, 0, 2, 1, 1);
+
+
+        gridLayout_12->addLayout(gridLayout_13, 2, 0, 1, 1);
+
+        ConfirmPassword_Label = new QLabel(LoginFormGroup);
+        ConfirmPassword_Label->setObjectName("ConfirmPassword_Label");
+        ConfirmPassword_Label->setStyleSheet(QString::fromUtf8("QLabel\n"
+"{\n"
+"	colour: black;\n"
+"}"));
+        ConfirmPassword_Label->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        gridLayout_12->addWidget(ConfirmPassword_Label, 1, 0, 1, 1);
+
+
+        verticalLayout_4->addLayout(gridLayout_12);
+
+        Warning_Label = new QLabel(LoginFormGroup);
+        Warning_Label->setObjectName("Warning_Label");
+        Warning_Label->setStyleSheet(QString::fromUtf8("QLabel\n"
+"{\n"
+"	\n"
+"	font: 9pt \"Montserrat\";\n"
+"	color: red;\n"
+"}"));
+        Warning_Label->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        verticalLayout_4->addWidget(Warning_Label);
 
         verticalSpacer_10 = new QSpacerItem(5, 10, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
 
@@ -506,7 +554,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 976, 21));
+        menubar->setGeometry(QRect(0, 0, 976, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -514,7 +562,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -535,6 +583,8 @@ public:
         BackLogin_button->setText(QCoreApplication::translate("MainWindow", "< Back", nullptr));
         username_2->setText(QCoreApplication::translate("MainWindow", "Username", nullptr));
         password_2->setText(QCoreApplication::translate("MainWindow", "Password", nullptr));
+        ConfirmPassword_Label->setText(QCoreApplication::translate("MainWindow", "Confirm Password", nullptr));
+        Warning_Label->setText(QCoreApplication::translate("MainWindow", "Incorrect Username or Password", nullptr));
         Login_User_Button->setText(QCoreApplication::translate("MainWindow", "Log In", nullptr));
     } // retranslateUi
 
