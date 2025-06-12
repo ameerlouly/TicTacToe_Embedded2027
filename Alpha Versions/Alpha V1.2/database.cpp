@@ -39,13 +39,6 @@ void createTables(sqlite3 *db) {
 }
 
 void SIGN_UP(sqlite3 *db ,string password ,string username ) {
-    // string username, password;
-    // // cout << "Enter new username: ";
-    // // cin >> username;
-    // cin.ignore();
-    // getline(cin, username);
-    // cout << "Enter new password: ";
-    // cin >> password;
 
 
     string hashedPassword = sha256(password);
@@ -55,23 +48,12 @@ void SIGN_UP(sqlite3 *db ,string password ,string username ) {
     int rc = sqlite3_exec(db, sql.c_str(), 0, 0, &errMsg);
 
     if (rc != SQLITE_OK) {
-        // std::cout << "Error: " << errMsg << std::endl;
         sqlite3_free(errMsg);
     } else {
-        // std::cout << "Signup successful!\n";
     }
-
-
 }
 
 bool LOG_IN(sqlite3 *db ,string password ,string username ) {
-    // string username, password;
-    // cout << "Enter username: ";
-    // cin.ignore();
-    // // cin >> username;
-    // getline(cin, username);
-    // cout << "Enter password: ";
-    // cin >> password;
     string hashedPassword = sha256(password);
     G_UserName=username;
     string sql = "SELECT * FROM users WHERE username='" + username + "' AND password='" + hashedPassword + "';";
@@ -80,10 +62,8 @@ bool LOG_IN(sqlite3 *db ,string password ,string username ) {
 
         if (sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, 0) == SQLITE_OK) {
             if (sqlite3_step(stmt) == SQLITE_ROW) {
-                // cout << "Login successful!\n";
                 success = true;
             } else {
-                // cout << "Login failed. Wrong username or password.\n";
             }
         }
         sqlite3_finalize(stmt);
