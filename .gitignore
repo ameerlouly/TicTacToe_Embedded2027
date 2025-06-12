@@ -5,3 +5,14 @@ login/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/debug/mainwindow.o
 login/build
 login/login.pro.user
 *.pro.user
+login/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/debug/moc_mainwindow.o
+login/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/debug/login.exe
+login/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qtc_clangd/compile_commands.json
+login/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/ui_secdialog.h.E3495B7CEC883C4F.idx
+login/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/ui_mainwindow.h.A6DFFACE8FC99A8D.idx
+login/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/secdialog.h.1F0031EFF69EFECA.idx
+login/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/secdialog.cpp.D6F0AC10FEF178AB.idx
+login/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/mainwindow.cpp.D0A4646DB6C2CFC0.idx
+login/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/main.cpp.B68B8BA962039054.idx
+login/secdialog.ui.autosave
+login/login.pro.user
