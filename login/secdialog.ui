@@ -13,14 +13,26 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog
+{
+	background-color: rgb(230, 230, 230);
+}</string>
+  </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>121</width>
-     <height>451</height>
+     <height>701</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QGroupBox
+{
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(186, 200, 224, 255), stop:1 rgba(106, 133, 182, 255));
+}</string>
    </property>
    <property name="title">
     <string>GroupBox</string>
@@ -170,11 +182,14 @@ background-color:white;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QPushButton{
-border-radius:15px;
-background-color:white;
-border-color:black;
-
+      <string notr="true">QPushButton
+{
+	border-radius:30px;
+	color: white;
+	
+	font: 500 30pt &quot;Montserrat&quot;;
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(84, 204, 190, 255), stop:1 rgba(164, 227, 207, 255));
+	border-color:black;
 }</string>
      </property>
      <property name="text">

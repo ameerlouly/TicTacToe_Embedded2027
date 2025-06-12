@@ -28,7 +28,7 @@ void MainWindow::on_Signup_Button_clicked()
 
 void MainWindow::on_Guest_Button_clicked()
 {
-    this->close();
+    close();
    // SecDialog secdialog;
   // secdialog.setModal(true);
   //  secdialog.exec();
