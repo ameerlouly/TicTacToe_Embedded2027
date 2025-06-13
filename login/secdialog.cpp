@@ -80,17 +80,22 @@ void SecDialog::on_back_3_clicked()
       ui->stackedWidget->setCurrentIndex(1);
 }
 
-
-void SecDialog::on_pushButton_17_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(4);
-}
-
-
 void SecDialog::on_tableWidget_itemClicked(QTableWidgetItem *item)
 {
     if (item->row() == 2 && item->column() == 2) {
-        ui->stackedWidget->setCurrentIndex(5);
+        ui->stackedWidget->setCurrentIndex(4);
     }
+}
+
+
+void SecDialog::on_back_4_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+
+void SecDialog::on_history_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
 }
 

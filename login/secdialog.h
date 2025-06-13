@@ -42,6 +42,10 @@ private slots:
 
     void on_tableWidget_itemClicked(QTableWidgetItem *item);
 
+    void on_back_4_clicked();
+
+    void on_history_clicked();
+
 private:
     Ui::SecDialog *ui;
 };

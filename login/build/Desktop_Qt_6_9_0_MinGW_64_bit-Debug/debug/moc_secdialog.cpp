@@ -54,7 +54,9 @@ template <> constexpr inline auto SecDialog::qt_create_metaobjectdata<qt_meta_ta
         "on_pushButton_17_clicked",
         "on_tableWidget_itemClicked",
         "QTableWidgetItem*",
-        "item"
+        "item",
+        "on_back_4_clicked",
+        "on_history_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -86,6 +88,10 @@ template <> constexpr inline auto SecDialog::qt_create_metaobjectdata<qt_meta_ta
         QtMocHelpers::SlotData<void(QTableWidgetItem *)>(14, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { 0x80000000 | 15, 16 },
         }}),
+        // Slot 'on_back_4_clicked'
+        QtMocHelpers::SlotData<void()>(17, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_history_clicked'
+        QtMocHelpers::SlotData<void()>(18, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -120,8 +126,9 @@ void SecDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 8: _t->on_back_clicked(); break;
         case 9: _t->on_back_2_clicked(); break;
         case 10: _t->on_back_3_clicked(); break;
-        case 11: _t->on_pushButton_17_clicked(); break;
         case 12: _t->on_tableWidget_itemClicked((*reinterpret_cast< std::add_pointer_t<QTableWidgetItem*>>(_a[1]))); break;
+        case 13: _t->on_back_4_clicked(); break;
+        case 14: _t->on_history_clicked(); break;
         default: ;
         }
     }
@@ -146,14 +153,14 @@ int SecDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 15)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 15;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 15)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 13;
+        _id -= 15;
     }
     return _id;
 }

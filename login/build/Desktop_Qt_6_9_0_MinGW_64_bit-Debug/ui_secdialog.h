@@ -15,7 +15,6 @@
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTableWidget>
@@ -33,11 +32,6 @@ public:
     QPushButton *history;
     QPushButton *settings;
     QStackedWidget *stackedWidget;
-    QWidget *page;
-    QLabel *label;
-    QLabel *label_2;
-    QLabel *label_3;
-    QTableWidget *tableWidget;
     QWidget *page_2;
     QPushButton *startgame;
     QWidget *page_3;
@@ -71,8 +65,17 @@ public:
     QFrame *line;
     QPushButton *pushButton_15;
     QPushButton *pushButton_16;
-    QPushButton *pushButton_17;
+    QPushButton *back_4;
     QGroupBox *groupBox_2;
+    QWidget *page;
+    QTableWidget *tableWidget;
+    QWidget *widget;
+    QTextEdit *losses_label;
+    QTextEdit *draws_label;
+    QTextEdit *draws_num;
+    QTextEdit *losses_num;
+    QTextEdit *wins_num;
+    QTextEdit *wins_label;
 
     void setupUi(QDialog *SecDialog)
     {
@@ -125,50 +128,6 @@ public:
         stackedWidget = new QStackedWidget(SecDialog);
         stackedWidget->setObjectName("stackedWidget");
         stackedWidget->setGeometry(QRect(120, 10, 941, 691));
-        page = new QWidget();
-        page->setObjectName("page");
-        label = new QLabel(page);
-        label->setObjectName("label");
-        label->setGeometry(QRect(130, 20, 63, 20));
-        label_2 = new QLabel(page);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(240, 20, 63, 20));
-        label_3 = new QLabel(page);
-        label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(360, 20, 63, 20));
-        tableWidget = new QTableWidget(page);
-        if (tableWidget->columnCount() < 3)
-            tableWidget->setColumnCount(3);
-        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
-        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
-        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
-        if (tableWidget->rowCount() < 10)
-            tableWidget->setRowCount(10);
-        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
-        __qtablewidgetitem3->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEditable|Qt::ItemIsDragEnabled|Qt::ItemIsDropEnabled|Qt::ItemIsEnabled);
-        tableWidget->setItem(0, 0, __qtablewidgetitem3);
-        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
-        tableWidget->setItem(0, 1, __qtablewidgetitem4);
-        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
-        tableWidget->setItem(0, 2, __qtablewidgetitem5);
-        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
-        tableWidget->setItem(1, 2, __qtablewidgetitem6);
-        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        tableWidget->setItem(2, 2, __qtablewidgetitem7);
-        tableWidget->setObjectName("tableWidget");
-        tableWidget->setGeometry(QRect(450, 60, 401, 411));
-        tableWidget->setSizeIncrement(QSize(0, 1));
-        tableWidget->setFrameShape(QFrame::Shape::NoFrame);
-        tableWidget->setFrameShadow(QFrame::Shadow::Sunken);
-        tableWidget->setLineWidth(1);
-        tableWidget->setTextElideMode(Qt::TextElideMode::ElideMiddle);
-        tableWidget->setGridStyle(Qt::PenStyle::SolidLine);
-        tableWidget->setSortingEnabled(false);
-        tableWidget->horizontalHeader()->setMinimumSectionSize(36);
-        stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName("page_2");
         startgame = new QPushButton(page_2);
@@ -460,7 +419,7 @@ public:
 "{\n"
 "color:black;\n"
 "background-color: rgb(115, 199, 255);\n"
-"font: 700 12pt \"Rockwell\";    \n"
+" font: 700 14pt \"Segoe UI\";\n"
 "}"));
         pushButton_16 = new QPushButton(page_4);
         pushButton_16->setObjectName("pushButton_16");
@@ -470,28 +429,106 @@ public:
 "{\n"
 "color:black;\n"
 "background-color: rgb(115, 199, 255);\n"
-"font: 700 12pt \"Rockwell\";    \n"
-"\n"
+" font: 700 14pt \"Segoe UI\";\n"
 "}"));
-        pushButton_17 = new QPushButton(page_4);
-        pushButton_17->setObjectName("pushButton_17");
-        pushButton_17->setGeometry(QRect(150, 620, 171, 61));
-        pushButton_17->setMaximumSize(QSize(500, 500));
-        pushButton_17->setStyleSheet(QString::fromUtf8("QPushButton\n"
+        back_4 = new QPushButton(page_4);
+        back_4->setObjectName("back_4");
+        back_4->setGeometry(QRect(150, 620, 171, 61));
+        back_4->setMaximumSize(QSize(500, 500));
+        back_4->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
-"\n"
 "color:black;\n"
 "background-color: rgb(115, 199, 255);\n"
-"font: 700 12pt \"Rockwell\";    \n"
+" font: 700 14pt \"Segoe UI\";\n"
 "}"));
         groupBox_2 = new QGroupBox(page_4);
         groupBox_2->setObjectName("groupBox_2");
         groupBox_2->setGeometry(QRect(160, 170, 651, 441));
         stackedWidget->addWidget(page_4);
+        page = new QWidget();
+        page->setObjectName("page");
+        tableWidget = new QTableWidget(page);
+        if (tableWidget->columnCount() < 3)
+            tableWidget->setColumnCount(3);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        if (tableWidget->rowCount() < 10)
+            tableWidget->setRowCount(10);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        __qtablewidgetitem3->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEditable|Qt::ItemIsDragEnabled|Qt::ItemIsDropEnabled|Qt::ItemIsEnabled);
+        tableWidget->setItem(0, 0, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        tableWidget->setItem(0, 1, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        tableWidget->setItem(0, 2, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        tableWidget->setItem(1, 2, __qtablewidgetitem6);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        tableWidget->setItem(2, 2, __qtablewidgetitem7);
+        tableWidget->setObjectName("tableWidget");
+        tableWidget->setGeometry(QRect(450, 60, 401, 411));
+        tableWidget->setSizeIncrement(QSize(0, 1));
+        tableWidget->setFrameShape(QFrame::Shape::NoFrame);
+        tableWidget->setFrameShadow(QFrame::Shadow::Sunken);
+        tableWidget->setLineWidth(1);
+        tableWidget->setTextElideMode(Qt::TextElideMode::ElideMiddle);
+        tableWidget->setGridStyle(Qt::PenStyle::SolidLine);
+        tableWidget->setSortingEnabled(false);
+        tableWidget->horizontalHeader()->setMinimumSectionSize(36);
+        widget = new QWidget(page);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(110, 80, 171, 351));
+        losses_label = new QTextEdit(widget);
+        losses_label->setObjectName("losses_label");
+        losses_label->setGeometry(QRect(10, 0, 141, 51));
+        losses_label->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+"{\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
+" font: 700 16pt \"Segoe UI\";\n"
+"}"));
+        losses_label->setReadOnly(true);
+        draws_label = new QTextEdit(widget);
+        draws_label->setObjectName("draws_label");
+        draws_label->setGeometry(QRect(10, 250, 141, 51));
+        draws_label->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+"{\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
+" font: 700 16pt \"Segoe UI\";\n"
+"}"));
+        draws_label->setReadOnly(true);
+        draws_num = new QTextEdit(widget);
+        draws_num->setObjectName("draws_num");
+        draws_num->setGeometry(QRect(10, 300, 141, 41));
+        draws_num->setReadOnly(true);
+        losses_num = new QTextEdit(widget);
+        losses_num->setObjectName("losses_num");
+        losses_num->setGeometry(QRect(10, 50, 141, 41));
+        losses_num->setReadOnly(true);
+        wins_num = new QTextEdit(widget);
+        wins_num->setObjectName("wins_num");
+        wins_num->setGeometry(QRect(10, 170, 141, 41));
+        wins_num->setReadOnly(true);
+        wins_label = new QTextEdit(widget);
+        wins_label->setObjectName("wins_label");
+        wins_label->setGeometry(QRect(10, 120, 141, 51));
+        wins_label->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+"{\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
+" font: 700 16pt \"Segoe UI\";\n"
+"}"));
+        wins_label->setReadOnly(true);
+        stackedWidget->addWidget(page);
 
         retranslateUi(SecDialog);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(SecDialog);
@@ -505,22 +542,6 @@ public:
         home->setText(QCoreApplication::translate("SecDialog", "Home", nullptr));
         history->setText(QCoreApplication::translate("SecDialog", "History", nullptr));
         settings->setText(QCoreApplication::translate("SecDialog", "Settings", nullptr));
-        label->setText(QCoreApplication::translate("SecDialog", "WINS", nullptr));
-        label_2->setText(QCoreApplication::translate("SecDialog", "LOSSES", nullptr));
-        label_3->setText(QCoreApplication::translate("SecDialog", "DRAWS", nullptr));
-        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QCoreApplication::translate("SecDialog", "RESULT", nullptr));
-        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QCoreApplication::translate("SecDialog", "DATE", nullptr));
-        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QCoreApplication::translate("SecDialog", "REVIEW GAME", nullptr));
-
-        const bool __sortingEnabled = tableWidget->isSortingEnabled();
-        tableWidget->setSortingEnabled(false);
-        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->item(2, 2);
-        ___qtablewidgetitem3->setText(QCoreApplication::translate("SecDialog", "SHOW", nullptr));
-        tableWidget->setSortingEnabled(__sortingEnabled);
-
         startgame->setText(QCoreApplication::translate("SecDialog", "START GAME", nullptr));
         PVP->setText(QCoreApplication::translate("SecDialog", "PVP", nullptr));
         PVE->setText(QCoreApplication::translate("SecDialog", "PVE", nullptr));
@@ -559,8 +580,69 @@ public:
         pushButton_10->setText(QCoreApplication::translate("SecDialog", "9", nullptr));
         pushButton_15->setText(QCoreApplication::translate("SecDialog", "REVIWE GAME", nullptr));
         pushButton_16->setText(QCoreApplication::translate("SecDialog", "RE_MATCH", nullptr));
-        pushButton_17->setText(QCoreApplication::translate("SecDialog", "BACK", nullptr));
+        back_4->setText(QCoreApplication::translate("SecDialog", "BACK", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("SecDialog", "GroupBox", nullptr));
+        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("SecDialog", "RESULT", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("SecDialog", "DATE", nullptr));
+        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("SecDialog", "REVIEW GAME", nullptr));
+
+        const bool __sortingEnabled = tableWidget->isSortingEnabled();
+        tableWidget->setSortingEnabled(false);
+        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->item(2, 2);
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("SecDialog", "SHOW", nullptr));
+        tableWidget->setSortingEnabled(__sortingEnabled);
+
+        losses_label->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">LOSSES</span></p></body></html>", nullptr));
+        draws_label->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">DRAWS</span></p></body></html>", nullptr));
+        draws_num->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:700;\">6</span></p></body></html>", nullptr));
+        losses_num->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:700;\">0</span></p></body></html>", nullptr));
+        wins_num->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:700;\">15</span></p></body></html>", nullptr));
+        wins_label->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">WINS</p></body></html>", nullptr));
     } // retranslateUi
 
 };
