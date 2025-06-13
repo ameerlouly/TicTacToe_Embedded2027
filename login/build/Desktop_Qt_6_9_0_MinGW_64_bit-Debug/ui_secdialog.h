@@ -14,9 +14,11 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
@@ -35,6 +37,7 @@ public:
     QLabel *label;
     QLabel *label_2;
     QLabel *label_3;
+    QTableWidget *tableWidget;
     QWidget *page_2;
     QPushButton *startgame;
     QWidget *page_3;
@@ -133,6 +136,38 @@ public:
         label_3 = new QLabel(page);
         label_3->setObjectName("label_3");
         label_3->setGeometry(QRect(360, 20, 63, 20));
+        tableWidget = new QTableWidget(page);
+        if (tableWidget->columnCount() < 3)
+            tableWidget->setColumnCount(3);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        if (tableWidget->rowCount() < 10)
+            tableWidget->setRowCount(10);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        __qtablewidgetitem3->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEditable|Qt::ItemIsDragEnabled|Qt::ItemIsDropEnabled|Qt::ItemIsEnabled);
+        tableWidget->setItem(0, 0, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        tableWidget->setItem(0, 1, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        tableWidget->setItem(0, 2, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        tableWidget->setItem(1, 2, __qtablewidgetitem6);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        tableWidget->setItem(2, 2, __qtablewidgetitem7);
+        tableWidget->setObjectName("tableWidget");
+        tableWidget->setGeometry(QRect(450, 60, 401, 411));
+        tableWidget->setSizeIncrement(QSize(0, 1));
+        tableWidget->setFrameShape(QFrame::Shape::NoFrame);
+        tableWidget->setFrameShadow(QFrame::Shadow::Sunken);
+        tableWidget->setLineWidth(1);
+        tableWidget->setTextElideMode(Qt::TextElideMode::ElideMiddle);
+        tableWidget->setGridStyle(Qt::PenStyle::SolidLine);
+        tableWidget->setSortingEnabled(false);
+        tableWidget->horizontalHeader()->setMinimumSectionSize(36);
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName("page_2");
@@ -456,7 +491,7 @@ public:
 
         retranslateUi(SecDialog);
 
-        stackedWidget->setCurrentIndex(5);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(SecDialog);
@@ -473,6 +508,19 @@ public:
         label->setText(QCoreApplication::translate("SecDialog", "WINS", nullptr));
         label_2->setText(QCoreApplication::translate("SecDialog", "LOSSES", nullptr));
         label_3->setText(QCoreApplication::translate("SecDialog", "DRAWS", nullptr));
+        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("SecDialog", "RESULT", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("SecDialog", "DATE", nullptr));
+        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("SecDialog", "REVIEW GAME", nullptr));
+
+        const bool __sortingEnabled = tableWidget->isSortingEnabled();
+        tableWidget->setSortingEnabled(false);
+        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->item(2, 2);
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("SecDialog", "SHOW", nullptr));
+        tableWidget->setSortingEnabled(__sortingEnabled);
+
         startgame->setText(QCoreApplication::translate("SecDialog", "START GAME", nullptr));
         PVP->setText(QCoreApplication::translate("SecDialog", "PVP", nullptr));
         PVE->setText(QCoreApplication::translate("SecDialog", "PVE", nullptr));

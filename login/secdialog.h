@@ -1,6 +1,6 @@
 #ifndef SECDIALOG_H
 #define SECDIALOG_H
-
+#include <QTableWidgetItem>
 #include <QDialog>
 
 namespace Ui {
@@ -39,6 +39,8 @@ private slots:
     void on_back_3_clicked();
 
     void on_pushButton_17_clicked();
+
+    void on_tableWidget_itemClicked(QTableWidgetItem *item);
 
 private:
     Ui::SecDialog *ui;
