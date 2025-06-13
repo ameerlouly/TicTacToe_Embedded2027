@@ -239,3 +239,6 @@ void MainWindow::on_profile_button_clicked()
     }
 }
 
+void MainWindow::returnBacktoPage0InGame(){
+    ui->stackedWidget->setCurrentIndex(2);
+}

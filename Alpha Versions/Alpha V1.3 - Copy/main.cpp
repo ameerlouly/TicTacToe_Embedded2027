@@ -14,6 +14,12 @@
 
 #include"main.h"
 #include <QStackedWidget>
+#include <QDir>
+#include <QCoreApplication>
+#include <QDebug>
+#include <QFileInfo>
+#include <QStandardPaths>
+#include <sqlite3.h>
 QStackedWidget* reset_pointer=nullptr;
 int NextPlayer=1;  // who can start the game (X -> 1  O -> 2)
 int MoveNum =0;
@@ -53,10 +59,19 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     GameWindow = new MainWindow();
     LoginWindow= new MainWindow1();
-    // win = new SecDialog();
-    sqlite3_open("Program_data.db", &db);
-    createTables(db);
 
+    QString dbDir = QCoreApplication::applicationDirPath() + "/db";
+    QDir().mkpath(dbDir);
+
+    QString dbPath = dbDir + "/Program_data.db";
+    int rc = sqlite3_open(dbPath.toStdString().c_str(), &db);
+
+    if (rc != SQLITE_OK) {
+        qDebug() << "Failed to open database:" << sqlite3_errmsg(db);
+        return -1;
+    }
+
+    createTables(db);
 
     if(getCurrentUser(db,username)){
         G_UserName = username;
@@ -67,8 +82,6 @@ int main(int argc, char *argv[])
 
     GameWindow->initializeButtons();
     LoginWindow->initializeButtons();
-
-
 
     QVBoxLayout *layout = new QVBoxLayout();
 
@@ -315,6 +328,7 @@ void Check_data_forLogin(sqlite3 *db, MainWindow *window, MainWindow1 *window1) 
     // Only navigate if login/signup succeeded
     if(loginFound){
         setCurrentUser(db,username);
+        window->returnBacktoPage0InGame();
         window->show();
         window1->close();
     }

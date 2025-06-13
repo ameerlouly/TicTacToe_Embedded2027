@@ -30,8 +30,6 @@ void createTables(sqlite3 *db) {
                                     "id INTEGER PRIMARY KEY CHECK (id = 1),"
                                     "username TEXT);";
 
-
-
     char* errMsg = 0;
 
     int rc = sqlite3_exec(db, userTableSQL, 0, 0, &errMsg);

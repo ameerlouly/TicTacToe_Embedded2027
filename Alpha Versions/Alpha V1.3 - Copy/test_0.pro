@@ -43,7 +43,6 @@ DISTFILES += \
     Graphics/Login Graphic-01.png \
     Graphics/Login Graphic-02.png \
     Graphics/Login Graphic.png \
-    game_data.db
-
+    db/Program_data.db
 RESOURCES += \
     images.qrc
