@@ -46,6 +46,8 @@ private slots:
 
     void on_history_clicked();
 
+    void on_settings_clicked();
+
 private:
     Ui::SecDialog *ui;
 };

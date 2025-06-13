@@ -76,6 +76,12 @@ public:
     QTextEdit *losses_num;
     QTextEdit *wins_num;
     QTextEdit *wins_label;
+    QWidget *page_7;
+    QTextEdit *textEdit_9;
+    QTextEdit *textEdit_24;
+    QTextEdit *textEdit_25;
+    QTextEdit *textEdit_26;
+    QTextEdit *textEdit_27;
 
     void setupUi(QDialog *SecDialog)
     {
@@ -119,11 +125,12 @@ public:
 "}"));
         settings = new QPushButton(groupBox);
         settings->setObjectName("settings");
-        settings->setGeometry(QRect(10, 400, 93, 29));
+        settings->setGeometry(QRect(10, 570, 101, 71));
         settings->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"border-radius:10px;\n"
-"background-color:white;\n"
-"\n"
+"font: 700 11pt \"Segoe UI\";\n"
+"border-radius:25px;\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
 "}"));
         stackedWidget = new QStackedWidget(SecDialog);
         stackedWidget->setObjectName("stackedWidget");
@@ -525,10 +532,68 @@ public:
 "}"));
         wins_label->setReadOnly(true);
         stackedWidget->addWidget(page);
+        page_7 = new QWidget();
+        page_7->setObjectName("page_7");
+        textEdit_9 = new QTextEdit(page_7);
+        textEdit_9->setObjectName("textEdit_9");
+        textEdit_9->setGeometry(QRect(260, 140, 431, 51));
+        textEdit_9->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+"{\n"
+"border :none;\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
+"font: 700 12pt \"Rockwell\";    \n"
+" border-radius: 20px;\n"
+"}"));
+        textEdit_24 = new QTextEdit(page_7);
+        textEdit_24->setObjectName("textEdit_24");
+        textEdit_24->setGeometry(QRect(260, 240, 431, 51));
+        textEdit_24->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+"{\n"
+"border :none;\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
+"font: 700 12pt \"Rockwell\";    \n"
+" border-radius: 20px;\n"
+"}"));
+        textEdit_25 = new QTextEdit(page_7);
+        textEdit_25->setObjectName("textEdit_25");
+        textEdit_25->setGeometry(QRect(260, 340, 431, 51));
+        textEdit_25->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+"{\n"
+"border :none;\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
+"font: 700 12pt \"Rockwell\";    \n"
+" border-radius: 20px;\n"
+"}"));
+        textEdit_26 = new QTextEdit(page_7);
+        textEdit_26->setObjectName("textEdit_26");
+        textEdit_26->setGeometry(QRect(260, 440, 431, 51));
+        textEdit_26->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+"{\n"
+"border :none;\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
+"font: 700 12pt \"Rockwell\";    \n"
+" border-radius: 20px;\n"
+"}"));
+        textEdit_27 = new QTextEdit(page_7);
+        textEdit_27->setObjectName("textEdit_27");
+        textEdit_27->setGeometry(QRect(260, 550, 431, 51));
+        textEdit_27->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+"{\n"
+"border :none;\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
+"font: 700 12pt \"Rockwell\";    \n"
+" border-radius: 20px;\n"
+"}"));
+        stackedWidget->addWidget(page_7);
 
         retranslateUi(SecDialog);
 
-        stackedWidget->setCurrentIndex(4);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(SecDialog);
@@ -541,7 +606,7 @@ public:
         profile->setText(QCoreApplication::translate("SecDialog", "Profile", nullptr));
         home->setText(QCoreApplication::translate("SecDialog", "Home", nullptr));
         history->setText(QCoreApplication::translate("SecDialog", "History", nullptr));
-        settings->setText(QCoreApplication::translate("SecDialog", "Settings", nullptr));
+        settings->setText(QCoreApplication::translate("SecDialog", "ABOUT US", nullptr));
         startgame->setText(QCoreApplication::translate("SecDialog", "START GAME", nullptr));
         PVP->setText(QCoreApplication::translate("SecDialog", "PVP", nullptr));
         PVE->setText(QCoreApplication::translate("SecDialog", "PVE", nullptr));
@@ -643,6 +708,46 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">WINS</p></body></html>", nullptr));
+        textEdit_9->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:16pt;\">NOURHAN MOHAMMAD</span></p></body></html>", nullptr));
+        textEdit_24->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:16pt;\">ROLA REFAT</span></p></body></html>", nullptr));
+        textEdit_25->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:16pt;\">AMEER LOULY</span></p></body></html>", nullptr));
+        textEdit_26->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:16pt;\">AMIR SAMEH</span></p></body></html>", nullptr));
+        textEdit_27->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:16pt;\">MOHAMED ABDULLAH</span></p></body></html>", nullptr));
     } // retranslateUi
 
 };

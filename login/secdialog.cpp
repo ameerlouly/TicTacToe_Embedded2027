@@ -99,3 +99,9 @@ void SecDialog::on_history_clicked()
     ui->stackedWidget->setCurrentIndex(5);
 }
 
+
+void SecDialog::on_settings_clicked()
+{
+   ui->stackedWidget->setCurrentIndex(6);
+}
+
