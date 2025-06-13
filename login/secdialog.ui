@@ -19,130 +19,127 @@
 	background-color: rgb(230, 230, 230);
 }</string>
   </property>
-  <widget class="QGroupBox" name="groupBox">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>30</x>
      <y>0</y>
-     <width>121</width>
-     <height>701</height>
+     <width>1031</width>
+     <height>651</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">QGroupBox
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="styleSheet">
+       <string notr="true">QGroupBox
 {
 	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(186, 200, 224, 255), stop:1 rgba(106, 133, 182, 255));
 }</string>
-   </property>
-   <property name="title">
-    <string>GroupBox</string>
-   </property>
-   <widget class="QPushButton" name="profile">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>80</y>
-      <width>93</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
+      </property>
+      <property name="title">
+       <string>GroupBox</string>
+      </property>
+      <widget class="QPushButton" name="profile">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>93</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
 border-radius:10px;
 background-color:white;
 
 }</string>
-    </property>
-    <property name="text">
-     <string>Profile</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="home">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>150</y>
-      <width>93</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
+       </property>
+       <property name="text">
+        <string>Profile</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="home">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>150</y>
+         <width>93</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
 border-radius:10px;
 background-color:white;
 
 }</string>
-    </property>
-    <property name="text">
-     <string>Home</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="history">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>220</y>
-      <width>93</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
+       </property>
+       <property name="text">
+        <string>Home</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="history">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>220</y>
+         <width>93</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
 border-radius:10px;
 background-color:white;
 
 }</string>
-    </property>
-    <property name="text">
-     <string>History</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="settings">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>570</y>
-      <width>101</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
+       </property>
+       <property name="text">
+        <string>History</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="settings">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>570</y>
+         <width>101</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
 font: 700 11pt &quot;Segoe UI&quot;;
 border-radius:25px;
 color:black;
 background-color: rgb(115, 199, 255);
 }</string>
-    </property>
-    <property name="text">
-     <string>ABOUT US</string>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QStackedWidget" name="stackedWidget">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>10</y>
-     <width>941</width>
-     <height>691</height>
-    </rect>
-   </property>
-   <property name="currentIndex">
-    <number>6</number>
-   </property>
-   <widget class="QWidget" name="page_2">
-    <widget class="QPushButton" name="startgame">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>240</y>
-       <width>441</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton
+       </property>
+       <property name="text">
+        <string>ABOUT US</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>3</number>
+      </property>
+      <widget class="QWidget" name="page_2">
+       <widget class="QPushButton" name="startgame">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>240</y>
+          <width>441</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
 {
 	border-radius:30px;
 	color: white;
@@ -151,188 +148,188 @@ background-color: rgb(115, 199, 255);
 	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(84, 204, 190, 255), stop:1 rgba(164, 227, 207, 255));
 	border-color:black;
 }</string>
-     </property>
-     <property name="text">
-      <string>START GAME</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="page_3">
-    <widget class="QPushButton" name="PVP">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>260</y>
-       <width>281</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{
+        </property>
+        <property name="text">
+         <string>START GAME</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_3">
+       <widget class="QPushButton" name="PVP">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>260</y>
+          <width>281</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
 border-radius:15px;
 background-color:white;
 
 }</string>
-     </property>
-     <property name="text">
-      <string>PVP</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="PVE">
-     <property name="geometry">
-      <rect>
-       <x>550</x>
-       <y>260</y>
-       <width>281</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{
+        </property>
+        <property name="text">
+         <string>PVP</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="PVE">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>260</y>
+          <width>281</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
 border-radius:15px;
 background-color:white;
 
 }</string>
-     </property>
-     <property name="text">
-      <string>PVE</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="back_3">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>0</y>
-       <width>93</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>back</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="page_5">
-    <widget class="QPushButton" name="normal">
-     <property name="geometry">
-      <rect>
-       <x>370</x>
-       <y>140</y>
-       <width>241</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{
+        </property>
+        <property name="text">
+         <string>PVE</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="back_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>93</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>back</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_5">
+       <widget class="QPushButton" name="normal">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>140</y>
+          <width>241</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
 border-radius:10px;
 background-color:white;
 
 }</string>
-     </property>
-     <property name="text">
-      <string>Normal</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="infinite">
-     <property name="geometry">
-      <rect>
-       <x>370</x>
-       <y>300</y>
-       <width>241</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{
+        </property>
+        <property name="text">
+         <string>Normal</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="infinite">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>300</y>
+          <width>241</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
 border-radius:10px;
 background-color:white;
 
 }</string>
-     </property>
-     <property name="text">
-      <string>Infinite</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="back_2">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>0</y>
-       <width>93</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>back</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="page_6">
-    <widget class="QPushButton" name="easy">
-     <property name="geometry">
-      <rect>
-       <x>310</x>
-       <y>80</y>
-       <width>251</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Easy</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="medium">
-     <property name="geometry">
-      <rect>
-       <x>310</x>
-       <y>200</y>
-       <width>251</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Medium</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="hard">
-     <property name="geometry">
-      <rect>
-       <x>310</x>
-       <y>320</y>
-       <width>251</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Hard</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="back">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>10</y>
-       <width>93</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>back</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="page_4">
-    <widget class="QPushButton" name="pushButton_4">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>490</y>
-       <width>201</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton
+        </property>
+        <property name="text">
+         <string>Infinite</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="back_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>0</y>
+          <width>93</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>back</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_6">
+       <widget class="QPushButton" name="easy">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>80</y>
+          <width>251</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Easy</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="medium">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>200</y>
+          <width>251</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Medium</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="hard">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>320</y>
+          <width>251</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Hard</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="back">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>10</y>
+          <width>93</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>back</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_4">
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>490</y>
+          <width>201</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
 {
 border :none;
 color:black;
@@ -346,22 +343,22 @@ QPushButton:pressed
 {
 background-color:red;
 }</string>
-     </property>
-     <property name="text">
-      <string>7</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_6">
-     <property name="geometry">
-      <rect>
-       <x>580</x>
-       <y>350</y>
-       <width>201</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton
+        </property>
+        <property name="text">
+         <string>7</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_6">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>350</y>
+          <width>201</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
 {
 border :none;
 color:black;
@@ -375,22 +372,22 @@ QPushButton:pressed
 {
 background-color:red;
 }</string>
-     </property>
-     <property name="text">
-      <string>6</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_9">
-     <property name="geometry">
-      <rect>
-       <x>580</x>
-       <y>200</y>
-       <width>201</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton
+        </property>
+        <property name="text">
+         <string>6</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_9">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>200</y>
+          <width>201</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
 {
 border :none;
 color:black;
@@ -404,54 +401,54 @@ QPushButton:pressed
 {
 background-color:red;
 }</string>
-     </property>
-     <property name="text">
-      <string>3</string>
-     </property>
-    </widget>
-    <widget class="Line" name="line_2">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
-       <y>200</y>
-       <width>20</width>
-       <height>421</height>
-      </rect>
-     </property>
-     <property name="lineWidth">
-      <number>5</number>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Orientation::Vertical</enum>
-     </property>
-    </widget>
-    <widget class="Line" name="line_3">
-     <property name="geometry">
-      <rect>
-       <x>190</x>
-       <y>480</y>
-       <width>601</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="lineWidth">
-      <number>5</number>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Orientation::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_8">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>200</y>
-       <width>201</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton
+        </property>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_2">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>200</y>
+          <width>20</width>
+          <height>421</height>
+         </rect>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="Line" name="line_3">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>480</y>
+          <width>601</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_8">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>200</y>
+          <width>201</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
 {
 border :none;
 color:black;
@@ -465,22 +462,22 @@ QPushButton:checked {
     background-color: red;
 }
 </string>
-     </property>
-     <property name="text">
-      <string>1</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_5">
-     <property name="geometry">
-      <rect>
-       <x>370</x>
-       <y>500</y>
-       <width>201</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton
+        </property>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>500</y>
+          <width>201</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
 {
 border :none;
 color:black;
@@ -494,22 +491,22 @@ QPushButton:pressed
 {
 background-color:red;
 }</string>
-     </property>
-     <property name="text">
-      <string>8</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>372</x>
-       <y>350</y>
-       <width>201</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton
+        </property>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>372</x>
+          <y>350</y>
+          <width>201</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
 {
 border :none;
 color:black;
@@ -523,22 +520,22 @@ QPushButton:pressed
 {
 background-color:red;
 }</string>
-     </property>
-     <property name="text">
-      <string>5</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_2">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>350</y>
-       <width>201</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton
+        </property>
+        <property name="text">
+         <string>5</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>350</y>
+          <width>201</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
 {
 border :none;
 color:black;
@@ -560,22 +557,22 @@ QPushButton[text=&quot;X&quot;] {
     color: white;
     }
 </string>
-     </property>
-     <property name="text">
-      <string>4</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_2">
-     <property name="geometry">
-      <rect>
-       <x>590</x>
-       <y>60</y>
-       <width>261</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTextEdit
+        </property>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit_2">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>60</y>
+          <width>261</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTextEdit
 {
 border :none;
 color:black;
@@ -583,9 +580,9 @@ background-color: rgb(115, 199, 255);
 font: 700 12pt &quot;Rockwell&quot;;    
  border-radius: 20px;
 }</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
@@ -593,19 +590,19 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt;&quot;&gt;player2:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>60</y>
-       <width>261</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTextEdit
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>60</y>
+          <width>261</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTextEdit
 {
 border :none;
 color:black;
@@ -613,9 +610,9 @@ background-color: rgb(115, 199, 255);
 font: 700 12pt &quot;Rockwell&quot;;    
  border-radius: 20px;
 }</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
@@ -623,19 +620,19 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt;&quot;&gt;player1:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_7">
-     <property name="geometry">
-      <rect>
-       <x>370</x>
-       <y>200</y>
-       <width>201</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_7">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>200</y>
+          <width>201</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
 {
 border :none;
 color:black;
@@ -649,38 +646,38 @@ QPushButton:pressed
 {
 background-color:red;
 }</string>
-     </property>
-     <property name="text">
-      <string>2</string>
-     </property>
-    </widget>
-    <widget class="Line" name="line_4">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>330</y>
-       <width>611</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="lineWidth">
-      <number>5</number>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Orientation::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_10">
-     <property name="geometry">
-      <rect>
-       <x>580</x>
-       <y>490</y>
-       <width>201</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton
+        </property>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_4">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>330</y>
+          <width>611</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_10">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>490</y>
+          <width>201</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
 {
 border :none;
 color:black;
@@ -694,244 +691,244 @@ QPushButton:pressed
 {
 background-color:red;
 }</string>
-     </property>
-     <property name="text">
-      <string>9</string>
-     </property>
-    </widget>
-    <widget class="Line" name="line">
-     <property name="geometry">
-      <rect>
-       <x>570</x>
-       <y>200</y>
-       <width>20</width>
-       <height>421</height>
-      </rect>
-     </property>
-     <property name="lineWidth">
-      <number>5</number>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Orientation::Vertical</enum>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_15">
-     <property name="geometry">
-      <rect>
-       <x>640</x>
-       <y>620</y>
-       <width>171</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>500</width>
-       <height>500</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton
+        </property>
+        <property name="text">
+         <string>9</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>200</y>
+          <width>20</width>
+          <height>421</height>
+         </rect>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_15">
+        <property name="geometry">
+         <rect>
+          <x>640</x>
+          <y>620</y>
+          <width>171</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>500</width>
+          <height>500</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
 {
 color:black;
 background-color: rgb(115, 199, 255);
  font: 700 14pt &quot;Segoe UI&quot;;
 }</string>
-     </property>
-     <property name="text">
-      <string>REVIWE GAME</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_16">
-     <property name="geometry">
-      <rect>
-       <x>390</x>
-       <y>620</y>
-       <width>171</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>500</width>
-       <height>500</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton
+        </property>
+        <property name="text">
+         <string>REVIWE GAME</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_16">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>620</y>
+          <width>171</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>500</width>
+          <height>500</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
 {
 color:black;
 background-color: rgb(115, 199, 255);
  font: 700 14pt &quot;Segoe UI&quot;;
 }</string>
-     </property>
-     <property name="text">
-      <string>RE_MATCH</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="back_4">
-     <property name="geometry">
-      <rect>
-       <x>150</x>
-       <y>620</y>
-       <width>171</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>500</width>
-       <height>500</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton
+        </property>
+        <property name="text">
+         <string>RE_MATCH</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="back_4">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>620</y>
+          <width>171</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>500</width>
+          <height>500</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
 {
 color:black;
 background-color: rgb(115, 199, 255);
  font: 700 14pt &quot;Segoe UI&quot;;
 }</string>
-     </property>
-     <property name="text">
-      <string>BACK</string>
-     </property>
-    </widget>
-    <widget class="QGroupBox" name="groupBox_2">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>170</y>
-       <width>651</width>
-       <height>441</height>
-      </rect>
-     </property>
-     <property name="title">
-      <string>GroupBox</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="page">
-    <widget class="QTableWidget" name="tableWidget">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>60</y>
-       <width>401</width>
-       <height>411</height>
-      </rect>
-     </property>
-     <property name="sizeIncrement">
-      <size>
-       <width>0</width>
-       <height>1</height>
-      </size>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Shape::NoFrame</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Shadow::Sunken</enum>
-     </property>
-     <property name="lineWidth">
-      <number>1</number>
-     </property>
-     <property name="textElideMode">
-      <enum>Qt::TextElideMode::ElideMiddle</enum>
-     </property>
-     <property name="gridStyle">
-      <enum>Qt::PenStyle::SolidLine</enum>
-     </property>
-     <property name="sortingEnabled">
-      <bool>false</bool>
-     </property>
-     <attribute name="horizontalHeaderMinimumSectionSize">
-      <number>36</number>
-     </attribute>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <column>
-      <property name="text">
-       <string>RESULT</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>DATE</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>REVIEW GAME</string>
-      </property>
-     </column>
-     <item row="0" column="0">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="flags">
-       <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsEnabled</set>
-      </property>
-     </item>
-     <item row="0" column="1">
-      <property name="text">
-       <string/>
-      </property>
-     </item>
-     <item row="0" column="2">
-      <property name="text">
-       <string/>
-      </property>
-     </item>
-     <item row="1" column="2">
-      <property name="text">
-       <string/>
-      </property>
-     </item>
-     <item row="2" column="2">
-      <property name="text">
-       <string>SHOW</string>
-      </property>
-     </item>
-    </widget>
-    <widget class="QWidget" name="widget" native="true">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>80</y>
-       <width>171</width>
-       <height>351</height>
-      </rect>
-     </property>
-     <widget class="QTextEdit" name="losses_label">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>0</y>
-        <width>141</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QTextEdit
+        </property>
+        <property name="text">
+         <string>BACK</string>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>170</y>
+          <width>651</width>
+          <height>441</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>GroupBox</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page">
+       <widget class="QTableWidget" name="tableWidget">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>60</y>
+          <width>401</width>
+          <height>411</height>
+         </rect>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>0</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Sunken</enum>
+        </property>
+        <property name="lineWidth">
+         <number>1</number>
+        </property>
+        <property name="textElideMode">
+         <enum>Qt::TextElideMode::ElideMiddle</enum>
+        </property>
+        <property name="gridStyle">
+         <enum>Qt::PenStyle::SolidLine</enum>
+        </property>
+        <property name="sortingEnabled">
+         <bool>false</bool>
+        </property>
+        <attribute name="horizontalHeaderMinimumSectionSize">
+         <number>36</number>
+        </attribute>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <column>
+         <property name="text">
+          <string>RESULT</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>DATE</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>REVIEW GAME</string>
+         </property>
+        </column>
+        <item row="0" column="0">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="flags">
+          <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsEnabled</set>
+         </property>
+        </item>
+        <item row="0" column="1">
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item row="0" column="2">
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item row="1" column="2">
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item row="2" column="2">
+         <property name="text">
+          <string>SHOW</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QWidget" name="widget" native="true">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>80</y>
+          <width>171</width>
+          <height>351</height>
+         </rect>
+        </property>
+        <widget class="QTextEdit" name="losses_label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>141</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTextEdit
 {
 color:black;
 background-color: rgb(115, 199, 255);
  font: 700 16pt &quot;Segoe UI&quot;;
 }</string>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-      <property name="html">
-       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
@@ -939,30 +936,30 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;LOSSES&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QTextEdit" name="draws_label">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>250</y>
-        <width>141</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QTextEdit
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="draws_label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>250</y>
+           <width>141</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTextEdit
 {
 color:black;
 background-color: rgb(115, 199, 255);
  font: 700 16pt &quot;Segoe UI&quot;;
 }</string>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-      <property name="html">
-       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
@@ -970,22 +967,22 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;DRAWS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QTextEdit" name="draws_num">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>300</y>
-        <width>141</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-      <property name="html">
-       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="draws_num">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>300</y>
+           <width>141</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
@@ -993,22 +990,22 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;6&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QTextEdit" name="losses_num">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>50</y>
-        <width>141</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-      <property name="html">
-       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="losses_num">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>50</y>
+           <width>141</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
@@ -1016,22 +1013,22 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QTextEdit" name="wins_num">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>170</y>
-        <width>141</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-      <property name="html">
-       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="wins_num">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>170</y>
+           <width>141</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
@@ -1039,30 +1036,30 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;15&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QTextEdit" name="wins_label">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>120</y>
-        <width>141</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QTextEdit
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="wins_label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>120</y>
+           <width>141</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTextEdit
 {
 color:black;
 background-color: rgb(115, 199, 255);
  font: 700 16pt &quot;Segoe UI&quot;;
 }</string>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-      <property name="html">
-       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
@@ -1070,22 +1067,22 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;WINS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="page_7">
-    <widget class="QTextEdit" name="textEdit_9">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>140</y>
-       <width>431</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTextEdit
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_7">
+       <widget class="QTextEdit" name="textEdit_9">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>140</y>
+          <width>431</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTextEdit
 {
 border :none;
 color:black;
@@ -1093,9 +1090,9 @@ background-color: rgb(115, 199, 255);
 font: 700 12pt &quot;Rockwell&quot;;    
  border-radius: 20px;
 }</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
@@ -1103,19 +1100,19 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16pt;&quot;&gt;NOURHAN MOHAMMAD&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_24">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>240</y>
-       <width>431</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTextEdit
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit_24">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>240</y>
+          <width>431</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTextEdit
 {
 border :none;
 color:black;
@@ -1123,29 +1120,29 @@ background-color: rgb(115, 199, 255);
 font: 700 12pt &quot;Rockwell&quot;;    
  border-radius: 20px;
 }</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16pt;&quot;&gt;ROLA REFAT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_25">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>340</y>
-       <width>431</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTextEdit
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16pt;&quot;&gt;ROLA REFAAT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit_25">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>340</y>
+          <width>431</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTextEdit
 {
 border :none;
 color:black;
@@ -1153,9 +1150,9 @@ background-color: rgb(115, 199, 255);
 font: 700 12pt &quot;Rockwell&quot;;    
  border-radius: 20px;
 }</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
@@ -1163,19 +1160,19 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16pt;&quot;&gt;AMEER LOULY&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_26">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>440</y>
-       <width>431</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTextEdit
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit_26">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>440</y>
+          <width>431</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTextEdit
 {
 border :none;
 color:black;
@@ -1183,9 +1180,9 @@ background-color: rgb(115, 199, 255);
 font: 700 12pt &quot;Rockwell&quot;;    
  border-radius: 20px;
 }</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
@@ -1193,19 +1190,19 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16pt;&quot;&gt;AMIR SAMEH&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit_27">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>540</y>
-       <width>431</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTextEdit
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit_27">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>540</y>
+          <width>431</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTextEdit
 {
 border :none;
 color:black;
@@ -1213,9 +1210,9 @@ background-color: rgb(115, 199, 255);
 font: 700 12pt &quot;Rockwell&quot;;    
  border-radius: 20px;
 }</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
@@ -1223,9 +1220,51 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:16pt;&quot;&gt;MOHAMED ABDULLAH&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-   </widget>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_8">
+       <widget class="QPushButton" name="Log_out">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>330</y>
+          <width>421</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+border-radius:10px;
+background-color:white;
+
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="username">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>220</y>
+          <width>421</width>
+          <height>75</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTextEdit{
+border-radius:10px;
+background-color:white;
+
+}</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

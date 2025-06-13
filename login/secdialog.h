@@ -48,6 +48,8 @@ private slots:
 
     void on_settings_clicked();
 
+    void on_profile_clicked();
+
 private:
     Ui::SecDialog *ui;
 };
