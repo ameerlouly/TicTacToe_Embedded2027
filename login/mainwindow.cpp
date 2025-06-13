@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "main.h"
 #include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -32,8 +33,9 @@ void MainWindow::on_Guest_Button_clicked()
    // SecDialog secdialog;
   // secdialog.setModal(true);
   //  secdialog.exec();
-   secDialog = new SecDialog(this);
-   secDialog->show();
+   //secDialog = new SecDialog(this);
+   //secDialog->show();
+    GameWindow->show();
 
 }
 

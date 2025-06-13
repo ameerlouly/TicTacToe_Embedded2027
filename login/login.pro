@@ -14,6 +14,7 @@ SOURCES += \
     secdialog.cpp
 
 HEADERS += \
+    main.h \
     mainwindow.h \
     secdialog.h
 

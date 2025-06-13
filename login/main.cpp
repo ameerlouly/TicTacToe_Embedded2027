@@ -1,12 +1,14 @@
-#include "mainwindow.h"
+#include"main.h"
 
-#include <QApplication>
+MainWindow* LoginWindow = nullptr;
+SecDialog* GameWindow = nullptr;
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
+    LoginWindow = new MainWindow();
+    GameWindow = new SecDialog();
 
-    w.show();
+    LoginWindow->show();
     return a.exec();
 }
