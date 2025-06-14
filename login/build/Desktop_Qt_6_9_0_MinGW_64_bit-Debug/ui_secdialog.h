@@ -12,10 +12,13 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextEdit>
@@ -26,27 +29,58 @@ QT_BEGIN_NAMESPACE
 class Ui_SecDialog
 {
 public:
+    QGridLayout *gridLayout_4;
+    QFormLayout *formLayout_2;
     QGroupBox *groupBox;
+    QGridLayout *gridLayout;
+    QSpacerItem *verticalSpacer_3;
+    QGridLayout *gridLayout_3;
     QPushButton *profile;
     QPushButton *home;
     QPushButton *history;
     QPushButton *settings;
     QStackedWidget *stackedWidget;
     QWidget *page_2;
+    QGridLayout *gridLayout_6;
+    QSpacerItem *verticalSpacer_5;
+    QSpacerItem *horizontalSpacer_4;
     QPushButton *startgame;
+    QSpacerItem *horizontalSpacer_5;
+    QSpacerItem *verticalSpacer_4;
     QWidget *page_3;
+    QGridLayout *gridLayout_10;
+    QPushButton *back_3;
+    QSpacerItem *horizontalSpacer_9;
+    QSpacerItem *verticalSpacer_8;
+    QSpacerItem *horizontalSpacer_8;
+    QGridLayout *gridLayout_9;
     QPushButton *PVP;
     QPushButton *PVE;
-    QPushButton *back_3;
+    QSpacerItem *horizontalSpacer_10;
+    QSpacerItem *verticalSpacer_9;
     QWidget *page_5;
+    QGridLayout *gridLayout_19;
+    QPushButton *back_2;
+    QSpacerItem *horizontalSpacer_22;
+    QSpacerItem *verticalSpacer_18;
+    QSpacerItem *horizontalSpacer_21;
+    QGridLayout *gridLayout_18;
     QPushButton *normal;
     QPushButton *infinite;
-    QPushButton *back_2;
+    QSpacerItem *horizontalSpacer_23;
+    QSpacerItem *verticalSpacer_19;
     QWidget *page_6;
+    QGridLayout *gridLayout_5;
+    QPushButton *back;
+    QSpacerItem *horizontalSpacer_2;
+    QSpacerItem *verticalSpacer;
+    QSpacerItem *horizontalSpacer;
+    QGridLayout *gridLayout_2;
+    QPushButton *hard;
     QPushButton *easy;
     QPushButton *medium;
-    QPushButton *hard;
-    QPushButton *back;
+    QSpacerItem *horizontalSpacer_3;
+    QSpacerItem *verticalSpacer_2;
     QWidget *page_4;
     QPushButton *pushButton_4;
     QPushButton *pushButton_6;
@@ -70,18 +104,30 @@ public:
     QWidget *page;
     QTableWidget *tableWidget;
     QWidget *widget;
+    QGridLayout *gridLayout_20;
     QTextEdit *losses_label;
+    QTextEdit *losses_num;
+    QTextEdit *wins_label;
+    QTextEdit *wins_num;
     QTextEdit *draws_label;
     QTextEdit *draws_num;
-    QTextEdit *losses_num;
-    QTextEdit *wins_num;
-    QTextEdit *wins_label;
     QWidget *page_7;
+    QWidget *widget1;
+    QGridLayout *gridLayout_21;
     QTextEdit *textEdit_9;
     QTextEdit *textEdit_24;
     QTextEdit *textEdit_25;
     QTextEdit *textEdit_26;
     QTextEdit *textEdit_27;
+    QWidget *page_8;
+    QGridLayout *gridLayout_8;
+    QSpacerItem *verticalSpacer_6;
+    QSpacerItem *horizontalSpacer_6;
+    QGridLayout *gridLayout_7;
+    QTextEdit *username;
+    QPushButton *Log_out;
+    QSpacerItem *horizontalSpacer_7;
+    QSpacerItem *verticalSpacer_7;
 
     void setupUi(QDialog *SecDialog)
     {
@@ -92,54 +138,92 @@ public:
 "{\n"
 "	background-color: rgb(230, 230, 230);\n"
 "}"));
+        gridLayout_4 = new QGridLayout(SecDialog);
+        gridLayout_4->setObjectName("gridLayout_4");
+        formLayout_2 = new QFormLayout();
+        formLayout_2->setObjectName("formLayout_2");
         groupBox = new QGroupBox(SecDialog);
         groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(0, 0, 121, 701));
         groupBox->setStyleSheet(QString::fromUtf8("QGroupBox\n"
 "{\n"
 "	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(186, 200, 224, 255), stop:1 rgba(106, 133, 182, 255));\n"
 "}"));
+        gridLayout = new QGridLayout(groupBox);
+        gridLayout->setObjectName("gridLayout");
+        verticalSpacer_3 = new QSpacerItem(20, 457, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout->addItem(verticalSpacer_3, 1, 0, 1, 1);
+
+        gridLayout_3 = new QGridLayout();
+        gridLayout_3->setObjectName("gridLayout_3");
         profile = new QPushButton(groupBox);
         profile->setObjectName("profile");
-        profile->setGeometry(QRect(10, 80, 93, 29));
+        profile->setMinimumSize(QSize(0, 30));
         profile->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:10px;\n"
 "background-color:white;\n"
 "\n"
 "}"));
+
+        gridLayout_3->addWidget(profile, 0, 0, 1, 1);
+
         home = new QPushButton(groupBox);
         home->setObjectName("home");
-        home->setGeometry(QRect(10, 150, 93, 29));
+        home->setMinimumSize(QSize(0, 30));
         home->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:10px;\n"
 "background-color:white;\n"
 "\n"
 "}"));
+
+        gridLayout_3->addWidget(home, 1, 0, 1, 1);
+
         history = new QPushButton(groupBox);
         history->setObjectName("history");
-        history->setGeometry(QRect(10, 220, 93, 29));
+        history->setMinimumSize(QSize(0, 30));
         history->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:10px;\n"
 "background-color:white;\n"
 "\n"
 "}"));
+
+        gridLayout_3->addWidget(history, 2, 0, 1, 1);
+
         settings = new QPushButton(groupBox);
         settings->setObjectName("settings");
-        settings->setGeometry(QRect(10, 570, 101, 71));
+        settings->setMinimumSize(QSize(100, 60));
         settings->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "font: 700 11pt \"Segoe UI\";\n"
 "border-radius:25px;\n"
 "color:black;\n"
 "background-color: rgb(115, 199, 255);\n"
 "}"));
+
+        gridLayout_3->addWidget(settings, 3, 0, 1, 1);
+
+
+        gridLayout->addLayout(gridLayout_3, 0, 0, 1, 1);
+
+
+        formLayout_2->setWidget(0, QFormLayout::ItemRole::LabelRole, groupBox);
+
         stackedWidget = new QStackedWidget(SecDialog);
         stackedWidget->setObjectName("stackedWidget");
-        stackedWidget->setGeometry(QRect(120, 10, 941, 691));
         page_2 = new QWidget();
         page_2->setObjectName("page_2");
+        gridLayout_6 = new QGridLayout(page_2);
+        gridLayout_6->setObjectName("gridLayout_6");
+        verticalSpacer_5 = new QSpacerItem(20, 209, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_6->addItem(verticalSpacer_5, 0, 1, 1, 1);
+
+        horizontalSpacer_4 = new QSpacerItem(189, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer_4, 1, 0, 1, 1);
+
         startgame = new QPushButton(page_2);
         startgame->setObjectName("startgame");
-        startgame->setGeometry(QRect(240, 240, 441, 91));
+        startgame->setMinimumSize(QSize(500, 120));
         startgame->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
 "	border-radius:30px;\n"
@@ -149,65 +233,184 @@ public:
 "	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(84, 204, 190, 255), stop:1 rgba(164, 227, 207, 255));\n"
 "	border-color:black;\n"
 "}"));
+
+        gridLayout_6->addWidget(startgame, 1, 1, 1, 1);
+
+        horizontalSpacer_5 = new QSpacerItem(189, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer_5, 1, 2, 1, 1);
+
+        verticalSpacer_4 = new QSpacerItem(20, 320, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_6->addItem(verticalSpacer_4, 2, 1, 1, 1);
+
         stackedWidget->addWidget(page_2);
         page_3 = new QWidget();
         page_3->setObjectName("page_3");
+        gridLayout_10 = new QGridLayout(page_3);
+        gridLayout_10->setObjectName("gridLayout_10");
+        back_3 = new QPushButton(page_3);
+        back_3->setObjectName("back_3");
+
+        gridLayout_10->addWidget(back_3, 0, 0, 1, 1);
+
+        horizontalSpacer_9 = new QSpacerItem(402, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_10->addItem(horizontalSpacer_9, 0, 1, 1, 2);
+
+        verticalSpacer_8 = new QSpacerItem(20, 289, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_10->addItem(verticalSpacer_8, 0, 3, 1, 1);
+
+        horizontalSpacer_8 = new QSpacerItem(188, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_10->addItem(horizontalSpacer_8, 1, 0, 1, 2);
+
+        gridLayout_9 = new QGridLayout();
+        gridLayout_9->setObjectName("gridLayout_9");
         PVP = new QPushButton(page_3);
         PVP->setObjectName("PVP");
-        PVP->setGeometry(QRect(140, 260, 281, 51));
+        PVP->setMinimumSize(QSize(250, 70));
         PVP->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:15px;\n"
 "background-color:white;\n"
 "\n"
 "}"));
+
+        gridLayout_9->addWidget(PVP, 0, 0, 1, 1);
+
         PVE = new QPushButton(page_3);
         PVE->setObjectName("PVE");
-        PVE->setGeometry(QRect(550, 260, 281, 51));
+        PVE->setMinimumSize(QSize(250, 70));
         PVE->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:15px;\n"
 "background-color:white;\n"
 "\n"
 "}"));
-        back_3 = new QPushButton(page_3);
-        back_3->setObjectName("back_3");
-        back_3->setGeometry(QRect(10, 0, 93, 29));
+
+        gridLayout_9->addWidget(PVE, 0, 1, 1, 1);
+
+
+        gridLayout_10->addLayout(gridLayout_9, 1, 2, 1, 2);
+
+        horizontalSpacer_10 = new QSpacerItem(277, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_10->addItem(horizontalSpacer_10, 1, 4, 1, 1);
+
+        verticalSpacer_9 = new QSpacerItem(20, 288, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_10->addItem(verticalSpacer_9, 2, 3, 1, 1);
+
         stackedWidget->addWidget(page_3);
         page_5 = new QWidget();
         page_5->setObjectName("page_5");
+        gridLayout_19 = new QGridLayout(page_5);
+        gridLayout_19->setObjectName("gridLayout_19");
+        back_2 = new QPushButton(page_5);
+        back_2->setObjectName("back_2");
+
+        gridLayout_19->addWidget(back_2, 0, 0, 1, 1);
+
+        horizontalSpacer_22 = new QSpacerItem(414, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_19->addItem(horizontalSpacer_22, 0, 1, 1, 2);
+
+        verticalSpacer_18 = new QSpacerItem(20, 250, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_19->addItem(verticalSpacer_18, 0, 3, 1, 1);
+
+        horizontalSpacer_21 = new QSpacerItem(298, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_19->addItem(horizontalSpacer_21, 1, 0, 1, 2);
+
+        gridLayout_18 = new QGridLayout();
+        gridLayout_18->setObjectName("gridLayout_18");
         normal = new QPushButton(page_5);
         normal->setObjectName("normal");
-        normal->setGeometry(QRect(370, 140, 241, 81));
+        normal->setMinimumSize(QSize(250, 70));
         normal->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:10px;\n"
 "background-color:white;\n"
 "\n"
 "}"));
+
+        gridLayout_18->addWidget(normal, 0, 0, 1, 1);
+
         infinite = new QPushButton(page_5);
         infinite->setObjectName("infinite");
-        infinite->setGeometry(QRect(370, 300, 241, 81));
+        infinite->setMinimumSize(QSize(250, 70));
         infinite->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:10px;\n"
 "background-color:white;\n"
 "\n"
 "}"));
-        back_2 = new QPushButton(page_5);
-        back_2->setObjectName("back_2");
-        back_2->setGeometry(QRect(20, 0, 93, 29));
+
+        gridLayout_18->addWidget(infinite, 1, 0, 1, 1);
+
+
+        gridLayout_19->addLayout(gridLayout_18, 1, 2, 1, 2);
+
+        horizontalSpacer_23 = new QSpacerItem(336, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_19->addItem(horizontalSpacer_23, 1, 4, 1, 1);
+
+        verticalSpacer_19 = new QSpacerItem(20, 250, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_19->addItem(verticalSpacer_19, 2, 3, 1, 1);
+
         stackedWidget->addWidget(page_5);
         page_6 = new QWidget();
         page_6->setObjectName("page_6");
-        easy = new QPushButton(page_6);
-        easy->setObjectName("easy");
-        easy->setGeometry(QRect(310, 80, 251, 81));
-        medium = new QPushButton(page_6);
-        medium->setObjectName("medium");
-        medium->setGeometry(QRect(310, 200, 251, 81));
-        hard = new QPushButton(page_6);
-        hard->setObjectName("hard");
-        hard->setGeometry(QRect(310, 320, 251, 81));
+        gridLayout_5 = new QGridLayout(page_6);
+        gridLayout_5->setObjectName("gridLayout_5");
         back = new QPushButton(page_6);
         back->setObjectName("back");
-        back->setGeometry(QRect(40, 10, 93, 29));
+
+        gridLayout_5->addWidget(back, 0, 0, 1, 1);
+
+        horizontalSpacer_2 = new QSpacerItem(318, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_5->addItem(horizontalSpacer_2, 0, 1, 1, 2);
+
+        verticalSpacer = new QSpacerItem(20, 242, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_5->addItem(verticalSpacer, 0, 3, 1, 1);
+
+        horizontalSpacer = new QSpacerItem(241, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_5->addItem(horizontalSpacer, 1, 0, 1, 2);
+
+        gridLayout_2 = new QGridLayout();
+        gridLayout_2->setObjectName("gridLayout_2");
+        hard = new QPushButton(page_6);
+        hard->setObjectName("hard");
+        hard->setMinimumSize(QSize(300, 50));
+
+        gridLayout_2->addWidget(hard, 2, 0, 1, 1);
+
+        easy = new QPushButton(page_6);
+        easy->setObjectName("easy");
+        easy->setMinimumSize(QSize(300, 50));
+
+        gridLayout_2->addWidget(easy, 0, 0, 1, 1);
+
+        medium = new QPushButton(page_6);
+        medium->setObjectName("medium");
+        medium->setMinimumSize(QSize(300, 50));
+
+        gridLayout_2->addWidget(medium, 1, 0, 1, 1);
+
+
+        gridLayout_5->addLayout(gridLayout_2, 1, 2, 1, 3);
+
+        horizontalSpacer_3 = new QSpacerItem(335, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_5->addItem(horizontalSpacer_3, 1, 5, 1, 1);
+
+        verticalSpacer_2 = new QSpacerItem(20, 241, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_5->addItem(verticalSpacer_2, 2, 4, 1, 1);
+
         stackedWidget->addWidget(page_6);
         page_4 = new QWidget();
         page_4->setObjectName("page_4");
@@ -488,10 +691,11 @@ public:
         tableWidget->horizontalHeader()->setMinimumSectionSize(36);
         widget = new QWidget(page);
         widget->setObjectName("widget");
-        widget->setGeometry(QRect(110, 80, 171, 351));
+        widget->setGeometry(QRect(50, 60, 261, 381));
+        gridLayout_20 = new QGridLayout(widget);
+        gridLayout_20->setObjectName("gridLayout_20");
         losses_label = new QTextEdit(widget);
         losses_label->setObjectName("losses_label");
-        losses_label->setGeometry(QRect(10, 0, 141, 51));
         losses_label->setStyleSheet(QString::fromUtf8("QTextEdit\n"
 "{\n"
 "color:black;\n"
@@ -499,31 +703,17 @@ public:
 " font: 700 16pt \"Segoe UI\";\n"
 "}"));
         losses_label->setReadOnly(true);
-        draws_label = new QTextEdit(widget);
-        draws_label->setObjectName("draws_label");
-        draws_label->setGeometry(QRect(10, 250, 141, 51));
-        draws_label->setStyleSheet(QString::fromUtf8("QTextEdit\n"
-"{\n"
-"color:black;\n"
-"background-color: rgb(115, 199, 255);\n"
-" font: 700 16pt \"Segoe UI\";\n"
-"}"));
-        draws_label->setReadOnly(true);
-        draws_num = new QTextEdit(widget);
-        draws_num->setObjectName("draws_num");
-        draws_num->setGeometry(QRect(10, 300, 141, 41));
-        draws_num->setReadOnly(true);
+
+        gridLayout_20->addWidget(losses_label, 0, 0, 1, 1);
+
         losses_num = new QTextEdit(widget);
         losses_num->setObjectName("losses_num");
-        losses_num->setGeometry(QRect(10, 50, 141, 41));
         losses_num->setReadOnly(true);
-        wins_num = new QTextEdit(widget);
-        wins_num->setObjectName("wins_num");
-        wins_num->setGeometry(QRect(10, 170, 141, 41));
-        wins_num->setReadOnly(true);
+
+        gridLayout_20->addWidget(losses_num, 1, 0, 1, 1);
+
         wins_label = new QTextEdit(widget);
         wins_label->setObjectName("wins_label");
-        wins_label->setGeometry(QRect(10, 120, 141, 51));
         wins_label->setStyleSheet(QString::fromUtf8("QTextEdit\n"
 "{\n"
 "color:black;\n"
@@ -531,12 +721,46 @@ public:
 " font: 700 16pt \"Segoe UI\";\n"
 "}"));
         wins_label->setReadOnly(true);
+
+        gridLayout_20->addWidget(wins_label, 2, 0, 1, 1);
+
+        wins_num = new QTextEdit(widget);
+        wins_num->setObjectName("wins_num");
+        wins_num->setReadOnly(true);
+
+        gridLayout_20->addWidget(wins_num, 3, 0, 1, 1);
+
+        draws_label = new QTextEdit(widget);
+        draws_label->setObjectName("draws_label");
+        draws_label->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+"{\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
+" font: 700 16pt \"Segoe UI\";\n"
+"}"));
+        draws_label->setReadOnly(true);
+
+        gridLayout_20->addWidget(draws_label, 4, 0, 1, 1);
+
+        draws_num = new QTextEdit(widget);
+        draws_num->setObjectName("draws_num");
+        draws_num->setReadOnly(true);
+
+        gridLayout_20->addWidget(draws_num, 5, 0, 1, 1);
+
         stackedWidget->addWidget(page);
         page_7 = new QWidget();
         page_7->setObjectName("page_7");
-        textEdit_9 = new QTextEdit(page_7);
+        widget1 = new QWidget(page_7);
+        widget1->setObjectName("widget1");
+        widget1->setGeometry(QRect(220, 140, 511, 441));
+        gridLayout_21 = new QGridLayout(widget1);
+        gridLayout_21->setObjectName("gridLayout_21");
+        gridLayout_21->setContentsMargins(0, 0, 0, 0);
+        textEdit_9 = new QTextEdit(widget1);
         textEdit_9->setObjectName("textEdit_9");
-        textEdit_9->setGeometry(QRect(260, 140, 431, 51));
+        textEdit_9->setMinimumSize(QSize(450, 50));
+        textEdit_9->setMaximumSize(QSize(450, 50));
         textEdit_9->setStyleSheet(QString::fromUtf8("QTextEdit\n"
 "{\n"
 "border :none;\n"
@@ -545,9 +769,13 @@ public:
 "font: 700 12pt \"Rockwell\";    \n"
 " border-radius: 20px;\n"
 "}"));
-        textEdit_24 = new QTextEdit(page_7);
+
+        gridLayout_21->addWidget(textEdit_9, 0, 0, 1, 1);
+
+        textEdit_24 = new QTextEdit(widget1);
         textEdit_24->setObjectName("textEdit_24");
-        textEdit_24->setGeometry(QRect(260, 240, 431, 51));
+        textEdit_24->setMinimumSize(QSize(450, 50));
+        textEdit_24->setMaximumSize(QSize(450, 50));
         textEdit_24->setStyleSheet(QString::fromUtf8("QTextEdit\n"
 "{\n"
 "border :none;\n"
@@ -556,9 +784,13 @@ public:
 "font: 700 12pt \"Rockwell\";    \n"
 " border-radius: 20px;\n"
 "}"));
-        textEdit_25 = new QTextEdit(page_7);
+
+        gridLayout_21->addWidget(textEdit_24, 1, 0, 1, 1);
+
+        textEdit_25 = new QTextEdit(widget1);
         textEdit_25->setObjectName("textEdit_25");
-        textEdit_25->setGeometry(QRect(260, 340, 431, 51));
+        textEdit_25->setMinimumSize(QSize(450, 50));
+        textEdit_25->setMaximumSize(QSize(450, 50));
         textEdit_25->setStyleSheet(QString::fromUtf8("QTextEdit\n"
 "{\n"
 "border :none;\n"
@@ -567,9 +799,13 @@ public:
 "font: 700 12pt \"Rockwell\";    \n"
 " border-radius: 20px;\n"
 "}"));
-        textEdit_26 = new QTextEdit(page_7);
+
+        gridLayout_21->addWidget(textEdit_25, 2, 0, 1, 1);
+
+        textEdit_26 = new QTextEdit(widget1);
         textEdit_26->setObjectName("textEdit_26");
-        textEdit_26->setGeometry(QRect(260, 440, 431, 51));
+        textEdit_26->setMinimumSize(QSize(450, 50));
+        textEdit_26->setMaximumSize(QSize(450, 50));
         textEdit_26->setStyleSheet(QString::fromUtf8("QTextEdit\n"
 "{\n"
 "border :none;\n"
@@ -578,9 +814,13 @@ public:
 "font: 700 12pt \"Rockwell\";    \n"
 " border-radius: 20px;\n"
 "}"));
-        textEdit_27 = new QTextEdit(page_7);
+
+        gridLayout_21->addWidget(textEdit_26, 3, 0, 1, 1);
+
+        textEdit_27 = new QTextEdit(widget1);
         textEdit_27->setObjectName("textEdit_27");
-        textEdit_27->setGeometry(QRect(260, 550, 431, 51));
+        textEdit_27->setMinimumSize(QSize(450, 50));
+        textEdit_27->setMaximumSize(QSize(450, 50));
         textEdit_27->setStyleSheet(QString::fromUtf8("QTextEdit\n"
 "{\n"
 "border :none;\n"
@@ -589,7 +829,65 @@ public:
 "font: 700 12pt \"Rockwell\";    \n"
 " border-radius: 20px;\n"
 "}"));
+
+        gridLayout_21->addWidget(textEdit_27, 4, 0, 1, 1);
+
         stackedWidget->addWidget(page_7);
+        page_8 = new QWidget();
+        page_8->setObjectName("page_8");
+        gridLayout_8 = new QGridLayout(page_8);
+        gridLayout_8->setObjectName("gridLayout_8");
+        verticalSpacer_6 = new QSpacerItem(20, 215, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_8->addItem(verticalSpacer_6, 0, 2, 1, 1);
+
+        horizontalSpacer_6 = new QSpacerItem(238, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_8->addItem(horizontalSpacer_6, 1, 0, 1, 1);
+
+        gridLayout_7 = new QGridLayout();
+        gridLayout_7->setObjectName("gridLayout_7");
+        username = new QTextEdit(page_8);
+        username->setObjectName("username");
+        username->setMinimumSize(QSize(400, 0));
+        username->setMaximumSize(QSize(16777215, 50));
+        username->setStyleSheet(QString::fromUtf8("QTextEdit{\n"
+"border-radius:10px;\n"
+"background-color:white;\n"
+"\n"
+"}"));
+
+        gridLayout_7->addWidget(username, 0, 0, 1, 1);
+
+        Log_out = new QPushButton(page_8);
+        Log_out->setObjectName("Log_out");
+        Log_out->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"border-radius:10px;\n"
+"background-color:white;\n"
+"color:black;\n"
+"	font: 700 14pt \"Source Code Pro\";\n"
+"}"));
+
+        gridLayout_7->addWidget(Log_out, 1, 0, 1, 1);
+
+
+        gridLayout_8->addLayout(gridLayout_7, 1, 1, 1, 2);
+
+        horizontalSpacer_7 = new QSpacerItem(238, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_8->addItem(horizontalSpacer_7, 1, 3, 1, 1);
+
+        verticalSpacer_7 = new QSpacerItem(20, 346, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_8->addItem(verticalSpacer_7, 2, 1, 1, 1);
+
+        stackedWidget->addWidget(page_8);
+
+        formLayout_2->setWidget(0, QFormLayout::ItemRole::FieldRole, stackedWidget);
+
+
+        gridLayout_4->addLayout(formLayout_2, 0, 0, 1, 1);
+
 
         retranslateUi(SecDialog);
 
@@ -608,16 +906,16 @@ public:
         history->setText(QCoreApplication::translate("SecDialog", "History", nullptr));
         settings->setText(QCoreApplication::translate("SecDialog", "ABOUT US", nullptr));
         startgame->setText(QCoreApplication::translate("SecDialog", "START GAME", nullptr));
+        back_3->setText(QCoreApplication::translate("SecDialog", "back", nullptr));
         PVP->setText(QCoreApplication::translate("SecDialog", "PVP", nullptr));
         PVE->setText(QCoreApplication::translate("SecDialog", "PVE", nullptr));
-        back_3->setText(QCoreApplication::translate("SecDialog", "back", nullptr));
+        back_2->setText(QCoreApplication::translate("SecDialog", "back", nullptr));
         normal->setText(QCoreApplication::translate("SecDialog", "Normal", nullptr));
         infinite->setText(QCoreApplication::translate("SecDialog", "Infinite", nullptr));
-        back_2->setText(QCoreApplication::translate("SecDialog", "back", nullptr));
+        back->setText(QCoreApplication::translate("SecDialog", "back", nullptr));
+        hard->setText(QCoreApplication::translate("SecDialog", "Hard", nullptr));
         easy->setText(QCoreApplication::translate("SecDialog", "Easy", nullptr));
         medium->setText(QCoreApplication::translate("SecDialog", "Medium", nullptr));
-        hard->setText(QCoreApplication::translate("SecDialog", "Hard", nullptr));
-        back->setText(QCoreApplication::translate("SecDialog", "back", nullptr));
         pushButton_4->setText(QCoreApplication::translate("SecDialog", "7", nullptr));
         pushButton_6->setText(QCoreApplication::translate("SecDialog", "6", nullptr));
         pushButton_9->setText(QCoreApplication::translate("SecDialog", "3", nullptr));
@@ -668,6 +966,30 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">LOSSES</span></p></body></html>", nullptr));
+        losses_num->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:700;\">0</span></p></body></html>", nullptr));
+        wins_label->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">WINS</p></body></html>", nullptr));
+        wins_num->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:700;\">15</span></p></body></html>", nullptr));
         draws_label->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -684,30 +1006,6 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:700;\">6</span></p></body></html>", nullptr));
-        losses_num->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:700;\">0</span></p></body></html>", nullptr));
-        wins_num->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:700;\">15</span></p></body></html>", nullptr));
-        wins_label->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">WINS</p></body></html>", nullptr));
         textEdit_9->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -723,7 +1021,7 @@ public:
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:16pt;\">ROLA REFAT</span></p></body></html>", nullptr));
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:16pt;\">ROLA REFAAT</span></p></body></html>", nullptr));
         textEdit_25->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -748,6 +1046,15 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:16pt;\">MOHAMED ABDULLAH</span></p></body></html>", nullptr));
+        username->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt; font-weight:700;\">USER NAME:</span></p></body></html>", nullptr));
+        Log_out->setText(QCoreApplication::translate("SecDialog", "LOG OUT", nullptr));
     } // retranslateUi
 
 };
