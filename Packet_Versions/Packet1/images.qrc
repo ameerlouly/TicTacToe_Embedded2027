@@ -15,5 +15,7 @@
         <file>Graphics/Ready/HomeButton_Hover_Graphic.png</file>
         <file>Graphics/Ready/HomeButton_Pressed_Graphic.png</file>
         <file>Graphics/Ready/XO_StartMenu_Graphic.png</file>
+        <file>Graphics/Ready/PvP_icon.png</file>
+        <file>Graphics/Ready/PvE_icon.png</file>
     </qresource>
 </RCC>

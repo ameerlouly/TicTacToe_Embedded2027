@@ -52,6 +52,8 @@ public:
     QSpacerItem *verticalSpacer_13;
     QWidget *LoginSignup_Page;
     QGridLayout *gridLayout_9;
+    QSpacerItem *verticalSpacer_9;
+    QSpacerItem *verticalSpacer_8;
     QGridLayout *gridLayout_8;
     QSpacerItem *verticalSpacer_6;
     QSpacerItem *horizontalSpacer_8;
@@ -101,10 +103,6 @@ public:
     QSpacerItem *horizontalSpacer_5;
     QSpacerItem *horizontalSpacer_7;
     QSpacerItem *verticalSpacer_7;
-    QSpacerItem *horizontalSpacer_10;
-    QSpacerItem *verticalSpacer_8;
-    QSpacerItem *verticalSpacer_9;
-    QSpacerItem *horizontalSpacer_9;
     QWidget *ResetAccount_Page;
     QGridLayout *gridLayout_13;
     QSpacerItem *verticalSpacer_16;
@@ -153,7 +151,7 @@ public:
     {
         if (MainWindow1->objectName().isEmpty())
             MainWindow1->setObjectName("MainWindow1");
-        MainWindow1->resize(1064, 987);
+        MainWindow1->resize(707, 812);
         QFont font;
         font.setBold(false);
         MainWindow1->setFont(font);
@@ -174,11 +172,11 @@ public:
         ChooseRegisterType_Page->setObjectName("ChooseRegisterType_Page");
         gridLayout_5 = new QGridLayout(ChooseRegisterType_Page);
         gridLayout_5->setObjectName("gridLayout_5");
-        verticalSpacer_4 = new QSpacerItem(20, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer_4 = new QSpacerItem(20, 10, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::MinimumExpanding);
 
         gridLayout_5->addItem(verticalSpacer_4, 0, 1, 1, 1);
 
-        horizontalSpacer_3 = new QSpacerItem(20, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        horizontalSpacer_3 = new QSpacerItem(20, 20, QSizePolicy::Policy::MinimumExpanding, QSizePolicy::Policy::Minimum);
 
         gridLayout_5->addItem(horizontalSpacer_3, 1, 0, 1, 1);
 
@@ -272,15 +270,15 @@ public:
 
         gridLayout_3->addWidget(groupBox_3, 1, 1, 1, 1);
 
-        verticalSpacer = new QSpacerItem(20, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer = new QSpacerItem(20, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::MinimumExpanding);
 
         gridLayout_3->addItem(verticalSpacer, 0, 1, 1, 1);
 
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::MinimumExpanding, QSizePolicy::Policy::Minimum);
 
         gridLayout_3->addItem(horizontalSpacer, 1, 0, 1, 1);
 
-        verticalSpacer_2 = new QSpacerItem(20, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer_2 = new QSpacerItem(20, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::MinimumExpanding);
 
         gridLayout_3->addItem(verticalSpacer_2, 2, 1, 1, 1);
 
@@ -291,11 +289,11 @@ public:
 
         gridLayout_5->addLayout(gridLayout_3, 1, 1, 1, 1);
 
-        horizontalSpacer_4 = new QSpacerItem(20, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        horizontalSpacer_4 = new QSpacerItem(20, 20, QSizePolicy::Policy::MinimumExpanding, QSizePolicy::Policy::Minimum);
 
         gridLayout_5->addItem(horizontalSpacer_4, 1, 2, 1, 1);
 
-        verticalSpacer_13 = new QSpacerItem(20, 107, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer_13 = new QSpacerItem(20, 10, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::MinimumExpanding);
 
         gridLayout_5->addItem(verticalSpacer_13, 2, 1, 1, 1);
 
@@ -304,6 +302,14 @@ public:
         LoginSignup_Page->setObjectName("LoginSignup_Page");
         gridLayout_9 = new QGridLayout(LoginSignup_Page);
         gridLayout_9->setObjectName("gridLayout_9");
+        verticalSpacer_9 = new QSpacerItem(20, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::MinimumExpanding);
+
+        gridLayout_9->addItem(verticalSpacer_9, 0, 0, 1, 1);
+
+        verticalSpacer_8 = new QSpacerItem(20, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::MinimumExpanding);
+
+        gridLayout_9->addItem(verticalSpacer_8, 3, 0, 1, 1);
+
         gridLayout_8 = new QGridLayout();
         gridLayout_8->setObjectName("gridLayout_8");
         verticalSpacer_6 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
@@ -684,30 +690,14 @@ public:
         gridLayout_8->addItem(verticalSpacer_7, 2, 1, 1, 1);
 
 
-        gridLayout_9->addLayout(gridLayout_8, 1, 1, 1, 1);
-
-        horizontalSpacer_10 = new QSpacerItem(173, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        gridLayout_9->addItem(horizontalSpacer_10, 1, 2, 1, 1);
-
-        verticalSpacer_8 = new QSpacerItem(20, 12, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
-
-        gridLayout_9->addItem(verticalSpacer_8, 3, 1, 1, 1);
-
-        verticalSpacer_9 = new QSpacerItem(20, 12, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
-
-        gridLayout_9->addItem(verticalSpacer_9, 0, 1, 1, 1);
-
-        horizontalSpacer_9 = new QSpacerItem(173, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        gridLayout_9->addItem(horizontalSpacer_9, 1, 0, 1, 1);
+        gridLayout_9->addLayout(gridLayout_8, 1, 0, 1, 1);
 
         stackedWidget->addWidget(LoginSignup_Page);
         ResetAccount_Page = new QWidget();
         ResetAccount_Page->setObjectName("ResetAccount_Page");
         gridLayout_13 = new QGridLayout(ResetAccount_Page);
         gridLayout_13->setObjectName("gridLayout_13");
-        verticalSpacer_16 = new QSpacerItem(20, 132, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer_16 = new QSpacerItem(20, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::MinimumExpanding);
 
         gridLayout_13->addItem(verticalSpacer_16, 0, 1, 1, 1);
 
@@ -976,7 +966,7 @@ public:
 
         gridLayout_13->addLayout(gridLayout_12, 1, 1, 2, 1);
 
-        verticalSpacer_17 = new QSpacerItem(20, 132, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer_17 = new QSpacerItem(20, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::MinimumExpanding);
 
         gridLayout_13->addItem(verticalSpacer_17, 3, 1, 1, 1);
 

@@ -60,13 +60,19 @@ public:
     QSpacerItem *horizontalSpacer_5;
     QSpacerItem *verticalSpacer_4;
     QWidget *VsPage;
-    QGridLayout *gridLayout_10;
+    QVBoxLayout *verticalLayout_6;
+    QHBoxLayout *horizontalLayout_3;
     QPushButton *back_3;
     QSpacerItem *horizontalSpacer_9;
+    QGridLayout *gridLayout_4;
     QSpacerItem *verticalSpacer_8;
     QSpacerItem *horizontalSpacer_8;
-    QGridLayout *gridLayout_9;
+    QHBoxLayout *horizontalLayout_2;
+    QVBoxLayout *verticalLayout_4;
+    QLabel *label_4;
     QPushButton *PVP;
+    QVBoxLayout *verticalLayout_5;
+    QLabel *label_5;
     QPushButton *PVE;
     QSpacerItem *horizontalSpacer_10;
     QSpacerItem *verticalSpacer_9;
@@ -430,6 +436,39 @@ public:
 "	padding-bottom: 10px;\n"
 "	min-height: 100px;\n"
 "	min-width: 400px;\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border-radius:40px;\n"
+"	color: white;\n"
+"	font: 500 40pt \"Montserrat\";\n"
+"	background-color: rgba(164, 227, 207, 255);\n"
+"	border-color:black;\n"
+"\n"
+"	padding-left: 40px;\n"
+"	padding-right: 40px;\n"
+"	padding-top: 10px;\n"
+"	padding-bottom: 10px;\n"
+"	min-height: 100px;\n"
+"	min-width: 400px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border-radius:40px;\n"
+"	color: white;\n"
+"	font: 500 40pt \"Montserrat\";\n"
+"	background-color: rgba(84, 204, 190, 255);\n"
+"	border-color:black;\n"
+"\n"
+"	padding-left: 40px;\n"
+"	padding-right: 40px;\n"
+""
+                        "	padding-top: 10px;\n"
+"	padding-bottom: 10px;\n"
+"	min-height: 100px;\n"
+"	min-width: 400px;\n"
 "}"));
 
         verticalLayout_2->addWidget(startgame);
@@ -448,66 +487,168 @@ public:
         stackedWidget->addWidget(HomePage);
         VsPage = new QWidget();
         VsPage->setObjectName("VsPage");
-        gridLayout_10 = new QGridLayout(VsPage);
-        gridLayout_10->setObjectName("gridLayout_10");
+        verticalLayout_6 = new QVBoxLayout(VsPage);
+        verticalLayout_6->setObjectName("verticalLayout_6");
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName("horizontalLayout_3");
+        horizontalLayout_3->setContentsMargins(15, 10, -1, -1);
         back_3 = new QPushButton(VsPage);
         back_3->setObjectName("back_3");
-        back_3->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"background-color:white;\n"
-"color:rgb(0, 0, 0);\n"
-"font: 900 9pt \"Segoe UI\";\n"
+        back_3->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	color: grey;\n"
+"	font: 300 15pt \"Montserrat\";\n"
+"	Background: rgba(0, 0, 0, 0);\n"
+"	border: none;\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	font: 300 15pt \"Montserrat\";\n"
+"	color: rgb(90, 90, 90);\n"
+"	Background: rgba(0, 0, 0, 0);\n"
+"	border: none;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	font: 300 15pt \"Montserrat\";\n"
+"	color: rgb(36, 36, 36);\n"
+"	Background: rgba(0, 0, 0, 0);\n"
+"	border: none;\n"
 "}"));
 
-        gridLayout_10->addWidget(back_3, 0, 0, 1, 1);
+        horizontalLayout_3->addWidget(back_3);
 
         horizontalSpacer_9 = new QSpacerItem(402, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
-        gridLayout_10->addItem(horizontalSpacer_9, 0, 1, 1, 2);
+        horizontalLayout_3->addItem(horizontalSpacer_9);
 
-        verticalSpacer_8 = new QSpacerItem(20, 289, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
-        gridLayout_10->addItem(verticalSpacer_8, 0, 3, 1, 1);
+        verticalLayout_6->addLayout(horizontalLayout_3);
 
-        horizontalSpacer_8 = new QSpacerItem(188, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        gridLayout_4 = new QGridLayout();
+        gridLayout_4->setObjectName("gridLayout_4");
+        verticalSpacer_8 = new QSpacerItem(17, 98, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
-        gridLayout_10->addItem(horizontalSpacer_8, 1, 0, 1, 2);
+        gridLayout_4->addItem(verticalSpacer_8, 0, 1, 1, 1);
 
-        gridLayout_9 = new QGridLayout();
-        gridLayout_9->setObjectName("gridLayout_9");
+        horizontalSpacer_8 = new QSpacerItem(48, 69, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_4->addItem(horizontalSpacer_8, 1, 0, 1, 1);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(130);
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setSpacing(30);
+        verticalLayout_4->setObjectName("verticalLayout_4");
+        label_4 = new QLabel(VsPage);
+        label_4->setObjectName("label_4");
+        label_4->setMinimumSize(QSize(74, 40));
+        label_4->setPixmap(QPixmap(QString::fromUtf8(":/Logic/Graphics/Ready/PvP_icon.png")));
+
+        verticalLayout_4->addWidget(label_4);
+
         PVP = new QPushButton(VsPage);
         PVP->setObjectName("PVP");
-        PVP->setMinimumSize(QSize(250, 70));
-        PVP->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"border-radius:15px;\n"
-"background-color:white;\n"
-"color:rgb(0, 0, 0);\n"
-"font: 900 9pt \"Segoe UI\";\n"
+        PVP->setMinimumSize(QSize(200, 100));
+        PVP->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background-color:qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(186, 200, 224, 255), stop:1 rgba(106, 133, 182, 255));\n"
+"	color: white;\n"
+"	font: 700 40pt \"Montserrat\";\n"
+"	min-width: 200px;\n"
+"	min-height: 100px;\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background-color:rgba(186, 200, 224, 255);\n"
+"	color: white;\n"
+"	font: 700 40pt \"Montserrat\";\n"
+"	min-width: 200px;\n"
+"	min-height: 100px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background-color:rgba(106, 133, 182, 255);\n"
+"	color: white;\n"
+"	font: 700 40pt \"Montserrat\";\n"
+"	min-width: 200px;\n"
+"	min-height: 100px;\n"
 "}"));
 
-        gridLayout_9->addWidget(PVP, 0, 0, 1, 1);
+        verticalLayout_4->addWidget(PVP);
+
+
+        horizontalLayout_2->addLayout(verticalLayout_4);
+
+        verticalLayout_5 = new QVBoxLayout();
+        verticalLayout_5->setSpacing(30);
+        verticalLayout_5->setObjectName("verticalLayout_5");
+        label_5 = new QLabel(VsPage);
+        label_5->setObjectName("label_5");
+        label_5->setMinimumSize(QSize(74, 40));
+        label_5->setPixmap(QPixmap(QString::fromUtf8(":/Logic/Graphics/Ready/PvE_icon.png")));
+
+        verticalLayout_5->addWidget(label_5);
 
         PVE = new QPushButton(VsPage);
         PVE->setObjectName("PVE");
-        PVE->setMinimumSize(QSize(250, 70));
-        PVE->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"border-radius:15px;\n"
-"background-color:white;\n"
-"color:rgb(0, 0, 0);\n"
-"font: 900 9pt \"Segoe UI\";\n"
+        PVE->setMinimumSize(QSize(200, 100));
+        PVE->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(222, 152, 227, 255), stop:1 rgba(162, 84, 204, 255));\n"
+"	color: white;\n"
+"	font: 700 40pt \"Montserrat\";\n"
+"	min-width: 200px;\n"
+"	min-height: 100px;\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background-color: rgba(222, 152, 227, 255);\n"
+"	color: white;\n"
+"	font: 700 40pt \"Montserrat\";\n"
+"	min-width: 200px;\n"
+"	min-height: 100px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background-color: rgba(162, 84, 204, 255);\n"
+"	color: white;\n"
+"	font: 700 40pt \"Montserrat\";\n"
+"	min-width: 200px;\n"
+"	min-height: 100px;\n"
 "}"));
 
-        gridLayout_9->addWidget(PVE, 0, 1, 1, 1);
+        verticalLayout_5->addWidget(PVE);
 
 
-        gridLayout_10->addLayout(gridLayout_9, 1, 2, 1, 2);
+        horizontalLayout_2->addLayout(verticalLayout_5);
 
-        horizontalSpacer_10 = new QSpacerItem(277, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
-        gridLayout_10->addItem(horizontalSpacer_10, 1, 4, 1, 1);
+        gridLayout_4->addLayout(horizontalLayout_2, 1, 1, 1, 1);
 
-        verticalSpacer_9 = new QSpacerItem(20, 288, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        horizontalSpacer_10 = new QSpacerItem(58, 69, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
-        gridLayout_10->addItem(verticalSpacer_9, 2, 3, 1, 1);
+        gridLayout_4->addItem(horizontalSpacer_10, 1, 2, 1, 1);
+
+        verticalSpacer_9 = new QSpacerItem(17, 108, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_4->addItem(verticalSpacer_9, 2, 1, 1, 1);
+
+
+        verticalLayout_6->addLayout(gridLayout_4);
 
         stackedWidget->addWidget(VsPage);
         GameMode = new QWidget();
@@ -1161,7 +1302,7 @@ public:
 
         retranslateUi(SecDialog);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(SecDialog);
@@ -1180,8 +1321,10 @@ public:
         settings->setText(QCoreApplication::translate("SecDialog", "ABOUT US", nullptr));
         label_3->setText(QString());
         startgame->setText(QCoreApplication::translate("SecDialog", "START GAME", nullptr));
-        back_3->setText(QCoreApplication::translate("SecDialog", "back", nullptr));
+        back_3->setText(QCoreApplication::translate("SecDialog", "< Back", nullptr));
+        label_4->setText(QString());
         PVP->setText(QCoreApplication::translate("SecDialog", "PVP", nullptr));
+        label_5->setText(QString());
         PVE->setText(QCoreApplication::translate("SecDialog", "PVE", nullptr));
         back_2->setText(QCoreApplication::translate("SecDialog", "back", nullptr));
         normal->setText(QCoreApplication::translate("SecDialog", "Normal", nullptr));

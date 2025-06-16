@@ -138,6 +138,7 @@ debug/qrc_images.cpp: ../../images.qrc \
 		../../Graphics/Ready/History_Button_Pressed_Graphic.png \
 		../../Graphics/Ready/x_symbol.png \
 		../../Graphics/Ready/HomeButton_Graphic.png \
+		../../Graphics/Ready/PvE_icon.png \
 		../../Graphics/Ready/History_Button_Hover_Graphic.png \
 		../../Graphics/Ready/Login\ Graphic-02.png \
 		../../Graphics/Ready/HomeButton_Pressed_Graphic.png \
@@ -149,6 +150,7 @@ debug/qrc_images.cpp: ../../images.qrc \
 		../../Graphics/Ready/xo_grid.png \
 		../../Graphics/Ready/Login\ Background.png \
 		../../Graphics/Ready/Login\ Graphic.png \
+		../../Graphics/Ready/PvP_icon.png \
 		../../Graphics/Ready/XO_StartMenu_Graphic.png
 	C:\Qt\6.9.0\mingw_64\bin\rcc.exe -name images --no-zstd ..\..\images.qrc -o debug\qrc_images.cpp
 
