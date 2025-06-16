@@ -30,7 +30,7 @@ jobs:
 
     - name: Build test_0.pro inside Packets_Versions/build
       run: |
-        cd TicTacToe_Embedded2027/Packets_Versions/Packet1/build
+        cd Packets_Versions/Packet1/build
         qmake test_0.pro
         mingw32-make
 
