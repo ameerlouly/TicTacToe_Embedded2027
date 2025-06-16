@@ -1,248 +1,36 @@
-name: Qt Application CI/CD
+name: Build Packets_Versions/build/test_0.pro
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
-  release: 
-    types: [published]
-
-env:
-  PROJECT_PATH: TicTacToe_Embedded2027/Packet_Versions/Packet1
-  PRO_FILE: test_0.pro
 
 jobs:
-  build-windows:
+  build:
     runs-on: windows-latest
-    
+
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Install Qt
-      id: install-qt
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Debug workspace
+      run: |
+        pwd
+        ls -R
+
+    - name: Install Qt (MinGW)
       uses: jurplel/install-qt-action@v3
       with:
-        version: '6.5.0'
-        host: 'windows'
-        target: 'desktop'
+        version: '6.8.3'
         arch: 'win64_mingw'
-        modules: 'qtcharts qtnetworkauth qtmultimedia'
-        cache: true
-    
-    - name: Setup MinGW
-      uses: egor-tensin/setup-mingw@v2
-      with:
-        platform: x64
-        version: 12
 
-    - name: Build Application
+    - name: Add Qt bin directory to PATH
+      run: echo "C:\Qt\6.8.3\mingw_64\bin" >> $env:GITHUB_PATH
+
+    - name: Build test_0.pro inside Packets_Versions/build
       run: |
-        cd $env:PROJECT_PATH
-        qmake $env:PRO_FILE CONFIG+=release
-        mingw32-make -j${env:NUMBER_OF_PROCESSORS}
-      shell: powershell
+        cd TicTacToe_Embedded2027/Packets_Versions/Packet1/build
+        qmake test_0.pro
+        mingw32-make
 
-    - name: Deploy Qt Libraries
-      run: |
-        cd $env:PROJECT_PATH
-        mkdir deploy
-        copy release\test_0.exe deploy\
-        windeployqt deploy\test_0.exe --release --compiler-runtime --force
-      shell: powershell
-
-    - name: Package MinGW Runtime
-      run: |
-        cd $env:PROJECT_PATH/deploy
-        # Detect actual MinGW path dynamically from install-qt-action output
-        $mingw_bin = "${{ steps.install-qt.outputs.Qt6_DIR }}\..\..\..\Tools\mingw1120_64\bin"
-        if (Test-Path "$mingw_bin\libgcc_s_seh-1.dll") {
-          copy "$mingw_bin\libgcc_s_seh-1.dll" .
-          copy "$mingw_bin\libstdc++-6.dll" .
-          copy "$mingw_bin\libwinpthread-1.dll" .
-        } else {
-          Write-Output "MinGW runtime not found. Skipping."
-        }
-      shell: powershell
-      continue-on-error: true
-
-    - name: Upload Windows Build
-      uses: actions/upload-artifact@v4
-      with:
-        name: windows-x64-release
-        path: |
-          ${{ env.PROJECT_PATH }}/deploy/
-        retention-days: 30
-
-  build-linux:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v4
-    
-    - name: Install Qt
-      uses: jurplel/install-qt-action@v3
-      with:
-        version: '6.5.0'
-        host: 'linux'
-        target: 'desktop'
-        arch: 'gcc_64'
-        modules: 'qtcharts qtnetworkauth qtmultimedia'
-        cache: true
-    
-    - name: Install Linux Dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y build-essential libgl1-mesa-dev
-    
-    - name: Build Application
-      run: |
-        cd $PROJECT_PATH
-        qmake $PRO_FILE CONFIG+=release
-        make -j$(nproc)
-
-    - name: Upload Linux Build
-      uses: actions/upload-artifact@v4
-      with:
-        name: linux-x64-release
-        path: |
-          ${{ env.PROJECT_PATH }}/test_0
-        retention-days: 30
-
-  build-macos:
-    runs-on: macos-latest
-    
-    steps:
-    - uses: actions/checkout@v4
-    
-    - name: Install Qt
-      uses: jurplel/install-qt-action@v3
-      with:
-        version: '6.5.0'
-        host: 'mac'
-        target: 'desktop'
-        modules: 'qtcharts qtnetworkauth qtmultimedia'
-        cache: true
-    
-    - name: Build Application
-      run: |
-        cd $PROJECT_PATH
-        qmake $PRO_FILE CONFIG+=release
-        make -j$(sysctl -n hw.ncpu)
-    
-    - name: Upload macOS Build
-      uses: actions/upload-artifact@v4
-      with:
-        name: macos-universal-release
-        path: |
-          ${{ env.PROJECT_PATH }}/*.app
-        retention-days: 30
-
-  code-quality:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v4
-    
-    - name: Install Qt for Analysis
-      uses: jurplel/install-qt-action@v3
-      with:
-        version: '6.5.0'
-        host: 'linux'
-        target: 'desktop'
-        arch: 'gcc_64'
-        cache: true
-    
-    - name: Install Analysis Tools
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y cppcheck clang-format clang-tidy
-    
-    - name: Run Static Analysis
-      run: |
-        cd $PROJECT_PATH
-        cppcheck --enable=all --inconclusive --xml --xml-version=2 \
-          --suppress=missingIncludeSystem \
-          *.cpp *.h \
-          2> cppcheck_report.xml || true
-    
-    - name: Check Code Formatting
-      run: |
-        cd $PROJECT_PATH
-        find . -name "*.cpp" -o -name "*.h" | \
-        xargs clang-format -style=file -dry-run -Werror || true
-    
-    - name: Upload Analysis Results
-      uses: actions/upload-artifact@v4
-      with:
-        name: code-analysis
-        path: |
-          ${{ env.PROJECT_PATH }}/cppcheck_report.xml
-        retention-days: 7
-
-  tests:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
-    
-    steps:
-    - uses: actions/checkout@v4
-    
-    - name: Install Qt
-      uses: jurplel/install-qt-action@v3
-      with:
-        version: '6.5.0'
-        host: 'linux'
-        target: 'desktop'
-        arch: 'gcc_64'
-        modules: 'qttest'
-        cache: true
-    
-    - name: Build Tests
-      run: |
-        cd $PROJECT_PATH
-        echo "Configure your tests here"
-
-    - name: Run Unit Tests
-      run: |
-        echo "Run your tests here"
-
-  deploy:
-    needs: [build-windows, build-linux, build-macos]
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    
-    steps:
-    - name: Download All Artifacts
-      uses: actions/download-artifact@v4
-    
-    - name: Create Development Release
-      uses: softprops/action-gh-release@v1
-      with:
-        tag_name: dev-${{ github.sha }}
-        name: Development Build ${{ github.sha }}
-        prerelease: true
-        files: |
-          windows-x64-release/**
-          linux-x64-release/**
-          macos-universal-release/**
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  release:
-    needs: [build-windows, build-linux, build-macos, code-quality]
-    runs-on: ubuntu-latest
-    if: github.event_name == 'release'
-    
-    steps:
-    - name: Download All Artifacts
-      uses: actions/download-artifact@v4
-    
-    - name: Upload Release Assets
-      uses: softprops/action-gh-release@v1
-      with:
-        files: |
-          windows-x64-release/**
-          linux-x64-release/**
-          macos-universal-release/**
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
