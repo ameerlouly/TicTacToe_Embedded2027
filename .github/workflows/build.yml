@@ -1,56 +1,47 @@
-name: CI/CD for Qt qmake Project with MinGW
+name: Auto Build Changed Qt Projects with MinGW
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  release:
-    types: [published]
 
 jobs:
-  build:
+  detect-and-build:
     runs-on: windows-latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0   # عشان نقدر نقارن مع الـ main
 
     - name: Install Qt (MinGW)
       uses: jurplel/install-qt-action@v3
       with:
-        version: '6.8.3'
+        version: '6.5.0'
         arch: 'win64_mingw'
 
     - name: Add Qt bin directory to PATH
       run: echo "C:\Qt\6.5.0\mingw_64\bin" >> $env:GITHUB_PATH
 
-    - name: Build project using qmake + mingw32-make
+    - name: Detect changed projects
+      id: detect
       run: |
-        qmake test_0.pro
-        mingw32-make
+        git fetch origin main
+        echo "Changed folders:"
+        git diff --name-only origin/main HEAD | cut -d/ -f1 | sort | uniq > changed.txt
+        cat changed.txt
 
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: build-output
-        path: |
-          .\*.exe
-          .\release\*.exe
-          .\debug\*.exe
+    - name: Build changed projects
+      run: |
+        for /F %%i in (changed.txt) do (
+          echo Building %%i...
+          if exist %%i\%%i.pro (
+            qmake %%i\%%i.pro
+            mingw32-make
+          ) else (
+            echo No .pro file in %%i, skipping.
+          )
+        )
 
-  release:
-    if: github.event_name == 'release'
-    runs-on: windows-latest
-    needs: build
-    steps:
-    - name: Download build artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: build-output
-
-    - name: Upload release assets
-      uses: softprops/action-gh-release@v1
-      with:
-        files: |
-          *.exe
-          release/*.exe
