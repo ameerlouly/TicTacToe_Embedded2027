@@ -707,7 +707,7 @@ public:
         ResetAccount_Page->setObjectName("ResetAccount_Page");
         gridLayout_13 = new QGridLayout(ResetAccount_Page);
         gridLayout_13->setObjectName("gridLayout_13");
-        verticalSpacer_16 = new QSpacerItem(20, 111, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer_16 = new QSpacerItem(20, 132, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
         gridLayout_13->addItem(verticalSpacer_16, 0, 1, 1, 1);
 
@@ -976,7 +976,7 @@ public:
 
         gridLayout_13->addLayout(gridLayout_12, 1, 1, 2, 1);
 
-        verticalSpacer_17 = new QSpacerItem(20, 110, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer_17 = new QSpacerItem(20, 132, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
         gridLayout_13->addItem(verticalSpacer_17, 3, 1, 1, 1);
 
@@ -988,7 +988,7 @@ public:
 
         retranslateUi(MainWindow1);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow1);

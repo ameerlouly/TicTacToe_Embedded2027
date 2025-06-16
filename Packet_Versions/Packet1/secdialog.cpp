@@ -56,14 +56,15 @@ void SecDialog::isGuest()
     {
         ui->history->setEnabled(false);
         ui->HistoryWarning->show();
-        ui->HistoryWarning->setText("You Are In Guset Mode");
-        ui->UsenameTag->setText("Welcome , Pls Sign In First");
+        ui->HistoryWarning->setText("Guest Mode");
+        ui->UsenameTag->setText("Welcome, Pls Sign In First");
         ui->Log_out->setText("Regstier Now");
     }
     else
     {
         ui->history->setEnabled(true);
         ui->UsenameTag->setText("Welcome " + QString::fromStdString(G_UserName));
+        ui->HistoryWarning->setText(QString::fromStdString(G_UserName));
         ui->Log_out->setText("LogOut");
         ui->HistoryWarning->hide();
     }

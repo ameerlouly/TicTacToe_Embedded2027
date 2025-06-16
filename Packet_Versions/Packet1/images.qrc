@@ -10,6 +10,10 @@
         <file>Graphics/Ready/o_symbol.png</file>
         <file>Graphics/Ready/x_symbol.png</file>
         <file>Graphics/Ready/xo_grid.png</file>
+        <file>Graphics/Ready/History_Button_Hover_Graphic.png</file>
+        <file>Graphics/Ready/History_Button_Pressed_Graphic.png</file>
+        <file>Graphics/Ready/HomeButton_Hover_Graphic.png</file>
+        <file>Graphics/Ready/HomeButton_Pressed_Graphic.png</file>
         <file>Graphics/Ready/XO_StartMenu_Graphic.png</file>
     </qresource>
 </RCC>
