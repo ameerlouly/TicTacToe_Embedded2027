@@ -1,4 +1,4 @@
-name: Build Packet_Versions/test_0.pro
+name: Build Packets_Versions/build/test_0.pro
 
 on:
   push:
@@ -23,9 +23,8 @@ jobs:
     - name: Add Qt bin directory to PATH
       run: echo "C:\Qt\6.8.3\mingw_64\bin" >> $env:GITHUB_PATH
 
-    - name: Build test_0.pro inside Packet_Versions
+    - name: Build test_0.pro inside Packets_Versions/build
       run: |
-        cd Packet_Versions
+        cd Packets_Versions/build
         qmake test_0.pro
         mingw32-make
-
