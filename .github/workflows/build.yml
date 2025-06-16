@@ -30,6 +30,6 @@ jobs:
 
     - name: Build test_0.pro inside Packets_Versions
       run: |
-        cd ../../Packets_Versions/Packet1
+        cd ../../Packet_Versions/Packet1
         qmake test_0.pro
         mingw32-make
