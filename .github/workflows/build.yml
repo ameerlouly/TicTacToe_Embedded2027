@@ -1,35 +1,263 @@
-name: Build Packets_Versions/build/test_0.pro
-
+name: Qt Application CI/CD
 on:
   push:
-    branches: [ main ]
+    branches: [ main, develop ]
   pull_request:
     branches: [ main ]
+  release:
+    types: [published]
 
 jobs:
-  build:
+  build-windows:
     runs-on: windows-latest
-
+    
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Debug workspace
-      run: |
-        pwd
-        ls -R
-
-    - name: Install Qt (MinGW)
+    - uses: actions/checkout@v4
+    
+    - name: Install Qt
       uses: jurplel/install-qt-action@v3
       with:
-        version: '6.8.3'
+        version: '6.5.0'
+        host: 'windows'
+        target: 'desktop'
         arch: 'win64_mingw'
-
-    - name: Add Qt bin directory to PATH
-      run: echo "C:\Qt\6.8.3\mingw_64\bin" >> $env:GITHUB_PATH
-
-    - name: Build test_0.pro inside Packets_Versions/build
+        modules: 'qtcharts qtnetworkauth qtmultimedia'
+        cache: true
+    
+    - name: Setup MinGW
+      uses: egor-tensin/setup-mingw@v2
+      with:
+        platform: x64
+        version: 12
+    
+    - name: Configure Project
       run: |
-        cd TicTacToe_Embedded2027/Packets_Versions/build
-        qmake test_0.pro
-        mingw32-make
+        cd Packet_Versions/Packet1
+        qmake test_0.pro CONFIG+=release
+      shell: cmd
+    
+    - name: Build Application
+      run: |
+        cd Packet_Versions/Packet1
+        mingw32-make -j%NUMBER_OF_PROCESSORS%
+      shell: cmd
+    
+    - name: Deploy Qt Libraries
+      run: |
+        cd Packet_Versions/Packet1
+        mkdir deploy
+        copy release\test_0.exe deploy\
+        windeployqt deploy\test_0.exe --release --compiler-runtime --force
+      shell: cmd
+    
+    - name: Package MinGW Runtime
+      run: |
+        cd Packet_Versions/Packet1/deploy
+        # نسخ مكتبات MinGW المطلوبة
+        copy "%Qt6_DIR%\..\..\..\Tools\mingw1120_64\bin\libgcc_s_seh-1.dll" .
+        copy "%Qt6_DIR%\..\..\..\Tools\mingw1120_64\bin\libstdc++-6.dll" .
+        copy "%Qt6_DIR%\..\..\..\Tools\mingw1120_64\bin\libwinpthread-1.dll" .
+      shell: cmd
+      continue-on-error: true
+    
+    - name: Create Windows Installer (Optional)
+      run: |
+        # يمكنك استخدام NSIS أو Inno Setup هنا
+        echo "Installer creation step - implement based on your needs"
+    
+    - name: Upload Windows Build
+      uses: actions/upload-artifact@v4
+      with:
+        name: windows-x64-release
+        path: |
+          Packet_Versions/Packet1/deploy/
+        retention-days: 30
+
+  build-linux:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '6.5.0'
+        host: 'linux'
+        target: 'desktop'
+        arch: 'gcc_64'
+        modules: 'qtcharts qtnetworkauth qtmultimedia'
+        cache: true
+    
+    - name: Install Linux Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential libgl1-mesa-dev
+    
+    - name: Build Application
+      run: |
+        cd Packet_Versions/Packet1
+        qmake test_0.pro CONFIG+=release
+        make -j$(nproc)
+    
+    - name: Create AppImage (Optional)
+      run: |
+        # خطوات إنشاء AppImage
+        echo "AppImage creation - implement if needed"
+    
+    - name: Upload Linux Build
+      uses: actions/upload-artifact@v4
+      with:
+        name: linux-x64-release
+        path: |
+          Packet_Versions/Packet1/test_0
+        retention-days: 30
+
+  build-macos:
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '6.5.0'
+        host: 'mac'
+        target: 'desktop'
+        modules: 'qtcharts qtnetworkauth qtmultimedia'
+        cache: true
+    
+    - name: Build Application
+      run: |
+        cd Packet_Versions/Packet1
+        qmake test_0.pro CONFIG+=release
+        make -j$(sysctl -n hw.ncpu)
+    
+    - name: Create DMG (Optional)
+      run: |
+        cd Packet_Versions/Packet1
+        macdeployqt test_0.app -dmg
+    
+    - name: Upload macOS Build
+      uses: actions/upload-artifact@v4
+      with:
+        name: macos-universal-release
+        path: |
+          Packet_Versions/Packet1/*.dmg
+          Packet_Versions/Packet1/*.app
+        retention-days: 30
+
+  code-quality:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Qt for Analysis
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '6.5.0'
+        host: 'linux'
+        target: 'desktop'
+        arch: 'gcc_64'
+        cache: true
+    
+    - name: Install Analysis Tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cppcheck clang-format clang-tidy
+    
+    - name: Run Static Analysis
+      run: |
+        cd Packet_Versions/Packet1
+        cppcheck --enable=all --inconclusive --xml --xml-version=2 \
+          --suppress=missingIncludeSystem \
+          *.cpp *.h \
+          2> cppcheck_report.xml || true
+    
+    - name: Check Code Formatting
+      run: |
+        cd Packet_Versions/Packet1
+        find . -name "*.cpp" -o -name "*.h" | \
+        xargs clang-format -style=file -dry-run -Werror || true
+    
+    - name: Upload Analysis Results
+      uses: actions/upload-artifact@v4
+      with:
+        name: code-analysis
+        path: |
+          Packet_Versions/Packet1/cppcheck_report.xml
+        retention-days: 7
+
+  tests:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '6.5.0'
+        host: 'linux'
+        target: 'desktop'
+        arch: 'gcc_64'
+        modules: 'qttest'
+        cache: true
+    
+    - name: Build Tests
+      run: |
+        cd Packet_Versions/Packet1
+        # إذا كان عندك ملف tests منفصل
+        # qmake tests.pro CONFIG+=debug
+        # make
+        echo "Configure your tests here"
+    
+    - name: Run Unit Tests
+      run: |
+        # تشغيل الاختبارات
+        # ./tests/test_runner
+        echo "Run your tests here"
+
+  deploy:
+    needs: [build-windows, build-linux, build-macos]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+    - name: Download All Artifacts
+      uses: actions/download-artifact@v4
+    
+    - name: Create Development Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: dev-${{ github.sha }}
+        name: Development Build ${{ github.sha }}
+        prerelease: true
+        files: |
+          windows-x64-release/**
+          linux-x64-release/**
+          macos-universal-release/**
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  release:
+    needs: [build-windows, build-linux, build-macos, code-quality]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release'
+    
+    steps:
+    - name: Download All Artifacts
+      uses: actions/download-artifact@v4
+    
+    - name: Upload Release Assets
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          windows-x64-release/**
+          linux-x64-release/**
+          macos-universal-release/**
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
