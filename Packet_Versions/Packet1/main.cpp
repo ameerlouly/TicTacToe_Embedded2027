@@ -11,7 +11,7 @@
  *
  * ----------------------------------------------------
  */
-rola
+
 #include"main.h"
 #include <QStackedWidget>
 #include <QDir>
