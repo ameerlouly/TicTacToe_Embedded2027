@@ -1,15 +1,20 @@
+/*
+    secdialog.cpp
+    Description: Contains Defintions to UI Slots for Game Window
+*/
+
+
 #include "secdialog.h"
 #include "ui_secdialog.h"
 #include "main.h"
 #include "AItest.h"
 
 
-QPushButton* GridButtons[9];
-bool inHistory;
+QPushButton* GridButtons[9];    // Grid Buttons for the Game
+bool inHistory;                 // Checks whether if you are in history mode or not for displaying history of Game mode
 
-QTimer *myTimer[10]= {nullptr};
-
-int ToBePlayed[10]={0};
+QTimer *myTimer[10] = {nullptr}; // Timer to Display history
+int ToBePlayed[10] = { 0 };      // Store Data to be display in history
 
 
 SecDialog::SecDialog(QWidget *parent)
@@ -45,14 +50,18 @@ SecDialog::~SecDialog()
 }
 
 
-void SecDialog::isGuest(){
-    if(REG_Mode==GUSET){
+void SecDialog::isGuest()
+{
+    if(REG_Mode==GUSET)
+    {
         ui->history->setEnabled(false);
         ui->HistoryWarning->show();
         ui->HistoryWarning->setText("You Are In Guset Mode");
         ui->UsenameTag->setText("Welcome , Pls Sign In First");
         ui->Log_out->setText("Regstier Now");
-    }else{
+    }
+    else
+    {
         ui->history->setEnabled(true);
         ui->UsenameTag->setText("Welcome " + QString::fromStdString(G_UserName));
         ui->Log_out->setText("LogOut");
@@ -60,16 +69,20 @@ void SecDialog::isGuest(){
     }
 }
 
-void SecDialog::OldGameHistory(int his[9]){
+void SecDialog::OldGameHistory(int his[9])
+{
     ShowGrid();
     //ui->tableWidget_history->hide();
     ui->stackedWidget->setCurrentIndex(4);
 
 
 
-    for(int i=0; i<9; i++){
-        if(myTimer[i] != nullptr){
-            if (myTimer[i]->isActive()) {
+    for(int i=0; i<9; i++)
+    {
+        if(myTimer[i] != nullptr)
+        {
+            if (myTimer[i]->isActive())
+            {
                 myTimer[i]->stop();
                 myTimer[i]->deleteLater();
             }
@@ -78,7 +91,8 @@ void SecDialog::OldGameHistory(int his[9]){
         myTimer[i] = new QTimer(Gamewindow2);
     }
 
-    for (int i = 0; i < 9; i++) {
+    for (int i = 0; i < 9; i++)
+    {
         ToBePlayed[i] = his[i];
         qDebug() << "resceved:" << ToBePlayed[i];
         clicked[i]=3;
@@ -91,8 +105,10 @@ void SecDialog::OldGameHistory(int his[9]){
     }
 }
 
-void  SecDialog::ShowGrid(){
-    for(int i=0; i<9; i++){
+void  SecDialog::ShowGrid()
+{
+    for(int i=0; i<9; i++)
+    {
         ToBePlayed[i]=0;
         GridButtons[i]->show();
         GridButtons[i]->setText("");
@@ -123,19 +139,19 @@ void SecDialog::on_PVE_clicked()
 
 void SecDialog::on_normal_clicked()
 {
-      ui->stackedWidget->setCurrentIndex(4);
-        mode=1;
-      ReMatch();
-      ShowGrid();
+    ui->stackedWidget->setCurrentIndex(4);
+    mode=1;
+    ReMatch();
+    ShowGrid();
 }
 
 
 void SecDialog::on_infinite_clicked()
 {
-      ui->stackedWidget->setCurrentIndex(4);
-        mode=2;
-      ReMatch();
-      ShowGrid();
+    ui->stackedWidget->setCurrentIndex(4);
+    mode=2;
+    ReMatch();
+    ShowGrid();
 }
 
 
@@ -168,42 +184,48 @@ void SecDialog::on_hard_clicked()
 
 void SecDialog::on_back_clicked()
 {
-      ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(1);
 }
 
 
 void SecDialog::on_back_2_clicked()
 {
-      ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(1);
 }
 
 
 void SecDialog::on_back_3_clicked()
 {
-      ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget->setCurrentIndex(0);
 }
 
 void SecDialog::on_tableWidget_itemClicked(QTableWidgetItem *item)
 {
-    if (item->row() == 2 && item->column() == 2) {
+    if (item->row() == 2 && item->column() == 2)
+    {
         ui->stackedWidget->setCurrentIndex(4);
     }
 }
 
 void SecDialog::on_back_4_clicked()
 {
-    if(ui->ShureExit->text()=="" && !ui->label->isVisible()){
+    if(ui->ShureExit->text()=="" && !ui->label->isVisible())
+    {
         ui->ShureExit->setText("Are you sure you want to exit the game?");
     }
-    else{
+    else
+    {
         ui->ShureExit->setText("");
-        if(inHistory){
+        if(inHistory)
+        {
             ui->stackedWidget->setCurrentIndex(5);
         }
-        else if(3 == mode){
+        else if(3 == mode)
+        {
             ui->stackedWidget->setCurrentIndex(3);
         }
-        else if(1 == mode || 2 == mode ){
+        else if(1 == mode || 2 == mode )
+        {
             ui->stackedWidget->setCurrentIndex(2);
         }
 
@@ -226,14 +248,13 @@ void SecDialog::on_history_clicked()
     ui->wins->setText(QString::number(TotalWins));
     ui->losses->setText(QString::number(TotalLoses));
     ui->draws->setText(QString::number(TotalDraws));
-
 }
 
 
 void SecDialog::on_settings_clicked()
 {
     inHistory=false;
-   ui->stackedWidget->setCurrentIndex(6);
+    ui->stackedWidget->setCurrentIndex(6);
 }
 
 
@@ -244,7 +265,6 @@ void SecDialog::on_profile_clicked()
     ui->UsenameTag->show();
     ui->Log_out->show();
     isGuest();
-
 }
 
 void SecDialog::on_grid0_clicked()
@@ -321,7 +341,8 @@ void SecDialog::on_Rematch_clicked()
 void SecDialog::on_GameReview_clicked()
 {
     ShowGrid();
-    for (int i = 0; i < 9; i++) {
+    for (int i = 0; i < 9; i++)
+    {
         int delay = 500 + i * 500;
         QTimer::singleShot(delay, Gamewindow2, [=]() {nextHistorymove(HistoryRecorder[i], GridButtons);});
     }
@@ -335,18 +356,25 @@ void SecDialog::on_Log_out_clicked()
     LoginWindow->show();
     //ui->NameInProfile->hide();
 
-    if (QFile::exists(AuthPath)) {
-        if (QFile::remove(AuthPath)) {
+    if (QFile::exists(AuthPath))
+    {
+        if (QFile::remove(AuthPath))
+        {
             qDebug() << "File deleted:" << AuthPath;
-        } else {
+        }
+        else
+        {
             qDebug() << "Failed to delete file:" << AuthPath;
         }
-    } else {
+    }
+    else
+    {
         qDebug() << "File does not exist:" << AuthPath;
     }
 }
 
-void SecDialog::returnBacktoPage0InGame(){
+void SecDialog::returnBacktoPage0InGame()
+{
     ui->stackedWidget->setCurrentIndex(0);
 }
 

@@ -14,7 +14,6 @@ SOURCES += \
     PasswordHash.cpp \
     database.cpp \
     main.cpp \
-    mainwindow.cpp \
     mainwindow1.cpp \
     secdialog.cpp \
     sqlite3.c
@@ -22,7 +21,6 @@ SOURCES += \
 HEADERS += \
     AItest.h \
     main.h \
-    mainwindow.h \
     mainwindow1.h \
     queue.h \
     secdialog.h \
@@ -30,7 +28,6 @@ HEADERS += \
     sqlite3ext.h
 
 FORMS += \
-    mainwindow.ui \
     mainwindow1.ui \
     secdialog.ui
 

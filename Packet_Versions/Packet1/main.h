@@ -1,7 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include"mainwindow.h"
 #include"mainwindow1.h"
 #include"secdialog.h"
 
@@ -17,6 +16,14 @@
 #include "AItest.h"
 #include "sqlite3.h"
 
+#define NORMAL_MODE         1
+#define INFINITE_MODE       2
+#define AIVS_MODE           3
+
+#define UNPLAYED            0
+#define X_PLAYED            1
+#define Y_PLAYED            2
+#define DRAW_GAME           3
 
 
 extern sqlite3* db;
@@ -28,6 +35,7 @@ void AIPlay(int *MoveNum ,int*x,QPushButton * Grid[9],QPushButton* Rematch,QPush
 
 extern int clicked[9];
 
+// Utility Function to Check which window is opened
 void CheckWin(int clicked[9] ,sqlite3 *db,QPushButton* Rematch,QPushButton* ReView,QLabel* GameResultLabel);
 
 int GridToNum(QPushButton *Button);
@@ -48,7 +56,7 @@ void ReMatch();
 
 
 
-void GuestMode(MainWindow *window);
+void GuestMode(SecDialog *window);
 extern int mode;
 
 extern unsigned short int DiffModeForAI;
@@ -57,7 +65,6 @@ extern short int REG_Mode;
 
 using namespace std;
 
-extern MainWindow* GameWindow;
 extern MainWindow1* LoginWindow;
 extern SecDialog* Gamewindow2;
 

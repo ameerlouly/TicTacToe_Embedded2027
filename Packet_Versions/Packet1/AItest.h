@@ -1,37 +1,35 @@
 #ifndef C2690D40_52F0_4909_82F9_C64668A5665E
 #define C2690D40_52F0_4909_82F9_C64668A5665E
-#include <iostream>   // For input/output
-#include <limits>     // For INT_MAX, INT_MIN
-#include "sqlite3.h"
-#include <string>
-#include <QString>
-#include <QStackedWidget>
-#include <QTableWidget>
-#include <QTableWidgetItem>
-#include "mainwindow.h"
-#include"mainwindow1.h"
-#include "secdialog.h"
+#include    <iostream>   // For input/output
+#include    <limits>     // For INT_MAX, INT_MIN
+#include    "sqlite3.h"
+#include    <string>
+#include    <QString>
+#include    <QStackedWidget>
+#include    <QTableWidget>
+#include    <QTableWidgetItem>
+#include    "mainwindow1.h"
+#include    "secdialog.h"
 
 
 #define AuthPath  "session.ac"
 
 using namespace std;
 
-#define AI_MODE 1
-#define PVP_MODE 2
-#define IPVP_MODE 3
-#define LOGOUT 9
+#define AI_MODE      1
+#define PVP_MODE     2
+#define IPVP_MODE    3
+#define LOGOUT       9
 
-#define SIGNUP 1
-#define LOGIN 2
-#define GUSET 3
+#define SIGNUP       1
+#define LOGIN        2
+#define GUSET        3
 
-// #define savepath "عباس الضوو.acc"
-extern QStackedWidget* reset_pointer;
 
 // Difficulty levels
-enum Difficulty {
-    EASY=1,
+enum Difficulty
+{
+    EASY = 1,
     MEDIUM,
     HARD
 };
@@ -64,6 +62,7 @@ std::pair<int, int> findBestMove(int board[3][3], Difficulty level);
 
 void viewGameHistory(sqlite3* db , QTableWidget* table );
 
+// Password Hashing Functions
 string sha256(const string& str);
 string sha512(const string& str);
 string sha224(const string& str);

@@ -1,9 +1,20 @@
+/*
+    mainwindow1.cpp
+    Description: Contains Defintions to UI Slots for Login Window
+*/
+
 #include "mainwindow1.h"
-#include"mainwindow.h"
 #include "ui_mainwindow1.h"
 #include "main.h"
 #include "AItest.h"
 #include <QMessageBox>
+
+using namespace std;
+
+std::string username;
+std::string passcode;
+std::string passcodeConf;
+std::string PhoneNumber;
 
 MainWindow1::MainWindow1(QWidget *parent)
     : QMainWindow(parent)
@@ -19,7 +30,6 @@ MainWindow1::~MainWindow1()
 
 void MainWindow1::initializeButtons()
 {
-    reset_pointer=ui->stackedWidget;
     ui->WrongWarning->hide();
 }
 
