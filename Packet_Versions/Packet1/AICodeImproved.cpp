@@ -64,37 +64,90 @@ int evaluate(int board[3][3]) {
     return 0;
 }
 
-int minimax(shared_ptr<Node> node, int depth) {
+// int minimax(shared_ptr<Node> node, int depth) {
+//     int score = evaluate(node->board);
+//     if (score == 10 || score == -10)
+//         return score - depth;
+//     if (!isMovesLeft(node->board))
+//         return 0;
+
+//     if (node->isMax) {
+//         int best = numeric_limits<int>::min();
+//         for (int i = 0; i < 3; i++)
+//             for (int j = 0; j < 3; j++)
+//                 if (node->board[i][j] == 0) {
+//                     node->board[i][j] = AI;
+//                     auto child = make_shared<Node>(node->board, false);
+//                     node->board[i][j] = 0;
+//                     node->children.push_back(child);
+//                     best = max(best, minimax(child, depth + 1));
+//                 }
+//         node->score = best;
+//         return best;
+//     } else {
+//         int best = numeric_limits<int>::max();
+//         for (int i = 0; i < 3; i++)
+//             for (int j = 0; j < 3; j++)
+//                 if (node->board[i][j] == 0) {
+//                     node->board[i][j] = PLAYER;
+//                     auto child = make_shared<Node>(node->board, true);
+//                     node->board[i][j] = 0;
+//                     node->children.push_back(child);
+//                     best = min(best, minimax(child, depth + 1));
+//                 }
+//         node->score = best;
+//         return best;
+//     }
+// }
+int minimax(shared_ptr<Node> node, int depth, int alpha, int beta) {
     int score = evaluate(node->board);
+
     if (score == 10 || score == -10)
         return score - depth;
+
     if (!isMovesLeft(node->board))
         return 0;
 
     if (node->isMax) {
         int best = numeric_limits<int>::min();
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 3; j++)
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 if (node->board[i][j] == 0) {
                     node->board[i][j] = AI;
                     auto child = make_shared<Node>(node->board, false);
                     node->board[i][j] = 0;
                     node->children.push_back(child);
-                    best = max(best, minimax(child, depth + 1));
+
+                    int val = minimax(child, depth + 1, alpha, beta);
+                    best = max(best, val);
+                    alpha = max(alpha, best);
+
+                    if (beta <= alpha)
+                        break;
                 }
+            }
+        }
         node->score = best;
         return best;
     } else {
         int best = numeric_limits<int>::max();
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 3; j++)
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 if (node->board[i][j] == 0) {
                     node->board[i][j] = PLAYER;
                     auto child = make_shared<Node>(node->board, true);
                     node->board[i][j] = 0;
                     node->children.push_back(child);
-                    best = min(best, minimax(child, depth + 1));
+
+                    int val = minimax(child, depth + 1, alpha, beta);
+                    best = min(best, val);
+                    beta = min(beta, best);
+
+                    if (beta <= alpha)
+                        break;
                 }
+            }
+        }
         node->score = best;
         return best;
     }
@@ -132,7 +185,7 @@ pair<int, int> findBestMove(int board[3][3], Difficulty level) {
         auto root = make_shared<Node>(board, false);
         board[i][j] = 0;
 
-        int moveVal = minimax(root, 0);
+        int moveVal = minimax(root, 0, numeric_limits<int>::min(), numeric_limits<int>::max());
         if (moveVal > bestVal) {
             bestVal = moveVal;
             bestMove = move;
