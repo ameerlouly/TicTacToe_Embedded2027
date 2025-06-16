@@ -1,5 +1,4 @@
-
-name: Auto Build Changed Qt Projects with MinGW
+name: Build Packet_Versions/test_0.pro
 
 on:
   push:
@@ -8,14 +7,12 @@ on:
     branches: [ main ]
 
 jobs:
-  detect-and-build:
+  build:
     runs-on: windows-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-      with:
-        fetch-depth: 0  
 
     - name: Install Qt (MinGW)
       uses: jurplel/install-qt-action@v3
@@ -26,28 +23,9 @@ jobs:
     - name: Add Qt bin directory to PATH
       run: echo "C:\Qt\6.8.3\mingw_64\bin" >> $env:GITHUB_PATH
 
-    - name: Detect changed projects
-      id: detect
+    - name: Build test_0.pro inside Packet_Versions
       run: |
-        git fetch origin main
-        echo "Changed folders:"
-        git diff --name-only origin/main HEAD | cut -d/ -f1 | sort | uniq > changed.txt
-        cat changed.txt
+        cd Packet_Versions
+        qmake test_0.pro
+        mingw32-make
 
-    - name: Build changed projects
-      run: |
-        Get-Content changed.txt | ForEach-Object {
-          $project = $_.Trim()
-          if ($project) {
-            Write-Output "Building $project..."
-            $proFile = "$project/$project.pro"
-            
-            if (Test-Path $proFile) {
-              # استخدام المسارات مع علامات الاقتباس للتعامل مع المسافات
-              qmake "`"$proFile`""
-              mingw32-make
-            } else {
-              Write-Output "No .pro file in $project, skipping."
-            }
-          }
-        }
