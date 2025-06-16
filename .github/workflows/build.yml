@@ -1,4 +1,4 @@
-name: Build Packets_Versions/packet1/test_0.pro
+name: Build Packet_Versions/packet1/test_0.pro
 
 on:
   push:
