@@ -31,7 +31,7 @@ QT_BEGIN_NAMESPACE
 class Ui_SecDialog
 {
 public:
-    QVBoxLayout *verticalLayout_3;
+    QVBoxLayout *verticalLayout_7;
     QGroupBox *TopBar;
     QHBoxLayout *horizontalLayout;
     QLabel *label_2;
@@ -77,20 +77,24 @@ public:
     QSpacerItem *horizontalSpacer_10;
     QSpacerItem *verticalSpacer_9;
     QWidget *GameMode;
-    QGridLayout *gridLayout_19;
+    QVBoxLayout *verticalLayout_3;
+    QHBoxLayout *horizontalLayout_4;
     QPushButton *back_2;
     QSpacerItem *horizontalSpacer_22;
+    QGridLayout *gridLayout_6;
     QSpacerItem *verticalSpacer_18;
     QSpacerItem *horizontalSpacer_21;
     QGridLayout *gridLayout_18;
-    QPushButton *normal;
     QPushButton *infinite;
+    QPushButton *normal;
     QSpacerItem *horizontalSpacer_23;
     QSpacerItem *verticalSpacer_19;
     QWidget *DifficultyPage;
-    QGridLayout *gridLayout_5;
+    QVBoxLayout *verticalLayout_8;
+    QHBoxLayout *horizontalLayout_5;
     QPushButton *back;
     QSpacerItem *horizontalSpacer_2;
+    QGridLayout *gridLayout_5;
     QSpacerItem *verticalSpacer;
     QSpacerItem *horizontalSpacer;
     QGridLayout *gridLayout_2;
@@ -163,10 +167,10 @@ public:
 "{\n"
 "	border-radius: 0px;\n"
 "}"));
-        verticalLayout_3 = new QVBoxLayout(SecDialog);
-        verticalLayout_3->setSpacing(0);
-        verticalLayout_3->setObjectName("verticalLayout_3");
-        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_7 = new QVBoxLayout(SecDialog);
+        verticalLayout_7->setSpacing(0);
+        verticalLayout_7->setObjectName("verticalLayout_7");
+        verticalLayout_7->setContentsMargins(0, 0, 0, 0);
         TopBar = new QGroupBox(SecDialog);
         TopBar->setObjectName("TopBar");
         TopBar->setStyleSheet(QString::fromUtf8("QGroupBox\n"
@@ -188,7 +192,7 @@ public:
         horizontalLayout->addItem(horizontalSpacer_11);
 
 
-        verticalLayout_3->addWidget(TopBar);
+        verticalLayout_7->addWidget(TopBar);
 
         MainLayout = new QHBoxLayout();
         MainLayout->setSpacing(0);
@@ -202,7 +206,7 @@ public:
 "}"));
         verticalLayout = new QVBoxLayout(SideBar);
         verticalLayout->setObjectName("verticalLayout");
-        verticalLayout->setContentsMargins(0, -1, 0, -1);
+        verticalLayout->setContentsMargins(0, 15, 0, -1);
         HistoryWarning = new QLabel(SideBar);
         HistoryWarning->setObjectName("HistoryWarning");
         HistoryWarning->setStyleSheet(QString::fromUtf8("QLabel\n"
@@ -427,7 +431,7 @@ public:
 "	border-radius:40px;\n"
 "	color: white;\n"
 "	font: 500 40pt \"Montserrat\";\n"
-"	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.2, stop:0 rgba(84, 204, 190, 255), stop:1 rgba(164, 227, 207, 255));\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0.7, x2:0.5, y2:0.2, stop:0 rgba(84, 204, 190, 255), 		stop:1 rgba(164, 227, 207, 255));\n"
 "	border-color:black;\n"
 "\n"
 "	padding-left: 40px;\n"
@@ -653,147 +657,317 @@ public:
         stackedWidget->addWidget(VsPage);
         GameMode = new QWidget();
         GameMode->setObjectName("GameMode");
-        gridLayout_19 = new QGridLayout(GameMode);
-        gridLayout_19->setObjectName("gridLayout_19");
+        verticalLayout_3 = new QVBoxLayout(GameMode);
+        verticalLayout_3->setObjectName("verticalLayout_3");
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName("horizontalLayout_4");
+        horizontalLayout_4->setContentsMargins(15, 10, -1, -1);
         back_2 = new QPushButton(GameMode);
         back_2->setObjectName("back_2");
-        back_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"color:rgb(0, 0, 0);\n"
-"font: 900 9pt \"Segoe UI\";\n"
+        back_2->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	color: grey;\n"
+"	font: 300 15pt \"Montserrat\";\n"
+"	Background: rgba(0, 0, 0, 0);\n"
+"	border: none;\n"
 "}\n"
-""));
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	font: 300 15pt \"Montserrat\";\n"
+"	color: rgb(90, 90, 90);\n"
+"	Background: rgba(0, 0, 0, 0);\n"
+"	border: none;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	font: 300 15pt \"Montserrat\";\n"
+"	color: rgb(36, 36, 36);\n"
+"	Background: rgba(0, 0, 0, 0);\n"
+"	border: none;\n"
+"}"));
 
-        gridLayout_19->addWidget(back_2, 0, 0, 1, 1);
+        horizontalLayout_4->addWidget(back_2);
 
         horizontalSpacer_22 = new QSpacerItem(414, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
-        gridLayout_19->addItem(horizontalSpacer_22, 0, 1, 1, 2);
+        horizontalLayout_4->addItem(horizontalSpacer_22);
 
-        verticalSpacer_18 = new QSpacerItem(20, 250, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
-        gridLayout_19->addItem(verticalSpacer_18, 0, 3, 1, 1);
+        verticalLayout_3->addLayout(horizontalLayout_4);
 
-        horizontalSpacer_21 = new QSpacerItem(298, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        gridLayout_6 = new QGridLayout();
+        gridLayout_6->setObjectName("gridLayout_6");
+        verticalSpacer_18 = new QSpacerItem(20, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::MinimumExpanding);
 
-        gridLayout_19->addItem(horizontalSpacer_21, 1, 0, 1, 2);
+        gridLayout_6->addItem(verticalSpacer_18, 0, 1, 1, 1);
+
+        horizontalSpacer_21 = new QSpacerItem(20, 20, QSizePolicy::Policy::MinimumExpanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer_21, 1, 0, 1, 1);
 
         gridLayout_18 = new QGridLayout();
         gridLayout_18->setObjectName("gridLayout_18");
-        normal = new QPushButton(GameMode);
-        normal->setObjectName("normal");
-        normal->setMinimumSize(QSize(250, 70));
-        normal->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"border-radius:10px;\n"
-"background-color:white;\n"
-"color:rgb(0, 0, 0);\n"
-"font: 900 9pt \"Segoe UI\";\n"
-"}\n"
-""));
-
-        gridLayout_18->addWidget(normal, 0, 0, 1, 1);
-
+        gridLayout_18->setVerticalSpacing(70);
         infinite = new QPushButton(GameMode);
         infinite->setObjectName("infinite");
         infinite->setMinimumSize(QSize(250, 70));
-        infinite->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"border-radius:10px;\n"
-"background-color:white;\n"
-"color:rgb(0, 0, 0);\n"
-"font: 900 9pt \"Segoe UI\";\n"
+        infinite->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(222, 152, 227, 255), stop:1 rgba(162, 84, 204, 255));\n"
+"	color: white;\n"
+"	font: 700 30pt \"Montserrat\";\n"
 "}\n"
-""));
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background-color: rgba(222, 152, 227, 255);\n"
+"	color: white;\n"
+"	font: 700 30pt \"Montserrat\";\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background-color: rgba(162, 84, 204, 255);\n"
+"	color: white;\n"
+"	font: 700 30pt \"Montserrat\";\n"
+"}"));
 
         gridLayout_18->addWidget(infinite, 1, 0, 1, 1);
 
+        normal = new QPushButton(GameMode);
+        normal->setObjectName("normal");
+        normal->setMinimumSize(QSize(250, 70));
+        normal->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:15px;\n"
+"	color: white;\n"
+"	font: 500 30pt \"Montserrat\";\n"
+"	background-color:qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(186, 200, 224, 255), stop:1 rgba(106, 133, 182, 255));\n"
+"	border-color:black;\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border-radius:15px;\n"
+"	color: white;\n"
+"	font: 500 30pt \"Montserrat\";\n"
+"	background-color: rgba(186, 200, 224, 255);\n"
+"	border-color:black;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border-radius:15px;\n"
+"	color: white;\n"
+"	font: 500 30pt \"Montserrat\";\n"
+"	background-color: rgba(106, 133, 182, 255);\n"
+"	border-color:black;\n"
+"}"));
 
-        gridLayout_19->addLayout(gridLayout_18, 1, 2, 1, 2);
+        gridLayout_18->addWidget(normal, 0, 0, 1, 1);
 
-        horizontalSpacer_23 = new QSpacerItem(336, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
-        gridLayout_19->addItem(horizontalSpacer_23, 1, 4, 1, 1);
+        gridLayout_6->addLayout(gridLayout_18, 1, 1, 1, 1);
 
-        verticalSpacer_19 = new QSpacerItem(20, 250, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        horizontalSpacer_23 = new QSpacerItem(20, 20, QSizePolicy::Policy::MinimumExpanding, QSizePolicy::Policy::Minimum);
 
-        gridLayout_19->addItem(verticalSpacer_19, 2, 3, 1, 1);
+        gridLayout_6->addItem(horizontalSpacer_23, 1, 2, 1, 1);
+
+        verticalSpacer_19 = new QSpacerItem(20, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::MinimumExpanding);
+
+        gridLayout_6->addItem(verticalSpacer_19, 2, 1, 1, 1);
+
+
+        verticalLayout_3->addLayout(gridLayout_6);
 
         stackedWidget->addWidget(GameMode);
         DifficultyPage = new QWidget();
         DifficultyPage->setObjectName("DifficultyPage");
-        gridLayout_5 = new QGridLayout(DifficultyPage);
-        gridLayout_5->setObjectName("gridLayout_5");
+        verticalLayout_8 = new QVBoxLayout(DifficultyPage);
+        verticalLayout_8->setObjectName("verticalLayout_8");
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName("horizontalLayout_5");
+        horizontalLayout_5->setContentsMargins(15, 10, -1, -1);
         back = new QPushButton(DifficultyPage);
         back->setObjectName("back");
-        back->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"color:rgb(0, 0, 0);\n"
-"font: 900 9pt \"Segoe UI\";\n"
+        back->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	color: grey;\n"
+"	font: 300 15pt \"Montserrat\";\n"
+"	Background: rgba(0, 0, 0, 0);\n"
+"	border: none;\n"
 "}\n"
-""));
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	font: 300 15pt \"Montserrat\";\n"
+"	color: rgb(90, 90, 90);\n"
+"	Background: rgba(0, 0, 0, 0);\n"
+"	border: none;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	font: 300 15pt \"Montserrat\";\n"
+"	color: rgb(36, 36, 36);\n"
+"	Background: rgba(0, 0, 0, 0);\n"
+"	border: none;\n"
+"}"));
 
-        gridLayout_5->addWidget(back, 0, 0, 1, 1);
+        horizontalLayout_5->addWidget(back);
 
         horizontalSpacer_2 = new QSpacerItem(318, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
-        gridLayout_5->addItem(horizontalSpacer_2, 0, 1, 1, 2);
+        horizontalLayout_5->addItem(horizontalSpacer_2);
 
-        verticalSpacer = new QSpacerItem(20, 242, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
-        gridLayout_5->addItem(verticalSpacer, 0, 3, 1, 1);
+        verticalLayout_8->addLayout(horizontalLayout_5);
 
-        horizontalSpacer = new QSpacerItem(241, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        gridLayout_5 = new QGridLayout();
+        gridLayout_5->setObjectName("gridLayout_5");
+        verticalSpacer = new QSpacerItem(20, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::MinimumExpanding);
 
-        gridLayout_5->addItem(horizontalSpacer, 1, 0, 1, 2);
+        gridLayout_5->addItem(verticalSpacer, 0, 1, 1, 1);
+
+        horizontalSpacer = new QSpacerItem(20, 20, QSizePolicy::Policy::MinimumExpanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_5->addItem(horizontalSpacer, 1, 0, 1, 1);
 
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setObjectName("gridLayout_2");
+        gridLayout_2->setVerticalSpacing(50);
         hard = new QPushButton(DifficultyPage);
         hard->setObjectName("hard");
-        hard->setMinimumSize(QSize(300, 50));
-        hard->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"border-radius:10px;\n"
-"background-color:white;\n"
-"color:rgb(0, 0, 0);\n"
-"font: 900 9pt \"Segoe UI\";\n"
+        hard->setMinimumSize(QSize(300, 70));
+        hard->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:10px;\n"
+"	color: white;\n"
+"	font: 700 25pt \"Montserrat\";\n"
+"	border-radius:15px;\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(237, 76, 120, 255), stop:1 rgba(241, 40, 0, 255));\n"
+"	min-height: 70px;\n"
 "}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border-radius:10px;\n"
+"	color: white;\n"
+"	font: 700 25pt \"Montserrat\";\n"
+"	border-radius:15px;\n"
+"	background-color:rgba(237, 76, 120, 255);\n"
+"	min-height: 70px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border-radius:10px;\n"
+"	color: white;\n"
+"	font: 700 25pt \"Montserrat\";\n"
+"	border-radius:15px;\n"
+"	background-color: rgba(241, 40, 0, 255);\n"
+"	min-height: 70px;\n"
+"}\n"
+"\n"
 ""));
 
         gridLayout_2->addWidget(hard, 2, 0, 1, 1);
 
         easy = new QPushButton(DifficultyPage);
         easy->setObjectName("easy");
-        easy->setMinimumSize(QSize(300, 50));
-        easy->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"border-radius:10px;\n"
-"background-color:white;\n"
-"color:rgb(0, 0, 0);\n"
-"font: 900 9pt \"Segoe UI\";\n"
+        easy->setMinimumSize(QSize(300, 70));
+        easy->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:10px;\n"
+"	color: white;\n"
+"	font: 700 25pt \"Montserrat\";\n"
+"	border-radius:15px;\n"
+"	\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0.00558659 rgba(121, 191, 134, 255), stop:1 rgba(0, 133, 49, 255));\n"
+"\n"
+"	min-height: 70px;\n"
 "}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border-radius:10px;\n"
+"	color: white;\n"
+"	font: 700 25pt \"Montserrat\";\n"
+"	border-radius:15px;\n"
+"	background-color: rgba(121, 191, 134, 255);\n"
+"	min-height: 70px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border-radius:10px;\n"
+"	color: white;\n"
+"	font: 700 25pt \"Montserrat\";\n"
+"	border-radius:15px;\n"
+"	background-color: rgba(0, 133, 49, 255);\n"
+"	min-height: 70px;\n"
+"}\n"
+"\n"
 ""));
 
         gridLayout_2->addWidget(easy, 0, 0, 1, 1);
 
         medium = new QPushButton(DifficultyPage);
         medium->setObjectName("medium");
-        medium->setMinimumSize(QSize(300, 50));
-        medium->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"border-radius:10px;\n"
-"background-color:white;\n"
-"color:rgb(0, 0, 0);\n"
-"font: 900 9pt \"Segoe UI\";\n"
+        medium->setMinimumSize(QSize(300, 70));
+        medium->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:10px;\n"
+"	color: white;\n"
+"	font: 700 25pt \"Montserrat\";\n"
+"	border-radius:15px;\n"
+"	\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(247, 147, 30, 255), stop:1 rgba(241, 90, 36, 255));\n"
+"	min-height: 70px;\n"
 "}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border-radius:10px;\n"
+"	color: white;\n"
+"	font: 700 25pt \"Montserrat\";\n"
+"	border-radius:15px;\n"
+"	background-color: rgba(247, 147, 30, 255);\n"
+"	min-height: 70px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border-radius:10px;\n"
+"	color: white;\n"
+"	font: 700 25pt \"Montserrat\";\n"
+"	border-radius:15px;\n"
+"	background-color: rgba(241, 90, 36, 255);\n"
+"	min-height: 70px;\n"
+"}\n"
+"\n"
 ""));
 
         gridLayout_2->addWidget(medium, 1, 0, 1, 1);
 
 
-        gridLayout_5->addLayout(gridLayout_2, 1, 2, 1, 3);
+        gridLayout_5->addLayout(gridLayout_2, 1, 1, 1, 1);
 
-        horizontalSpacer_3 = new QSpacerItem(335, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        horizontalSpacer_3 = new QSpacerItem(20, 20, QSizePolicy::Policy::MinimumExpanding, QSizePolicy::Policy::Minimum);
 
-        gridLayout_5->addItem(horizontalSpacer_3, 1, 5, 1, 1);
+        gridLayout_5->addItem(horizontalSpacer_3, 1, 2, 1, 1);
 
-        verticalSpacer_2 = new QSpacerItem(20, 241, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer_2 = new QSpacerItem(20, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::MinimumExpanding);
 
-        gridLayout_5->addItem(verticalSpacer_2, 2, 4, 1, 1);
+        gridLayout_5->addItem(verticalSpacer_2, 2, 1, 1, 1);
+
+
+        verticalLayout_8->addLayout(gridLayout_5);
 
         stackedWidget->addWidget(DifficultyPage);
         GamePage = new QWidget();
@@ -1297,12 +1471,12 @@ public:
         MainLayout->addWidget(stackedWidget);
 
 
-        verticalLayout_3->addLayout(MainLayout);
+        verticalLayout_7->addLayout(MainLayout);
 
 
         retranslateUi(SecDialog);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(SecDialog);
@@ -1326,10 +1500,10 @@ public:
         PVP->setText(QCoreApplication::translate("SecDialog", "PVP", nullptr));
         label_5->setText(QString());
         PVE->setText(QCoreApplication::translate("SecDialog", "PVE", nullptr));
-        back_2->setText(QCoreApplication::translate("SecDialog", "back", nullptr));
-        normal->setText(QCoreApplication::translate("SecDialog", "Normal", nullptr));
+        back_2->setText(QCoreApplication::translate("SecDialog", "< Back", nullptr));
         infinite->setText(QCoreApplication::translate("SecDialog", "Infinite", nullptr));
-        back->setText(QCoreApplication::translate("SecDialog", "back", nullptr));
+        normal->setText(QCoreApplication::translate("SecDialog", "Normal", nullptr));
+        back->setText(QCoreApplication::translate("SecDialog", "< Back", nullptr));
         hard->setText(QCoreApplication::translate("SecDialog", "Hard", nullptr));
         easy->setText(QCoreApplication::translate("SecDialog", "Easy", nullptr));
         medium->setText(QCoreApplication::translate("SecDialog", "Medium", nullptr));
