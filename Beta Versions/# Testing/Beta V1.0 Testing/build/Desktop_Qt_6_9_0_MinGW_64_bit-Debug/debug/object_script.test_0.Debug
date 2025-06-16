@@ -1,0 +1,14 @@
+debug/AI_Code.o
+debug/PasswordHash.o
+debug/database.o
+debug/gametest.o
+debug/main.o
+debug/mainwindow.o
+debug/mainwindow1.o
+debug/secdialog.o
+debug/sqlite3.o
+debug/qrc_images.o
+debug/moc_gametest.o
+debug/moc_mainwindow.o
+debug/moc_mainwindow1.o
+debug/moc_secdialog.o
