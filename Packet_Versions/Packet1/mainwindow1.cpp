@@ -72,7 +72,7 @@ void MainWindow1::on_Signup_Button_clicked()
 
 void MainWindow1::on_Guest_Button_clicked()
 {
-   REG_Mode=GUSET;
+   REG_Mode = GUEST;
    close();
    Check_data_forLogin(db,Gamewindow2,LoginWindow);
    Gamewindow2->isGuest();
@@ -160,7 +160,8 @@ void MainWindow1::on_Login_User_Button_clicked()
             }
         }
     }
-    else{
+    else
+    {
 
         Check_data_forLogin(db,Gamewindow2,LoginWindow);
         ui->username->clear();
@@ -175,7 +176,9 @@ void MainWindow1::on_Login_User_Button_clicked()
             ui->password_3->clear();
             ui->phone_number->clear();
         }
-    }
+    } // End of If Statement
+
+    Gamewindow2->isGuest();
 }
 
 

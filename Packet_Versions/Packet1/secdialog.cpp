@@ -52,7 +52,7 @@ SecDialog::~SecDialog()
 
 void SecDialog::isGuest()
 {
-    if(REG_Mode==GUSET)
+    if(REG_Mode == GUEST)
     {
         ui->history->setEnabled(false);
         ui->HistoryWarning->show();
@@ -66,7 +66,6 @@ void SecDialog::isGuest()
         ui->UsenameTag->setText("Welcome " + QString::fromStdString(G_UserName));
         ui->HistoryWarning->setText(QString::fromStdString(G_UserName));
         ui->Log_out->setText("LogOut");
-        ui->HistoryWarning->hide();
     }
 }
 
@@ -75,7 +74,6 @@ void SecDialog::OldGameHistory(int his[9])
     ShowGrid();
     //ui->tableWidget_history->hide();
     ui->stackedWidget->setCurrentIndex(4);
-
 
 
     for(int i=0; i<9; i++)
@@ -88,7 +86,7 @@ void SecDialog::OldGameHistory(int his[9])
                 myTimer[i]->deleteLater();
             }
         }
-        myTimer[i] =nullptr;
+        myTimer[i] = nullptr;
         myTimer[i] = new QTimer(Gamewindow2);
     }
 
@@ -110,7 +108,7 @@ void  SecDialog::ShowGrid()
 {
     for(int i=0; i<9; i++)
     {
-        ToBePlayed[i]=0;
+        ToBePlayed[i] = 0;
         GridButtons[i]->show();
         GridButtons[i]->setText("");
         GridButtons[i]->setEnabled(true);
@@ -134,14 +132,14 @@ void SecDialog::on_PVP_clicked()
 void SecDialog::on_PVE_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
-    mode=3;
+    mode = 3;
 }
 
 
 void SecDialog::on_normal_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
-    mode=1;
+    mode = 1;
     ReMatch();
     ShowGrid();
 }
@@ -150,7 +148,7 @@ void SecDialog::on_normal_clicked()
 void SecDialog::on_infinite_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
-    mode=2;
+    mode = 2;
     ReMatch();
     ShowGrid();
 }
@@ -159,7 +157,7 @@ void SecDialog::on_infinite_clicked()
 void SecDialog::on_easy_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
-    levelMode=static_cast<Difficulty>(1);
+    levelMode = static_cast<Difficulty>(1);
     ReMatch();
     ShowGrid();
 }
@@ -168,7 +166,7 @@ void SecDialog::on_easy_clicked()
 void SecDialog::on_medium_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
-    levelMode=static_cast<Difficulty>(2);
+    levelMode = static_cast<Difficulty>(2);
     ReMatch();
     ShowGrid();
 }
@@ -177,7 +175,7 @@ void SecDialog::on_medium_clicked()
 void SecDialog::on_hard_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
-    levelMode=static_cast<Difficulty>(3);
+    levelMode = static_cast<Difficulty>(3);
     ReMatch();
     ShowGrid();
 }
@@ -210,7 +208,7 @@ void SecDialog::on_tableWidget_itemClicked(QTableWidgetItem *item)
 
 void SecDialog::on_back_4_clicked()
 {
-    if(ui->ShureExit->text()=="" && !ui->label->isVisible())
+    if(ui->ShureExit->text() == "" && !ui->label->isVisible())
     {
         ui->ShureExit->setText("Are you sure you want to exit the game?");
     }
@@ -243,7 +241,7 @@ void SecDialog::on_back_4_clicked()
 
 void SecDialog::on_history_clicked()
 {
-    inHistory=true;
+    inHistory = true;
     ui->stackedWidget->setCurrentIndex(5);
     viewGameHistory(db, ui->historyTable);
     ui->wins->setText(QString::number(TotalWins));
@@ -254,14 +252,14 @@ void SecDialog::on_history_clicked()
 
 void SecDialog::on_settings_clicked()
 {
-    inHistory=false;
+    inHistory = false;
     ui->stackedWidget->setCurrentIndex(6);
 }
 
 
 void SecDialog::on_profile_clicked()
 {
-    inHistory=false;
+    inHistory = false;
     ui->stackedWidget->setCurrentIndex(7);
     ui->UsenameTag->show();
     ui->Log_out->show();
@@ -276,55 +274,55 @@ void SecDialog::on_grid0_clicked()
 
 void SecDialog::on_grid1_clicked()
 {
- onButtonClicked(&NextPlayer , ui->grid1,1,&MoveNum ,db,GridButtons, ui->Rematch, ui->GameReview,ui->label);
+    onButtonClicked(&NextPlayer , ui->grid1,1,&MoveNum ,db,GridButtons, ui->Rematch, ui->GameReview,ui->label);
     ui->ShureExit->setText("");
 }
 
 void SecDialog::on_grid2_clicked()
 {
- onButtonClicked(&NextPlayer , ui->grid2,2,&MoveNum ,db,GridButtons, ui->Rematch, ui->GameReview,ui->label);
+    onButtonClicked(&NextPlayer , ui->grid2,2,&MoveNum ,db,GridButtons, ui->Rematch, ui->GameReview,ui->label);
     ui->ShureExit->setText("");
 }
 
 
 void SecDialog::on_grid3_clicked()
 {
- onButtonClicked(&NextPlayer , ui->grid3,3,&MoveNum ,db,GridButtons, ui->Rematch, ui->GameReview,ui->label);
+    onButtonClicked(&NextPlayer , ui->grid3,3,&MoveNum ,db,GridButtons, ui->Rematch, ui->GameReview,ui->label);
     ui->ShureExit->setText("");
 }
 
 
 void SecDialog::on_grid4_clicked()
 {
- onButtonClicked(&NextPlayer , ui->grid4,4,&MoveNum ,db,GridButtons, ui->Rematch, ui->GameReview,ui->label);
+    onButtonClicked(&NextPlayer , ui->grid4,4,&MoveNum ,db,GridButtons, ui->Rematch, ui->GameReview,ui->label);
     ui->ShureExit->setText("");
 }
 
 
 void SecDialog::on_grid5_clicked()
 {
- onButtonClicked(&NextPlayer , ui->grid5,5,&MoveNum ,db,GridButtons, ui->Rematch, ui->GameReview,ui->label);
+    onButtonClicked(&NextPlayer , ui->grid5,5,&MoveNum ,db,GridButtons, ui->Rematch, ui->GameReview,ui->label);
     ui->ShureExit->setText("");
 }
 
 
 void SecDialog::on_grid6_clicked()
 {
- onButtonClicked(&NextPlayer , ui->grid6,6,&MoveNum ,db,GridButtons, ui->Rematch, ui->GameReview,ui->label);
+    onButtonClicked(&NextPlayer , ui->grid6,6,&MoveNum ,db,GridButtons, ui->Rematch, ui->GameReview,ui->label);
     ui->ShureExit->setText("");
 }
 
 
 void SecDialog::on_grid7_clicked()
 {
- onButtonClicked(&NextPlayer , ui->grid7,7,&MoveNum ,db,GridButtons, ui->Rematch, ui->GameReview,ui->label);
+    onButtonClicked(&NextPlayer , ui->grid7,7,&MoveNum ,db,GridButtons, ui->Rematch, ui->GameReview,ui->label);
     ui->ShureExit->setText("");
 }
 
 
 void SecDialog::on_grid8_clicked()
 {
- onButtonClicked(&NextPlayer , ui->grid8,8,&MoveNum ,db,GridButtons, ui->Rematch, ui->GameReview,ui->label);
+    onButtonClicked(&NextPlayer , ui->grid8,8,&MoveNum ,db,GridButtons, ui->Rematch, ui->GameReview,ui->label);
     ui->ShureExit->setText("");
 }
 
@@ -381,7 +379,7 @@ void SecDialog::returnBacktoPage0InGame()
 
 void SecDialog::on_home_clicked()
 {
-    inHistory=false;
+    inHistory = false;
     ui->stackedWidget->setCurrentIndex(0);
 }
 

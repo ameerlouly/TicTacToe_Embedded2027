@@ -230,7 +230,7 @@ bool resetPassword(sqlite3* db, const string& username, const string& phone, con
 
 void saveGameHistory(sqlite3* db, string result , int HistoryMoves[9]) {
 
-    if(REG_Mode != GUSET){
+    if(REG_Mode != GUEST){
         string movesStr;
         for (int i = 0; i < 9; ++i) {
             movesStr += to_string(HistoryMoves[i]);

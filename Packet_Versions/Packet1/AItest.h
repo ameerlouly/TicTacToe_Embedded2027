@@ -23,7 +23,7 @@ using namespace std;
 
 #define SIGNUP       1
 #define LOGIN        2
-#define GUSET        3
+#define GUEST        3
 
 
 // Difficulty levels

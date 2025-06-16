@@ -85,7 +85,7 @@ int main(int argc, char *argv[])
         G_UserName = username;
         if(G_UserName == "Guest")
         {
-            REG_Mode=GUSET;
+            REG_Mode = GUEST;
         }
         //GameWindow->isGuest();
         Gamewindow2->isGuest();
@@ -326,7 +326,7 @@ void CheckWin(int clicked[9] ,sqlite3 *db ,QPushButton* Rematch,QPushButton* ReV
             resultText = "Draw!";
         }
 
-        if(REG_Mode!=GUSET && mode!=2)
+        if(REG_Mode != GUEST && mode != 2)
             saveGameHistory(db, result,HistoryRecorder);
 
         GameResultLabel->setText(resultText);
@@ -402,7 +402,7 @@ void Check_data_forLogin(sqlite3 *db, SecDialog *window, MainWindow1 *window1)
             }
         }
     }
-    else if(REG_Mode == GUSET)
+    else if(REG_Mode == GUEST)
     {
         loginFound = LOG_IN(db, "", "Guest");
         if(loginFound)
