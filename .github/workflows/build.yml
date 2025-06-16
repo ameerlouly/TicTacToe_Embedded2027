@@ -1,3 +1,4 @@
+
 name: Auto Build Changed Qt Projects with MinGW
 
 on:
@@ -35,13 +36,18 @@ jobs:
 
     - name: Build changed projects
       run: |
-        for /F %%i in (changed.txt) do (
-          echo Building %%i...
-          if exist %%i\%%i.pro (
-            qmake %%i\%%i.pro
-            mingw32-make
-          ) else (
-            echo No .pro file in %%i, skipping.
-          )
-        )
-
+        Get-Content changed.txt | ForEach-Object {
+          $project = $_.Trim()
+          if ($project) {
+            Write-Output "Building $project..."
+            $proFile = "$project/$project.pro"
+            
+            if (Test-Path $proFile) {
+              # استخدام المسارات مع علامات الاقتباس للتعامل مع المسافات
+              qmake "`"$proFile`""
+              mingw32-make
+            } else {
+              Write-Output "No .pro file in $project, skipping."
+            }
+          }
+        }
