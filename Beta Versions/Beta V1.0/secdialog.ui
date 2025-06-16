@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1081</width>
-    <height>715</height>
+    <width>1181</width>
+    <height>804</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -124,7 +124,6 @@ background-color: rgb(115, 199, 255);
 border-radius:10px;
 background-color:white;
 color: rgb(0,0,0);
-
 }</string>
             </property>
             <property name="text">
@@ -150,7 +149,7 @@ color: rgb(0,0,0);
      <item row="0" column="1">
       <widget class="QStackedWidget" name="stackedWidget">
        <property name="currentIndex">
-        <number>4</number>
+        <number>5</number>
        </property>
        <widget class="QWidget" name="page_2">
         <layout class="QGridLayout" name="gridLayout_6">
@@ -236,6 +235,13 @@ color: rgb(0,0,0);
         <layout class="QGridLayout" name="gridLayout_10">
          <item row="0" column="0">
           <widget class="QPushButton" name="back_3">
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+background-color:white;
+color:rgb(0, 0, 0);
+font: 900 9pt &quot;Segoe UI&quot;;
+}</string>
+           </property>
            <property name="text">
             <string>back</string>
            </property>
@@ -294,7 +300,8 @@ color: rgb(0,0,0);
               <string notr="true">QPushButton{
 border-radius:15px;
 background-color:white;
-
+color:rgb(0, 0, 0);
+font: 900 9pt &quot;Segoe UI&quot;;
 }</string>
              </property>
              <property name="text">
@@ -314,7 +321,8 @@ background-color:white;
               <string notr="true">QPushButton{
 border-radius:15px;
 background-color:white;
-
+color:rgb(0, 0, 0);
+font: 900 9pt &quot;Segoe UI&quot;;
 }</string>
              </property>
              <property name="text">
@@ -356,6 +364,13 @@ background-color:white;
         <layout class="QGridLayout" name="gridLayout_19">
          <item row="0" column="0">
           <widget class="QPushButton" name="back_2">
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+color:rgb(0, 0, 0);
+font: 900 9pt &quot;Segoe UI&quot;;
+}
+</string>
+           </property>
            <property name="text">
             <string>back</string>
            </property>
@@ -414,8 +429,10 @@ background-color:white;
               <string notr="true">QPushButton{
 border-radius:10px;
 background-color:white;
-
-}</string>
+color:rgb(0, 0, 0);
+font: 900 9pt &quot;Segoe UI&quot;;
+}
+</string>
              </property>
              <property name="text">
               <string>Normal</string>
@@ -434,8 +451,10 @@ background-color:white;
               <string notr="true">QPushButton{
 border-radius:10px;
 background-color:white;
-
-}</string>
+color:rgb(0, 0, 0);
+font: 900 9pt &quot;Segoe UI&quot;;
+}
+</string>
              </property>
              <property name="text">
               <string>Infinite</string>
@@ -476,6 +495,13 @@ background-color:white;
         <layout class="QGridLayout" name="gridLayout_5">
          <item row="0" column="0">
           <widget class="QPushButton" name="back">
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+color:rgb(0, 0, 0);
+font: 900 9pt &quot;Segoe UI&quot;;
+}
+</string>
+           </property>
            <property name="text">
             <string>back</string>
            </property>
@@ -530,6 +556,15 @@ background-color:white;
                <height>50</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+border-radius:10px;
+background-color:white;
+color:rgb(0, 0, 0);
+font: 900 9pt &quot;Segoe UI&quot;;
+}
+</string>
+             </property>
              <property name="text">
               <string>Hard</string>
              </property>
@@ -543,6 +578,15 @@ background-color:white;
                <height>50</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+border-radius:10px;
+background-color:white;
+color:rgb(0, 0, 0);
+font: 900 9pt &quot;Segoe UI&quot;;
+}
+</string>
+             </property>
              <property name="text">
               <string>Easy</string>
              </property>
@@ -555,6 +599,15 @@ background-color:white;
                <width>300</width>
                <height>50</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+border-radius:10px;
+background-color:white;
+color:rgb(0, 0, 0);
+font: 900 9pt &quot;Segoe UI&quot;;
+}
+</string>
              </property>
              <property name="text">
               <string>Medium</string>
@@ -1092,6 +1145,52 @@ background-color: rgb(115, 199, 255);
           <string>TextLabel</string>
          </property>
         </widget>
+        <widget class="QTextEdit" name="textEdit_3">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>680</y>
+           <width>321</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt;&quot;&gt;Are you sure you want to exit the game?:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Are you sure you want to exit the game?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_2">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>680</y>
+           <width>281</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>Are you sure you want to exit the game?</string>
+         </property>
+        </widget>
         <zorder>groupBox_2</zorder>
         <zorder>grid6</zorder>
         <zorder>grid5</zorder>
@@ -1112,6 +1211,8 @@ background-color: rgb(115, 199, 255);
         <zorder>back_4</zorder>
         <zorder>grid8</zorder>
         <zorder>label</zorder>
+        <zorder>textEdit_3</zorder>
+        <zorder>label_2</zorder>
        </widget>
        <widget class="QWidget" name="page">
         <widget class="QTableWidget" name="historyTable">
@@ -1214,6 +1315,31 @@ background-color: rgb(115, 199, 255);
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout_20">
+          <item row="2" column="0">
+           <widget class="QTextEdit" name="wins_label">
+            <property name="styleSheet">
+             <string notr="true">QTextEdit
+{
+color:black;
+background-color: rgb(115, 199, 255);
+ font: 700 16pt &quot;Segoe UI&quot;;
+}</string>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="html">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;WINS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
           <item row="0" column="0">
            <widget class="QTextEdit" name="losses_label">
             <property name="styleSheet">
@@ -1240,61 +1366,22 @@ li.checked::marker { content: &quot;\2612&quot;; }
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QTextEdit" name="losses_num">
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-            <property name="html">
-             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QTextEdit" name="wins_label">
+           <widget class="QLabel" name="losses">
             <property name="styleSheet">
-             <string notr="true">QTextEdit
-{
-color:black;
-background-color: rgb(115, 199, 255);
- font: 700 16pt &quot;Segoe UI&quot;;
-}</string>
+             <string notr="true">color: rgb(0,0,0);</string>
             </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-            <property name="html">
-             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;WINS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <property name="text">
+             <string>TextLabel</string>
             </property>
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QTextEdit" name="wins_num">
-            <property name="readOnly">
-             <bool>true</bool>
+           <widget class="QLabel" name="wins">
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0,0,0);</string>
             </property>
-            <property name="html">
-             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;15&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <property name="text">
+             <string>TextLabel</string>
             </property>
            </widget>
           </item>
@@ -1324,19 +1411,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
            </widget>
           </item>
           <item row="5" column="0">
-           <widget class="QTextEdit" name="draws_num">
-            <property name="readOnly">
-             <bool>true</bool>
+           <widget class="QLabel" name="draws">
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0,0,0);</string>
             </property>
-            <property name="html">
-             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;6&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <property name="text">
+             <string>TextLabel</string>
             </property>
            </widget>
           </item>

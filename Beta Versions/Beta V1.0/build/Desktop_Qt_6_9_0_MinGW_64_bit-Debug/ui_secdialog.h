@@ -104,16 +104,24 @@ public:
     QPushButton *back_4;
     QGroupBox *groupBox_2;
     QLabel *label;
+    QTextEdit *textEdit_3;
+    QLabel *label_2;
     QWidget *page;
     QTableWidget *historyTable;
     QWidget *widget;
     QGridLayout *gridLayout_20;
+    QSpacerItem *verticalSpacer_13;
+    QSpacerItem *verticalSpacer_12;
+    QSpacerItem *verticalSpacer_10;
+    QLabel *draws;
+    QLabel *wins;
+    QSpacerItem *verticalSpacer_11;
     QTextEdit *losses_label;
-    QTextEdit *losses_num;
     QTextEdit *wins_label;
-    QTextEdit *wins_num;
+    QLabel *losses;
+    QSpacerItem *verticalSpacer_14;
     QTextEdit *draws_label;
-    QTextEdit *draws_num;
+    QSpacerItem *verticalSpacer_15;
     QWidget *page_7;
     QWidget *layoutWidget;
     QGridLayout *gridLayout_21;
@@ -136,7 +144,7 @@ public:
     {
         if (SecDialog->objectName().isEmpty())
             SecDialog->setObjectName("SecDialog");
-        SecDialog->resize(1081, 715);
+        SecDialog->resize(1181, 804);
         SecDialog->setStyleSheet(QString::fromUtf8("QDialog\n"
 "{\n"
 "	background-color: rgb(230, 230, 230);\n"
@@ -201,7 +209,6 @@ public:
 "border-radius:10px;\n"
 "background-color:white;\n"
 "color: rgb(0,0,0);\n"
-"\n"
 "}"));
 
         gridLayout_3->addWidget(profile, 0, 0, 1, 1);
@@ -262,6 +269,11 @@ public:
         gridLayout_10->setObjectName("gridLayout_10");
         back_3 = new QPushButton(page_3);
         back_3->setObjectName("back_3");
+        back_3->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"background-color:white;\n"
+"color:rgb(0, 0, 0);\n"
+"font: 900 9pt \"Segoe UI\";\n"
+"}"));
 
         gridLayout_10->addWidget(back_3, 0, 0, 1, 1);
 
@@ -285,7 +297,8 @@ public:
         PVP->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:15px;\n"
 "background-color:white;\n"
-"\n"
+"color:rgb(0, 0, 0);\n"
+"font: 900 9pt \"Segoe UI\";\n"
 "}"));
 
         gridLayout_9->addWidget(PVP, 0, 0, 1, 1);
@@ -296,7 +309,8 @@ public:
         PVE->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:15px;\n"
 "background-color:white;\n"
-"\n"
+"color:rgb(0, 0, 0);\n"
+"font: 900 9pt \"Segoe UI\";\n"
 "}"));
 
         gridLayout_9->addWidget(PVE, 0, 1, 1, 1);
@@ -319,6 +333,11 @@ public:
         gridLayout_19->setObjectName("gridLayout_19");
         back_2 = new QPushButton(page_5);
         back_2->setObjectName("back_2");
+        back_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"color:rgb(0, 0, 0);\n"
+"font: 900 9pt \"Segoe UI\";\n"
+"}\n"
+""));
 
         gridLayout_19->addWidget(back_2, 0, 0, 1, 1);
 
@@ -342,8 +361,10 @@ public:
         normal->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:10px;\n"
 "background-color:white;\n"
-"\n"
-"}"));
+"color:rgb(0, 0, 0);\n"
+"font: 900 9pt \"Segoe UI\";\n"
+"}\n"
+""));
 
         gridLayout_18->addWidget(normal, 0, 0, 1, 1);
 
@@ -353,8 +374,10 @@ public:
         infinite->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border-radius:10px;\n"
 "background-color:white;\n"
-"\n"
-"}"));
+"color:rgb(0, 0, 0);\n"
+"font: 900 9pt \"Segoe UI\";\n"
+"}\n"
+""));
 
         gridLayout_18->addWidget(infinite, 1, 0, 1, 1);
 
@@ -376,6 +399,11 @@ public:
         gridLayout_5->setObjectName("gridLayout_5");
         back = new QPushButton(page_6);
         back->setObjectName("back");
+        back->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"color:rgb(0, 0, 0);\n"
+"font: 900 9pt \"Segoe UI\";\n"
+"}\n"
+""));
 
         gridLayout_5->addWidget(back, 0, 0, 1, 1);
 
@@ -396,18 +424,39 @@ public:
         hard = new QPushButton(page_6);
         hard->setObjectName("hard");
         hard->setMinimumSize(QSize(300, 50));
+        hard->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"border-radius:10px;\n"
+"background-color:white;\n"
+"color:rgb(0, 0, 0);\n"
+"font: 900 9pt \"Segoe UI\";\n"
+"}\n"
+""));
 
         gridLayout_2->addWidget(hard, 2, 0, 1, 1);
 
         easy = new QPushButton(page_6);
         easy->setObjectName("easy");
         easy->setMinimumSize(QSize(300, 50));
+        easy->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"border-radius:10px;\n"
+"background-color:white;\n"
+"color:rgb(0, 0, 0);\n"
+"font: 900 9pt \"Segoe UI\";\n"
+"}\n"
+""));
 
         gridLayout_2->addWidget(easy, 0, 0, 1, 1);
 
         medium = new QPushButton(page_6);
         medium->setObjectName("medium");
         medium->setMinimumSize(QSize(300, 50));
+        medium->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"border-radius:10px;\n"
+"background-color:white;\n"
+"color:rgb(0, 0, 0);\n"
+"font: 900 9pt \"Segoe UI\";\n"
+"}\n"
+""));
 
         gridLayout_2->addWidget(medium, 1, 0, 1, 1);
 
@@ -668,6 +717,21 @@ public:
         label = new QLabel(page_4);
         label->setObjectName("label");
         label->setGeometry(QRect(390, 150, 261, 20));
+        textEdit_3 = new QTextEdit(page_4);
+        textEdit_3->setObjectName("textEdit_3");
+        textEdit_3->setGeometry(QRect(90, 680, 321, 31));
+        textEdit_3->setStyleSheet(QString::fromUtf8("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:14pt;\">Are you sure you want to exit the game?:</span></p></body></html>"));
+        label_2 = new QLabel(page_4);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(420, 680, 281, 20));
+        label_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
         stackedWidget->addWidget(page_4);
         groupBox_2->raise();
         grid6->raise();
@@ -689,6 +753,8 @@ public:
         back_4->raise();
         grid8->raise();
         label->raise();
+        textEdit_3->raise();
+        label_2->raise();
         page = new QWidget();
         page->setObjectName("page");
         historyTable = new QTableWidget(page);
@@ -725,9 +791,39 @@ public:
         historyTable->horizontalHeader()->setMinimumSectionSize(36);
         widget = new QWidget(page);
         widget->setObjectName("widget");
-        widget->setGeometry(QRect(50, 60, 261, 381));
+        widget->setGeometry(QRect(50, 60, 301, 371));
         gridLayout_20 = new QGridLayout(widget);
         gridLayout_20->setObjectName("gridLayout_20");
+        verticalSpacer_13 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_20->addItem(verticalSpacer_13, 8, 0, 1, 1);
+
+        verticalSpacer_12 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_20->addItem(verticalSpacer_12, 10, 0, 1, 1);
+
+        verticalSpacer_10 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_20->addItem(verticalSpacer_10, 1, 0, 1, 1);
+
+        draws = new QLabel(widget);
+        draws->setObjectName("draws");
+
+        gridLayout_20->addWidget(draws, 11, 0, 1, 1);
+
+        wins = new QLabel(widget);
+        wins->setObjectName("wins");
+        wins->setStyleSheet(QString::fromUtf8("Label{\n"
+"	background-color: rgb(0, 0, 0);\n"
+"\n"
+"}"));
+
+        gridLayout_20->addWidget(wins, 7, 0, 1, 1);
+
+        verticalSpacer_11 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_20->addItem(verticalSpacer_11, 6, 0, 1, 1);
+
         losses_label = new QTextEdit(widget);
         losses_label->setObjectName("losses_label");
         losses_label->setStyleSheet(QString::fromUtf8("QTextEdit\n"
@@ -740,12 +836,6 @@ public:
 
         gridLayout_20->addWidget(losses_label, 0, 0, 1, 1);
 
-        losses_num = new QTextEdit(widget);
-        losses_num->setObjectName("losses_num");
-        losses_num->setReadOnly(true);
-
-        gridLayout_20->addWidget(losses_num, 1, 0, 1, 1);
-
         wins_label = new QTextEdit(widget);
         wins_label->setObjectName("wins_label");
         wins_label->setStyleSheet(QString::fromUtf8("QTextEdit\n"
@@ -756,13 +846,21 @@ public:
 "}"));
         wins_label->setReadOnly(true);
 
-        gridLayout_20->addWidget(wins_label, 2, 0, 1, 1);
+        gridLayout_20->addWidget(wins_label, 5, 0, 1, 1);
 
-        wins_num = new QTextEdit(widget);
-        wins_num->setObjectName("wins_num");
-        wins_num->setReadOnly(true);
+        losses = new QLabel(widget);
+        losses->setObjectName("losses");
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Maximum, QSizePolicy::Policy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(losses->sizePolicy().hasHeightForWidth());
+        losses->setSizePolicy(sizePolicy);
 
-        gridLayout_20->addWidget(wins_num, 3, 0, 1, 1);
+        gridLayout_20->addWidget(losses, 2, 0, 2, 1);
+
+        verticalSpacer_14 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_20->addItem(verticalSpacer_14, 4, 0, 1, 1);
 
         draws_label = new QTextEdit(widget);
         draws_label->setObjectName("draws_label");
@@ -774,13 +872,11 @@ public:
 "}"));
         draws_label->setReadOnly(true);
 
-        gridLayout_20->addWidget(draws_label, 4, 0, 1, 1);
+        gridLayout_20->addWidget(draws_label, 9, 0, 1, 1);
 
-        draws_num = new QTextEdit(widget);
-        draws_num->setObjectName("draws_num");
-        draws_num->setReadOnly(true);
+        verticalSpacer_15 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
-        gridLayout_20->addWidget(draws_num, 5, 0, 1, 1);
+        gridLayout_20->addItem(verticalSpacer_15, 12, 0, 1, 1);
 
         stackedWidget->addWidget(page);
         page_7 = new QWidget();
@@ -921,7 +1017,7 @@ public:
 
         retranslateUi(SecDialog);
 
-        stackedWidget->setCurrentIndex(4);
+        stackedWidget->setCurrentIndex(5);
 
 
         QMetaObject::connectSlotsByName(SecDialog);
@@ -977,6 +1073,15 @@ public:
         back_4->setText(QCoreApplication::translate("SecDialog", "BACK", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("SecDialog", "GroupBox", nullptr));
         label->setText(QCoreApplication::translate("SecDialog", "TextLabel", nullptr));
+        textEdit_3->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Are you sure you want to exit the game?</p></body></html>", nullptr));
+        label_2->setText(QCoreApplication::translate("SecDialog", "Are you sure you want to exit the game?", nullptr));
         QTableWidgetItem *___qtablewidgetitem = historyTable->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("SecDialog", "RESULT", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = historyTable->horizontalHeaderItem(1);
@@ -990,6 +1095,8 @@ public:
         ___qtablewidgetitem3->setText(QCoreApplication::translate("SecDialog", "SHOW", nullptr));
         historyTable->setSortingEnabled(__sortingEnabled);
 
+        draws->setText(QString());
+        wins->setText(QString());
         losses_label->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -998,14 +1105,6 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">LOSSES</span></p></body></html>", nullptr));
-        losses_num->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:700;\">0</span></p></body></html>", nullptr));
         wins_label->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -1014,14 +1113,7 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">WINS</p></body></html>", nullptr));
-        wins_num->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:700;\">15</span></p></body></html>", nullptr));
+        losses->setText(QString());
         draws_label->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -1030,14 +1122,6 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">DRAWS</span></p></body></html>", nullptr));
-        draws_num->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:700;\">6</span></p></body></html>", nullptr));
         textEdit_9->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
