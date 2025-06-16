@@ -29,7 +29,7 @@ jobs:
       run: echo "C:\Qt\6.8.3\mingw_64\bin" | Out-File -Append -FilePath $env:GITHUB_PATH
 
     - name: Create build directory
-      run: mkdir -p Packets_Versions/build
+      run: mkdir Packets_Versions/build
 
     - name: Build test_0.pro inside Packets_Versions/build
       run: |
@@ -37,7 +37,6 @@ jobs:
         qmake ../Packet1/test_0.pro
         mingw32-make
 
-    shell: pwsh
     env:
       pythonLocation: C:\hostedtoolcache\windows\Python\3.11.9\x64
       PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.11.9\x64/lib/pkgconfig
@@ -47,4 +46,3 @@ jobs:
       Qt6_DIR: C:\Qt\6.8.3\mingw_64
       QT_PLUGIN_PATH: C:\Qt\6.8.3\mingw_64\plugins
       QML2_IMPORT_PATH: C:\Qt\6.8.3\mingw_64\qml
-
