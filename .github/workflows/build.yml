@@ -1,11 +1,16 @@
 name: Qt Application CI/CD
+
 on:
   push:
     branches: [ main, develop ]
   pull_request:
     branches: [ main ]
-  release:
+  release: 
     types: [published]
+
+env:
+  PROJECT_PATH: TicTacToe_Embedded2027/Packet_Versions/Packet1
+  PRO_FILE: test_0.pro
 
 jobs:
   build-windows:
@@ -15,6 +20,7 @@ jobs:
     - uses: actions/checkout@v4
     
     - name: Install Qt
+      id: install-qt
       uses: jurplel/install-qt-action@v3
       with:
         version: '6.5.0'
@@ -29,48 +35,43 @@ jobs:
       with:
         platform: x64
         version: 12
-    
-    - name: Configure Project
-      run: |
-        cd Packet_Versions/Packet1
-        qmake test_0.pro CONFIG+=release
-      shell: cmd
-    
+
     - name: Build Application
       run: |
-        cd Packet_Versions/Packet1
-        mingw32-make -j%NUMBER_OF_PROCESSORS%
-      shell: cmd
-    
+        cd $env:PROJECT_PATH
+        qmake $env:PRO_FILE CONFIG+=release
+        mingw32-make -j${env:NUMBER_OF_PROCESSORS}
+      shell: powershell
+
     - name: Deploy Qt Libraries
       run: |
-        cd Packet_Versions/Packet1
+        cd $env:PROJECT_PATH
         mkdir deploy
         copy release\test_0.exe deploy\
         windeployqt deploy\test_0.exe --release --compiler-runtime --force
-      shell: cmd
-    
+      shell: powershell
+
     - name: Package MinGW Runtime
       run: |
-        cd Packet_Versions/Packet1/deploy
-        # نسخ مكتبات MinGW المطلوبة
-        copy "%Qt6_DIR%\..\..\..\Tools\mingw1120_64\bin\libgcc_s_seh-1.dll" .
-        copy "%Qt6_DIR%\..\..\..\Tools\mingw1120_64\bin\libstdc++-6.dll" .
-        copy "%Qt6_DIR%\..\..\..\Tools\mingw1120_64\bin\libwinpthread-1.dll" .
-      shell: cmd
+        cd $env:PROJECT_PATH/deploy
+        # Detect actual MinGW path dynamically from install-qt-action output
+        $mingw_bin = "${{ steps.install-qt.outputs.Qt6_DIR }}\..\..\..\Tools\mingw1120_64\bin"
+        if (Test-Path "$mingw_bin\libgcc_s_seh-1.dll") {
+          copy "$mingw_bin\libgcc_s_seh-1.dll" .
+          copy "$mingw_bin\libstdc++-6.dll" .
+          copy "$mingw_bin\libwinpthread-1.dll" .
+        } else {
+          Write-Output "MinGW runtime not found. Skipping."
+        }
+      shell: powershell
       continue-on-error: true
-    
-    - name: Create Windows Installer (Optional)
-      run: |
-        # يمكنك استخدام NSIS أو Inno Setup هنا
-        echo "Installer creation step - implement based on your needs"
-    
+
     - name: Upload Windows Build
       uses: actions/upload-artifact@v4
       with:
         name: windows-x64-release
         path: |
-          Packet_Versions/Packet1/deploy/
+          ${{ env.PROJECT_PATH }}/deploy/
         retention-days: 30
 
   build-linux:
@@ -96,21 +97,16 @@ jobs:
     
     - name: Build Application
       run: |
-        cd Packet_Versions/Packet1
-        qmake test_0.pro CONFIG+=release
+        cd $PROJECT_PATH
+        qmake $PRO_FILE CONFIG+=release
         make -j$(nproc)
-    
-    - name: Create AppImage (Optional)
-      run: |
-        # خطوات إنشاء AppImage
-        echo "AppImage creation - implement if needed"
-    
+
     - name: Upload Linux Build
       uses: actions/upload-artifact@v4
       with:
         name: linux-x64-release
         path: |
-          Packet_Versions/Packet1/test_0
+          ${{ env.PROJECT_PATH }}/test_0
         retention-days: 30
 
   build-macos:
@@ -130,22 +126,16 @@ jobs:
     
     - name: Build Application
       run: |
-        cd Packet_Versions/Packet1
-        qmake test_0.pro CONFIG+=release
+        cd $PROJECT_PATH
+        qmake $PRO_FILE CONFIG+=release
         make -j$(sysctl -n hw.ncpu)
-    
-    - name: Create DMG (Optional)
-      run: |
-        cd Packet_Versions/Packet1
-        macdeployqt test_0.app -dmg
     
     - name: Upload macOS Build
       uses: actions/upload-artifact@v4
       with:
         name: macos-universal-release
         path: |
-          Packet_Versions/Packet1/*.dmg
-          Packet_Versions/Packet1/*.app
+          ${{ env.PROJECT_PATH }}/*.app
         retention-days: 30
 
   code-quality:
@@ -170,7 +160,7 @@ jobs:
     
     - name: Run Static Analysis
       run: |
-        cd Packet_Versions/Packet1
+        cd $PROJECT_PATH
         cppcheck --enable=all --inconclusive --xml --xml-version=2 \
           --suppress=missingIncludeSystem \
           *.cpp *.h \
@@ -178,7 +168,7 @@ jobs:
     
     - name: Check Code Formatting
       run: |
-        cd Packet_Versions/Packet1
+        cd $PROJECT_PATH
         find . -name "*.cpp" -o -name "*.h" | \
         xargs clang-format -style=file -dry-run -Werror || true
     
@@ -187,7 +177,7 @@ jobs:
       with:
         name: code-analysis
         path: |
-          Packet_Versions/Packet1/cppcheck_report.xml
+          ${{ env.PROJECT_PATH }}/cppcheck_report.xml
         retention-days: 7
 
   tests:
@@ -209,16 +199,11 @@ jobs:
     
     - name: Build Tests
       run: |
-        cd Packet_Versions/Packet1
-        # إذا كان عندك ملف tests منفصل
-        # qmake tests.pro CONFIG+=debug
-        # make
+        cd $PROJECT_PATH
         echo "Configure your tests here"
-    
+
     - name: Run Unit Tests
       run: |
-        # تشغيل الاختبارات
-        # ./tests/test_runner
         echo "Run your tests here"
 
   deploy:
