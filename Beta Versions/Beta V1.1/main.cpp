@@ -75,6 +75,7 @@ int main(int argc, char *argv[])
         return -1;
     }
 
+
     createTables(db);
 
     if(getCurrentUser(db,username)){
