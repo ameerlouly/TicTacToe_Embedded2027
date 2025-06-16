@@ -41,7 +41,8 @@ int evaluate(int board[3][3])
 {
     for (int row = 0; row < 3; row++)
         if (board[row][0] == board[row][1] &&
-            board[row][1] == board[row][2]) {
+            board[row][1] == board[row][2])
+        {
             if (board[row][0] == AI) return + 10;
             else if (board[row][0] == PLAYER) return - 10;
         }

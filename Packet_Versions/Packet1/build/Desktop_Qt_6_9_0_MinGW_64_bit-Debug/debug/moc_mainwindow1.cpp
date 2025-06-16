@@ -46,7 +46,8 @@ template <> constexpr inline auto MainWindow1::qt_create_metaobjectdata<qt_meta_
         "on_BackLogin_button_clicked",
         "on_Login_User_Button_clicked",
         "on_Confirm_reset_clicked",
-        "on_Reset_buttom_clicked"
+        "on_Reset_buttom_clicked",
+        "on_BackLogin_button_2_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -64,6 +65,8 @@ template <> constexpr inline auto MainWindow1::qt_create_metaobjectdata<qt_meta_
         QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_Reset_buttom_clicked'
         QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_BackLogin_button_2_clicked'
+        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -94,6 +97,7 @@ void MainWindow1::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 4: _t->on_Login_User_Button_clicked(); break;
         case 5: _t->on_Confirm_reset_clicked(); break;
         case 6: _t->on_Reset_buttom_clicked(); break;
+        case 7: _t->on_BackLogin_button_2_clicked(); break;
         default: ;
         }
     }
@@ -119,14 +123,14 @@ int MainWindow1::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 8)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 7;
+        _id -= 8;
     }
     return _id;
 }

@@ -31,27 +31,39 @@ MainWindow1::~MainWindow1()
 void MainWindow1::initializeButtons()
 {
     ui->WrongWarning->hide();
+    ui->WarningReset_Label->hide();
 }
 
 void MainWindow1::on_Signup_Button_clicked()
 {
-    REG_Mode=SIGNUP;
+    REG_Mode = SIGNUP;
+    Gamewindow2->isGuest();
+
+        /* UI Adjustments */
     ui->Reset_buttom->hide();
     ui->phone_number_label->show();
     ui->phone_number->show();
+    ui->PhoneNumber_Spacer->changeSize(20, 20, QSizePolicy::Expanding, QSizePolicy::Fixed);
+    ui->ConfirmPassword_Spacer->changeSize(20, 20, QSizePolicy::Expanding, QSizePolicy::Fixed);
     ui->stackedWidget->setCurrentIndex(1);
-    Gamewindow2->isGuest();
     ui->Login_User_Button->setText("Sign Up");
 
-    for (int i = 0; i < ui->confirmPasswordPar->count(); ++i) {
-        QLayoutItem* item = ui->confirmPasswordPar->itemAt(i);
-        if (item->widget()) {
+    ui->PasswordAndForget_Layout->setAlignment(ui->password_label, Qt::AlignCenter);
+    // ui->password_label->setAlignment(Qt::AlignCenter);
+
+    for (int i = 0; i < ui->verticalLayout_5->count(); ++i)
+    {
+        QLayoutItem* item = ui->verticalLayout_5->itemAt(i);
+        if (item->widget())
+        {
             item->widget()->show();
         }
     }
-    for (int i = 0; i < ui->confContainer->count(); ++i) {
+    for (int i = 0; i < ui->confContainer->count(); ++i)
+    {
         QLayoutItem* item = ui->confContainer->itemAt(i);
-        if (item->widget()) {
+        if (item->widget())
+        {
             item->widget()->show();
         }
     }
@@ -70,23 +82,37 @@ void MainWindow1::on_Guest_Button_clicked()
 
 void MainWindow1::on_Login_Button_clicked()
 {
-    REG_Mode=LOGIN;
-    Gamewindow2->isGuest();
+    REG_Mode = LOGIN;   // Change Register Mode
+    Gamewindow2->isGuest(); // Check if Guest or not
+
+    /*UI Adjustments*/
     ui->phone_number_label->hide();
     ui->phone_number->hide();
+    ui->PhoneNumber_Spacer->changeSize(0, 0, QSizePolicy::Fixed, QSizePolicy::Fixed);
+    ui->ConfirmPassword_Spacer->changeSize(0, 0, QSizePolicy::Fixed, QSizePolicy::Fixed);
+
+    ui->Reset_buttom->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    ui->Reset_buttom->update();
     ui->Reset_buttom->show();
     ui->stackedWidget->setCurrentIndex(1);
     ui->Login_User_Button->setText("Log In");
 
-    for (int i = 0; i < ui->confirmPasswordPar->count(); ++i) {
-        QLayoutItem* item = ui->confirmPasswordPar->itemAt(i);
-        if (item->widget()) {
+    ui->PasswordAndForget_Layout->setAlignment(ui->password_label, Qt::AlignRight);
+    // ui->password_label->setAlignment(Qt::AlignRight);
+
+    for (int i = 0; i < ui->verticalLayout_5->count(); ++i)
+    {
+        QLayoutItem* item = ui->verticalLayout_5->itemAt(i);
+        if (item->widget())
+        {
             item->widget()->hide();
         }
     }
-    for (int i = 0; i < ui->confContainer->count(); ++i) {
+    for (int i = 0; i < ui->confContainer->count(); ++i)
+    {
         QLayoutItem* item = ui->confContainer->itemAt(i);
-        if (item->widget()) {
+        if (item->widget())
+        {
             item->widget()->hide();
         }
     }
@@ -117,11 +143,15 @@ void MainWindow1::on_Login_User_Button_clicked()
             ui->WrongWarning->show();
             ui->WrongWarning->setText("You Should enter all fields");
         }
-        else{
-            if(passcode != passcodeConf){
+        else
+        {
+            if(passcode != passcodeConf)
+            {
                 ui->WrongWarning->show();
                 ui->WrongWarning->setText("Please confirm your password");
-            }else{
+            }
+            else
+            {
                 Check_data_forLogin(db,Gamewindow2,LoginWindow);
                 ui->username->clear();
                 ui->password->clear();
@@ -161,16 +191,16 @@ void MainWindow1::on_Confirm_reset_clicked()
     PhoneNumber = QPhoneNumber.toStdString();
 
     if(passcode == "" || username == "" || PhoneNumber == ""){
-        ui->wrong_input_reset->show();
-        ui->wrong_input_reset->setText("You Should enter all fields");
+        ui->WarningReset_Label->show();
+        ui->WarningReset_Label->setText("You Should enter all fields");
     }
     else if(!resetPassword(db,username,PhoneNumber,passcode)){
-        ui->wrong_input_reset->show();
-        ui->wrong_input_reset->setText("Check username or Phone number");
+        ui->WarningReset_Label->show();
+        ui->WarningReset_Label->setText("Check username or Phone number");
     }
     else {
-        ui->wrong_input_reset->show();
-        ui->wrong_input_reset->setText("Done , Now Login to cont");
+        ui->WarningReset_Label->show();
+        ui->WarningReset_Label->setText("Done , Now Login to cont");
         ret=true;
     }
 
@@ -185,5 +215,11 @@ void MainWindow1::on_Confirm_reset_clicked()
 void MainWindow1::on_Reset_buttom_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
+}
+
+
+void MainWindow1::on_BackLogin_button_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }
 

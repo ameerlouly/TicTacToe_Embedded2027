@@ -20,7 +20,7 @@ public:
     MainWindow1(QWidget *parent = nullptr);
 
     ~MainWindow1();
-    void initializeButtons();
+    void initializeButtons();   // Used for Hiding warning Labels
 
 private slots:
 
@@ -37,6 +37,8 @@ private slots:
     void on_Confirm_reset_clicked();
 
     void on_Reset_buttom_clicked();
+
+    void on_BackLogin_button_2_clicked();
 
 private:
     Ui::MainWindow1 *ui;
