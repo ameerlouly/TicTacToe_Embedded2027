@@ -135,6 +135,9 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_images.cpp
 debug/qrc_images.cpp: ../../images.qrc \
 		C:/Qt/6.9.0/mingw_64/bin/rcc.exe \
+		../../Graphics/SVG/Engineering.svg \
+		../../Graphics/SVG/CU.svg \
+		../../Graphics/SVG/EECE27_logo_SVG.svg \
 		../../Graphics/Ready/History_Button_Pressed_Graphic.png \
 		../../Graphics/Ready/x_symbol.png \
 		../../Graphics/Ready/HomeButton_Graphic.png \

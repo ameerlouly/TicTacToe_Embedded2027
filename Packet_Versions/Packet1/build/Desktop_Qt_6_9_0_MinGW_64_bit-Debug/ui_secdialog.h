@@ -136,13 +136,26 @@ public:
     QTextEdit *draws_label;
     QLabel *draws;
     QWidget *AboutPage;
-    QWidget *layoutWidget;
-    QGridLayout *gridLayout_21;
-    QTextEdit *textEdit_9;
-    QTextEdit *textEdit_24;
-    QTextEdit *textEdit_25;
-    QTextEdit *textEdit_26;
-    QTextEdit *textEdit_27;
+    QVBoxLayout *verticalLayout_10;
+    QHBoxLayout *horizontalLayout_6;
+    QSpacerItem *horizontalSpacer_15;
+    QLabel *label_11;
+    QSpacerItem *horizontalSpacer_12;
+    QLabel *label_12;
+    QSpacerItem *horizontalSpacer_13;
+    QLabel *label_13;
+    QSpacerItem *horizontalSpacer_17;
+    QGridLayout *gridLayout_8;
+    QSpacerItem *verticalSpacer_11;
+    QSpacerItem *horizontalSpacer_14;
+    QVBoxLayout *verticalLayout_9;
+    QLabel *label_6;
+    QLabel *label_7;
+    QLabel *label_8;
+    QLabel *label_9;
+    QLabel *label_10;
+    QSpacerItem *horizontalSpacer_16;
+    QSpacerItem *verticalSpacer_12;
     QWidget *ProfilePage;
     QGridLayout *gridLayout;
     QSpacerItem *verticalSpacer_6;
@@ -201,7 +214,7 @@ public:
         SideBar->setObjectName("SideBar");
         SideBar->setStyleSheet(QString::fromUtf8("QGroupBox\n"
 "{\n"
-"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(186, 200, 224, 255), 				stop:1 rgba(106, 133, 182, 255));\n"
+"	background-color: qlineargradient(spread:pad, x1:0.2, y1:0, x2:0.5, y2:0.7, stop:0 rgba(186, 200, 224, 255), 				stop:1 rgba(106, 133, 182, 255));\n"
 "	min-width: 150px;\n"
 "}"));
         verticalLayout = new QVBoxLayout(SideBar);
@@ -398,6 +411,7 @@ public:
 
         stackedWidget = new QStackedWidget(SecDialog);
         stackedWidget->setObjectName("stackedWidget");
+        stackedWidget->setStyleSheet(QString::fromUtf8(""));
         stackedWidget->setLineWidth(0);
         HomePage = new QWidget();
         HomePage->setObjectName("HomePage");
@@ -1337,89 +1351,157 @@ public:
         stackedWidget->addWidget(HistoryPage);
         AboutPage = new QWidget();
         AboutPage->setObjectName("AboutPage");
-        layoutWidget = new QWidget(AboutPage);
-        layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(220, 140, 511, 441));
-        gridLayout_21 = new QGridLayout(layoutWidget);
-        gridLayout_21->setObjectName("gridLayout_21");
-        gridLayout_21->setContentsMargins(0, 0, 0, 0);
-        textEdit_9 = new QTextEdit(layoutWidget);
-        textEdit_9->setObjectName("textEdit_9");
-        textEdit_9->setMinimumSize(QSize(450, 50));
-        textEdit_9->setMaximumSize(QSize(450, 50));
-        textEdit_9->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+        verticalLayout_10 = new QVBoxLayout(AboutPage);
+        verticalLayout_10->setObjectName("verticalLayout_10");
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setObjectName("horizontalLayout_6");
+        horizontalLayout_6->setContentsMargins(30, 20, 30, -1);
+        horizontalSpacer_15 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_15);
+
+        label_11 = new QLabel(AboutPage);
+        label_11->setObjectName("label_11");
+        label_11->setMinimumSize(QSize(100, 130));
+        label_11->setMaximumSize(QSize(100, 130));
+        label_11->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
-"border :none;\n"
-"color:black;\n"
-"background-color: rgb(115, 199, 255);\n"
-"font: 700 12pt \"Rockwell\";    \n"
-" border-radius: 20px;\n"
+"	background-color: rgba(0, 0, 0, 0);\n"
 "}"));
-        textEdit_9->setReadOnly(true);
-        textEdit_9->setOverwriteMode(false);
+        label_11->setPixmap(QPixmap(QString::fromUtf8(":/Logic/Graphics/SVG/CU.svg")));
+        label_11->setScaledContents(true);
 
-        gridLayout_21->addWidget(textEdit_9, 0, 0, 1, 1);
+        horizontalLayout_6->addWidget(label_11);
 
-        textEdit_24 = new QTextEdit(layoutWidget);
-        textEdit_24->setObjectName("textEdit_24");
-        textEdit_24->setMinimumSize(QSize(450, 50));
-        textEdit_24->setMaximumSize(QSize(450, 50));
-        textEdit_24->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Policy::MinimumExpanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_12);
+
+        label_12 = new QLabel(AboutPage);
+        label_12->setObjectName("label_12");
+        label_12->setMaximumSize(QSize(330, 100));
+        label_12->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
-"border :none;\n"
-"color:black;\n"
-"background-color: rgb(115, 199, 255);\n"
-"font: 700 12pt \"Rockwell\";    \n"
-" border-radius: 20px;\n"
+"	background-color: rgba(0, 0, 0, 0);\n"
 "}"));
+        label_12->setPixmap(QPixmap(QString::fromUtf8(":/Logic/Graphics/SVG/EECE27_logo_SVG.svg")));
+        label_12->setScaledContents(true);
 
-        gridLayout_21->addWidget(textEdit_24, 1, 0, 1, 1);
+        horizontalLayout_6->addWidget(label_12);
 
-        textEdit_25 = new QTextEdit(layoutWidget);
-        textEdit_25->setObjectName("textEdit_25");
-        textEdit_25->setMinimumSize(QSize(450, 50));
-        textEdit_25->setMaximumSize(QSize(450, 50));
-        textEdit_25->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+        horizontalSpacer_13 = new QSpacerItem(40, 20, QSizePolicy::Policy::MinimumExpanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_13);
+
+        label_13 = new QLabel(AboutPage);
+        label_13->setObjectName("label_13");
+        label_13->setMaximumSize(QSize(100, 100));
+        label_13->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
-"border :none;\n"
-"color:black;\n"
-"background-color: rgb(115, 199, 255);\n"
-"font: 700 12pt \"Rockwell\";    \n"
-" border-radius: 20px;\n"
+"	background-color: rgba(0, 0, 0, 0);\n"
 "}"));
+        label_13->setPixmap(QPixmap(QString::fromUtf8(":/Logic/Graphics/SVG/Engineering.svg")));
+        label_13->setScaledContents(true);
 
-        gridLayout_21->addWidget(textEdit_25, 2, 0, 1, 1);
+        horizontalLayout_6->addWidget(label_13);
 
-        textEdit_26 = new QTextEdit(layoutWidget);
-        textEdit_26->setObjectName("textEdit_26");
-        textEdit_26->setMinimumSize(QSize(450, 50));
-        textEdit_26->setMaximumSize(QSize(450, 50));
-        textEdit_26->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+        horizontalSpacer_17 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_17);
+
+
+        verticalLayout_10->addLayout(horizontalLayout_6);
+
+        gridLayout_8 = new QGridLayout();
+        gridLayout_8->setObjectName("gridLayout_8");
+        verticalSpacer_11 = new QSpacerItem(408, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_8->addItem(verticalSpacer_11, 0, 1, 1, 1);
+
+        horizontalSpacer_14 = new QSpacerItem(40, 298, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_8->addItem(horizontalSpacer_14, 1, 0, 1, 1);
+
+        verticalLayout_9 = new QVBoxLayout();
+        verticalLayout_9->setSpacing(20);
+        verticalLayout_9->setObjectName("verticalLayout_9");
+        verticalLayout_9->setContentsMargins(9, 9, 9, 9);
+        label_6 = new QLabel(AboutPage);
+        label_6->setObjectName("label_6");
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("Montserrat")});
+        font1.setPointSize(20);
+        label_6->setFont(font1);
+        label_6->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
-"border :none;\n"
-"color:black;\n"
-"background-color: rgb(115, 199, 255);\n"
-"font: 700 12pt \"Rockwell\";    \n"
-" border-radius: 20px;\n"
+"	background-color:rgba(0, 0, 0, 50);\n"
+"	border-radius: 15px;\n"
 "}"));
-        textEdit_26->setTextInteractionFlags(Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse);
+        label_6->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_21->addWidget(textEdit_26, 3, 0, 1, 1);
+        verticalLayout_9->addWidget(label_6);
 
-        textEdit_27 = new QTextEdit(layoutWidget);
-        textEdit_27->setObjectName("textEdit_27");
-        textEdit_27->setMinimumSize(QSize(450, 50));
-        textEdit_27->setMaximumSize(QSize(450, 50));
-        textEdit_27->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+        label_7 = new QLabel(AboutPage);
+        label_7->setObjectName("label_7");
+        label_7->setFont(font1);
+        label_7->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
-"border :none;\n"
-"color:black;\n"
-"background-color: rgb(115, 199, 255);\n"
-"font: 700 12pt \"Rockwell\";    \n"
-" border-radius: 20px;\n"
+"	background-color:rgba(0, 0, 0, 50);\n"
+"	border-radius: 15px;\n"
 "}"));
+        label_7->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_21->addWidget(textEdit_27, 4, 0, 1, 1);
+        verticalLayout_9->addWidget(label_7);
+
+        label_8 = new QLabel(AboutPage);
+        label_8->setObjectName("label_8");
+        label_8->setFont(font1);
+        label_8->setStyleSheet(QString::fromUtf8("QLabel\n"
+"{\n"
+"	background-color:rgba(0, 0, 0, 50);\n"
+"	border-radius: 15px;\n"
+"}"));
+        label_8->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        verticalLayout_9->addWidget(label_8);
+
+        label_9 = new QLabel(AboutPage);
+        label_9->setObjectName("label_9");
+        label_9->setFont(font1);
+        label_9->setStyleSheet(QString::fromUtf8("QLabel\n"
+"{\n"
+"	background-color:rgba(0, 0, 0, 50);\n"
+"	border-radius: 15px;\n"
+"}"));
+        label_9->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        verticalLayout_9->addWidget(label_9);
+
+        label_10 = new QLabel(AboutPage);
+        label_10->setObjectName("label_10");
+        label_10->setFont(font1);
+        label_10->setStyleSheet(QString::fromUtf8("QLabel\n"
+"{\n"
+"	background-color:rgba(0, 0, 0, 50);\n"
+"	border-radius: 15px;\n"
+"}"));
+        label_10->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        verticalLayout_9->addWidget(label_10);
+
+
+        gridLayout_8->addLayout(verticalLayout_9, 1, 1, 1, 1);
+
+        horizontalSpacer_16 = new QSpacerItem(40, 318, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_8->addItem(horizontalSpacer_16, 1, 2, 1, 1);
+
+        verticalSpacer_12 = new QSpacerItem(408, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout_8->addItem(verticalSpacer_12, 2, 1, 1, 1);
+
+
+        verticalLayout_10->addLayout(gridLayout_8);
 
         stackedWidget->addWidget(AboutPage);
         ProfilePage = new QWidget();
@@ -1476,7 +1558,7 @@ public:
 
         retranslateUi(SecDialog);
 
-        stackedWidget->setCurrentIndex(3);
+        stackedWidget->setCurrentIndex(6);
 
 
         QMetaObject::connectSlotsByName(SecDialog);
@@ -1578,46 +1660,14 @@ public:
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">DRAWS</span></p></body></html>", nullptr));
         draws->setText(QCoreApplication::translate("SecDialog", "TextLabel", nullptr));
-        textEdit_9->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:16pt;\">NOURHAN MOHAMMAD</span></p></body></html>", nullptr));
-        textEdit_24->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:16pt;\">ROLA REFAAT</span></p></body></html>", nullptr));
-        textEdit_25->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:16pt;\">AMEER LOULY</span></p></body></html>", nullptr));
-        textEdit_26->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:16pt;\">AMIR SAMEH</span></p></body></html>", nullptr));
-        textEdit_27->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:16pt;\">MOHAMED ABDULLAH</span></p></body></html>", nullptr));
+        label_11->setText(QString());
+        label_12->setText(QString());
+        label_13->setText(QString());
+        label_6->setText(QCoreApplication::translate("SecDialog", "Nourhan Mohammad", nullptr));
+        label_7->setText(QCoreApplication::translate("SecDialog", "Rola Refaat", nullptr));
+        label_8->setText(QCoreApplication::translate("SecDialog", "Ameer Louly", nullptr));
+        label_9->setText(QCoreApplication::translate("SecDialog", "Amir Sameh", nullptr));
+        label_10->setText(QCoreApplication::translate("SecDialog", "Mohamed Abdullah", nullptr));
         UsenameTag->setText(QCoreApplication::translate("SecDialog", "Welcome", nullptr));
         Log_out->setText(QCoreApplication::translate("SecDialog", "LOG OUT", nullptr));
     } // retranslateUi

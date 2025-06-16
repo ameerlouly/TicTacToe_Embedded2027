@@ -17,5 +17,8 @@
         <file>Graphics/Ready/XO_StartMenu_Graphic.png</file>
         <file>Graphics/Ready/PvP_icon.png</file>
         <file>Graphics/Ready/PvE_icon.png</file>
+        <file>Graphics/SVG/CU.svg</file>
+        <file>Graphics/SVG/Engineering.svg</file>
+        <file>Graphics/SVG/EECE27_logo_SVG.svg</file>
     </qresource>
 </RCC>
