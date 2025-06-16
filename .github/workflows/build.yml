@@ -14,6 +14,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
+    - name: Debug workspace
+      run: |
+        pwd
+        ls -R
+
     - name: Install Qt (MinGW)
       uses: jurplel/install-qt-action@v3
       with:
@@ -25,7 +30,6 @@ jobs:
 
     - name: Build test_0.pro inside Packets_Versions/build
       run: |
-        cd Packets_Versions/build
+        cd TicTacToe_Embedded2027/Packets_Versions/build
         qmake test_0.pro
         mingw32-make
-
