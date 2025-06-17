@@ -19,14 +19,14 @@ jobs:
         pwd
         ls -R
 
-    # - name: Install Qt (MinGW)
-    #   uses: jurplel/install-qt-action@v3
-    #   with:
-    #     version: '6.8.3'
-    #     arch: 'win64_mingw'
+    - name: Install Qt (MinGW)
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '6.8.3'
+        arch: 'win64_mingw'
 
-    # - name: Add Qt bin directory to PATH
-    #   run: echo "C:\Qt\6.8.3\mingw_64\bin" >> $env:GITHUB_PATH
+    - name: Add Qt bin directory to PATH
+      run: echo "C:\Qt\6.8.3\mingw_64\bin" >> $env:GITHUB_PATH
 
     - name: Build test_0.pro inside Packets_Versions
       run: |
