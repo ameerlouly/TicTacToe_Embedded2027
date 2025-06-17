@@ -401,7 +401,7 @@ QPushButton:pressed
         <number>0</number>
        </property>
        <property name="currentIndex">
-        <number>6</number>
+        <number>5</number>
        </property>
        <widget class="QWidget" name="HomePage">
         <layout class="QGridLayout" name="gridLayout_3">
@@ -1846,10 +1846,10 @@ background-color: rgb(115, 199, 255);
         <widget class="QTableWidget" name="historyTable">
          <property name="geometry">
           <rect>
-           <x>410</x>
-           <y>60</y>
-           <width>481</width>
-           <height>411</height>
+           <x>370</x>
+           <y>180</y>
+           <width>341</width>
+           <height>351</height>
           </rect>
          </property>
          <property name="sizeIncrement">
@@ -1857,6 +1857,22 @@ background-color: rgb(115, 199, 255);
            <width>0</width>
            <height>1</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTableWidget
+ {
+    background-color: #f0f0f0;
+    gridline-color: black;
+}
+
+QHeaderView::section
+{
+	font: 400 9pt &quot;Montserrat&quot;;
+    background-color: black;
+    color: white;
+	padding: 10px;
+    border:1px  solid white;
+}</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::Shape::NoFrame</enum>
@@ -1891,17 +1907,17 @@ background-color: rgb(115, 199, 255);
          <row/>
          <column>
           <property name="text">
-           <string>RESULT</string>
+           <string>Result</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>DATE</string>
+           <string>Date</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>REVIEW GAME</string>
+           <string>Review</string>
           </property>
          </column>
          <item row="0" column="0">
@@ -2054,16 +2070,65 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <widget class="QWidget" name="AboutPage">
         <layout class="QVBoxLayout" name="verticalLayout_10">
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <layout class="QHBoxLayout" name="horizontalLayout_9">
            <property name="leftMargin">
-            <number>30</number>
+            <number>15</number>
            </property>
            <property name="topMargin">
-            <number>20</number>
+            <number>10</number>
            </property>
-           <property name="rightMargin">
-            <number>30</number>
+           <property name="bottomMargin">
+            <number>10</number>
            </property>
+           <item>
+            <widget class="QPushButton" name="back_5">
+             <property name="styleSheet">
+              <string notr="true">QPushButton
+{
+	color: grey;
+	font: 300 15pt &quot;Montserrat&quot;;
+	Background: rgba(0, 0, 0, 0);
+	border: none;
+}
+
+QPushButton:hover
+{
+	font: 300 15pt &quot;Montserrat&quot;;
+	color: rgb(90, 90, 90);
+	Background: rgba(0, 0, 0, 0);
+	border: none;
+}
+
+QPushButton:pressed
+{
+	font: 300 15pt &quot;Montserrat&quot;;
+	color: rgb(36, 36, 36);
+	Background: rgba(0, 0, 0, 0);
+	border: none;
+}</string>
+             </property>
+             <property name="text">
+              <string>&lt; Back</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_25">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>318</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
            <item>
             <spacer name="horizontalSpacer_15">
              <property name="orientation">
@@ -2358,7 +2423,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
 }</string>
                </property>
                <property name="text">
-                <string>Mohamed Abdullah</string>
+                <string>Mohamed Abdallah</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -2417,21 +2482,32 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <property name="orientation">
             <enum>Qt::Orientation::Horizontal</enum>
            </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Policy::MinimumExpanding</enum>
+           </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>191</width>
+             <width>50</width>
              <height>20</height>
             </size>
            </property>
           </spacer>
          </item>
          <item row="1" column="1">
-          <layout class="QGridLayout" name="gridLayout_7">
-           <item row="0" column="0">
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
             <widget class="QLabel" name="UsenameTag">
+             <property name="font">
+              <font>
+               <family>Montserrat</family>
+               <pointsize>40</pointsize>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
              <property name="styleSheet">
               <string notr="true">
-font: 900 20pt &quot;Segoe UI&quot;;
+font: 700 40pt &quot;Montserrat&quot;;
 color: rgb(0, 0, 0);</string>
              </property>
              <property name="text">
@@ -2439,20 +2515,147 @@ color: rgb(0, 0, 0);</string>
              </property>
             </widget>
            </item>
-           <item row="1" column="0">
-            <widget class="QPushButton" name="Log_out">
-             <property name="styleSheet">
-              <string notr="true">QPushButton{
-border-radius:10px;
-background-color:white;
-color:black;
-	font: 700 14pt &quot;Source Code Pro&quot;;
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <item>
+              <spacer name="horizontalSpacer_18">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="Log_out">
+               <property name="styleSheet">
+                <string notr="true">QPushButton
+{
+	border-radius:10px;
+	background-color:rgba(0, 0, 0, 50);
+	color:White;
+	font: 400 15pt &quot;Montserrat&quot;;
+	min-width:  200px;
+	min-width:  200px;
+	min-height: 35px;
+}
+
+QPushButton:hover
+{
+	border-radius:10px;
+	background-color:rgba(0, 0, 0, 70);
+	color:White;
+	font: 400 15pt &quot;Montserrat&quot;;
+	min-width:  200px;
+	min-width:  200px;
+	min-height: 35px;
+}
+
+QPushButton:pressed
+{
+	border-radius:10px;
+	background-color:rgba(0, 0, 0, 90);
+	color:White;
+	font: 400 15pt &quot;Montserrat&quot;;
+	min-width:  200px;
+	min-width:  200px;
+	min-height: 35px;
 }</string>
-             </property>
-             <property name="text">
-              <string>LOG OUT</string>
-             </property>
-            </widget>
+               </property>
+               <property name="text">
+                <string>LOG OUT</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_19">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <spacer name="horizontalSpacer_24">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="ViewHistory_Button">
+               <property name="styleSheet">
+                <string notr="true">QPushButton
+{
+	border-radius:10px;
+	background-color:rgba(0, 0, 0, 50);
+	color:White;
+	font: 400 15pt &quot;Montserrat&quot;;
+	min-width:  200px;
+	min-width:  200px;
+	min-height: 35px;
+}
+
+QPushButton:hover
+{
+	border-radius:10px;
+	background-color:rgba(0, 0, 0, 70);
+	color:White;
+	font: 400 15pt &quot;Montserrat&quot;;
+	min-width:  200px;
+	min-width:  200px;
+	min-height: 35px;
+}
+
+QPushButton:pressed
+{
+	border-radius:10px;
+	background-color:rgba(0, 0, 0, 90);
+	color:White;
+	font: 400 15pt &quot;Montserrat&quot;;
+	min-width:  200px;
+	min-width:  200px;
+	min-height: 35px;
+}</string>
+               </property>
+               <property name="text">
+                <string>View History</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_20">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
            </item>
           </layout>
          </item>
@@ -2461,9 +2664,12 @@ color:black;
            <property name="orientation">
             <enum>Qt::Orientation::Horizontal</enum>
            </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Policy::MinimumExpanding</enum>
+           </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>238</width>
+             <width>50</width>
              <height>20</height>
             </size>
            </property>

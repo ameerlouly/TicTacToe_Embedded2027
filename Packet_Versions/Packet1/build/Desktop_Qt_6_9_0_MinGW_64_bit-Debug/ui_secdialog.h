@@ -137,6 +137,9 @@ public:
     QLabel *draws;
     QWidget *AboutPage;
     QVBoxLayout *verticalLayout_10;
+    QHBoxLayout *horizontalLayout_9;
+    QPushButton *back_5;
+    QSpacerItem *horizontalSpacer_25;
     QHBoxLayout *horizontalLayout_6;
     QSpacerItem *horizontalSpacer_15;
     QLabel *label_11;
@@ -160,9 +163,16 @@ public:
     QGridLayout *gridLayout;
     QSpacerItem *verticalSpacer_6;
     QSpacerItem *horizontalSpacer_6;
-    QGridLayout *gridLayout_7;
+    QVBoxLayout *verticalLayout_11;
     QLabel *UsenameTag;
+    QHBoxLayout *horizontalLayout_8;
+    QSpacerItem *horizontalSpacer_18;
     QPushButton *Log_out;
+    QSpacerItem *horizontalSpacer_19;
+    QHBoxLayout *horizontalLayout_7;
+    QSpacerItem *horizontalSpacer_24;
+    QPushButton *ViewHistory_Button;
+    QSpacerItem *horizontalSpacer_20;
     QSpacerItem *horizontalSpacer_7;
     QSpacerItem *verticalSpacer_7;
 
@@ -1353,9 +1363,46 @@ public:
         AboutPage->setObjectName("AboutPage");
         verticalLayout_10 = new QVBoxLayout(AboutPage);
         verticalLayout_10->setObjectName("verticalLayout_10");
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setObjectName("horizontalLayout_9");
+        horizontalLayout_9->setContentsMargins(15, 10, -1, -1);
+        back_5 = new QPushButton(AboutPage);
+        back_5->setObjectName("back_5");
+        back_5->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	color: grey;\n"
+"	font: 300 15pt \"Montserrat\";\n"
+"	Background: rgba(0, 0, 0, 0);\n"
+"	border: none;\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	font: 300 15pt \"Montserrat\";\n"
+"	color: rgb(90, 90, 90);\n"
+"	Background: rgba(0, 0, 0, 0);\n"
+"	border: none;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	font: 300 15pt \"Montserrat\";\n"
+"	color: rgb(36, 36, 36);\n"
+"	Background: rgba(0, 0, 0, 0);\n"
+"	border: none;\n"
+"}"));
+
+        horizontalLayout_9->addWidget(back_5);
+
+        horizontalSpacer_25 = new QSpacerItem(318, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_9->addItem(horizontalSpacer_25);
+
+
+        verticalLayout_10->addLayout(horizontalLayout_9);
+
         horizontalLayout_6 = new QHBoxLayout();
         horizontalLayout_6->setObjectName("horizontalLayout_6");
-        horizontalLayout_6->setContentsMargins(30, 20, 30, -1);
         horizontalSpacer_15 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         horizontalLayout_6->addItem(horizontalSpacer_15);
@@ -1512,35 +1559,130 @@ public:
 
         gridLayout->addItem(verticalSpacer_6, 0, 1, 1, 1);
 
-        horizontalSpacer_6 = new QSpacerItem(191, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        horizontalSpacer_6 = new QSpacerItem(50, 20, QSizePolicy::Policy::MinimumExpanding, QSizePolicy::Policy::Minimum);
 
         gridLayout->addItem(horizontalSpacer_6, 1, 0, 1, 1);
 
-        gridLayout_7 = new QGridLayout();
-        gridLayout_7->setObjectName("gridLayout_7");
+        verticalLayout_11 = new QVBoxLayout();
+        verticalLayout_11->setObjectName("verticalLayout_11");
         UsenameTag = new QLabel(ProfilePage);
         UsenameTag->setObjectName("UsenameTag");
+        QFont font2;
+        font2.setFamilies({QString::fromUtf8("Montserrat")});
+        font2.setPointSize(40);
+        font2.setBold(true);
+        font2.setItalic(false);
+        UsenameTag->setFont(font2);
         UsenameTag->setStyleSheet(QString::fromUtf8("\n"
-"font: 900 20pt \"Segoe UI\";\n"
+"font: 700 40pt \"Montserrat\";\n"
 "color: rgb(0, 0, 0);"));
 
-        gridLayout_7->addWidget(UsenameTag, 0, 0, 1, 1);
+        verticalLayout_11->addWidget(UsenameTag);
+
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setObjectName("horizontalLayout_8");
+        horizontalSpacer_18 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_8->addItem(horizontalSpacer_18);
 
         Log_out = new QPushButton(ProfilePage);
         Log_out->setObjectName("Log_out");
-        Log_out->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"border-radius:10px;\n"
-"background-color:white;\n"
-"color:black;\n"
-"	font: 700 14pt \"Source Code Pro\";\n"
+        Log_out->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:10px;\n"
+"	background-color:rgba(0, 0, 0, 50);\n"
+"	color:White;\n"
+"	font: 400 15pt \"Montserrat\";\n"
+"	min-width:  200px;\n"
+"	min-width:  200px;\n"
+"	min-height: 35px;\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border-radius:10px;\n"
+"	background-color:rgba(0, 0, 0, 70);\n"
+"	color:White;\n"
+"	font: 400 15pt \"Montserrat\";\n"
+"	min-width:  200px;\n"
+"	min-width:  200px;\n"
+"	min-height: 35px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border-radius:10px;\n"
+"	background-color:rgba(0, 0, 0, 90);\n"
+"	color:White;\n"
+"	font: 400 15pt \"Montserrat\";\n"
+"	min-width:  200px;\n"
+"	min-width:  200px;\n"
+"	min-height: 35px;\n"
 "}"));
 
-        gridLayout_7->addWidget(Log_out, 1, 0, 1, 1);
+        horizontalLayout_8->addWidget(Log_out);
+
+        horizontalSpacer_19 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_8->addItem(horizontalSpacer_19);
 
 
-        gridLayout->addLayout(gridLayout_7, 1, 1, 1, 1);
+        verticalLayout_11->addLayout(horizontalLayout_8);
 
-        horizontalSpacer_7 = new QSpacerItem(238, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setObjectName("horizontalLayout_7");
+        horizontalSpacer_24 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_7->addItem(horizontalSpacer_24);
+
+        ViewHistory_Button = new QPushButton(ProfilePage);
+        ViewHistory_Button->setObjectName("ViewHistory_Button");
+        ViewHistory_Button->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border-radius:10px;\n"
+"	background-color:rgba(0, 0, 0, 50);\n"
+"	color:White;\n"
+"	font: 400 15pt \"Montserrat\";\n"
+"	min-width:  200px;\n"
+"	min-width:  200px;\n"
+"	min-height: 35px;\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border-radius:10px;\n"
+"	background-color:rgba(0, 0, 0, 70);\n"
+"	color:White;\n"
+"	font: 400 15pt \"Montserrat\";\n"
+"	min-width:  200px;\n"
+"	min-width:  200px;\n"
+"	min-height: 35px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border-radius:10px;\n"
+"	background-color:rgba(0, 0, 0, 90);\n"
+"	color:White;\n"
+"	font: 400 15pt \"Montserrat\";\n"
+"	min-width:  200px;\n"
+"	min-width:  200px;\n"
+"	min-height: 35px;\n"
+"}"));
+
+        horizontalLayout_7->addWidget(ViewHistory_Button);
+
+        horizontalSpacer_20 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_7->addItem(horizontalSpacer_20);
+
+
+        verticalLayout_11->addLayout(horizontalLayout_7);
+
+
+        gridLayout->addLayout(verticalLayout_11, 1, 1, 1, 1);
+
+        horizontalSpacer_7 = new QSpacerItem(50, 20, QSizePolicy::Policy::MinimumExpanding, QSizePolicy::Policy::Minimum);
 
         gridLayout->addItem(horizontalSpacer_7, 1, 2, 1, 1);
 
@@ -1660,6 +1802,7 @@ public:
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">DRAWS</span></p></body></html>", nullptr));
         draws->setText(QCoreApplication::translate("SecDialog", "TextLabel", nullptr));
+        back_5->setText(QCoreApplication::translate("SecDialog", "< Back", nullptr));
         label_11->setText(QString());
         label_12->setText(QString());
         label_13->setText(QString());
@@ -1667,9 +1810,10 @@ public:
         label_7->setText(QCoreApplication::translate("SecDialog", "Rola Refaat", nullptr));
         label_8->setText(QCoreApplication::translate("SecDialog", "Ameer Louly", nullptr));
         label_9->setText(QCoreApplication::translate("SecDialog", "Amir Sameh", nullptr));
-        label_10->setText(QCoreApplication::translate("SecDialog", "Mohamed Abdullah", nullptr));
+        label_10->setText(QCoreApplication::translate("SecDialog", "Mohamed Abdallah", nullptr));
         UsenameTag->setText(QCoreApplication::translate("SecDialog", "Welcome", nullptr));
         Log_out->setText(QCoreApplication::translate("SecDialog", "LOG OUT", nullptr));
+        ViewHistory_Button->setText(QCoreApplication::translate("SecDialog", "View History", nullptr));
     } // retranslateUi
 
 };

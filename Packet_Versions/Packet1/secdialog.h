@@ -85,6 +85,10 @@ private slots:
 
     void on_home_clicked();
 
+    void on_ViewHistory_Button_clicked();
+
+    void on_back_5_clicked();
+
 private:
     Ui::SecDialog *ui;
 };

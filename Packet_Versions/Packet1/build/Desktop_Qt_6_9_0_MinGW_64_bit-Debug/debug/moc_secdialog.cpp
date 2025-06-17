@@ -71,7 +71,9 @@ template <> constexpr inline auto SecDialog::qt_create_metaobjectdata<qt_meta_ta
         "ShowGrid",
         "on_GameReview_clicked",
         "on_Log_out_clicked",
-        "on_home_clicked"
+        "on_home_clicked",
+        "on_ViewHistory_Button_clicked",
+        "on_back_5_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -137,6 +139,10 @@ template <> constexpr inline auto SecDialog::qt_create_metaobjectdata<qt_meta_ta
         QtMocHelpers::SlotData<void()>(32, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_home_clicked'
         QtMocHelpers::SlotData<void()>(33, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_ViewHistory_Button_clicked'
+        QtMocHelpers::SlotData<void()>(34, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_back_5_clicked'
+        QtMocHelpers::SlotData<void()>(35, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -190,6 +196,8 @@ void SecDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 27: _t->on_GameReview_clicked(); break;
         case 28: _t->on_Log_out_clicked(); break;
         case 29: _t->on_home_clicked(); break;
+        case 30: _t->on_ViewHistory_Button_clicked(); break;
+        case 31: _t->on_back_5_clicked(); break;
         default: ;
         }
     }
@@ -214,14 +222,14 @@ int SecDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 30)
+        if (_id < 32)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 30;
+        _id -= 32;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 30)
+        if (_id < 32)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 30;
+        _id -= 32;
     }
     return _id;
 }

@@ -57,15 +57,17 @@ void SecDialog::isGuest()
         ui->history->setEnabled(false);
         ui->HistoryWarning->show();
         ui->HistoryWarning->setText("Guest Mode");
-        ui->UsenameTag->setText("Welcome, Pls Sign In First");
+        ui->UsenameTag->setText("Welcome, Please Create an Account");
         ui->Log_out->setText("Regstier Now");
+        ui->ViewHistory_Button->hide();
     }
     else
     {
         ui->history->setEnabled(true);
-        ui->UsenameTag->setText("Welcome " + QString::fromStdString(G_UserName));
+        ui->UsenameTag->setText("Welcome, " + QString::fromStdString(G_UserName));
         ui->HistoryWarning->setText(QString::fromStdString(G_UserName));
-        ui->Log_out->setText("LogOut");
+        ui->Log_out->setText("Log Out");
+        ui->ViewHistory_Button->show();
     }
 }
 
@@ -239,6 +241,12 @@ void SecDialog::on_back_4_clicked()
 
 }
 
+void SecDialog::on_back_5_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+
 void SecDialog::on_history_clicked()
 {
     inHistory = true;
@@ -260,6 +268,7 @@ void SecDialog::on_settings_clicked()
 void SecDialog::on_profile_clicked()
 {
     inHistory = false;
+
     ui->stackedWidget->setCurrentIndex(7);
     ui->UsenameTag->show();
     ui->Log_out->show();
@@ -381,5 +390,16 @@ void SecDialog::on_home_clicked()
 {
     inHistory = false;
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+
+void SecDialog::on_ViewHistory_Button_clicked()
+{
+    inHistory = true;
+    ui->stackedWidget->setCurrentIndex(5);
+    viewGameHistory(db, ui->historyTable);
+    ui->wins->setText(QString::number(TotalWins));
+    ui->losses->setText(QString::number(TotalLoses));
+    ui->draws->setText(QString::number(TotalDraws));
 }
 
