@@ -127,6 +127,14 @@ void onButtonClicked(int *x , QPushButton *button , int num, int *MoveNum, sqlit
         if(*x == 1)
         {  // Human (X)
             button->setText("X"); //! Change to Picture
+
+            // Create a palette and set the text color
+            QPalette palette = button->palette();
+            palette.setColor(QPalette::ButtonText, QColor("#162DD3")); // Change text color to red
+
+            // Apply the palette to the button
+            button->setPalette(palette);
+
             clicked[num] = 1;
 
             if (mode != 2)
@@ -155,27 +163,44 @@ void onButtonClicked(int *x , QPushButton *button , int num, int *MoveNum, sqlit
 
             CheckWin(clicked, db,Rematch,ReView,GameResultLabel);
 
-            if (mode == 3 && WhoWon ==0) {
+            if (mode == 3 && WhoWon ==0)
+            {
                 waitAI=true;
                 QTimer::singleShot(200, Gamewindow2, [=]() {AIPlay(MoveNum ,x,Grid,Rematch,ReView,GameResultLabel);});
             }
 
-        } else if (*x == 2) {  // O turn (e.g., in 2-player mode)
+        }
+        else if (*x == 2) // O turn (e.g., in 2-player mode)
+        {
             button->setText("O");
+
+            // Create a palette and set the text color
+            QPalette palette = button->palette();
+            palette.setColor(QPalette::ButtonText, QColor("#EF2622")); // Change text color to red
+
+            // Apply the palette to the button
+            button->setPalette(palette);
+
+            button->update();
+
             clicked[num] = 2;
 
-            if (mode != 2) {
+            if (mode != 2)
+            {
                 HistoryRecorder[*MoveNum] = (10 * (*x)) + num;
             }
 
-            if (mode == 2) {
-                if (PlayerXQ.isfull()) {
+            if (mode == 2)
+            {
+                if (PlayerXQ.isfull())
+                {
                     QPushButton *dash = PlayerXQ.peak();
                     dash->setEnabled(false);
                 }
 
                 QPushButton *remove = PlayerOQ.push(Grid[num]);
-                if (remove != nullptr) {
+                if (remove != nullptr)
+                {
                     remove->setEnabled(true);
                     remove->setText("");
                     clicked[GridToNum(remove,Grid)] = 0;

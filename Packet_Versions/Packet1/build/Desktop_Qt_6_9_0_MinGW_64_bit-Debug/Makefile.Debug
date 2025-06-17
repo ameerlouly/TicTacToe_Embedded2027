@@ -135,8 +135,12 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_images.cpp
 debug/qrc_images.cpp: ../../images.qrc \
 		C:/Qt/6.9.0/mingw_64/bin/rcc.exe \
+		../../Graphics/SVG/Grid_v1.svg \
 		../../Graphics/SVG/Engineering.svg \
 		../../Graphics/SVG/CU.svg \
+		../../Graphics/SVG/Grid_h.svg \
+		../../Graphics/SVG/Grid_v2.svg \
+		../../Graphics/SVG/Grid_v1_1.svg \
 		../../Graphics/SVG/EECE27_logo_SVG.svg \
 		../../Graphics/Ready/History_Button_Pressed_Graphic.png \
 		../../Graphics/Ready/x_symbol.png \
@@ -2112,6 +2116,8 @@ debug/secdialog.o: ../../secdialog.cpp ../../secdialog.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QSpacerItem \
+		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QSplitter \
+		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qsplitter.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QStackedWidget \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/qstackedwidget.h \
 		C:/Qt/6.9.0/mingw_64/include/QtWidgets/QTableWidget \

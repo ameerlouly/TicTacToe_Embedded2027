@@ -105,27 +105,51 @@ public:
     QSpacerItem *horizontalSpacer_3;
     QSpacerItem *verticalSpacer_2;
     QWidget *GamePage;
-    QPushButton *grid6;
-    QPushButton *grid5;
-    QPushButton *grid2;
-    QFrame *line_2;
-    QFrame *line_3;
-    QPushButton *grid0;
-    QPushButton *grid7;
-    QPushButton *grid4;
-    QPushButton *grid3;
-    QTextEdit *textEdit_2;
-    QTextEdit *textEdit;
-    QPushButton *grid1;
-    QFrame *line_4;
-    QPushButton *grid8;
-    QFrame *line;
-    QPushButton *GameReview;
-    QPushButton *Rematch;
-    QPushButton *back_4;
-    QGroupBox *groupBox_2;
+    QVBoxLayout *verticalLayout_16;
+    QHBoxLayout *horizontalLayout_11;
+    QVBoxLayout *verticalLayout_13;
+    QLabel *Player1_Label;
+    QLabel *Player1_Label_2;
+    QSpacerItem *horizontalSpacer_26;
     QLabel *label;
+    QSpacerItem *horizontalSpacer_27;
+    QVBoxLayout *verticalLayout_14;
+    QLabel *Player2_Label;
+    QLabel *Player1_Label_3;
+    QHBoxLayout *horizontalLayout_12;
+    QSpacerItem *horizontalSpacer_28;
     QLabel *ShureExit;
+    QSpacerItem *horizontalSpacer_29;
+    QGridLayout *gridLayout_7;
+    QSpacerItem *verticalSpacer_14;
+    QSpacerItem *horizontalSpacer_30;
+    QSpacerItem *horizontalSpacer_31;
+    QSpacerItem *verticalSpacer_13;
+    QVBoxLayout *verticalLayout_15;
+    QHBoxLayout *horizontalLayout_13;
+    QPushButton *grid0;
+    QLabel *label_14;
+    QPushButton *grid1;
+    QLabel *label_15;
+    QPushButton *grid2;
+    QLabel *label_21;
+    QHBoxLayout *horizontalLayout_15;
+    QPushButton *grid3;
+    QLabel *label_18;
+    QPushButton *grid4;
+    QLabel *label_19;
+    QPushButton *grid5;
+    QLabel *label_20;
+    QHBoxLayout *horizontalLayout_14;
+    QPushButton *grid6;
+    QLabel *label_16;
+    QPushButton *grid7;
+    QLabel *label_17;
+    QPushButton *grid8;
+    QHBoxLayout *horizontalLayout_10;
+    QPushButton *back_4;
+    QPushButton *Rematch;
+    QPushButton *GameReview;
     QWidget *HistoryPage;
     QWidget *widget;
     QGridLayout *gridLayout_20;
@@ -185,7 +209,7 @@ public:
     {
         if (SecDialog->objectName().isEmpty())
             SecDialog->setObjectName("SecDialog");
-        SecDialog->resize(952, 755);
+        SecDialog->resize(948, 909);
         SecDialog->setStyleSheet(QString::fromUtf8("QDialog\n"
 "{\n"
 "	background-color: rgb(230, 230, 230);\n"
@@ -201,6 +225,8 @@ public:
         verticalLayout_7->setContentsMargins(0, 0, 0, 0);
         TopBar = new QGroupBox(SecDialog);
         TopBar->setObjectName("TopBar");
+        TopBar->setMinimumSize(QSize(0, 60));
+        TopBar->setMaximumSize(QSize(16777215, 60));
         TopBar->setStyleSheet(QString::fromUtf8("QGroupBox\n"
 "{\n"
 "	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(22, 45, 211, 255), stop:1 			rgba(17, 180, 237, 255));\n"
@@ -226,6 +252,7 @@ public:
         splitter->setObjectName("splitter");
         splitter->setOrientation(Qt::Orientation::Horizontal);
         splitter->setHandleWidth(0);
+        splitter->setChildrenCollapsible(false);
         SideBar = new QGroupBox(splitter);
         SideBar->setObjectName("SideBar");
         QSizePolicy sizePolicy(QSizePolicy::Policy::Ignored, QSizePolicy::Policy::Ignored);
@@ -233,6 +260,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(SideBar->sizePolicy().hasHeightForWidth());
         SideBar->setSizePolicy(sizePolicy);
+        SideBar->setMaximumSize(QSize(300, 16777215));
         SideBar->setStyleSheet(QString::fromUtf8("QGroupBox\n"
 "{\n"
 "	background-color: qlineargradient(spread:pad, x1:0.2, y1:0, x2:0.5, y2:0.7, stop:0 rgba(186, 200, 224, 255), 				stop:1 rgba(106, 133, 182, 255));\n"
@@ -380,7 +408,7 @@ public:
 
         verticalLayout->addWidget(line_6);
 
-        verticalSpacer_3 = new QSpacerItem(20, 50, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::MinimumExpanding);
+        verticalSpacer_3 = new QSpacerItem(500, 50, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::MinimumExpanding);
 
         verticalLayout->addItem(verticalSpacer_3);
 
@@ -423,7 +451,7 @@ public:
 
         verticalLayout->addWidget(settings);
 
-        verticalSpacer_10 = new QSpacerItem(20, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
+        verticalSpacer_10 = new QSpacerItem(500, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
 
         verticalLayout->addItem(verticalSpacer_10);
 
@@ -1005,236 +1033,614 @@ public:
         stackedWidget->addWidget(DifficultyPage);
         GamePage = new QWidget();
         GamePage->setObjectName("GamePage");
-        grid6 = new QPushButton(GamePage);
-        grid6->setObjectName("grid6");
-        grid6->setGeometry(QRect(170, 490, 201, 131));
-        grid6->setStyleSheet(QString::fromUtf8("QPushButton\n"
+        verticalLayout_16 = new QVBoxLayout(GamePage);
+        verticalLayout_16->setObjectName("verticalLayout_16");
+        horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setObjectName("horizontalLayout_11");
+        horizontalLayout_11->setContentsMargins(10, 10, 10, -1);
+        verticalLayout_13 = new QVBoxLayout();
+        verticalLayout_13->setSpacing(0);
+        verticalLayout_13->setObjectName("verticalLayout_13");
+        Player1_Label = new QLabel(GamePage);
+        Player1_Label->setObjectName("Player1_Label");
+        Player1_Label->setMinimumSize(QSize(200, 20));
+        Player1_Label->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
-"border :none;\n"
-"color:black;\n"
-"	font: 28pt \"Segoe Fluent Icons\";\n"
-"}\n"
-"QPushButton:Hover\n"
-"{\n"
-"background-color:blue;\n"
-"}\n"
-"QPushButton:pressed\n"
-"{\n"
-"background-color:red;\n"
+"	color: #21344D;\n"
+"	font: 700 17pt \"Montserrat\";\n"
 "}"));
-        grid5 = new QPushButton(GamePage);
-        grid5->setObjectName("grid5");
-        grid5->setGeometry(QRect(580, 350, 201, 131));
-        grid5->setStyleSheet(QString::fromUtf8("QPushButton\n"
+        Player1_Label->setScaledContents(false);
+        Player1_Label->setWordWrap(true);
+
+        verticalLayout_13->addWidget(Player1_Label);
+
+        Player1_Label_2 = new QLabel(GamePage);
+        Player1_Label_2->setObjectName("Player1_Label_2");
+        Player1_Label_2->setMinimumSize(QSize(200, 20));
+        Player1_Label_2->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
-"border :none;\n"
-"color:black;\n"
-"	font: 28pt \"Segoe Fluent Icons\";\n"
-"}\n"
-"QPushButton:Hover\n"
-"{\n"
-"background-color:blue;\n"
-"}\n"
-"QPushButton:pressed\n"
-"{\n"
-"background-color:red;\n"
+"	color: #21344D;\n"
+"	font: 200 12pt \"Montserrat\";\n"
 "}"));
-        grid2 = new QPushButton(GamePage);
-        grid2->setObjectName("grid2");
-        grid2->setGeometry(QRect(580, 200, 201, 131));
-        grid2->setStyleSheet(QString::fromUtf8("QPushButton\n"
+        Player1_Label_2->setScaledContents(false);
+        Player1_Label_2->setWordWrap(true);
+
+        verticalLayout_13->addWidget(Player1_Label_2);
+
+
+        horizontalLayout_11->addLayout(verticalLayout_13);
+
+        horizontalSpacer_26 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_11->addItem(horizontalSpacer_26);
+
+        label = new QLabel(GamePage);
+        label->setObjectName("label");
+        label->setStyleSheet(QString::fromUtf8("font: 600 28pt \"Montserrat\";\n"
+"color: #21344D;"));
+        label->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        horizontalLayout_11->addWidget(label);
+
+        horizontalSpacer_27 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_11->addItem(horizontalSpacer_27);
+
+        verticalLayout_14 = new QVBoxLayout();
+        verticalLayout_14->setObjectName("verticalLayout_14");
+        Player2_Label = new QLabel(GamePage);
+        Player2_Label->setObjectName("Player2_Label");
+        Player2_Label->setMinimumSize(QSize(200, 30));
+        Player2_Label->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
-"border :none;\n"
-"color:black;\n"
-"	font: 28pt \"Segoe Fluent Icons\";\n"
-"}\n"
-"QPushButton:Hover\n"
-"{\n"
-"background-color:blue;\n"
-"}\n"
-"QPushButton:pressed\n"
-"{\n"
-"background-color:red;\n"
+"	color: #21344D;\n"
+"	font: 700 17pt \"Montserrat\";\n"
 "}"));
-        line_2 = new QFrame(GamePage);
-        line_2->setObjectName("line_2");
-        line_2->setGeometry(QRect(360, 200, 20, 421));
-        line_2->setLineWidth(5);
-        line_2->setFrameShape(QFrame::Shape::VLine);
-        line_2->setFrameShadow(QFrame::Shadow::Sunken);
-        line_3 = new QFrame(GamePage);
-        line_3->setObjectName("line_3");
-        line_3->setGeometry(QRect(190, 480, 601, 20));
-        line_3->setLineWidth(5);
-        line_3->setFrameShape(QFrame::Shape::HLine);
-        line_3->setFrameShadow(QFrame::Shadow::Sunken);
+        Player2_Label->setWordWrap(true);
+
+        verticalLayout_14->addWidget(Player2_Label);
+
+        Player1_Label_3 = new QLabel(GamePage);
+        Player1_Label_3->setObjectName("Player1_Label_3");
+        Player1_Label_3->setMinimumSize(QSize(200, 30));
+        Player1_Label_3->setStyleSheet(QString::fromUtf8("QLabel\n"
+"{\n"
+"	color: #21344D;\n"
+"	font: 200 12pt \"Montserrat\";\n"
+"}"));
+        Player1_Label_3->setScaledContents(false);
+        Player1_Label_3->setWordWrap(true);
+
+        verticalLayout_14->addWidget(Player1_Label_3);
+
+
+        horizontalLayout_11->addLayout(verticalLayout_14);
+
+
+        verticalLayout_16->addLayout(horizontalLayout_11);
+
+        horizontalLayout_12 = new QHBoxLayout();
+        horizontalLayout_12->setObjectName("horizontalLayout_12");
+        horizontalSpacer_28 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_12->addItem(horizontalSpacer_28);
+
+        ShureExit = new QLabel(GamePage);
+        ShureExit->setObjectName("ShureExit");
+        ShureExit->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);\n"
+"font: 500 15pt \"Montserrat\";"));
+        ShureExit->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        horizontalLayout_12->addWidget(ShureExit);
+
+        horizontalSpacer_29 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_12->addItem(horizontalSpacer_29);
+
+
+        verticalLayout_16->addLayout(horizontalLayout_12);
+
+        gridLayout_7 = new QGridLayout();
+        gridLayout_7->setSpacing(0);
+        gridLayout_7->setObjectName("gridLayout_7");
+        gridLayout_7->setSizeConstraint(QLayout::SizeConstraint::SetMinAndMaxSize);
+        verticalSpacer_14 = new QSpacerItem(70, 70, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::MinimumExpanding);
+
+        gridLayout_7->addItem(verticalSpacer_14, 0, 1, 1, 1);
+
+        horizontalSpacer_30 = new QSpacerItem(70, 70, QSizePolicy::Policy::MinimumExpanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_7->addItem(horizontalSpacer_30, 1, 0, 1, 1);
+
+        horizontalSpacer_31 = new QSpacerItem(70, 70, QSizePolicy::Policy::MinimumExpanding, QSizePolicy::Policy::Minimum);
+
+        gridLayout_7->addItem(horizontalSpacer_31, 1, 2, 1, 1);
+
+        verticalSpacer_13 = new QSpacerItem(70, 70, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::MinimumExpanding);
+
+        gridLayout_7->addItem(verticalSpacer_13, 2, 1, 1, 1);
+
+        verticalLayout_15 = new QVBoxLayout();
+        verticalLayout_15->setSpacing(0);
+        verticalLayout_15->setObjectName("verticalLayout_15");
+        horizontalLayout_13 = new QHBoxLayout();
+        horizontalLayout_13->setSpacing(0);
+        horizontalLayout_13->setObjectName("horizontalLayout_13");
         grid0 = new QPushButton(GamePage);
         grid0->setObjectName("grid0");
-        grid0->setGeometry(QRect(160, 200, 201, 131));
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(grid0->sizePolicy().hasHeightForWidth());
+        grid0->setSizePolicy(sizePolicy1);
+        grid0->setMinimumSize(QSize(150, 150));
+        grid0->setMaximumSize(QSize(150, 150));
+        grid0->setToolTipDuration(-8);
         grid0->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
-"border :none;\n"
-"color:black;\n"
-"	font: 28pt \"Segoe Fluent Icons\";\n"
+"	border: none;\n"
+"	background-color: rgba(255, 255, 255, 0);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
 "}\n"
-"QPushButton:Hover\n"
+"\n"
+"QPushButton:hover\n"
 "{\n"
-"background-color:blue;\n"
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 20);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
 "}\n"
-"QPushButton:checked {\n"
-"    background-color: red;\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 40);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
 "}\n"
+"\n"
+"\n"
+"\n"
+"\n"
 ""));
-        grid7 = new QPushButton(GamePage);
-        grid7->setObjectName("grid7");
-        grid7->setGeometry(QRect(370, 500, 201, 131));
-        grid7->setStyleSheet(QString::fromUtf8("QPushButton\n"
-"{\n"
-"border :none;\n"
-"color:black;\n"
-"	font: 28pt \"Segoe Fluent Icons\";\n"
-"}\n"
-"QPushButton:Hover\n"
-"{\n"
-"background-color:blue;\n"
-"}\n"
-"QPushButton:pressed\n"
-"{\n"
-"background-color:red;\n"
-"}"));
-        grid4 = new QPushButton(GamePage);
-        grid4->setObjectName("grid4");
-        grid4->setGeometry(QRect(372, 350, 201, 131));
-        grid4->setStyleSheet(QString::fromUtf8("QPushButton\n"
-"{\n"
-"border :none;\n"
-"color:black;\n"
-"	font: 28pt \"Segoe Fluent Icons\";\n"
-"}\n"
-"QPushButton:Hover\n"
-"{\n"
-"background-color:blue;\n"
-"}\n"
-"QPushButton:pressed\n"
-"{\n"
-"background-color:red;\n"
-"}"));
-        grid3 = new QPushButton(GamePage);
-        grid3->setObjectName("grid3");
-        grid3->setGeometry(QRect(160, 350, 201, 131));
-        grid3->setStyleSheet(QString::fromUtf8("QPushButton\n"
-"{\n"
-"border :none;\n"
-"color:black;\n"
-"	font: 28pt \"Segoe Fluent Icons\";\n"
-"}\n"
-"QPushButton:Hover\n"
-"{\n"
-"background-color:blue;\n"
-"}\n"
-"QPushButton:pressed\n"
-"{\n"
-"background-color:red;\n"
-"}\n"
-"QPushButton[text=\"O\"] {\n"
-"    color: black;\n"
-"   \n"
-"}\n"
-"QPushButton[text=\"X\"] {\n"
-"    color: white;\n"
-"    }\n"
-""));
-        textEdit_2 = new QTextEdit(GamePage);
-        textEdit_2->setObjectName("textEdit_2");
-        textEdit_2->setGeometry(QRect(590, 60, 261, 41));
-        textEdit_2->setStyleSheet(QString::fromUtf8("QTextEdit\n"
-"{\n"
-"border :none;\n"
-"color:black;\n"
-"background-color: rgb(115, 199, 255);\n"
-"font: 700 12pt \"Rockwell\";    \n"
-" border-radius: 20px;\n"
-"}"));
-        textEdit = new QTextEdit(GamePage);
-        textEdit->setObjectName("textEdit");
-        textEdit->setGeometry(QRect(80, 60, 261, 41));
-        textEdit->setStyleSheet(QString::fromUtf8("QTextEdit\n"
-"{\n"
-"border :none;\n"
-"color:black;\n"
-"background-color: rgb(115, 199, 255);\n"
-"font: 700 12pt \"Rockwell\";    \n"
-" border-radius: 20px;\n"
-"}"));
+
+        horizontalLayout_13->addWidget(grid0);
+
+        label_14 = new QLabel(GamePage);
+        label_14->setObjectName("label_14");
+        label_14->setMinimumSize(QSize(20, 120));
+        label_14->setMaximumSize(QSize(15, 200));
+        label_14->setPixmap(QPixmap(QString::fromUtf8(":/Logic/Graphics/SVG/Grid_v1.svg")));
+        label_14->setScaledContents(true);
+
+        horizontalLayout_13->addWidget(label_14);
+
         grid1 = new QPushButton(GamePage);
         grid1->setObjectName("grid1");
-        grid1->setGeometry(QRect(370, 200, 201, 131));
+        sizePolicy1.setHeightForWidth(grid1->sizePolicy().hasHeightForWidth());
+        grid1->setSizePolicy(sizePolicy1);
+        grid1->setMinimumSize(QSize(150, 150));
+        grid1->setMaximumSize(QSize(150, 150));
+        grid1->setToolTipDuration(-8);
         grid1->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
-"border :none;\n"
-"color:black;\n"
-"	font: 28pt \"Segoe Fluent Icons\";\n"
+"	border: none;\n"
+"	background-color: rgba(255, 255, 255, 0);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
 "}\n"
-"QPushButton:Hover\n"
+"\n"
+"QPushButton:hover\n"
 "{\n"
-"background-color:blue;\n"
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 20);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
 "}\n"
+"\n"
 "QPushButton:pressed\n"
 "{\n"
-"background-color:red;\n"
-"}"));
-        line_4 = new QFrame(GamePage);
-        line_4->setObjectName("line_4");
-        line_4->setGeometry(QRect(180, 330, 611, 20));
-        line_4->setLineWidth(5);
-        line_4->setFrameShape(QFrame::Shape::HLine);
-        line_4->setFrameShadow(QFrame::Shadow::Sunken);
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 40);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""));
+
+        horizontalLayout_13->addWidget(grid1);
+
+        label_15 = new QLabel(GamePage);
+        label_15->setObjectName("label_15");
+        label_15->setMinimumSize(QSize(20, 120));
+        label_15->setMaximumSize(QSize(15, 200));
+        label_15->setPixmap(QPixmap(QString::fromUtf8(":/Logic/Graphics/SVG/Grid_v1.svg")));
+        label_15->setScaledContents(true);
+
+        horizontalLayout_13->addWidget(label_15);
+
+        grid2 = new QPushButton(GamePage);
+        grid2->setObjectName("grid2");
+        sizePolicy1.setHeightForWidth(grid2->sizePolicy().hasHeightForWidth());
+        grid2->setSizePolicy(sizePolicy1);
+        grid2->setMinimumSize(QSize(150, 150));
+        grid2->setMaximumSize(QSize(150, 150));
+        grid2->setToolTipDuration(-8);
+        grid2->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(255, 255, 255, 0);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 20);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 40);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""));
+
+        horizontalLayout_13->addWidget(grid2);
+
+
+        verticalLayout_15->addLayout(horizontalLayout_13);
+
+        label_21 = new QLabel(GamePage);
+        label_21->setObjectName("label_21");
+        label_21->setMinimumSize(QSize(1, 20));
+        label_21->setMaximumSize(QSize(550, 20));
+        label_21->setLineWidth(0);
+        label_21->setPixmap(QPixmap(QString::fromUtf8(":/Logic/Graphics/SVG/Grid_h.svg")));
+        label_21->setScaledContents(true);
+
+        verticalLayout_15->addWidget(label_21);
+
+        horizontalLayout_15 = new QHBoxLayout();
+        horizontalLayout_15->setSpacing(0);
+        horizontalLayout_15->setObjectName("horizontalLayout_15");
+        grid3 = new QPushButton(GamePage);
+        grid3->setObjectName("grid3");
+        sizePolicy1.setHeightForWidth(grid3->sizePolicy().hasHeightForWidth());
+        grid3->setSizePolicy(sizePolicy1);
+        grid3->setMinimumSize(QSize(150, 150));
+        grid3->setMaximumSize(QSize(150, 150));
+        grid3->setToolTipDuration(-8);
+        grid3->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(255, 255, 255, 0);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 20);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 40);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""));
+
+        horizontalLayout_15->addWidget(grid3);
+
+        label_18 = new QLabel(GamePage);
+        label_18->setObjectName("label_18");
+        label_18->setMinimumSize(QSize(20, 120));
+        label_18->setMaximumSize(QSize(15, 200));
+        label_18->setPixmap(QPixmap(QString::fromUtf8(":/Logic/Graphics/SVG/Grid_v2.svg")));
+        label_18->setScaledContents(true);
+
+        horizontalLayout_15->addWidget(label_18);
+
+        grid4 = new QPushButton(GamePage);
+        grid4->setObjectName("grid4");
+        sizePolicy1.setHeightForWidth(grid4->sizePolicy().hasHeightForWidth());
+        grid4->setSizePolicy(sizePolicy1);
+        grid4->setMinimumSize(QSize(150, 150));
+        grid4->setMaximumSize(QSize(150, 150));
+        grid4->setToolTipDuration(-8);
+        grid4->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(255, 255, 255, 0);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 20);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 40);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""));
+
+        horizontalLayout_15->addWidget(grid4);
+
+        label_19 = new QLabel(GamePage);
+        label_19->setObjectName("label_19");
+        label_19->setMinimumSize(QSize(20, 120));
+        label_19->setMaximumSize(QSize(15, 200));
+        label_19->setPixmap(QPixmap(QString::fromUtf8(":/Logic/Graphics/SVG/Grid_v2.svg")));
+        label_19->setScaledContents(true);
+
+        horizontalLayout_15->addWidget(label_19);
+
+        grid5 = new QPushButton(GamePage);
+        grid5->setObjectName("grid5");
+        sizePolicy1.setHeightForWidth(grid5->sizePolicy().hasHeightForWidth());
+        grid5->setSizePolicy(sizePolicy1);
+        grid5->setMinimumSize(QSize(150, 150));
+        grid5->setMaximumSize(QSize(150, 150));
+        grid5->setToolTipDuration(-8);
+        grid5->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(255, 255, 255, 0);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 20);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 40);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""));
+
+        horizontalLayout_15->addWidget(grid5);
+
+
+        verticalLayout_15->addLayout(horizontalLayout_15);
+
+        label_20 = new QLabel(GamePage);
+        label_20->setObjectName("label_20");
+        label_20->setMinimumSize(QSize(200, 20));
+        label_20->setMaximumSize(QSize(550, 20));
+        label_20->setLineWidth(0);
+        label_20->setPixmap(QPixmap(QString::fromUtf8(":/Logic/Graphics/SVG/Grid_h.svg")));
+        label_20->setScaledContents(true);
+        label_20->setIndent(0);
+
+        verticalLayout_15->addWidget(label_20);
+
+        horizontalLayout_14 = new QHBoxLayout();
+        horizontalLayout_14->setSpacing(0);
+        horizontalLayout_14->setObjectName("horizontalLayout_14");
+        grid6 = new QPushButton(GamePage);
+        grid6->setObjectName("grid6");
+        sizePolicy1.setHeightForWidth(grid6->sizePolicy().hasHeightForWidth());
+        grid6->setSizePolicy(sizePolicy1);
+        grid6->setMinimumSize(QSize(150, 150));
+        grid6->setMaximumSize(QSize(150, 150));
+        grid6->setToolTipDuration(-8);
+        grid6->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(255, 255, 255, 0);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 20);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 40);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""));
+
+        horizontalLayout_14->addWidget(grid6);
+
+        label_16 = new QLabel(GamePage);
+        label_16->setObjectName("label_16");
+        label_16->setMinimumSize(QSize(20, 120));
+        label_16->setMaximumSize(QSize(15, 200));
+        label_16->setPixmap(QPixmap(QString::fromUtf8(":/Logic/Graphics/SVG/Grid_v1_1.svg")));
+        label_16->setScaledContents(true);
+
+        horizontalLayout_14->addWidget(label_16);
+
+        grid7 = new QPushButton(GamePage);
+        grid7->setObjectName("grid7");
+        sizePolicy1.setHeightForWidth(grid7->sizePolicy().hasHeightForWidth());
+        grid7->setSizePolicy(sizePolicy1);
+        grid7->setMinimumSize(QSize(150, 150));
+        grid7->setMaximumSize(QSize(150, 150));
+        grid7->setToolTipDuration(-8);
+        grid7->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(255, 255, 255, 0);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 20);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 40);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""));
+
+        horizontalLayout_14->addWidget(grid7);
+
+        label_17 = new QLabel(GamePage);
+        label_17->setObjectName("label_17");
+        label_17->setMinimumSize(QSize(20, 120));
+        label_17->setMaximumSize(QSize(15, 200));
+        label_17->setPixmap(QPixmap(QString::fromUtf8(":/Logic/Graphics/SVG/Grid_v1_1.svg")));
+        label_17->setScaledContents(true);
+
+        horizontalLayout_14->addWidget(label_17);
+
         grid8 = new QPushButton(GamePage);
         grid8->setObjectName("grid8");
-        grid8->setGeometry(QRect(580, 490, 201, 131));
+        sizePolicy1.setHeightForWidth(grid8->sizePolicy().hasHeightForWidth());
+        grid8->setSizePolicy(sizePolicy1);
+        grid8->setMinimumSize(QSize(150, 150));
+        grid8->setMaximumSize(QSize(150, 150));
+        grid8->setToolTipDuration(-8);
         grid8->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
-"border :none;\n"
-"color:black;\n"
-"	font: 28pt \"Segoe Fluent Icons\";\n"
+"	border: none;\n"
+"	background-color: rgba(255, 255, 255, 0);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
 "}\n"
-"QPushButton:Hover\n"
+"\n"
+"QPushButton:hover\n"
 "{\n"
-"background-color:blue;\n"
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 20);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
 "}\n"
+"\n"
 "QPushButton:pressed\n"
 "{\n"
-"background-color:red;\n"
-"}"));
-        line = new QFrame(GamePage);
-        line->setObjectName("line");
-        line->setGeometry(QRect(570, 200, 20, 421));
-        line->setLineWidth(5);
-        line->setFrameShape(QFrame::Shape::VLine);
-        line->setFrameShadow(QFrame::Shadow::Sunken);
-        GameReview = new QPushButton(GamePage);
-        GameReview->setObjectName("GameReview");
-        GameReview->setGeometry(QRect(640, 620, 171, 61));
-        GameReview->setMaximumSize(QSize(500, 500));
-        GameReview->setStyleSheet(QString::fromUtf8("QPushButton\n"
-"{\n"
-"color:black;\n"
-"background-color: rgb(115, 199, 255);\n"
-" font: 700 14pt \"Segoe UI\";\n"
-"}"));
-        Rematch = new QPushButton(GamePage);
-        Rematch->setObjectName("Rematch");
-        Rematch->setGeometry(QRect(390, 620, 171, 61));
-        Rematch->setMaximumSize(QSize(500, 500));
-        Rematch->setStyleSheet(QString::fromUtf8("QPushButton\n"
-"{\n"
-"color:black;\n"
-"background-color: rgb(115, 199, 255);\n"
-" font: 700 14pt \"Segoe UI\";\n"
-"}"));
+"	border: none;\n"
+"	background-color: rgba(0, 0, 0, 40);\n"
+"	border-radius: 30px;\n"
+"	margin: 10px;\n"
+"	font: 90pt \"Insaniburger with Cheese\";\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+""));
+
+        horizontalLayout_14->addWidget(grid8);
+
+
+        verticalLayout_15->addLayout(horizontalLayout_14);
+
+
+        gridLayout_7->addLayout(verticalLayout_15, 1, 1, 1, 1);
+
+
+        verticalLayout_16->addLayout(gridLayout_7);
+
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setSpacing(50);
+        horizontalLayout_10->setObjectName("horizontalLayout_10");
+        horizontalLayout_10->setSizeConstraint(QLayout::SizeConstraint::SetFixedSize);
+        horizontalLayout_10->setContentsMargins(30, -1, 30, 30);
         back_4 = new QPushButton(GamePage);
         back_4->setObjectName("back_4");
-        back_4->setGeometry(QRect(150, 620, 171, 61));
         back_4->setMaximumSize(QSize(500, 500));
         back_4->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
@@ -1242,39 +1648,37 @@ public:
 "background-color: rgb(115, 199, 255);\n"
 " font: 700 14pt \"Segoe UI\";\n"
 "}"));
-        groupBox_2 = new QGroupBox(GamePage);
-        groupBox_2->setObjectName("groupBox_2");
-        groupBox_2->setGeometry(QRect(160, 170, 651, 441));
-        label = new QLabel(GamePage);
-        label->setObjectName("label");
-        label->setGeometry(QRect(380, 160, 261, 20));
-        ShureExit = new QLabel(GamePage);
-        ShureExit->setObjectName("ShureExit");
-        ShureExit->setGeometry(QRect(220, 100, 611, 51));
-        ShureExit->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);\n"
-"font: 15pt \"Segoe UI\";"));
+
+        horizontalLayout_10->addWidget(back_4);
+
+        Rematch = new QPushButton(GamePage);
+        Rematch->setObjectName("Rematch");
+        Rematch->setMaximumSize(QSize(500, 500));
+        Rematch->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
+" font: 700 14pt \"Segoe UI\";\n"
+"}"));
+
+        horizontalLayout_10->addWidget(Rematch);
+
+        GameReview = new QPushButton(GamePage);
+        GameReview->setObjectName("GameReview");
+        GameReview->setMaximumSize(QSize(500, 500));
+        GameReview->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"color:black;\n"
+"background-color: rgb(115, 199, 255);\n"
+" font: 700 14pt \"Segoe UI\";\n"
+"}"));
+
+        horizontalLayout_10->addWidget(GameReview);
+
+
+        verticalLayout_16->addLayout(horizontalLayout_10);
+
         stackedWidget->addWidget(GamePage);
-        groupBox_2->raise();
-        grid6->raise();
-        grid5->raise();
-        grid2->raise();
-        line_2->raise();
-        line_3->raise();
-        grid0->raise();
-        grid7->raise();
-        grid4->raise();
-        grid3->raise();
-        textEdit_2->raise();
-        textEdit->raise();
-        grid1->raise();
-        line_4->raise();
-        line->raise();
-        GameReview->raise();
-        Rematch->raise();
-        back_4->raise();
-        grid8->raise();
-        label->raise();
-        ShureExit->raise();
         HistoryPage = new QWidget();
         HistoryPage->setObjectName("HistoryPage");
         widget = new QWidget(HistoryPage);
@@ -1766,37 +2170,32 @@ public:
         hard->setText(QCoreApplication::translate("SecDialog", "Hard", nullptr));
         easy->setText(QCoreApplication::translate("SecDialog", "Easy", nullptr));
         medium->setText(QCoreApplication::translate("SecDialog", "Medium", nullptr));
-        grid6->setText(QString());
-        grid5->setText(QString());
-        grid2->setText(QString());
-        grid0->setText(QString());
-        grid7->setText(QString());
-        grid4->setText(QString());
-        grid3->setText(QString());
-        textEdit_2->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:14pt;\">player2:</span></p></body></html>", nullptr));
-        textEdit->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Rockwell'; font-size:12pt; font-weight:700; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Segoe UI'; font-size:14pt;\">player1:</span></p></body></html>", nullptr));
-        grid1->setText(QString());
-        grid8->setText(QString());
-        GameReview->setText(QCoreApplication::translate("SecDialog", "REVIEW GAME", nullptr));
-        Rematch->setText(QCoreApplication::translate("SecDialog", "RE_MATCH", nullptr));
-        back_4->setText(QCoreApplication::translate("SecDialog", "BACK", nullptr));
-        groupBox_2->setTitle(QCoreApplication::translate("SecDialog", "GroupBox", nullptr));
+        Player1_Label->setText(QCoreApplication::translate("SecDialog", "Player 1 Name", nullptr));
+        Player1_Label_2->setText(QCoreApplication::translate("SecDialog", "Player 1: X", nullptr));
         label->setText(QCoreApplication::translate("SecDialog", "TextLabel", nullptr));
+        Player2_Label->setText(QCoreApplication::translate("SecDialog", "Player 2 Name", nullptr));
+        Player1_Label_3->setText(QCoreApplication::translate("SecDialog", "Player 2: O", nullptr));
         ShureExit->setText(QCoreApplication::translate("SecDialog", "Are you sure you want to exit the game?", nullptr));
+        grid0->setText(QCoreApplication::translate("SecDialog", "X", nullptr));
+        label_14->setText(QString());
+        grid1->setText(QCoreApplication::translate("SecDialog", "X", nullptr));
+        label_15->setText(QString());
+        grid2->setText(QCoreApplication::translate("SecDialog", "X", nullptr));
+        label_21->setText(QString());
+        grid3->setText(QCoreApplication::translate("SecDialog", "X", nullptr));
+        label_18->setText(QString());
+        grid4->setText(QCoreApplication::translate("SecDialog", "X", nullptr));
+        label_19->setText(QString());
+        grid5->setText(QCoreApplication::translate("SecDialog", "X", nullptr));
+        label_20->setText(QString());
+        grid6->setText(QCoreApplication::translate("SecDialog", "X", nullptr));
+        label_16->setText(QString());
+        grid7->setText(QCoreApplication::translate("SecDialog", "X", nullptr));
+        label_17->setText(QString());
+        grid8->setText(QCoreApplication::translate("SecDialog", "X", nullptr));
+        back_4->setText(QCoreApplication::translate("SecDialog", "BACK", nullptr));
+        Rematch->setText(QCoreApplication::translate("SecDialog", "RE_MATCH", nullptr));
+        GameReview->setText(QCoreApplication::translate("SecDialog", "REVIEW GAME", nullptr));
         wins_label->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

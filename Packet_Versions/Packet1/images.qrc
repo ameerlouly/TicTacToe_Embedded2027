@@ -20,5 +20,9 @@
         <file>Graphics/SVG/CU.svg</file>
         <file>Graphics/SVG/Engineering.svg</file>
         <file>Graphics/SVG/EECE27_logo_SVG.svg</file>
+        <file>Graphics/SVG/Grid_h.svg</file>
+        <file>Graphics/SVG/Grid_v1.svg</file>
+        <file>Graphics/SVG/Grid_v2.svg</file>
+        <file>Graphics/SVG/Grid_v1_1.svg</file>
     </qresource>
 </RCC>
