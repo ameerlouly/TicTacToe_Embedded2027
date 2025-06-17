@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/Logic">
+        <file>Graphics/Ready/Login Background.png</file>
+        <file>Graphics/Ready/Login Graphic.png</file>
+        <file>Graphics/Ready/Login Graphic-01.png</file>
+        <file>Graphics/Ready/Login Graphic-02.png</file>
+        <file>Graphics/Ready/Game_Logo_Top_Bar.png</file>
+        <file>Graphics/Ready/History_Button_Graphic.png</file>
+        <file>Graphics/Ready/HomeButton_Graphic.png</file>
+        <file>Graphics/Ready/o_symbol.png</file>
+        <file>Graphics/Ready/x_symbol.png</file>
+        <file>Graphics/Ready/xo_grid.png</file>
+        <file>Graphics/Ready/History_Button_Hover_Graphic.png</file>
+        <file>Graphics/Ready/History_Button_Pressed_Graphic.png</file>
+        <file>Graphics/Ready/HomeButton_Hover_Graphic.png</file>
+        <file>Graphics/Ready/HomeButton_Pressed_Graphic.png</file>
+        <file>Graphics/Ready/XO_StartMenu_Graphic.png</file>
+        <file>Graphics/Ready/PvP_icon.png</file>
+        <file>Graphics/Ready/PvE_icon.png</file>
+        <file>Graphics/SVG/CU.svg</file>
+        <file>Graphics/SVG/Engineering.svg</file>
+        <file>Graphics/SVG/EECE27_logo_SVG.svg</file>
+    </qresource>
+</RCC>
