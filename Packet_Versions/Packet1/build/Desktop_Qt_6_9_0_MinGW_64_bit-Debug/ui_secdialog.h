@@ -20,6 +20,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QSplitter>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextEdit>
@@ -36,7 +37,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *label_2;
     QSpacerItem *horizontalSpacer_11;
-    QHBoxLayout *MainLayout;
+    QSplitter *splitter;
     QGroupBox *SideBar;
     QVBoxLayout *verticalLayout;
     QLabel *HistoryWarning;
@@ -221,10 +222,11 @@ public:
 
         verticalLayout_7->addWidget(TopBar);
 
-        MainLayout = new QHBoxLayout();
-        MainLayout->setSpacing(0);
-        MainLayout->setObjectName("MainLayout");
-        SideBar = new QGroupBox(SecDialog);
+        splitter = new QSplitter(SecDialog);
+        splitter->setObjectName("splitter");
+        splitter->setOrientation(Qt::Orientation::Horizontal);
+        splitter->setHandleWidth(0);
+        SideBar = new QGroupBox(splitter);
         SideBar->setObjectName("SideBar");
         SideBar->setStyleSheet(QString::fromUtf8("QGroupBox\n"
 "{\n"
@@ -420,10 +422,8 @@ public:
 
         verticalLayout->addItem(verticalSpacer_10);
 
-
-        MainLayout->addWidget(SideBar);
-
-        stackedWidget = new QStackedWidget(SecDialog);
+        splitter->addWidget(SideBar);
+        stackedWidget = new QStackedWidget(splitter);
         stackedWidget->setObjectName("stackedWidget");
         stackedWidget->setStyleSheet(QString::fromUtf8(""));
         stackedWidget->setLineWidth(0);
@@ -1722,11 +1722,9 @@ public:
         gridLayout->addItem(verticalSpacer_7, 2, 1, 1, 1);
 
         stackedWidget->addWidget(ProfilePage);
+        splitter->addWidget(stackedWidget);
 
-        MainLayout->addWidget(stackedWidget);
-
-
-        verticalLayout_7->addLayout(MainLayout);
+        verticalLayout_7->addWidget(splitter);
 
 
         retranslateUi(SecDialog);
