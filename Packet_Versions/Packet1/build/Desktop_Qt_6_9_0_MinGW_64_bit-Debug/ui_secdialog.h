@@ -228,6 +228,11 @@ public:
         splitter->setHandleWidth(0);
         SideBar = new QGroupBox(splitter);
         SideBar->setObjectName("SideBar");
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Ignored, QSizePolicy::Policy::Ignored);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(SideBar->sizePolicy().hasHeightForWidth());
+        SideBar->setSizePolicy(sizePolicy);
         SideBar->setStyleSheet(QString::fromUtf8("QGroupBox\n"
 "{\n"
 "	background-color: qlineargradient(spread:pad, x1:0.2, y1:0, x2:0.5, y2:0.7, stop:0 rgba(186, 200, 224, 255), 				stop:1 rgba(106, 133, 182, 255));\n"
@@ -1242,11 +1247,12 @@ public:
         groupBox_2->setGeometry(QRect(160, 170, 651, 441));
         label = new QLabel(GamePage);
         label->setObjectName("label");
-        label->setGeometry(QRect(390, 150, 261, 20));
+        label->setGeometry(QRect(380, 160, 261, 20));
         ShureExit = new QLabel(GamePage);
         ShureExit->setObjectName("ShureExit");
-        ShureExit->setGeometry(QRect(100, 690, 281, 20));
-        ShureExit->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);"));
+        ShureExit->setGeometry(QRect(220, 100, 611, 51));
+        ShureExit->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);\n"
+"font: 15pt \"Segoe UI\";"));
         stackedWidget->addWidget(GamePage);
         groupBox_2->raise();
         grid6->raise();
@@ -1729,7 +1735,7 @@ public:
 
         retranslateUi(SecDialog);
 
-        stackedWidget->setCurrentIndex(3);
+        stackedWidget->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(SecDialog);
