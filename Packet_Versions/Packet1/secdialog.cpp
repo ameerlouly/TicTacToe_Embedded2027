@@ -210,7 +210,7 @@ void SecDialog::on_tableWidget_itemClicked(QTableWidgetItem *item)
 
 void SecDialog::on_back_4_clicked()
 {
-    if(ui->ShureExit->text() == "" && !ui->label->isVisible())
+    if(ui->ShureExit->text() == "" && !ui->label->isVisible() && !inHistory)
     {
         ui->ShureExit->setText("Are you sure you want to exit the game?");
     }
@@ -249,30 +249,64 @@ void SecDialog::on_back_5_clicked()
 
 void SecDialog::on_history_clicked()
 {
-    inHistory = true;
-    ui->stackedWidget->setCurrentIndex(5);
-    viewGameHistory(db, ui->historyTable);
-    ui->wins->setText(QString::number(TotalWins));
-    ui->losses->setText(QString::number(TotalLoses));
-    ui->draws->setText(QString::number(TotalDraws));
+
+    if(ui->ShureExit->text() == "" && ui->stackedWidget->currentIndex() == 4 && !ui->label->isVisible())
+    {
+        ui->ShureExit->setText("Are you sure you want to exit the game?");
+    }
+    else
+    {
+        ui->ShureExit->setText("");
+        inHistory = true;
+        ui->stackedWidget->setCurrentIndex(5);
+        viewGameHistory(db, ui->historyTable);
+        ui->wins->setText(QString::number(TotalWins));
+        ui->losses->setText(QString::number(TotalLoses));
+        ui->draws->setText(QString::number(TotalDraws));
+    }
+
 }
 
 
 void SecDialog::on_settings_clicked()
 {
-    inHistory = false;
-    ui->stackedWidget->setCurrentIndex(6);
+    if(ui->ShureExit->text() == "" && ui->stackedWidget->currentIndex() == 4 && !ui->label->isVisible())
+    {
+        ui->ShureExit->setText("Are you sure you want to exit the game?");
+    }
+    else
+    {
+        ui->ShureExit->setText("");
+        inHistory = false;
+        ui->stackedWidget->setCurrentIndex(6);
+    }
+
 }
 
 
 void SecDialog::on_profile_clicked()
 {
-    inHistory = false;
+    if(ui->ShureExit->text() == "" && ui->stackedWidget->currentIndex() == 4 && !ui->label->isVisible())
+    {
+        ui->ShureExit->setText("Are you sure you want to exit the game?");
+    }
+    else
+    {
+        inHistory = false;
+        ui->ShureExit->setText("");
+        ui->GameReview->hide();
+        ui->Rematch->hide();
+        ui->label->hide();
+        ReMatch();
+        ShowGrid();
 
-    ui->stackedWidget->setCurrentIndex(7);
-    ui->UsenameTag->show();
-    ui->Log_out->show();
-    isGuest();
+        ui->stackedWidget->setCurrentIndex(7);
+        ui->UsenameTag->show();
+        ui->Log_out->show();
+        isGuest();
+    }
+
+
 }
 
 void SecDialog::on_grid0_clicked()
@@ -388,8 +422,23 @@ void SecDialog::returnBacktoPage0InGame()
 
 void SecDialog::on_home_clicked()
 {
-    inHistory = false;
-    ui->stackedWidget->setCurrentIndex(0);
+
+    if(ui->ShureExit->text() == "" && ui->stackedWidget->currentIndex() == 4 && !ui->label->isVisible())
+    {
+        ui->ShureExit->setText("Are you sure you want to exit the game?");
+    }
+    else
+    {
+        inHistory = false;
+        ui->ShureExit->setText("");
+        ui->GameReview->hide();
+        ui->Rematch->hide();
+        ui->label->hide();
+        ReMatch();
+        ShowGrid();
+
+        ui->stackedWidget->setCurrentIndex(0);
+    }
 }
 
 
