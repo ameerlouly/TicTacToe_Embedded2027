@@ -126,7 +126,6 @@ public:
     QLabel *label;
     QLabel *ShureExit;
     QWidget *HistoryPage;
-    QTableWidget *historyTable;
     QWidget *widget;
     QGridLayout *gridLayout_20;
     QTextEdit *wins_label;
@@ -135,6 +134,11 @@ public:
     QLabel *wins;
     QTextEdit *draws_label;
     QLabel *draws;
+    QStackedWidget *stackedWidget_2;
+    QWidget *page;
+    QVBoxLayout *verticalLayout_12;
+    QTableWidget *historyTable;
+    QWidget *page_2;
     QWidget *AboutPage;
     QVBoxLayout *verticalLayout_10;
     QHBoxLayout *horizontalLayout_9;
@@ -1267,38 +1271,6 @@ public:
         ShureExit->raise();
         HistoryPage = new QWidget();
         HistoryPage->setObjectName("HistoryPage");
-        historyTable = new QTableWidget(HistoryPage);
-        if (historyTable->columnCount() < 3)
-            historyTable->setColumnCount(3);
-        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
-        historyTable->setHorizontalHeaderItem(0, __qtablewidgetitem);
-        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
-        historyTable->setHorizontalHeaderItem(1, __qtablewidgetitem1);
-        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
-        historyTable->setHorizontalHeaderItem(2, __qtablewidgetitem2);
-        if (historyTable->rowCount() < 10)
-            historyTable->setRowCount(10);
-        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
-        __qtablewidgetitem3->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEditable|Qt::ItemIsDragEnabled|Qt::ItemIsDropEnabled|Qt::ItemIsEnabled);
-        historyTable->setItem(0, 0, __qtablewidgetitem3);
-        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
-        historyTable->setItem(0, 1, __qtablewidgetitem4);
-        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
-        historyTable->setItem(0, 2, __qtablewidgetitem5);
-        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
-        historyTable->setItem(1, 2, __qtablewidgetitem6);
-        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        historyTable->setItem(2, 2, __qtablewidgetitem7);
-        historyTable->setObjectName("historyTable");
-        historyTable->setGeometry(QRect(410, 60, 481, 411));
-        historyTable->setSizeIncrement(QSize(0, 1));
-        historyTable->setFrameShape(QFrame::Shape::NoFrame);
-        historyTable->setFrameShadow(QFrame::Shadow::Sunken);
-        historyTable->setLineWidth(1);
-        historyTable->setTextElideMode(Qt::TextElideMode::ElideMiddle);
-        historyTable->setGridStyle(Qt::PenStyle::SolidLine);
-        historyTable->setSortingEnabled(false);
-        historyTable->horizontalHeader()->setMinimumSectionSize(36);
         widget = new QWidget(HistoryPage);
         widget->setObjectName("widget");
         widget->setGeometry(QRect(50, 60, 261, 381));
@@ -1358,6 +1330,65 @@ public:
 
         gridLayout_20->addWidget(draws, 5, 0, 1, 1);
 
+        stackedWidget_2 = new QStackedWidget(HistoryPage);
+        stackedWidget_2->setObjectName("stackedWidget_2");
+        stackedWidget_2->setGeometry(QRect(60, 460, 651, 210));
+        page = new QWidget();
+        page->setObjectName("page");
+        verticalLayout_12 = new QVBoxLayout(page);
+        verticalLayout_12->setObjectName("verticalLayout_12");
+        historyTable = new QTableWidget(page);
+        if (historyTable->columnCount() < 3)
+            historyTable->setColumnCount(3);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        historyTable->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        historyTable->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        historyTable->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        if (historyTable->rowCount() < 10)
+            historyTable->setRowCount(10);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        __qtablewidgetitem3->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEditable|Qt::ItemIsDragEnabled|Qt::ItemIsDropEnabled|Qt::ItemIsEnabled);
+        historyTable->setItem(0, 0, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        historyTable->setItem(0, 1, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        historyTable->setItem(0, 2, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        historyTable->setItem(1, 2, __qtablewidgetitem6);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        historyTable->setItem(2, 2, __qtablewidgetitem7);
+        historyTable->setObjectName("historyTable");
+        historyTable->setSizeIncrement(QSize(0, 1));
+        historyTable->setStyleSheet(QString::fromUtf8("QTableWidget\n"
+" {\n"
+"    background-color: #f0f0f0;\n"
+"    gridline-color: black;\n"
+"}\n"
+"\n"
+"QHeaderView::section\n"
+"{\n"
+"	font: 400 9pt \"Montserrat\";\n"
+"    background-color: black;\n"
+"    color: white;\n"
+"	padding: 10px;\n"
+"    border:1px  solid white;\n"
+"}"));
+        historyTable->setFrameShape(QFrame::Shape::NoFrame);
+        historyTable->setFrameShadow(QFrame::Shadow::Sunken);
+        historyTable->setLineWidth(1);
+        historyTable->setTextElideMode(Qt::TextElideMode::ElideMiddle);
+        historyTable->setGridStyle(Qt::PenStyle::SolidLine);
+        historyTable->setSortingEnabled(false);
+        historyTable->horizontalHeader()->setMinimumSectionSize(36);
+
+        verticalLayout_12->addWidget(historyTable);
+
+        stackedWidget_2->addWidget(page);
+        page_2 = new QWidget();
+        page_2->setObjectName("page_2");
+        stackedWidget_2->addWidget(page_2);
         stackedWidget->addWidget(HistoryPage);
         AboutPage = new QWidget();
         AboutPage->setObjectName("AboutPage");
@@ -1365,7 +1396,7 @@ public:
         verticalLayout_10->setObjectName("verticalLayout_10");
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setObjectName("horizontalLayout_9");
-        horizontalLayout_9->setContentsMargins(15, 10, -1, -1);
+        horizontalLayout_9->setContentsMargins(15, 10, -1, 10);
         back_5 = new QPushButton(AboutPage);
         back_5->setObjectName("back_5");
         back_5->setStyleSheet(QString::fromUtf8("QPushButton\n"
@@ -1700,7 +1731,7 @@ public:
 
         retranslateUi(SecDialog);
 
-        stackedWidget->setCurrentIndex(6);
+        stackedWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(SecDialog);
@@ -1762,19 +1793,6 @@ public:
         groupBox_2->setTitle(QCoreApplication::translate("SecDialog", "GroupBox", nullptr));
         label->setText(QCoreApplication::translate("SecDialog", "TextLabel", nullptr));
         ShureExit->setText(QCoreApplication::translate("SecDialog", "Are you sure you want to exit the game?", nullptr));
-        QTableWidgetItem *___qtablewidgetitem = historyTable->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QCoreApplication::translate("SecDialog", "RESULT", nullptr));
-        QTableWidgetItem *___qtablewidgetitem1 = historyTable->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QCoreApplication::translate("SecDialog", "DATE", nullptr));
-        QTableWidgetItem *___qtablewidgetitem2 = historyTable->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QCoreApplication::translate("SecDialog", "REVIEW GAME", nullptr));
-
-        const bool __sortingEnabled = historyTable->isSortingEnabled();
-        historyTable->setSortingEnabled(false);
-        QTableWidgetItem *___qtablewidgetitem3 = historyTable->item(2, 2);
-        ___qtablewidgetitem3->setText(QCoreApplication::translate("SecDialog", "SHOW", nullptr));
-        historyTable->setSortingEnabled(__sortingEnabled);
-
         wins_label->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -1802,6 +1820,19 @@ public:
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">DRAWS</span></p></body></html>", nullptr));
         draws->setText(QCoreApplication::translate("SecDialog", "TextLabel", nullptr));
+        QTableWidgetItem *___qtablewidgetitem = historyTable->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("SecDialog", "Result", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = historyTable->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("SecDialog", "Date", nullptr));
+        QTableWidgetItem *___qtablewidgetitem2 = historyTable->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("SecDialog", "Review", nullptr));
+
+        const bool __sortingEnabled = historyTable->isSortingEnabled();
+        historyTable->setSortingEnabled(false);
+        QTableWidgetItem *___qtablewidgetitem3 = historyTable->item(2, 2);
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("SecDialog", "SHOW", nullptr));
+        historyTable->setSortingEnabled(__sortingEnabled);
+
         back_5->setText(QCoreApplication::translate("SecDialog", "< Back", nullptr));
         label_11->setText(QString());
         label_12->setText(QString());
