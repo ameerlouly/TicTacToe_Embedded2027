@@ -318,15 +318,15 @@ void viewGameHistory(sqlite3* db, QTableWidget* table) {
         table->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(result)));
         table->setCellWidget(row, 3, button);
 
-        if (result == "WIN") TotalWins++;
-        else if (result == "LOSS") TotalLoses++;
-        else if (result == "Draw") TotalDraws++;
+        if (result == "WIN") winCount++;
+        else if (result == "LOSS") lossCount++;
+        else if (result == "Draw") drawCount++;
 
         qDebug() <<TotalLoses<<" "<<TotalWins << " "<<TotalDraws;
 
-        // TotalLoses = lossCount;
-        // TotalWins = winCount;
-        // TotalDraws = drawCount;
+        TotalLoses = lossCount;
+        TotalWins = winCount;
+        TotalDraws = drawCount;
 
         gameNumber++;
     }
