@@ -20,11 +20,11 @@ public:
 private slots:
     //void runAllTestsInOrder();
 
-    //void TestSignUp ();
+    void TestSignUp ();
 
-    //void TestLogout();
+    void TestLogout();
 
-    //void TestSignIn();
+    void TestSignIn();
 
     void TestBlankBoardCase1();
 

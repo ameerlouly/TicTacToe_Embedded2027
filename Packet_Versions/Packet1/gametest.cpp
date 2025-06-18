@@ -1,55 +1,56 @@
 #include "gametest.h"
 #include "PublicWindows.h"
+#include "main.h"
 
 
 gametest::gametest() {
 
-    if (QFile::exists(AuthPath)) {
-        if (QFile::remove(AuthPath)) {
-            qDebug() << "Session Authantication File deleted:" << AuthPath;
-            qDebug() << "Ready for the test";
-        } else {
-            qDebug() << "Failed to delete file:" << AuthPath;
-        }
-    } else {
-        qDebug() << "File does not exist:" << AuthPath;
-    }
+    // if (QFile::exists(AuthPath)) {
+    //     if (QFile::remove(AuthPath)) {
+    //         qDebug() << "Session Authantication File deleted:" << AuthPath;
+    //         qDebug() << "Ready for the test";
+    //     } else {
+    //         qDebug() << "Failed to delete file:" << AuthPath;
+    //     }
+    // } else {
+    //     qDebug() << "File does not exist:" << AuthPath;
+    // }
 
 }
 
-// void gametest::TestSignUp (){
+void gametest::TestSignUp (){
 
 
-//     //LoginWindow->show();
+    LoginWindow->show();
 
-//     QTest::mouseClick(LoginWindow->SignUpButton, Qt::LeftButton);
-//     QTest::keyClicks(LoginWindow->NameInput, "999");
-//     QTest::keyClicks(LoginWindow->PassInput, "999");
-//     QTest::keyClicks(LoginWindow->ConfPassInput, "999");
-//     QTest::keyClicks(LoginWindow->NumInput, "999");
-//     QTest::mouseClick(LoginWindow->LogUserButton, Qt::LeftButton);
+    QTest::mouseClick(LoginWindow->SignUpButton, Qt::LeftButton);
+    QTest::keyClicks(LoginWindow->NameInput, "999");
+    QTest::keyClicks(LoginWindow->PassInput, "999");
+    QTest::keyClicks(LoginWindow->ConfPassInput, "999");
+    QTest::keyClicks(LoginWindow->NumInput, "999");
+    QTest::mouseClick(LoginWindow->LogUserButton, Qt::LeftButton);
 
-//     QFile file(AuthPath);
-//     QVERIFY(file.exists());
-// }
+    QFile file(AuthPath);
+    QVERIFY(file.exists());
+}
 
-// void gametest::TestLogout(){
-//     QTest::mouseClick(Gamewindow2->Profile, Qt::LeftButton);
-//     QTest::mouseClick(Gamewindow2->LogOut, Qt::LeftButton);
+void gametest::TestLogout(){
+    QTest::mouseClick(Gamewindow2->Profile, Qt::LeftButton);
+    QTest::mouseClick(Gamewindow2->LogOut, Qt::LeftButton);
 
-//     QFile file(AuthPath);
-//     QVERIFY(!file.exists());
-// }
+    QFile file(AuthPath);
+    QVERIFY(!file.exists());
+}
 
-// void gametest::TestSignIn(){
-//     QTest::mouseClick(LoginWindow->LoginButton, Qt::LeftButton);
-//     QTest::keyClicks(LoginWindow->NameInput, "999");
-//     QTest::keyClicks(LoginWindow->PassInput, "999");
-//     QTest::mouseClick(LoginWindow->LogUserButton, Qt::LeftButton);
+void gametest::TestSignIn(){
+    QTest::mouseClick(LoginWindow->LoginButton, Qt::LeftButton);
+    QTest::keyClicks(LoginWindow->NameInput, "999");
+    QTest::keyClicks(LoginWindow->PassInput, "999");
+    QTest::mouseClick(LoginWindow->LogUserButton, Qt::LeftButton);
 
-//     QFile file(AuthPath);
-//     QVERIFY(file.exists());
-// }
+    QFile file(AuthPath);
+    QVERIFY(file.exists());
+}
 
 void gametest::TestBlankBoardCase1(){
     QTest::mouseClick(Gamewindow2->StartGame, Qt::LeftButton);
@@ -58,11 +59,17 @@ void gametest::TestBlankBoardCase1(){
 
     bool IsBlank=true;
 
+    qDebug() << "File does not exist:" ;
+    qDebug() << "File does not exist:" ;
+    qDebug() << "File does not exist:" ;
+
+    //QTest::qWait(1000);  // Waits for 1 second
+
     for(int i=0; i<9; i++){
-        IsBlank &= (Gamewindow2->GridButtons[i]->text()=="");
+         IsBlank &= (Gamewindow2->GridButtons[i]->text()=="");
     }
 
-    QVERIFY(IsBlank);
+    QVERIFY(false);
 }
 
 void gametest::TestGamePlay(){  // to test player turns switching , validate button clicks to be X or O

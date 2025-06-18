@@ -40,8 +40,11 @@ template <> constexpr inline auto gametest::qt_create_metaobjectdata<qt_meta_tag
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "gametest",
-        "TestBlankBoardCase1",
+        "TestSignUp",
         "",
+        "TestLogout",
+        "TestSignIn",
+        "TestBlankBoardCase1",
         "TestGamePlay",
         "TestBoardLocking",
         "TestReMatch",
@@ -50,18 +53,24 @@ template <> constexpr inline auto gametest::qt_create_metaobjectdata<qt_meta_tag
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'TestBlankBoardCase1'
+        // Slot 'TestSignUp'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'TestGamePlay'
+        // Slot 'TestLogout'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'TestBoardLocking'
+        // Slot 'TestSignIn'
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'TestReMatch'
+        // Slot 'TestBlankBoardCase1'
         QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'TestCheckWin'
+        // Slot 'TestGamePlay'
         QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'TestHistorySave'
+        // Slot 'TestBoardLocking'
         QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'TestReMatch'
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'TestCheckWin'
+        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'TestHistorySave'
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -85,12 +94,15 @@ void gametest::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
     auto *_t = static_cast<gametest *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->TestBlankBoardCase1(); break;
-        case 1: _t->TestGamePlay(); break;
-        case 2: _t->TestBoardLocking(); break;
-        case 3: _t->TestReMatch(); break;
-        case 4: _t->TestCheckWin(); break;
-        case 5: _t->TestHistorySave(); break;
+        case 0: _t->TestSignUp(); break;
+        case 1: _t->TestLogout(); break;
+        case 2: _t->TestSignIn(); break;
+        case 3: _t->TestBlankBoardCase1(); break;
+        case 4: _t->TestGamePlay(); break;
+        case 5: _t->TestBoardLocking(); break;
+        case 6: _t->TestReMatch(); break;
+        case 7: _t->TestCheckWin(); break;
+        case 8: _t->TestHistorySave(); break;
         default: ;
         }
     }
@@ -116,14 +128,14 @@ int gametest::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 9;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 9;
     }
     return _id;
 }

@@ -26,7 +26,7 @@
 
 #include "gametest.h"
 
-#define TestMode 0
+#define TestMode 0  // 0-> normal program start   1-> GUI testing
 
 // Intialize Game Logic Variables
 int NextPlayer = 1;  // who can start the game (X -> 1  O -> 2)
@@ -62,9 +62,10 @@ int TotalDraws = 0;
 #if(TestMode)
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
+    //QCoreApplication app(argc, argv);
 
-    LoginWindow = new MainWindow1();
-    Gamewindow2 = new SecDialog();
+     LoginWindow = new MainWindow1();
+     Gamewindow2 = new SecDialog();
 
     QString dbDir = QCoreApplication::applicationDirPath() + "/db";
     QDir().mkpath(dbDir);
@@ -421,9 +422,23 @@ void CheckWin(int clicked[9] ,sqlite3 *db ,QPushButton* Rematch,QPushButton* ReV
 void nextHistorymove(int x,QPushButton* Button[9])
 {
     if(x>=20)
-        Button[x-20]->setText("O");
+    {
+       Button[x-20]->setText("O");
+      // Create a palette and set the text color
+      QPalette palette = Button[x-20]->palette();
+      palette.setColor(QPalette::ButtonText, QColor("#EF2622")); // Change text color to red
+      // Apply the palette to the button
+       Button[x-20]->setPalette(palette);
+
+    }
     else if(x<20 && 9<x)
+    {
         Button[x-10]->setText("X");
+        QPalette palette = Button[x-10]->palette();
+        palette.setColor(QPalette::ButtonText, QColor("#162DD3")); // Change text color to red
+        // Apply the palette to the button
+        Button[x-10]->setPalette(palette);
+    }
     return;
 }
 
@@ -486,10 +501,10 @@ void Check_data_forLogin(sqlite3 *db, SecDialog *window, MainWindow1 *window1)
             setCurrentUser(db,"Guest");
             window->returnBacktoPage0InGame();
 
-            if(!TestMode){
+
                 window->show();
                 window1->close();
-            }
+
 
             return;
         }
@@ -498,10 +513,10 @@ void Check_data_forLogin(sqlite3 *db, SecDialog *window, MainWindow1 *window1)
             SIGN_UP(db, "", "Guest", "");
             setCurrentUser(db,"Guest");
             window->returnBacktoPage0InGame();
-            if(!TestMode){
+
                 window->show();
                 window1->close();
-            }
+
 
             return;
         }
@@ -518,9 +533,9 @@ void Check_data_forLogin(sqlite3 *db, SecDialog *window, MainWindow1 *window1)
     {
         setCurrentUser(db,username);
         window->returnBacktoPage0InGame();
-         if(!TestMode){
+
                 window->show();
                 window1->close();
-            }
+
     }
 }
