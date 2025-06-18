@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Use Linux-compatible tools
+    runs-on: windows-latest
 
     steps:
     - name: Checkout code
@@ -19,113 +19,41 @@ jobs:
         pwd
         ls -R
 
-    - name: Install Qt (Linux)
+    - name: Install Qt (MinGW)
       uses: jurplel/install-qt-action@v3
       with:
         version: '6.8.3'
+        arch: 'win64_mingw'
+
+    - name: Add Qt bin directory to PATH
+      run: echo "C:\Qt\6.8.3\mingw_64\bin" >> $env:GITHUB_PATH
 
     - name: Build test_0.pro inside Packets_Versions
       run: |
         cd Packet_Versions/Packet1
         qmake test_0.pro CONFIG-=no_main CONFIG+=console
-        make
+        mingw32-make
 
-    - name: Install Xvfb
-      run: sudo apt-get install -y xvfb
-
-    - name: Run tests with GUI support
+    - name: Find and run test executable
+      shell: pwsh
       run: |
-        cd Packet_Versions/Packet1
-        
-        # Find the executable
-        echo "=== Looking for executable ==="
-        EXECUTABLE=$(find . -type f -executable -name "*test*" | head -1)
-        
-        # If no test executable found, look for any executable
-        if [ -z "$EXECUTABLE" ]; then
-          EXECUTABLE=$(find . -type f -executable | head -1)
-        fi
-        
-        # Check common locations if still not found
-        if [ -z "$EXECUTABLE" ]; then
-          POSSIBLE_PATHS=(
-            "./test_0"
-            "./debug/test_0"
-            "./release/test_0"
-            "./build/test_0"
-            "./debug"
-            "./release"
-          )
-          
-          for path in "${POSSIBLE_PATHS[@]}"; do
-            if [ -f "$path" ] && [ -x "$path" ]; then
-              EXECUTABLE="$path"
-              break
-            fi
-          done
-        fi
-        
-        # Verify we found something
-        if [ -z "$EXECUTABLE" ]; then
-          echo "ERROR: No executable found!"
-          echo "Available files:"
-          ls -la
-          echo "All files recursively:"
-          find . -type f
+        # Search for the test_0.exe file
+        $exe = Get-ChildItem -Path . -Filter test_0.exe -Recurse -File | Select-Object -First 1
+    
+        if (-not $exe) {
+          Write-Error "Executable test_0.exe not found."
           exit 1
-        fi
-        
-        echo "Found executable: $EXECUTABLE"
-        
-        # Start virtual display with proper configuration
-        echo "Starting Xvfb..."
-        Xvfb :99 -screen 0 1024x768x24 -ac +extension GLX +render -noreset &
-        XVFB_PID=$!
-        export DISPLAY=:99
-        
-        # Wait for Xvfb to be ready
-        sleep 3
-        
-        # Set Qt environment variables for headless operation
-        export QT_QPA_PLATFORM=xcb
-        export QT_DEBUG_PLUGINS=0
-        export QT_LOGGING_RULES="*.debug=false"
-        
-        # Run the executable with timeout and better error handling
-        echo "Running: $EXECUTABLE"
-        echo "Environment: DISPLAY=$DISPLAY, QT_QPA_PLATFORM=$QT_QPA_PLATFORM"
-        
-        # Run with timeout to prevent hanging
-        timeout 60 $EXECUTABLE > test_output.txt 2>&1
-        EXIT_CODE=$?
-        
-        # Clean up Xvfb
-        kill $XVFB_PID 2>/dev/null || true
-        
-        # Handle different exit codes
-        if [ $EXIT_CODE -eq 0 ]; then
-          echo "✅ Test execution completed successfully"
-        elif [ $EXIT_CODE -eq 124 ]; then
-          echo "⚠️  Test execution timed out after 60 seconds"
-        elif [ $EXIT_CODE -eq 134 ]; then
-          echo "❌ Test crashed with SIGABRT (exit code 134)"
-          echo "This usually means Qt GUI initialization failed"
-        else
-          echo "❌ Test failed with exit code: $EXIT_CODE"
-        fi
-        
-        # Show output regardless of exit code
-        echo "=== Test Output ==="
-        if [ -f test_output.txt ]; then
-          cat test_output.txt
-        else
-          echo "No output file created"
-        fi
-        
-        # Don't fail the pipeline on test crashes for now (remove this line if you want strict failure)
-        # exit $EXIT_CODE
-
-    - name: Run tests and display output
-      run: |
-        cd Packet_Versions/Packet1
-        cat test_output.txt
+        }
+    
+        Write-Host "Found test executable at: $($exe.FullName)"
+    
+        # Run the executable and capture output
+        & $exe.FullName | Tee-Object -FilePath test_output.txt
+    
+        # Check the exit code to fail the pipeline on test failure
+        if ($LASTEXITCODE -ne 0) {
+          Write-Error "Tests failed with exit code $LASTEXITCODE"
+          exit $LASTEXITCODE
+        }
+    
+    
