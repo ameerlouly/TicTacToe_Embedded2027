@@ -438,7 +438,7 @@ void Check_data_forLogin(sqlite3 *db, SecDialog *window, MainWindow1 *window1)
         bool success = SIGN_UP(db, passcode, username, PhoneNumber);
         if (!success)
         {
-            QMessageBox::warning(window1, "Signup Failed", "Username or phone number already exists!");
+            //QMessageBox::warning(window1, "Signup Failed", "Username or phone number already exists!");
             return;  // Don't continue if signup failed
         }
         loginFound = true;
@@ -451,7 +451,7 @@ void Check_data_forLogin(sqlite3 *db, SecDialog *window, MainWindow1 *window1)
             if (!loginFound)
             {
                 AccountNotFound = true;
-                QMessageBox::critical(window1, "Login Failed", "incorrect username or password");
+                //QMessageBox::critical(window1, "Login Failed", "incorrect username or password");
             }
         }
     }
@@ -479,7 +479,7 @@ void Check_data_forLogin(sqlite3 *db, SecDialog *window, MainWindow1 *window1)
     if (!loginFound && attempts>=MAX_LOGIN_ATTEMPTS)
     {
         // You can trigger a reset password UI here or call resetPassword directly if needed
-        QMessageBox::critical(window1, "Login Failed", "pls try again or press forget password");
+        //QMessageBox::critical(window1, "Login Failed", "pls try again or press forget password");
         return;
     }
 
