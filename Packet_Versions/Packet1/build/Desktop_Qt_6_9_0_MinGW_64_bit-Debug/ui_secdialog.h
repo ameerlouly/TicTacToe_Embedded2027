@@ -23,7 +23,6 @@
 #include <QtWidgets/QSplitter>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTableWidget>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -151,13 +150,16 @@ public:
     QPushButton *Rematch;
     QPushButton *GameReview;
     QWidget *HistoryPage;
-    QWidget *widget;
-    QGridLayout *gridLayout_20;
-    QTextEdit *wins_label;
-    QTextEdit *losses_label;
-    QLabel *losses;
+    QVBoxLayout *verticalLayout_20;
+    QGridLayout *gridLayout_9;
+    QVBoxLayout *verticalLayout_18;
+    QLabel *label_22;
     QLabel *wins;
-    QTextEdit *draws_label;
+    QVBoxLayout *verticalLayout_17;
+    QLabel *label_23;
+    QLabel *losses;
+    QVBoxLayout *verticalLayout_19;
+    QLabel *label_24;
     QLabel *draws;
     QStackedWidget *stackedWidget_2;
     QWidget *page;
@@ -209,7 +211,7 @@ public:
     {
         if (SecDialog->objectName().isEmpty())
             SecDialog->setObjectName("SecDialog");
-        SecDialog->resize(948, 909);
+        SecDialog->resize(988, 922);
         SecDialog->setStyleSheet(QString::fromUtf8("QDialog\n"
 "{\n"
 "	background-color: rgb(230, 230, 230);\n"
@@ -1759,68 +1761,136 @@ public:
         stackedWidget->addWidget(GamePage);
         HistoryPage = new QWidget();
         HistoryPage->setObjectName("HistoryPage");
-        widget = new QWidget(HistoryPage);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(50, 60, 261, 381));
-        gridLayout_20 = new QGridLayout(widget);
-        gridLayout_20->setObjectName("gridLayout_20");
-        wins_label = new QTextEdit(widget);
-        wins_label->setObjectName("wins_label");
-        wins_label->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+        verticalLayout_20 = new QVBoxLayout(HistoryPage);
+        verticalLayout_20->setSpacing(30);
+        verticalLayout_20->setObjectName("verticalLayout_20");
+        verticalLayout_20->setContentsMargins(50, 50, 50, 50);
+        gridLayout_9 = new QGridLayout();
+        gridLayout_9->setObjectName("gridLayout_9");
+        gridLayout_9->setHorizontalSpacing(30);
+        gridLayout_9->setVerticalSpacing(100);
+        verticalLayout_18 = new QVBoxLayout();
+        verticalLayout_18->setSpacing(0);
+        verticalLayout_18->setObjectName("verticalLayout_18");
+        verticalLayout_18->setContentsMargins(10, 10, 10, 10);
+        label_22 = new QLabel(HistoryPage);
+        label_22->setObjectName("label_22");
+        label_22->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
-"color:black;\n"
-"background-color: rgb(115, 199, 255);\n"
-" font: 700 16pt \"Segoe UI\";\n"
+"	background-color: white;\n"
+"	color: #6A85B6;\n"
+"	font: 600 20pt \"Montserrat\";\n"
+"	min-height: 50px;\n"
+"	max-height: 50px;\n"
+"	border-top-right-radius: 10px;\n"
+"	border-top-left-radius: 10px;\n"
 "}"));
-        wins_label->setReadOnly(true);
+        label_22->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_20->addWidget(wins_label, 2, 0, 1, 1);
+        verticalLayout_18->addWidget(label_22);
 
-        losses_label = new QTextEdit(widget);
-        losses_label->setObjectName("losses_label");
-        losses_label->setStyleSheet(QString::fromUtf8("QTextEdit\n"
-"{\n"
-"color:black;\n"
-"background-color: rgb(115, 199, 255);\n"
-" font: 700 16pt \"Segoe UI\";\n"
-"}"));
-        losses_label->setReadOnly(true);
-
-        gridLayout_20->addWidget(losses_label, 0, 0, 1, 1);
-
-        losses = new QLabel(widget);
-        losses->setObjectName("losses");
-        losses->setStyleSheet(QString::fromUtf8("color: rgb(0,0,0);"));
-
-        gridLayout_20->addWidget(losses, 1, 0, 1, 1);
-
-        wins = new QLabel(widget);
+        wins = new QLabel(HistoryPage);
         wins->setObjectName("wins");
-        wins->setStyleSheet(QString::fromUtf8("color: rgb(0,0,0);"));
-
-        gridLayout_20->addWidget(wins, 3, 0, 1, 1);
-
-        draws_label = new QTextEdit(widget);
-        draws_label->setObjectName("draws_label");
-        draws_label->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+        wins->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
-"color:black;\n"
-"background-color: rgb(115, 199, 255);\n"
-" font: 700 16pt \"Segoe UI\";\n"
+"	color: white;\n"
+"	font: 700 40pt \"Montserrat\";\n"
+"	min-width: 100px;\n"
+"	min-height: 120px;\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0.8, x2:0.5, y2:0.0, stop:0 rgba(84, 204, 190, 255), 			stop:1 					rgba(164, 227, 207, 255));\n"
+"	border-bottom-left-radius: 10px;\n"
+"	border-bottom-right-radius: 10px;\n"
 "}"));
-        draws_label->setReadOnly(true);
+        wins->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_20->addWidget(draws_label, 4, 0, 1, 1);
+        verticalLayout_18->addWidget(wins);
 
-        draws = new QLabel(widget);
+
+        gridLayout_9->addLayout(verticalLayout_18, 0, 0, 1, 1);
+
+        verticalLayout_17 = new QVBoxLayout();
+        verticalLayout_17->setSpacing(0);
+        verticalLayout_17->setObjectName("verticalLayout_17");
+        verticalLayout_17->setContentsMargins(10, 10, 10, 10);
+        label_23 = new QLabel(HistoryPage);
+        label_23->setObjectName("label_23");
+        label_23->setStyleSheet(QString::fromUtf8("QLabel\n"
+"{\n"
+"	background-color: white;\n"
+"	color: #6A85B6;\n"
+"	font: 600 20pt \"Montserrat\";\n"
+"	min-height: 50px;\n"
+"	max-height: 50px;\n"
+"	border-top-right-radius: 10px;\n"
+"	border-top-left-radius: 10px;\n"
+"}"));
+        label_23->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        verticalLayout_17->addWidget(label_23);
+
+        losses = new QLabel(HistoryPage);
+        losses->setObjectName("losses");
+        losses->setStyleSheet(QString::fromUtf8("QLabel\n"
+"{\n"
+"	color: white;\n"
+"	font: 700 40pt \"Montserrat\";\n"
+"	min-width: 100px;\n"
+"	min-height: 120px;\n"
+"	background-color:qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(186, 200, 224, 255), stop:1 rgba(106, 			133, 182, 255));\n"
+"	border-bottom-left-radius: 10px;\n"
+"	border-bottom-right-radius: 10px;\n"
+"}"));
+        losses->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        verticalLayout_17->addWidget(losses);
+
+
+        gridLayout_9->addLayout(verticalLayout_17, 0, 1, 1, 1);
+
+        verticalLayout_19 = new QVBoxLayout();
+        verticalLayout_19->setSpacing(0);
+        verticalLayout_19->setObjectName("verticalLayout_19");
+        verticalLayout_19->setContentsMargins(10, 10, 10, 10);
+        label_24 = new QLabel(HistoryPage);
+        label_24->setObjectName("label_24");
+        label_24->setStyleSheet(QString::fromUtf8("QLabel\n"
+"{\n"
+"	background-color: white;\n"
+"	color: #6A85B6;\n"
+"	font: 600 20pt \"Montserrat\";\n"
+"	min-height: 50px;\n"
+"	max-height: 50px;\n"
+"	border-top-right-radius: 10px;\n"
+"	border-top-left-radius: 10px;\n"
+"}"));
+        label_24->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        verticalLayout_19->addWidget(label_24);
+
+        draws = new QLabel(HistoryPage);
         draws->setObjectName("draws");
-        draws->setStyleSheet(QString::fromUtf8("color: rgb(0,0,0);"));
+        draws->setStyleSheet(QString::fromUtf8("QLabel\n"
+"{\n"
+"	color: white;\n"
+"	font: 700 40pt \"Montserrat\";\n"
+"	min-width: 100px;\n"
+"	min-height: 120px;\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(222, 152, 227, 255), stop:1 rgba(162, 			84, 204, 255));\n"
+"	border-bottom-left-radius: 10px;\n"
+"	border-bottom-right-radius: 10px;\n"
+"}"));
+        draws->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_20->addWidget(draws, 5, 0, 1, 1);
+        verticalLayout_19->addWidget(draws);
+
+
+        gridLayout_9->addLayout(verticalLayout_19, 0, 2, 1, 1);
+
+
+        verticalLayout_20->addLayout(gridLayout_9);
 
         stackedWidget_2 = new QStackedWidget(HistoryPage);
         stackedWidget_2->setObjectName("stackedWidget_2");
-        stackedWidget_2->setGeometry(QRect(60, 460, 651, 210));
         page = new QWidget();
         page->setObjectName("page");
         verticalLayout_12 = new QVBoxLayout(page);
@@ -1877,6 +1947,9 @@ public:
         page_2 = new QWidget();
         page_2->setObjectName("page_2");
         stackedWidget_2->addWidget(page_2);
+
+        verticalLayout_20->addWidget(stackedWidget_2);
+
         stackedWidget->addWidget(HistoryPage);
         AboutPage = new QWidget();
         AboutPage->setObjectName("AboutPage");
@@ -2217,7 +2290,7 @@ public:
 
         retranslateUi(SecDialog);
 
-        stackedWidget->setCurrentIndex(4);
+        stackedWidget->setCurrentIndex(5);
 
 
         QMetaObject::connectSlotsByName(SecDialog);
@@ -2274,33 +2347,12 @@ public:
         back_4->setText(QCoreApplication::translate("SecDialog", "BACK", nullptr));
         Rematch->setText(QCoreApplication::translate("SecDialog", "Re-Match", nullptr));
         GameReview->setText(QCoreApplication::translate("SecDialog", "Review Game", nullptr));
-        wins_label->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">WINS</p></body></html>", nullptr));
-        losses_label->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">LOSSES</span></p></body></html>", nullptr));
-        losses->setText(QCoreApplication::translate("SecDialog", "TextLabel", nullptr));
-        wins->setText(QCoreApplication::translate("SecDialog", "TextLabel", nullptr));
-        draws_label->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt;\">DRAWS</span></p></body></html>", nullptr));
-        draws->setText(QCoreApplication::translate("SecDialog", "TextLabel", nullptr));
+        label_22->setText(QCoreApplication::translate("SecDialog", "WINS", nullptr));
+        wins->setText(QCoreApplication::translate("SecDialog", "500", nullptr));
+        label_23->setText(QCoreApplication::translate("SecDialog", "LOSSES", nullptr));
+        losses->setText(QCoreApplication::translate("SecDialog", "100", nullptr));
+        label_24->setText(QCoreApplication::translate("SecDialog", "DRAWS", nullptr));
+        draws->setText(QCoreApplication::translate("SecDialog", "100", nullptr));
         QTableWidgetItem *___qtablewidgetitem = historyTable->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("SecDialog", "Result", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = historyTable->horizontalHeaderItem(1);
