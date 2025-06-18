@@ -15,6 +15,7 @@ SOURCES += \
     PasswordHash.cpp \
     database.cpp \
     gametest.cpp \
+    logictest.cpp \
     main.cpp \
     mainwindow1.cpp \
     secdialog.cpp \
@@ -24,6 +25,7 @@ HEADERS += \
     AItest.h \
     PublicWindows.h \
     gametest.h \
+    logictest.h \
     main.h \
     mainwindow1.h \
     queue.h \

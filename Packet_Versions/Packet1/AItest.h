@@ -62,6 +62,18 @@ std::pair<int, int> findBestMove(int board[3][3], Difficulty level);
 
 void viewGameHistory(sqlite3* db , QTableWidget* table );
 
+extern const int PLAYER;
+extern const int AI;
+
+// Forward declaration
+struct Node;
+
+// Function declarations
+bool isMovesLeft(int board[3][3]);
+int evaluate(int board[3][3]);
+int minimax(std::shared_ptr<Node> node, int depth);
+void printBoard(int board[3][3]);
+
 // Password Hashing Functions
 string sha256(const string& str);
 string sha512(const string& str);

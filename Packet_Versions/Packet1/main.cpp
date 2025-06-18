@@ -21,10 +21,11 @@
 #include "sqlite3.h"
 
 #include "secdialog.h"
+#include "logictest.h"
 
 #include "gametest.h"
 
-#define TestMode 0  // 0-> normal program start   1-> GUI testing
+#define TestMode 2  // 0-> normal program start   1-> GUI testing   2-> LogicTest
 
 // Intialize Game Logic Variables
 int NextPlayer = 1;  // who can start the game (X -> 1  O -> 2)
@@ -57,7 +58,7 @@ int TotalDraws = 0;
 
 //SecDialog* win=nullptr;
 
-#if(TestMode)
+#if(1 == TestMode)
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
     //QCoreApplication app(argc, argv);
@@ -80,6 +81,15 @@ int main(int argc, char *argv[]) {
 
     gametest test;
     test.Testdb =db;
+
+    return QTest::qExec(&test, argc, argv);
+}
+#elif(2 ==TestMode)
+int main(int argc, char *argv[])
+{
+    QCoreApplication app(argc, argv);
+
+    LogicTest test;
 
     return QTest::qExec(&test, argc, argv);
 }
