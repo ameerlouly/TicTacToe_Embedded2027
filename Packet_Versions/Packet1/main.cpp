@@ -24,7 +24,7 @@
 
 #include "gametest.h"
 
-#define TestMode 1
+#define TestMode 0
 
 // Intialize Game Logic Variables
 int NextPlayer = 1;  // who can start the game (X -> 1  O -> 2)
