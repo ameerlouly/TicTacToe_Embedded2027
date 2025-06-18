@@ -34,11 +34,13 @@ jobs:
         qmake test_0.pro CONFIG-=no_main CONFIG+=console
         mingw32-make
 
-    - name: Run Qt tests and capture output
+    - name: Find and run test executable
       shell: pwsh
       run: |
         $exeDir = "C:\a\TicTacToe_Embedded2027\TicTacToe_Embedded2027\Packet_Versions\Packet1\build\Desktop_Qt_6_9_0_MinGW_64_bit-Debug\debug"
         $exePath = Join-Path $exeDir "test_0.exe"
+        $logPath = Join-Path $exeDir "test_output.txt"
+    
         $qtBin = "C:\a\TicTacToe_Embedded2027\Qt\6.8.3\mingw_64\bin"
         $qtPlugins = "C:\a\TicTacToe_Embedded2027\Qt\6.8.3\mingw_64\plugins"
     
@@ -47,33 +49,49 @@ jobs:
           exit 1
         }
     
-        $qtDlls = @(
-          "Qt6Core.dll", "Qt6Test.dll", "Qt6Gui.dll", "Qt6Widgets.dll",
-          "libstdc++-6.dll", "libgcc_s_seh-1.dll", "libwinpthread-1.dll"
-        )
+        Write-Host "Found test executable at: $exePath"
+    
+        # List of required DLLs (optional)
+        $qtDlls = @()
     
         foreach ($dll in $qtDlls) {
-          $src = Join-Path $qtBin $dll
-          $dst = Join-Path $exeDir $dll
-          if (Test-Path $src) { Copy-Item $src $dst -Force }
+          $source = Join-Path $qtBin $dll
+          $destination = Join-Path $exeDir $dll
+          if (Test-Path $source) {
+            Copy-Item $source $destination -Force
+            Write-Host "Copied $dll to test folder."
+          } else {
+            Write-Warning "$dll not found in $qtBin"
+          }
         }
     
-        $platformsSrc = Join-Path $qtPlugins "platforms"
-        $platformsDst = Join-Path $exeDir "platforms"
-        New-Item -Path $platformsDst -ItemType Directory -Force | Out-Null
-        Copy-Item -Path (Join-Path $platformsSrc "qwindows.dll") -Destination $platformsDst -Force
+        # Copy platform plugins
+        $platformsSource = Join-Path $qtPlugins "platforms"
+        $platformsTarget = Join-Path $exeDir "platforms"
+        if (Test-Path $platformsSource) {
+          New-Item -Path $platformsTarget -ItemType Directory -Force | Out-Null
+          Copy-Item -Path (Join-Path $platformsSource "qwindows.dll") -Destination $platformsTarget -Force
+          Write-Host "Copied qwindows.dll to platforms folder."
+        } else {
+          Write-Warning "Qt platforms plugin folder not found at $platformsSource"
+        }
     
-        # Create the output file
-        New-Item -Path "$exeDir\test_output.txt" -ItemType File -Force | Out-Null
+        # Enable Qt debug info
+        $env:QT_DEBUG_PLUGINS = "1"
     
-        # Run the test
-        & $exePath | Tee-Object -FilePath "$exeDir\test_output.txt"
+        # Make sure the output file exists
+        if (-not (Test-Path $logPath)) {
+          New-Item -Path $logPath -ItemType File -Force | Out-Null
+        }
     
+        # Run the test and capture output
+        & $exePath | Tee-Object -FilePath $logPath
+    
+        # Check for test failure
         if ($LASTEXITCODE -ne 0) {
           Write-Error "Tests failed with exit code $LASTEXITCODE"
           exit $LASTEXITCODE
         }
-
     
     - name: Upload test output log
       uses: actions/upload-artifact@v4
