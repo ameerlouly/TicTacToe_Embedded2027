@@ -83,7 +83,7 @@ jobs:
         }
 
     - name: Upload test output log
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: test_output
         path: C:\a\TicTacToe_Embedded2027\TicTacToe_Embedded2027\Packet_Versions\Packet1\build\Desktop_Qt_6_9_0_MinGW_64_bit-Debug\debug\test_output.txt
