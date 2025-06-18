@@ -5,16 +5,16 @@
 
 gametest::gametest() {
 
-    if (QFile::exists(AuthPath)) {
-        if (QFile::remove(AuthPath)) {
-            qDebug() << "Session Authantication File deleted:" << AuthPath;
-            qDebug() << "Ready for the test";
-        } else {
-            qDebug() << "Failed to delete file:" << AuthPath;
-        }
-    } else {
-        qDebug() << "File does not exist:" << AuthPath;
-    }
+    // if (QFile::exists(AuthPath)) {
+    //     if (QFile::remove(AuthPath)) {
+    //         qDebug() << "Session Authantication File deleted:" << AuthPath;
+    //         qDebug() << "Ready for the test";
+    //     } else {
+    //         qDebug() << "Failed to delete file:" << AuthPath;
+    //     }
+    // } else {
+    //     qDebug() << "File does not exist:" << AuthPath;
+    // }
 
 }
 
@@ -59,13 +59,17 @@ void gametest::TestBlankBoardCase1(){
 
     bool IsBlank=true;
 
-    QTest::qWait(1000);  // Waits for 1 second
+    qDebug() << "File does not exist:" ;
+    qDebug() << "File does not exist:" ;
+    qDebug() << "File does not exist:" ;
+
+    //QTest::qWait(1000);  // Waits for 1 second
 
     for(int i=0; i<9; i++){
          IsBlank &= (Gamewindow2->GridButtons[i]->text()=="");
     }
 
-    QVERIFY(IsBlank);
+    QVERIFY(false);
 }
 
 void gametest::TestGamePlay(){  // to test player turns switching , validate button clicks to be X or O
