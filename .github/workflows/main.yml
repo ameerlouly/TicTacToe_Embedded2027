@@ -64,7 +64,7 @@ jobs:
         New-Item -Path "$exeDir\test_output.txt" -ItemType File -Force | Out-Null
     
         # Run the test
-        & $exePath | Tee-Object -FilePath "$exeDir\test_output.txt"
+        & $exePath 2>&1 | Tee-Object -FilePath "$exeDir\test_output.txt"
     
         if ($LASTEXITCODE -ne 0) {
           Write-Error "Tests failed with exit code $LASTEXITCODE"
