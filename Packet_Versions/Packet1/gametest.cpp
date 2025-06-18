@@ -1,5 +1,6 @@
 #include "gametest.h"
 #include "PublicWindows.h"
+#include "main.h"
 
 
 gametest::gametest() {
@@ -58,8 +59,14 @@ void gametest::TestBlankBoardCase1(){
 
     bool IsBlank=true;
 
+    QTest::qWait(1000);  // Waits for 1 second
+
     for(int i=0; i<9; i++){
-        IsBlank &= (Gamewindow2->GridButtons[i]->text()=="");
+         IsBlank &= (Gamewindow2->GridButtons[i]->text()=="");
+    }
+
+    for(int i=0; i<9; i++){
+         IsBlank &= (clicked[i]== 0);
     }
 
     QVERIFY(IsBlank);

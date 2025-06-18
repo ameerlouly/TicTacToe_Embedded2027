@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "AItest.h"
-#include <sqlite3.h>
+#include "sqlite3.h"
 #include <QString>
 #include <QTableWidget>
 #include <QTableWidgetItem>

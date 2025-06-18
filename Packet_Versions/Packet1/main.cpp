@@ -24,7 +24,7 @@
 
 #include "gametest.h"
 
-#define TestMode 0
+#define TestMode 1
 
 // Intialize Game Logic Variables
 int NextPlayer = 1;  // who can start the game (X -> 1  O -> 2)
@@ -60,6 +60,7 @@ int TotalDraws = 0;
 #if(TestMode)
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
+    //QCoreApplication app(argc, argv);
 
     LoginWindow = new MainWindow1();
     Gamewindow2 = new SecDialog();
