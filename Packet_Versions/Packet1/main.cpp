@@ -19,7 +19,9 @@
 #include <QFileInfo>
 #include <QStandardPaths>
 #include <sqlite3.h>
-
+#include <QStandardPaths>
+#include <QFile>
+#include <QDir>
 #include "secdialog.h"
 
 // Intialize Game Logic Variables
@@ -65,18 +67,38 @@ int main(int argc, char *argv[])
     // SecDialog* test= new SecDialog();
     //Gamewindow2->show();
 
-    QString dbDir = QCoreApplication::applicationDirPath() + "/db";
-    QDir().mkpath(dbDir);
+    // QString dbDir = QCoreApplication::applicationDirPath() + "/db";
+    // QDir().mkpath(dbDir);
 
-    QString dbPath = dbDir + "/DATA.db";
+    // QString dbPath = dbDir + "/DATA.db";
+    // int rc = sqlite3_open(dbPath.toStdString().c_str(), &db);
+
+    // if (rc != SQLITE_OK)
+    // {
+    //     qDebug() << "Failed to open database:" << sqlite3_errmsg(db);
+    //     return -1;
+    // }
+
+    // Step 1: AppData directory
+    QString appDataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QDir().mkpath(appDataDir);
+
+    // Step 2: Path to user-specific DB
+    QString dbPath = appDataDir + "/DATA.db";
+
+    // Step 3: If it's the first run, copy the DB from the install folder
+    if (!QFile::exists(dbPath)) {
+        QString installedPath = QCoreApplication::applicationDirPath() + "/db/DATA.db";
+        QFile::copy(installedPath, dbPath);
+    }
+
+    // Step 4: Open the database
     int rc = sqlite3_open(dbPath.toStdString().c_str(), &db);
 
-    if (rc != SQLITE_OK)
-    {
+    if (rc != SQLITE_OK) {
         qDebug() << "Failed to open database:" << sqlite3_errmsg(db);
         return -1;
     }
-
     createTables(db);
 
     if(getCurrentUser(db,username))
