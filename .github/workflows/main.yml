@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest  # Use Linux-compatible tools
 
     steps:
     - name: Checkout code
@@ -19,17 +19,28 @@ jobs:
         pwd
         ls -R
 
-    - name: Install Qt (MinGW)
+    - name: Install Qt (Linux)
       uses: jurplel/install-qt-action@v3
       with:
         version: '6.8.3'
-        arch: 'win64_mingw'
-
-    - name: Add Qt bin directory to PATH
-      run: echo "C:\Qt\6.8.3\mingw_64\bin" >> $env:GITHUB_PATH
 
     - name: Build test_0.pro inside Packets_Versions
       run: |
         cd Packet_Versions/Packet1
         qmake test_0.pro CONFIG-=no_main CONFIG+=console
-        mingw32-make
+        make
+
+    - name: Install Xvfb
+      run: sudo apt-get install -y xvfb
+
+    - name: Run tests with GUI support
+      run: |
+        cd Packet_Versions/Packet1
+        Xvfb :99 &
+        export DISPLAY=:99
+        ./debug/test_0 > test_output.txt
+
+    - name: Run tests and display output
+      run: |
+        cd Packet_Versions/Packet1
+        cat test_output.txt
