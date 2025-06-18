@@ -23,6 +23,8 @@ SecDialog::SecDialog(QWidget *parent)
 {
     ui->setupUi(this);
 
+    initiailzeButtons();
+
     GridButtons[0] = ui->grid0;
     GridButtons[1] = ui->grid1;
     GridButtons[2] = ui->grid2;
@@ -42,6 +44,8 @@ SecDialog::SecDialog(QWidget *parent)
 
     isGuest();
     inHistory=false;
+
+
 }
 
 SecDialog::~SecDialog()
@@ -49,6 +53,20 @@ SecDialog::~SecDialog()
     delete ui;
 }
 
+
+void SecDialog::initiailzeButtons(){
+
+    Profile =ui->profile;
+    LogOut= ui->Log_out;
+
+    Normal =ui->normal;
+    PVP =ui->PVP;
+    StartGame =ui->startgame;
+
+    ReMatchButton = ui->Rematch;
+
+    WinnerText= ui->label;
+}
 
 void SecDialog::isGuest()
 {
@@ -250,7 +268,7 @@ void SecDialog::on_back_5_clicked()
 void SecDialog::on_history_clicked()
 {
 
-    if(ui->ShureExit->text() == "" && ui->stackedWidget->currentIndex() == 4 && !ui->label->isVisible())
+    if(ui->ShureExit->text() == "" && ui->stackedWidget->currentIndex() == 4 && !ui->label->isVisible()&& !inHistory)
     {
         ui->ShureExit->setText("Are you sure you want to exit the game?");
     }
@@ -270,7 +288,7 @@ void SecDialog::on_history_clicked()
 
 void SecDialog::on_settings_clicked()
 {
-    if(ui->ShureExit->text() == "" && ui->stackedWidget->currentIndex() == 4 && !ui->label->isVisible())
+    if(ui->ShureExit->text() == "" && ui->stackedWidget->currentIndex() == 4 && !ui->label->isVisible()&& !inHistory)
     {
         ui->ShureExit->setText("Are you sure you want to exit the game?");
     }
@@ -286,7 +304,7 @@ void SecDialog::on_settings_clicked()
 
 void SecDialog::on_profile_clicked()
 {
-    if(ui->ShureExit->text() == "" && ui->stackedWidget->currentIndex() == 4 && !ui->label->isVisible())
+    if(ui->ShureExit->text() == "" && ui->stackedWidget->currentIndex() == 4 && !ui->label->isVisible()&& !inHistory)
     {
         ui->ShureExit->setText("Are you sure you want to exit the game?");
     }
@@ -423,7 +441,7 @@ void SecDialog::returnBacktoPage0InGame()
 void SecDialog::on_home_clicked()
 {
 
-    if(ui->ShureExit->text() == "" && ui->stackedWidget->currentIndex() == 4 && !ui->label->isVisible())
+    if(ui->ShureExit->text() == "" && ui->stackedWidget->currentIndex() == 4 && !ui->label->isVisible() && !inHistory)
     {
         ui->ShureExit->setText("Are you sure you want to exit the game?");
     }

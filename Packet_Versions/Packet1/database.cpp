@@ -324,12 +324,14 @@ void viewGameHistory(sqlite3* db, QTableWidget* table) {
 
         qDebug() <<TotalLoses<<" "<<TotalWins << " "<<TotalDraws;
 
-        TotalLoses = lossCount;
-        TotalWins = winCount;
-        TotalDraws = drawCount;
+
 
         gameNumber++;
     }
+
+    TotalLoses = lossCount;
+    TotalWins = winCount;
+    TotalDraws = drawCount;
 
         QObject::connect(whywhywhy[0], &QPushButton::clicked,[&]() {Gamewindow2->OldGameHistory(his[(whywhywhy[0]->text().mid(5,2).toInt()) -1]); });
     QObject::connect(whywhywhy[1], &QPushButton::clicked,[&]() {Gamewindow2->OldGameHistory(his[(whywhywhy[1]->text().mid(5,2).toInt()) -1]); });

@@ -22,6 +22,10 @@
 
 #include "secdialog.h"
 
+#include "gametest.h"
+
+#define TestMode 1
+
 // Intialize Game Logic Variables
 int NextPlayer = 1;  // who can start the game (X -> 1  O -> 2)
 int MoveNum = 0;    // Intialize First Move
@@ -53,8 +57,32 @@ int TotalDraws = 0;
 
 //SecDialog* win=nullptr;
 
+#if(TestMode)
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
 
+    LoginWindow = new MainWindow1();
+    Gamewindow2 = new SecDialog();
 
+    QString dbDir = QCoreApplication::applicationDirPath() + "/db";
+    QDir().mkpath(dbDir);
+
+    QString dbPath = dbDir + "/DATA.db";
+    int rc = sqlite3_open(dbPath.toStdString().c_str(), &db);
+
+    if (rc != SQLITE_OK) {
+        qDebug() << "Failed to open database:" << sqlite3_errmsg(db);
+        return -1;
+    }
+
+    createTables(db);
+
+    gametest test;
+    test.Testdb =db;
+
+    return QTest::qExec(&test, argc, argv);
+}
+#else
 
 int main(int argc, char *argv[])
 {
@@ -103,6 +131,7 @@ int main(int argc, char *argv[])
 
     return app.exec();
 }
+#endif
 
 int GridToNum(QPushButton *Button,QPushButton * Grid[9])
 {

@@ -1,4 +1,5 @@
 QT       += core gui
+QT       += testlib
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,6 +14,7 @@ SOURCES += \
     AI_Code.cpp \
     PasswordHash.cpp \
     database.cpp \
+    gametest.cpp \
     main.cpp \
     mainwindow1.cpp \
     secdialog.cpp \
@@ -20,6 +22,8 @@ SOURCES += \
 
 HEADERS += \
     AItest.h \
+    PublicWindows.h \
+    gametest.h \
     main.h \
     mainwindow1.h \
     queue.h \
