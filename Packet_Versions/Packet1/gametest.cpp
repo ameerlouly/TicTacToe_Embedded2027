@@ -73,7 +73,7 @@ void gametest::TestBlankBoardCase1(){
          IsBlank &= (clicked[i]== 0);
     }
 
-    QVERIFY(IsBlank);
+    QVERIFY(false);
 }
 
 // void gametest::TestGamePlay(){  // to test player turns switching , validate button clicks to be X or O
