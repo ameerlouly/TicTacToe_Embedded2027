@@ -2,6 +2,7 @@
 #define SECDIALOG_H
 #include <QTableWidgetItem>
 #include <QDialog>
+#include <QLabel>
 
 namespace Ui {
 class SecDialog;
@@ -18,6 +19,19 @@ public:
         void OldGameHistory(int his[9]);
 
     void isGuest();
+    void initiailzeButtons();
+
+        QPushButton* Profile;
+        QPushButton* LogOut;
+
+        QPushButton* GridButtons[9];
+
+        QPushButton* PVP;
+        QPushButton* Normal;
+        QPushButton* StartGame;
+        QPushButton* ReMatchButton;
+
+        QLabel* WinnerText;
 
 private slots:
     void on_startgame_clicked();

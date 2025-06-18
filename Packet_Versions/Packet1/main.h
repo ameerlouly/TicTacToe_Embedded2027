@@ -1,8 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include"mainwindow1.h"
-#include"secdialog.h"
+#include "PublicWindows.h"
 
 #include <QApplication>
 #include <QFile>
@@ -65,8 +64,8 @@ extern short int REG_Mode;
 
 using namespace std;
 
-extern MainWindow1* LoginWindow;
-extern SecDialog* Gamewindow2;
+// extern MainWindow1* LoginWindow;
+// extern SecDialog* Gamewindow2;
 
 extern bool AccountNotFound;
 

@@ -24,6 +24,10 @@
 #include <QDir>
 #include "secdialog.h"
 
+#include "gametest.h"
+
+#define TestMode 0
+
 // Intialize Game Logic Variables
 int NextPlayer = 1;  // who can start the game (X -> 1  O -> 2)
 int MoveNum = 0;    // Intialize First Move
@@ -55,8 +59,32 @@ int TotalDraws = 0;
 
 //SecDialog* win=nullptr;
 
+#if(TestMode)
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
 
+    LoginWindow = new MainWindow1();
+    Gamewindow2 = new SecDialog();
 
+    QString dbDir = QCoreApplication::applicationDirPath() + "/db";
+    QDir().mkpath(dbDir);
+
+    QString dbPath = dbDir + "/DATA.db";
+    int rc = sqlite3_open(dbPath.toStdString().c_str(), &db);
+
+    if (rc != SQLITE_OK) {
+        qDebug() << "Failed to open database:" << sqlite3_errmsg(db);
+        return -1;
+    }
+
+    createTables(db);
+
+    gametest test;
+    test.Testdb =db;
+
+    return QTest::qExec(&test, argc, argv);
+}
+#else
 
 int main(int argc, char *argv[])
 {
@@ -99,6 +127,7 @@ int main(int argc, char *argv[])
         qDebug() << "Failed to open database:" << sqlite3_errmsg(db);
         return -1;
     }
+
     createTables(db);
 
     if(getCurrentUser(db,username))
@@ -125,6 +154,7 @@ int main(int argc, char *argv[])
 
     return app.exec();
 }
+#endif
 
 int GridToNum(QPushButton *Button,QPushButton * Grid[9])
 {
@@ -431,7 +461,7 @@ void Check_data_forLogin(sqlite3 *db, SecDialog *window, MainWindow1 *window1)
         bool success = SIGN_UP(db, passcode, username, PhoneNumber);
         if (!success)
         {
-            QMessageBox::warning(window1, "Signup Failed", "Username or phone number already exists!");
+            //QMessageBox::warning(window1, "Signup Failed", "Username or phone number already exists!");
             return;  // Don't continue if signup failed
         }
         loginFound = true;
@@ -444,7 +474,7 @@ void Check_data_forLogin(sqlite3 *db, SecDialog *window, MainWindow1 *window1)
             if (!loginFound)
             {
                 AccountNotFound = true;
-                QMessageBox::critical(window1, "Login Failed", "incorrect username or password");
+                //QMessageBox::critical(window1, "Login Failed", "incorrect username or password");
             }
         }
     }
@@ -455,8 +485,12 @@ void Check_data_forLogin(sqlite3 *db, SecDialog *window, MainWindow1 *window1)
         {
             setCurrentUser(db,"Guest");
             window->returnBacktoPage0InGame();
-            window->show();
-            window1->close();
+
+            if(!TestMode){
+                window->show();
+                window1->close();
+            }
+
             return;
         }
         else
@@ -464,15 +498,18 @@ void Check_data_forLogin(sqlite3 *db, SecDialog *window, MainWindow1 *window1)
             SIGN_UP(db, "", "Guest", "");
             setCurrentUser(db,"Guest");
             window->returnBacktoPage0InGame();
-            window->show();
-            window1->close();
+            if(!TestMode){
+                window->show();
+                window1->close();
+            }
+
             return;
         }
     }
     if (!loginFound && attempts>=MAX_LOGIN_ATTEMPTS)
     {
         // You can trigger a reset password UI here or call resetPassword directly if needed
-        QMessageBox::critical(window1, "Login Failed", "pls try again or press forget password");
+        //QMessageBox::critical(window1, "Login Failed", "pls try again or press forget password");
         return;
     }
 
@@ -481,7 +518,9 @@ void Check_data_forLogin(sqlite3 *db, SecDialog *window, MainWindow1 *window1)
     {
         setCurrentUser(db,username);
         window->returnBacktoPage0InGame();
-        window->show();
-        window1->close();
+         if(!TestMode){
+                window->show();
+                window1->close();
+            }
     }
 }

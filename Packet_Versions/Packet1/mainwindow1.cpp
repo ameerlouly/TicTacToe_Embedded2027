@@ -21,6 +21,7 @@ MainWindow1::MainWindow1(QWidget *parent)
     , ui(new Ui::MainWindow1)
 {
     ui->setupUi(this);
+    initializeButtons();
 }
 
 MainWindow1::~MainWindow1()
@@ -32,6 +33,14 @@ void MainWindow1::initializeButtons()
 {
     ui->WrongWarning->hide();
     ui->WarningReset_Label->hide();
+
+    LoginButton=ui->Login_Button;
+    SignUpButton=ui->Signup_Button;
+    NameInput=ui->username;
+    PassInput=ui->password;
+    ConfPassInput=ui->password_3;
+    NumInput=ui->phone_number;
+    LogUserButton=ui->Login_User_Button;
 }
 
 void MainWindow1::on_Signup_Button_clicked()

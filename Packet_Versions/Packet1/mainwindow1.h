@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include <QStackedWidget>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QLabel>
 //#include "secdialog.h"
 
 QT_BEGIN_NAMESPACE
@@ -21,6 +24,14 @@ public:
 
     ~MainWindow1();
     void initializeButtons();   // Used for Hiding warning Labels
+
+    QPushButton* LoginButton;
+    QPushButton* SignUpButton;
+    QLineEdit* NameInput;
+    QLineEdit* PassInput;
+    QLineEdit* ConfPassInput;
+    QLineEdit* NumInput;
+    QPushButton* LogUserButton;
 
 private slots:
 
