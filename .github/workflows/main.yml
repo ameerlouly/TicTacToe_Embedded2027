@@ -34,8 +34,26 @@ jobs:
         qmake test_0.pro CONFIG-=no_main CONFIG+=console
         mingw32-make
 
-    - name: Run unit tests
+    - name: Find and run test executable
+      shell: pwsh
       run: |
-        cd Packet_Versions/Packet1/debug
-        ./test_0 > test_output.txt
-
+        # Search for the test_0.exe file
+        $exe = Get-ChildItem -Path . -Filter test_0.exe -Recurse -File | Select-Object -First 1
+    
+        if (-not $exe) {
+          Write-Error "Executable test_0.exe not found."
+          exit 1
+        }
+    
+        Write-Host "Found test executable at: $($exe.FullName)"
+    
+        # Run the executable and capture output
+        & $exe.FullName | Tee-Object -FilePath test_output.txt
+    
+        # Check the exit code to fail the pipeline on test failure
+        if ($LASTEXITCODE -ne 0) {
+          Write-Error "Tests failed with exit code $LASTEXITCODE"
+          exit $LASTEXITCODE
+        }
+    
+    
