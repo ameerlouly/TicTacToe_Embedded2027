@@ -2613,6 +2613,7 @@ QPushButton:pressed
 	background-color: white;
 	color: #6A85B6;
 	font: 600 20pt &quot;Montserrat&quot;;
+	letter-spacing: 2px;
 	min-height: 50px;
 	max-height: 50px;
 	border-top-right-radius: 10px;
@@ -2676,6 +2677,7 @@ QPushButton:pressed
 	background-color: white;
 	color: #6A85B6;
 	font: 600 20pt &quot;Montserrat&quot;;
+	letter-spacing: 2px;
 	min-height: 50px;
 	max-height: 50px;
 	border-top-right-radius: 10px;
@@ -2739,6 +2741,7 @@ QPushButton:pressed
 	background-color: white;
 	color: #6A85B6;
 	font: 600 20pt &quot;Montserrat&quot;;
+	letter-spacing: 2px;
 	min-height: 50px;
 	max-height: 50px;
 	border-top-right-radius: 10px;
@@ -2819,20 +2822,31 @@ QHeaderView::section
 
 QTableWidget::item
  {
+	background-color: white;
+	border: none;
+    color: black;
+	margin: 3px;
     padding: 6px;
-    border-bottom: 1px solid #555555;
+	border-radius: 10px;
+	min-height: 10px;
 }
 
-QTableWidget::item:selected 
-{
-    background-color: #555555;
-    color: #FFD700;
+QTableWidget::item:selected
+ {
+	background-color: rgb(221, 221, 221);
+	border: none;
+	border-radius: 10px;
+    color: black;
+	margin: 3px;
+    padding: 6px;
 }
+
 
 QTableCornerButton::section
  {
     background-color: rgba(0, 0, 0,  0);
 	border: none;
+	border-radius: 10px;
 }</string>
               </property>
               <property name="frameShape">
@@ -2906,15 +2920,33 @@ QTableCornerButton::section
                <property name="text">
                 <string>Result</string>
                </property>
+               <property name="font">
+                <font>
+                 <family>Montserrat</family>
+                 <pointsize>10</pointsize>
+                </font>
+               </property>
               </column>
               <column>
                <property name="text">
                 <string>Date</string>
                </property>
+               <property name="font">
+                <font>
+                 <family>Montserrat</family>
+                 <pointsize>10</pointsize>
+                </font>
+               </property>
               </column>
               <column>
                <property name="text">
                 <string>Review</string>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Montserrat</family>
+                 <pointsize>10</pointsize>
+                </font>
                </property>
               </column>
               <item row="0" column="0">

@@ -1780,6 +1780,7 @@ public:
 "	background-color: white;\n"
 "	color: #6A85B6;\n"
 "	font: 600 20pt \"Montserrat\";\n"
+"	letter-spacing: 2px;\n"
 "	min-height: 50px;\n"
 "	max-height: 50px;\n"
 "	border-top-right-radius: 10px;\n"
@@ -1819,6 +1820,7 @@ public:
 "	background-color: white;\n"
 "	color: #6A85B6;\n"
 "	font: 600 20pt \"Montserrat\";\n"
+"	letter-spacing: 2px;\n"
 "	min-height: 50px;\n"
 "	max-height: 50px;\n"
 "	border-top-right-radius: 10px;\n"
@@ -1858,6 +1860,7 @@ public:
 "	background-color: white;\n"
 "	color: #6A85B6;\n"
 "	font: 600 20pt \"Montserrat\";\n"
+"	letter-spacing: 2px;\n"
 "	min-height: 50px;\n"
 "	max-height: 50px;\n"
 "	border-top-right-radius: 10px;\n"
@@ -1898,11 +1901,17 @@ public:
         historyTable = new QTableWidget(page);
         if (historyTable->columnCount() < 3)
             historyTable->setColumnCount(3);
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("Montserrat")});
+        font1.setPointSize(10);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        __qtablewidgetitem->setFont(font1);
         historyTable->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        __qtablewidgetitem1->setFont(font1);
         historyTable->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        __qtablewidgetitem2->setFont(font1);
         historyTable->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         if (historyTable->rowCount() < 10)
             historyTable->setRowCount(10);
@@ -1937,7 +1946,7 @@ public:
 "QHeaderView::section\n"
 " {\n"
 "    background-color: #444444;\n"
-"    color: #FFFFFF;	\n"
+"    color: #FFFFFF;\n"
 "    margin: 10px;\n"
 "    font-size: 700 14px \"Montserrat\";\n"
 "	border-radius: 10px;\n"
@@ -1945,20 +1954,31 @@ public:
 "\n"
 "QTableWidget::item\n"
 " {\n"
+"	background-color: white;\n"
+"	border: none;\n"
+"    color: black;\n"
+"	margin: 3px;\n"
 "    padding: 6px;\n"
-"    border-bottom: 1px solid #555555;\n"
+"	border-radius: 10px;\n"
+"	min-height: 10px;\n"
 "}\n"
 "\n"
-"QTableWidget::item:selected \n"
-"{\n"
-"    background-color: #555555;\n"
-"    color: #FFD700;\n"
+"QTableWidget::item:selected\n"
+" {\n"
+"	background-color: rgb(221, 221, 221);\n"
+"	border: none;\n"
+"	border-radius: 10px;\n"
+"    color: black;\n"
+"	margin: 3px;\n"
+"    padding: 6px;\n"
 "}\n"
+"\n"
 "\n"
 "QTableCornerButton::section\n"
 " {\n"
 "    background-color: rgba(0, 0, 0,  0);\n"
 "	border: none;\n"
+"	border-radius: 10px;\n"
 "}"));
         historyTable->setFrameShape(QFrame::Shape::NoFrame);
         historyTable->setFrameShadow(QFrame::Shadow::Plain);
@@ -2106,10 +2126,10 @@ public:
         verticalLayout_9->setContentsMargins(9, 9, 9, 9);
         label_6 = new QLabel(AboutPage);
         label_6->setObjectName("label_6");
-        QFont font1;
-        font1.setFamilies({QString::fromUtf8("Montserrat")});
-        font1.setPointSize(20);
-        label_6->setFont(font1);
+        QFont font2;
+        font2.setFamilies({QString::fromUtf8("Montserrat")});
+        font2.setPointSize(20);
+        label_6->setFont(font2);
         label_6->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "	background-color:rgba(0, 0, 0, 50);\n"
@@ -2121,7 +2141,7 @@ public:
 
         label_7 = new QLabel(AboutPage);
         label_7->setObjectName("label_7");
-        label_7->setFont(font1);
+        label_7->setFont(font2);
         label_7->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "	background-color:rgba(0, 0, 0, 50);\n"
@@ -2133,7 +2153,7 @@ public:
 
         label_8 = new QLabel(AboutPage);
         label_8->setObjectName("label_8");
-        label_8->setFont(font1);
+        label_8->setFont(font2);
         label_8->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "	background-color:rgba(0, 0, 0, 50);\n"
@@ -2145,7 +2165,7 @@ public:
 
         label_9 = new QLabel(AboutPage);
         label_9->setObjectName("label_9");
-        label_9->setFont(font1);
+        label_9->setFont(font2);
         label_9->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "	background-color:rgba(0, 0, 0, 50);\n"
@@ -2157,7 +2177,7 @@ public:
 
         label_10 = new QLabel(AboutPage);
         label_10->setObjectName("label_10");
-        label_10->setFont(font1);
+        label_10->setFont(font2);
         label_10->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "	background-color:rgba(0, 0, 0, 50);\n"
@@ -2198,12 +2218,12 @@ public:
         verticalLayout_11->setObjectName("verticalLayout_11");
         UsenameTag = new QLabel(ProfilePage);
         UsenameTag->setObjectName("UsenameTag");
-        QFont font2;
-        font2.setFamilies({QString::fromUtf8("Montserrat")});
-        font2.setPointSize(40);
-        font2.setBold(true);
-        font2.setItalic(false);
-        UsenameTag->setFont(font2);
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("Montserrat")});
+        font3.setPointSize(40);
+        font3.setBold(true);
+        font3.setItalic(false);
+        UsenameTag->setFont(font3);
         UsenameTag->setStyleSheet(QString::fromUtf8("\n"
 "font: 700 40pt \"Montserrat\";\n"
 "color: rgb(0, 0, 0);"));

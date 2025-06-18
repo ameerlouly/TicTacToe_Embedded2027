@@ -256,14 +256,16 @@ void saveGameHistory(sqlite3* db, string result , int HistoryMoves[9]) {
  int gameID[10];
  QPushButton* whywhywhy[9];
 
-void viewGameHistory(sqlite3* db, QTableWidget* table) {
+void viewGameHistory(sqlite3* db, QTableWidget* table)
+ {
 
     QString username = QString::fromStdString(G_UserName);  // assuming G_UserName is std::string
     std::string sql = "SELECT result, timestamp, moves FROM game_history WHERE username='" + G_UserName + "' ORDER BY timestamp DESC LIMIT 10;";
     sqlite3_stmt* stmt;
 
     int rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, 0);
-    if (rc != SQLITE_OK) {
+    if (rc != SQLITE_OK)
+    {
         qDebug() << "Failed to fetch game history:" << sqlite3_errmsg(db);
         return;
     }
@@ -278,7 +280,8 @@ void viewGameHistory(sqlite3* db, QTableWidget* table) {
 
 
 
-    while (sqlite3_step(stmt) == SQLITE_ROW) {
+    while (sqlite3_step(stmt) == SQLITE_ROW)
+    {
         std::string result = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 0));
         std::string timestamp = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
 
@@ -295,7 +298,8 @@ void viewGameHistory(sqlite3* db, QTableWidget* table) {
 
         //std::cout << "movesStr: '" << movesStr << "'" << std::endl;
 
-        while (std::getline(ss, token, ',') && index < 9) {
+        while (std::getline(ss, token, ',') && index < 9)
+        {
             his[gameNumber-1][index++] = std::stoi(token);
         }
         /////////////
@@ -303,10 +307,11 @@ void viewGameHistory(sqlite3* db, QTableWidget* table) {
         table->insertRow(row);
 
          QPushButton *button = new QPushButton(QString("Game %1 Replay").arg(gameNumber));
-        gameID[gameNumber-1] = gameNumber-1;
-        whywhywhy[gameNumber-1]=button;
+        gameID[gameNumber - 1] = gameNumber-1;
+        whywhywhy[gameNumber - 1] = button;
 
-        for(int i=0; i<9; i++){
+        for(int i=0; i<9; i++)
+        {
             //qDebug() << "played:" << his[gameNumber-1][i]<<" ID: "<<gameID[gameNumber-1];
         }
 
