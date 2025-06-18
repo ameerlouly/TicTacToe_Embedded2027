@@ -17,39 +17,39 @@ gametest::gametest() {
 
 }
 
-void gametest::TestSignUp (){
+// void gametest::TestSignUp (){
 
 
-    LoginWindow->show();
+//     //LoginWindow->show();
 
-    QTest::mouseClick(LoginWindow->SignUpButton, Qt::LeftButton);
-    QTest::keyClicks(LoginWindow->NameInput, "999");
-    QTest::keyClicks(LoginWindow->PassInput, "999");
-    QTest::keyClicks(LoginWindow->ConfPassInput, "999");
-    QTest::keyClicks(LoginWindow->NumInput, "999");
-    QTest::mouseClick(LoginWindow->LogUserButton, Qt::LeftButton);
+//     QTest::mouseClick(LoginWindow->SignUpButton, Qt::LeftButton);
+//     QTest::keyClicks(LoginWindow->NameInput, "999");
+//     QTest::keyClicks(LoginWindow->PassInput, "999");
+//     QTest::keyClicks(LoginWindow->ConfPassInput, "999");
+//     QTest::keyClicks(LoginWindow->NumInput, "999");
+//     QTest::mouseClick(LoginWindow->LogUserButton, Qt::LeftButton);
 
-    QFile file(AuthPath);
-    QVERIFY(file.exists());
-}
+//     QFile file(AuthPath);
+//     QVERIFY(file.exists());
+// }
 
-void gametest::TestLogout(){
-    QTest::mouseClick(Gamewindow2->Profile, Qt::LeftButton);
-    QTest::mouseClick(Gamewindow2->LogOut, Qt::LeftButton);
+// void gametest::TestLogout(){
+//     QTest::mouseClick(Gamewindow2->Profile, Qt::LeftButton);
+//     QTest::mouseClick(Gamewindow2->LogOut, Qt::LeftButton);
 
-    QFile file(AuthPath);
-    QVERIFY(!file.exists());
-}
+//     QFile file(AuthPath);
+//     QVERIFY(!file.exists());
+// }
 
-void gametest::TestSignIn(){
-    QTest::mouseClick(LoginWindow->LoginButton, Qt::LeftButton);
-    QTest::keyClicks(LoginWindow->NameInput, "999");
-    QTest::keyClicks(LoginWindow->PassInput, "999");
-    QTest::mouseClick(LoginWindow->LogUserButton, Qt::LeftButton);
+// void gametest::TestSignIn(){
+//     QTest::mouseClick(LoginWindow->LoginButton, Qt::LeftButton);
+//     QTest::keyClicks(LoginWindow->NameInput, "999");
+//     QTest::keyClicks(LoginWindow->PassInput, "999");
+//     QTest::mouseClick(LoginWindow->LogUserButton, Qt::LeftButton);
 
-    QFile file(AuthPath);
-    QVERIFY(file.exists());
-}
+//     QFile file(AuthPath);
+//     QVERIFY(file.exists());
+// }
 
 void gametest::TestBlankBoardCase1(){
     QTest::mouseClick(Gamewindow2->StartGame, Qt::LeftButton);

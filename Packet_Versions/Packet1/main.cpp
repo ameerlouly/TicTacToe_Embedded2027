@@ -18,7 +18,7 @@
 #include <QDebug>
 #include <QFileInfo>
 #include <QStandardPaths>
-#include <sqlite3.h>
+#include "sqlite3.h"
 
 #include "secdialog.h"
 
@@ -462,8 +462,12 @@ void Check_data_forLogin(sqlite3 *db, SecDialog *window, MainWindow1 *window1)
         {
             setCurrentUser(db,"Guest");
             window->returnBacktoPage0InGame();
-            window->show();
-            window1->close();
+
+            if(!TestMode){
+                window->show();
+                window1->close();
+            }
+
             return;
         }
         else
@@ -471,8 +475,11 @@ void Check_data_forLogin(sqlite3 *db, SecDialog *window, MainWindow1 *window1)
             SIGN_UP(db, "", "Guest", "");
             setCurrentUser(db,"Guest");
             window->returnBacktoPage0InGame();
-            window->show();
-            window1->close();
+            if(!TestMode){
+                window->show();
+                window1->close();
+            }
+
             return;
         }
     }
@@ -488,7 +495,9 @@ void Check_data_forLogin(sqlite3 *db, SecDialog *window, MainWindow1 *window1)
     {
         setCurrentUser(db,username);
         window->returnBacktoPage0InGame();
-        window->show();
-        window1->close();
+         if(!TestMode){
+                window->show();
+                window1->close();
+            }
     }
 }
