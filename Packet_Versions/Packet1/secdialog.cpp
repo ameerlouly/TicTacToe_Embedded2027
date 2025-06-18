@@ -24,6 +24,7 @@ SecDialog::SecDialog(QWidget *parent)
     ui->setupUi(this);
 
     initiailzeButtons();
+    this->setWindowFlags(Qt::Window | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowCloseButtonHint);
 
     GridButtons[0] = ui->grid0;
     GridButtons[1] = ui->grid1;
@@ -44,8 +45,6 @@ SecDialog::SecDialog(QWidget *parent)
 
     isGuest();
     inHistory=false;
-
-
 }
 
 SecDialog::~SecDialog()

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>948</width>
-    <height>909</height>
+    <width>988</width>
+    <height>922</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -428,7 +428,7 @@ QPushButton:pressed
        <number>0</number>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="HomePage">
        <layout class="QGridLayout" name="gridLayout_3">
@@ -2422,16 +2422,42 @@ QPushButton:pressed
            <widget class="QPushButton" name="back_4">
             <property name="maximumSize">
              <size>
-              <width>500</width>
+              <width>220</width>
               <height>500</height>
              </size>
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton
 {
-color:black;
-background-color: rgb(115, 199, 255);
- font: 700 14pt &quot;Segoe UI&quot;;
+	border-radius:15px;
+	background-color:qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(186, 200, 224, 255), stop:1 rgba(106, 			133, 182, 255));
+	color: white;
+	font: 700 20pt &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
+}
+
+QPushButton:hover
+{
+	border-radius:15px;
+	background-color:rgba(186, 200, 224, 255);
+	color: white;
+	font: 700 20pt  &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
+}
+
+QPushButton:pressed
+{
+	border-radius:15px;
+	background-color:rgba(106, 133, 182, 255);
+	color: white;
+	font: 700 20pt &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
 }</string>
             </property>
             <property name="text">
@@ -2443,20 +2469,46 @@ background-color: rgb(115, 199, 255);
            <widget class="QPushButton" name="Rematch">
             <property name="maximumSize">
              <size>
-              <width>500</width>
+              <width>220</width>
               <height>500</height>
              </size>
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton
 {
-color:black;
-background-color: rgb(115, 199, 255);
- font: 700 14pt &quot;Segoe UI&quot;;
+	border-radius:15px;
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0.8, x2:0.5, y2:0.0, stop:0 rgba(84, 204, 190, 255), 			stop:1 				    rgba(164, 227, 207, 255));
+	color: white;
+	font: 700 20pt &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
+}
+
+QPushButton:hover
+{
+	border-radius:15px;
+	background-color: rgba(164, 227, 207, 255);
+	color: white;
+	font: 700 20pt  &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
+}
+
+QPushButton:pressed
+{
+	border-radius:15px;
+	background-color: rgba(84, 204, 190, 255);
+	color: white;
+	font: 700 20pt &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
 }</string>
             </property>
             <property name="text">
-             <string>RE_MATCH</string>
+             <string>Re-Match</string>
             </property>
            </widget>
           </item>
@@ -2464,20 +2516,46 @@ background-color: rgb(115, 199, 255);
            <widget class="QPushButton" name="GameReview">
             <property name="maximumSize">
              <size>
-              <width>500</width>
+              <width>220</width>
               <height>500</height>
              </size>
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton
 {
-color:black;
-background-color: rgb(115, 199, 255);
- font: 700 14pt &quot;Segoe UI&quot;;
+	border-radius:15px;
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(222, 152, 227, 255), stop:1 rgba(162,    	84, 204, 255));
+	color: white;
+	font: 700 20pt &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
+}
+
+QPushButton:hover
+{
+	border-radius:15px;
+	background-color: rgba(222, 152, 227, 255);
+	color: white;
+	font: 700 20pt  &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
+}
+
+QPushButton:pressed
+{
+	border-radius:15px;
+	background-color: rgba(162, 84, 204, 255);
+	color: white;
+	font: 700 20pt &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
 }</string>
             </property>
             <property name="text">
-             <string>REVIEW GAME</string>
+             <string>Review Game</string>
             </property>
            </widget>
           </item>
@@ -2486,144 +2564,235 @@ background-color: rgb(115, 199, 255);
        </layout>
       </widget>
       <widget class="QWidget" name="HistoryPage">
-       <widget class="QWidget" name="widget" native="true">
-        <property name="geometry">
-         <rect>
-          <x>50</x>
-          <y>60</y>
-          <width>261</width>
-          <height>381</height>
-         </rect>
+       <layout class="QVBoxLayout" name="verticalLayout_20">
+        <property name="spacing">
+         <number>30</number>
         </property>
-        <layout class="QGridLayout" name="gridLayout_20">
-         <item row="2" column="0">
-          <widget class="QTextEdit" name="wins_label">
-           <property name="styleSheet">
-            <string notr="true">QTextEdit
-{
-color:black;
-background-color: rgb(115, 199, 255);
- font: 700 16pt &quot;Segoe UI&quot;;
-}</string>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-           <property name="html">
-            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;WINS&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QTextEdit" name="losses_label">
-           <property name="styleSheet">
-            <string notr="true">QTextEdit
-{
-color:black;
-background-color: rgb(115, 199, 255);
- font: 700 16pt &quot;Segoe UI&quot;;
-}</string>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-           <property name="html">
-            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;LOSSES&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="losses">
-           <property name="styleSheet">
-            <string notr="true">color: rgb(0,0,0);</string>
-           </property>
-           <property name="text">
-            <string>TextLabel</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="wins">
-           <property name="styleSheet">
-            <string notr="true">color: rgb(0,0,0);</string>
-           </property>
-           <property name="text">
-            <string>TextLabel</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QTextEdit" name="draws_label">
-           <property name="styleSheet">
-            <string notr="true">QTextEdit
-{
-color:black;
-background-color: rgb(115, 199, 255);
- font: 700 16pt &quot;Segoe UI&quot;;
-}</string>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-           <property name="html">
-            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:16pt; font-weight:700; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;DRAWS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QLabel" name="draws">
-           <property name="styleSheet">
-            <string notr="true">color: rgb(0,0,0);</string>
-           </property>
-           <property name="text">
-            <string>TextLabel</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QStackedWidget" name="stackedWidget_2">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>460</y>
-          <width>651</width>
-          <height>210</height>
-         </rect>
+        <property name="leftMargin">
+         <number>50</number>
         </property>
-        <widget class="QWidget" name="page">
-         <layout class="QVBoxLayout" name="verticalLayout_12">
-          <item>
-           <widget class="QTableWidget" name="historyTable">
-            <property name="sizeIncrement">
-             <size>
-              <width>0</width>
-              <height>1</height>
-             </size>
+        <property name="topMargin">
+         <number>50</number>
+        </property>
+        <property name="rightMargin">
+         <number>50</number>
+        </property>
+        <property name="bottomMargin">
+         <number>50</number>
+        </property>
+        <item>
+         <layout class="QGridLayout" name="gridLayout_9">
+          <property name="horizontalSpacing">
+           <number>30</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>100</number>
+          </property>
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_18">
+            <property name="spacing">
+             <number>0</number>
             </property>
-            <property name="styleSheet">
-             <string notr="true">QTableWidget
+            <property name="leftMargin">
+             <number>10</number>
+            </property>
+            <property name="topMargin">
+             <number>10</number>
+            </property>
+            <property name="rightMargin">
+             <number>10</number>
+            </property>
+            <property name="bottomMargin">
+             <number>10</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_22">
+              <property name="styleSheet">
+               <string notr="true">QLabel
+{
+	background-color: white;
+	color: #6A85B6;
+	font: 600 20pt &quot;Montserrat&quot;;
+	min-height: 50px;
+	max-height: 50px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}</string>
+              </property>
+              <property name="text">
+               <string>WINS</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="wins">
+              <property name="styleSheet">
+               <string notr="true">QLabel
+{
+	color: white;
+	font: 700 40pt &quot;Montserrat&quot;;
+	min-width: 100px;
+	min-height: 120px;
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0.8, x2:0.5, y2:0.0, stop:0 rgba(84, 204, 190, 255), 			stop:1 					rgba(164, 227, 207, 255));
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}</string>
+              </property>
+              <property name="text">
+               <string>500</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_17">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>10</number>
+            </property>
+            <property name="topMargin">
+             <number>10</number>
+            </property>
+            <property name="rightMargin">
+             <number>10</number>
+            </property>
+            <property name="bottomMargin">
+             <number>10</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_23">
+              <property name="styleSheet">
+               <string notr="true">QLabel
+{
+	background-color: white;
+	color: #6A85B6;
+	font: 600 20pt &quot;Montserrat&quot;;
+	min-height: 50px;
+	max-height: 50px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}</string>
+              </property>
+              <property name="text">
+               <string>LOSSES</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="losses">
+              <property name="styleSheet">
+               <string notr="true">QLabel
+{
+	color: white;
+	font: 700 40pt &quot;Montserrat&quot;;
+	min-width: 100px;
+	min-height: 120px;
+	background-color:qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(186, 200, 224, 255), stop:1 rgba(106, 			133, 182, 255));
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}</string>
+              </property>
+              <property name="text">
+               <string>100</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="2">
+           <layout class="QVBoxLayout" name="verticalLayout_19">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>10</number>
+            </property>
+            <property name="topMargin">
+             <number>10</number>
+            </property>
+            <property name="rightMargin">
+             <number>10</number>
+            </property>
+            <property name="bottomMargin">
+             <number>10</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_24">
+              <property name="styleSheet">
+               <string notr="true">QLabel
+{
+	background-color: white;
+	color: #6A85B6;
+	font: 600 20pt &quot;Montserrat&quot;;
+	min-height: 50px;
+	max-height: 50px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}</string>
+              </property>
+              <property name="text">
+               <string>DRAWS</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="draws">
+              <property name="styleSheet">
+               <string notr="true">QLabel
+{
+	color: white;
+	font: 700 40pt &quot;Montserrat&quot;;
+	min-width: 100px;
+	min-height: 120px;
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(222, 152, 227, 255), stop:1 rgba(162, 			84, 204, 255));
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}</string>
+              </property>
+              <property name="text">
+               <string>100</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QStackedWidget" name="stackedWidget_2">
+          <widget class="QWidget" name="page">
+           <layout class="QVBoxLayout" name="verticalLayout_12">
+            <item>
+             <widget class="QTableWidget" name="historyTable">
+              <property name="sizeIncrement">
+               <size>
+                <width>0</width>
+                <height>1</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QTableWidget
  {
     background-color: #f0f0f0;
     gridline-color: black;
@@ -2637,87 +2806,89 @@ QHeaderView::section
 	padding: 10px;
     border:1px  solid white;
 }</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::Shape::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Shadow::Sunken</enum>
-            </property>
-            <property name="lineWidth">
-             <number>1</number>
-            </property>
-            <property name="textElideMode">
-             <enum>Qt::TextElideMode::ElideMiddle</enum>
-            </property>
-            <property name="gridStyle">
-             <enum>Qt::PenStyle::SolidLine</enum>
-            </property>
-            <property name="sortingEnabled">
-             <bool>false</bool>
-            </property>
-            <attribute name="horizontalHeaderMinimumSectionSize">
-             <number>36</number>
-            </attribute>
-            <row/>
-            <row/>
-            <row/>
-            <row/>
-            <row/>
-            <row/>
-            <row/>
-            <row/>
-            <row/>
-            <row/>
-            <column>
-             <property name="text">
-              <string>Result</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Date</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Review</string>
-             </property>
-            </column>
-            <item row="0" column="0">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="flags">
-              <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsEnabled</set>
-             </property>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::Shape::NoFrame</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Shadow::Sunken</enum>
+              </property>
+              <property name="lineWidth">
+               <number>1</number>
+              </property>
+              <property name="textElideMode">
+               <enum>Qt::TextElideMode::ElideMiddle</enum>
+              </property>
+              <property name="gridStyle">
+               <enum>Qt::PenStyle::SolidLine</enum>
+              </property>
+              <property name="sortingEnabled">
+               <bool>false</bool>
+              </property>
+              <attribute name="horizontalHeaderMinimumSectionSize">
+               <number>36</number>
+              </attribute>
+              <row/>
+              <row/>
+              <row/>
+              <row/>
+              <row/>
+              <row/>
+              <row/>
+              <row/>
+              <row/>
+              <row/>
+              <column>
+               <property name="text">
+                <string>Result</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Date</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Review</string>
+               </property>
+              </column>
+              <item row="0" column="0">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="flags">
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsEnabled</set>
+               </property>
+              </item>
+              <item row="0" column="1">
+               <property name="text">
+                <string/>
+               </property>
+              </item>
+              <item row="0" column="2">
+               <property name="text">
+                <string/>
+               </property>
+              </item>
+              <item row="1" column="2">
+               <property name="text">
+                <string/>
+               </property>
+              </item>
+              <item row="2" column="2">
+               <property name="text">
+                <string>SHOW</string>
+               </property>
+              </item>
+             </widget>
             </item>
-            <item row="0" column="1">
-             <property name="text">
-              <string/>
-             </property>
-            </item>
-            <item row="0" column="2">
-             <property name="text">
-              <string/>
-             </property>
-            </item>
-            <item row="1" column="2">
-             <property name="text">
-              <string/>
-             </property>
-            </item>
-            <item row="2" column="2">
-             <property name="text">
-              <string>SHOW</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-        <widget class="QWidget" name="page_2"/>
-       </widget>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_2"/>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="AboutPage">
        <layout class="QVBoxLayout" name="verticalLayout_10">

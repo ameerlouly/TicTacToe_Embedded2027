@@ -21,7 +21,7 @@
 
 #define UNPLAYED            0
 #define X_PLAYED            1
-#define Y_PLAYED            2
+#define O_PLAYED            2
 #define DRAW_GAME           3
 
 
