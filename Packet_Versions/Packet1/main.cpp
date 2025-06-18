@@ -59,11 +59,11 @@ int TotalDraws = 0;
 
 #if(TestMode)
 int main(int argc, char *argv[]) {
-    QApplication app(argc, argv);
-    //QCoreApplication app(argc, argv);
+    //QApplication app(argc, argv);
+    QCoreApplication app(argc, argv);
 
-    LoginWindow = new MainWindow1();
-    Gamewindow2 = new SecDialog();
+    // LoginWindow = new MainWindow1();
+    // Gamewindow2 = new SecDialog();
 
     QString dbDir = QCoreApplication::applicationDirPath() + "/db";
     QDir().mkpath(dbDir);

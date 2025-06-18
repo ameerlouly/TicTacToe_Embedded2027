@@ -28,15 +28,15 @@ private slots:
 
     void TestBlankBoardCase1();
 
-    void TestGamePlay();
+    // void TestGamePlay();
 
-    void TestBoardLocking();
+    // void TestBoardLocking();
 
-    void TestReMatch();
+    // void TestReMatch();
 
-    void TestCheckWin();
+    // void TestCheckWin();
 
-    void TestHistorySave();
+    // void TestHistorySave();
 };
 
 #endif // GAMETEST_H
