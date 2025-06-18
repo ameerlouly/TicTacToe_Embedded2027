@@ -52,13 +52,6 @@ jobs:
     
         # Required Qt DLLs
         $qtDlls = @(
-          "Qt6Core.dll",
-          "Qt6Test.dll",
-          "Qt6Gui.dll",
-          "Qt6Widgets.dll",
-          "libstdc++-6.dll",
-          "libgcc_s_seh-1.dll",
-          "libwinpthread-1.dll"
         )
     
         foreach ($dll in $qtDlls) {
