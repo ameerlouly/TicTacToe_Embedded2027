@@ -36,9 +36,57 @@ jobs:
     - name: Run tests with GUI support
       run: |
         cd Packet_Versions/Packet1
+        
+        # Find the executable
+        echo "=== Looking for executable ==="
+        EXECUTABLE=$(find . -type f -executable -name "*test*" | head -1)
+        
+        # If no test executable found, look for any executable
+        if [ -z "$EXECUTABLE" ]; then
+          EXECUTABLE=$(find . -type f -executable | head -1)
+        fi
+        
+        # Check common locations if still not found
+        if [ -z "$EXECUTABLE" ]; then
+          POSSIBLE_PATHS=(
+            "./test_0"
+            "./debug/test_0"
+            "./release/test_0"
+            "./build/test_0"
+            "./debug"
+            "./release"
+          )
+          
+          for path in "${POSSIBLE_PATHS[@]}"; do
+            if [ -f "$path" ] && [ -x "$path" ]; then
+              EXECUTABLE="$path"
+              break
+            fi
+          done
+        fi
+        
+        # Verify we found something
+        if [ -z "$EXECUTABLE" ]; then
+          echo "ERROR: No executable found!"
+          echo "Available files:"
+          ls -la
+          echo "All files recursively:"
+          find . -type f
+          exit 1
+        fi
+        
+        echo "Found executable: $EXECUTABLE"
+        
+        # Start virtual display
         Xvfb :99 &
         export DISPLAY=:99
-        ./debug > test_output.txt
+        sleep 2
+        
+        # Run the executable
+        echo "Running: $EXECUTABLE"
+        $EXECUTABLE > test_output.txt 2>&1
+    
+        echo "Test execution completed. Output saved to test_output.txt"
 
     - name: Run tests and display output
       run: |
