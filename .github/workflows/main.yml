@@ -33,3 +33,9 @@ jobs:
         cd Packet_Versions/Packet1
         qmake test_0.pro CONFIG-=no_main CONFIG+=console
         mingw32-make
+
+    - name: Run unit tests
+      run: |
+        cd Packet_Versions/Packet1/debug
+        ./test_0 > test_output.txt
+
