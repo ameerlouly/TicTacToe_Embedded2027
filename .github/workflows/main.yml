@@ -37,20 +37,20 @@ jobs:
     - name: Find and run test executable
       shell: pwsh
       run: |
-        # Search for the test_0.exe file
-        $exe = Get-ChildItem -Path . -Filter test_0.exe -Recurse -File | Select-Object -First 1
+        # Define paths
+        $exeDir = "C:\a\TicTacToe_Embedded2027\TicTacToe_Embedded2027\Packet_Versions\Packet1\build\Desktop_Qt_6_9_0_MinGW_64_bit-Debug\debug"
+        $exePath = Join-Path $exeDir "test_0.exe"
+        $qtBin = "C:\a\TicTacToe_Embedded2027\Qt\6.8.3\mingw_64\bin"
+        $qtPlugins = "C:\a\TicTacToe_Embedded2027\Qt\6.8.3\mingw_64\plugins"
     
-        if (-not $exe) {
-          Write-Error "Executable test_0.exe not found."
+        if (-not (Test-Path $exePath)) {
+          Write-Error "Executable test_0.exe not found at $exePath"
           exit 1
         }
     
-        Write-Host "Found test executable at: $($exe.FullName)"
+        Write-Host "Found test executable at: $exePath"
     
-        # Define Qt bin directory (adjust if needed)
-        $qtBin = "C:\a\TicTacToe_Embedded2027\Qt\6.8.3\mingw_64\bin"
-    
-        # List of required DLLs (core + GUI + Widgets)
+        # Required Qt DLLs
         $qtDlls = @(
           "Qt6Core.dll",
           "Qt6Test.dll",
@@ -61,10 +61,6 @@ jobs:
           "libwinpthread-1.dll"
         )
     
-        # Destination: same folder as the test executable
-        $exeDir = Split-Path -Parent $exe.FullName
-    
-        # Copy Qt DLLs to the executable directory
         foreach ($dll in $qtDlls) {
           $source = Join-Path $qtBin $dll
           $destination = Join-Path $exeDir $dll
@@ -77,10 +73,25 @@ jobs:
           }
         }
     
-        # Run the executable and capture output
-        & $exe.FullName | Tee-Object -FilePath test_output.txt
+        # Copy platforms plugin (e.g., qwindows.dll)
+        $platformsSource = Join-Path $qtPlugins "platforms"
+        $platformsTarget = Join-Path $exeDir "platforms"
     
-        # Check the exit code to fail the pipeline on test failure
+        if (Test-Path $platformsSource) {
+          New-Item -Path $platformsTarget -ItemType Directory -Force | Out-Null
+          Copy-Item -Path (Join-Path $platformsSource "qwindows.dll") -Destination $platformsTarget -Force
+          Write-Host "Copied qwindows.dll to platforms folder."
+        } else {
+          Write-Warning "Qt platforms plugin folder not found at $platformsSource"
+        }
+    
+        # (Optional) Debug plugin loading
+        $env:QT_DEBUG_PLUGINS = "1"
+    
+        # Run the test
+        & $exePath | Tee-Object -FilePath "$exeDir\test_output.txt"
+    
+        # Check for failure
         if ($LASTEXITCODE -ne 0) {
           Write-Error "Tests failed with exit code $LASTEXITCODE"
           exit $LASTEXITCODE
