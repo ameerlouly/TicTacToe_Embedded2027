@@ -37,27 +37,23 @@ jobs:
     - name: Find and run test executable
       shell: pwsh
       run: |
-        # Define paths
         $exeDir = "C:\a\TicTacToe_Embedded2027\TicTacToe_Embedded2027\Packet_Versions\Packet1\build\Desktop_Qt_6_9_0_MinGW_64_bit-Debug\debug"
         $exePath = Join-Path $exeDir "test_0.exe"
         $qtBin = "C:\a\TicTacToe_Embedded2027\Qt\6.8.3\mingw_64\bin"
         $qtPlugins = "C:\a\TicTacToe_Embedded2027\Qt\6.8.3\mingw_64\plugins"
-    
+
         if (-not (Test-Path $exePath)) {
           Write-Error "Executable test_0.exe not found at $exePath"
           exit 1
         }
-    
+
         Write-Host "Found test executable at: $exePath"
-    
-        # Required Qt DLLs
-        $qtDlls = @(
-        )
-    
+
+        $qtDlls = @()
+
         foreach ($dll in $qtDlls) {
           $source = Join-Path $qtBin $dll
           $destination = Join-Path $exeDir $dll
-    
           if (Test-Path $source) {
             Copy-Item $source $destination -Force
             Write-Host "Copied $dll to test folder."
@@ -65,11 +61,10 @@ jobs:
             Write-Warning "$dll not found in $qtBin"
           }
         }
-    
-        # Copy platforms plugin (e.g., qwindows.dll)
+
         $platformsSource = Join-Path $qtPlugins "platforms"
         $platformsTarget = Join-Path $exeDir "platforms"
-    
+
         if (Test-Path $platformsSource) {
           New-Item -Path $platformsTarget -ItemType Directory -Force | Out-Null
           Copy-Item -Path (Join-Path $platformsSource "qwindows.dll") -Destination $platformsTarget -Force
@@ -77,15 +72,18 @@ jobs:
         } else {
           Write-Warning "Qt platforms plugin folder not found at $platformsSource"
         }
-    
-        # (Optional) Debug plugin loading
+
         $env:QT_DEBUG_PLUGINS = "1"
-    
-        # Run the test
+
         & $exePath | Tee-Object -FilePath "$exeDir\test_output.txt"
-    
-        # Check for failure
+
         if ($LASTEXITCODE -ne 0) {
           Write-Error "Tests failed with exit code $LASTEXITCODE"
           exit $LASTEXITCODE
         }
+
+    - name: Upload test output log
+      uses: actions/upload-artifact@v3
+      with:
+        name: test_output
+        path: C:\a\TicTacToe_Embedded2027\TicTacToe_Embedded2027\Packet_Versions\Packet1\build\Desktop_Qt_6_9_0_MinGW_64_bit-Debug\debug\test_output.txt
