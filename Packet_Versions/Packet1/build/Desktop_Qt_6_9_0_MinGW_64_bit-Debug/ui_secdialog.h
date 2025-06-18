@@ -1641,36 +1641,114 @@ public:
         horizontalLayout_10->setContentsMargins(30, -1, 30, 30);
         back_4 = new QPushButton(GamePage);
         back_4->setObjectName("back_4");
-        back_4->setMaximumSize(QSize(500, 500));
+        back_4->setMaximumSize(QSize(220, 500));
         back_4->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
-"color:black;\n"
-"background-color: rgb(115, 199, 255);\n"
-" font: 700 14pt \"Segoe UI\";\n"
+"	border-radius:15px;\n"
+"	background-color:qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(186, 200, 224, 255), stop:1 rgba(106, 			133, 182, 255));\n"
+"	color: white;\n"
+"	font: 700 20pt \"Montserrat\";\n"
+"	min-width: 220px;\n"
+"	max-width: 220px;\n"
+"	min-height: 50px;\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background-color:rgba(186, 200, 224, 255);\n"
+"	color: white;\n"
+"	font: 700 20pt  \"Montserrat\";\n"
+"	min-width: 220px;\n"
+"	max-width: 220px;\n"
+"	min-height: 50px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background-color:rgba(106, 133, 182, 255);\n"
+"	color: white;\n"
+"	font: 700 20pt \"Montserrat\";\n"
+"	min-width: 220px;\n"
+"	max-width: 220px;\n"
+"	min-height: 50px;\n"
 "}"));
 
         horizontalLayout_10->addWidget(back_4);
 
         Rematch = new QPushButton(GamePage);
         Rematch->setObjectName("Rematch");
-        Rematch->setMaximumSize(QSize(500, 500));
+        Rematch->setMaximumSize(QSize(220, 500));
         Rematch->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
-"color:black;\n"
-"background-color: rgb(115, 199, 255);\n"
-" font: 700 14pt \"Segoe UI\";\n"
+"	border-radius:15px;\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0.8, x2:0.5, y2:0.0, stop:0 rgba(84, 204, 190, 255), 			stop:1 				    rgba(164, 227, 207, 255));\n"
+"	color: white;\n"
+"	font: 700 20pt \"Montserrat\";\n"
+"	min-width: 220px;\n"
+"	max-width: 220px;\n"
+"	min-height: 50px;\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background-color: rgba(164, 227, 207, 255);\n"
+"	color: white;\n"
+"	font: 700 20pt  \"Montserrat\";\n"
+"	min-width: 220px;\n"
+"	max-width: 220px;\n"
+"	min-height: 50px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background-color: rgba(84, 204, 190, 255);\n"
+"	color: white;\n"
+"	font: 700 20pt \"Montserrat\";\n"
+"	min-width: 220px;\n"
+"	max-width: 220px;\n"
+"	min-height: 50px;\n"
 "}"));
 
         horizontalLayout_10->addWidget(Rematch);
 
         GameReview = new QPushButton(GamePage);
         GameReview->setObjectName("GameReview");
-        GameReview->setMaximumSize(QSize(500, 500));
+        GameReview->setMaximumSize(QSize(220, 500));
         GameReview->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
-"color:black;\n"
-"background-color: rgb(115, 199, 255);\n"
-" font: 700 14pt \"Segoe UI\";\n"
+"	border-radius:15px;\n"
+"	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(222, 152, 227, 255), stop:1 rgba(162,    	84, 204, 255));\n"
+"	color: white;\n"
+"	font: 700 20pt \"Montserrat\";\n"
+"	min-width: 220px;\n"
+"	max-width: 220px;\n"
+"	min-height: 50px;\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background-color: rgba(222, 152, 227, 255);\n"
+"	color: white;\n"
+"	font: 700 20pt  \"Montserrat\";\n"
+"	min-width: 220px;\n"
+"	max-width: 220px;\n"
+"	min-height: 50px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	border-radius:15px;\n"
+"	background-color: rgba(162, 84, 204, 255);\n"
+"	color: white;\n"
+"	font: 700 20pt \"Montserrat\";\n"
+"	min-width: 220px;\n"
+"	max-width: 220px;\n"
+"	min-height: 50px;\n"
 "}"));
 
         horizontalLayout_10->addWidget(GameReview);
@@ -2194,8 +2272,8 @@ public:
         label_17->setText(QString());
         grid8->setText(QCoreApplication::translate("SecDialog", "X", nullptr));
         back_4->setText(QCoreApplication::translate("SecDialog", "BACK", nullptr));
-        Rematch->setText(QCoreApplication::translate("SecDialog", "RE_MATCH", nullptr));
-        GameReview->setText(QCoreApplication::translate("SecDialog", "REVIEW GAME", nullptr));
+        Rematch->setText(QCoreApplication::translate("SecDialog", "Re-Match", nullptr));
+        GameReview->setText(QCoreApplication::translate("SecDialog", "Review Game", nullptr));
         wins_label->setHtml(QCoreApplication::translate("SecDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

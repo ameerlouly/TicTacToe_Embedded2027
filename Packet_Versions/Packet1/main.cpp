@@ -281,12 +281,21 @@ void AIPlay(int *MoveNum ,int*x,QPushButton * Grid[9],QPushButton* Rematch,QPush
     pair<int, int> aiMove = findBestMove(grid, levelMode);
     int aiIndex = aiMove.first * 3 + aiMove.second;
 
-    if (clicked[aiIndex] == 0) {
-        clicked[aiIndex] = 2;
+    if (clicked[aiIndex] == 0)
+    {
+        clicked[aiIndex] = O_PLAYED;
         Grid[aiIndex]->setText("O");
-        // Grid[aiIndex]->setEnabled(false);
 
-        if (mode != 2) {
+        // Create a palette and set the text color
+        QPalette palette = Grid[aiIndex]->palette();
+        palette.setColor(QPalette::ButtonText, QColor("#EF2622")); // Change text color to red
+
+        // Apply the palette to the button
+        Grid[aiIndex]->setPalette(palette);
+        Grid[aiIndex]->setEnabled(false);
+
+        if (mode != 2)
+        {
             HistoryRecorder[*MoveNum] = (10 * 2) + aiIndex;
         }
 
@@ -302,7 +311,8 @@ void AIPlay(int *MoveNum ,int*x,QPushButton * Grid[9],QPushButton* Rematch,QPush
 }
 
 
-void CheckWin(int clicked[9] ,sqlite3 *db ,QPushButton* Rematch,QPushButton* ReView,QLabel* GameResultLabel){
+void CheckWin(int clicked[9] ,sqlite3 *db ,QPushButton* Rematch,QPushButton* ReView,QLabel* GameResultLabel)
+{
 
     // Check winning combinations
     if (clicked[0] == clicked[1] &&

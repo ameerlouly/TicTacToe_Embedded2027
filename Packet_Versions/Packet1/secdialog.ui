@@ -2422,16 +2422,42 @@ QPushButton:pressed
            <widget class="QPushButton" name="back_4">
             <property name="maximumSize">
              <size>
-              <width>500</width>
+              <width>220</width>
               <height>500</height>
              </size>
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton
 {
-color:black;
-background-color: rgb(115, 199, 255);
- font: 700 14pt &quot;Segoe UI&quot;;
+	border-radius:15px;
+	background-color:qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(186, 200, 224, 255), stop:1 rgba(106, 			133, 182, 255));
+	color: white;
+	font: 700 20pt &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
+}
+
+QPushButton:hover
+{
+	border-radius:15px;
+	background-color:rgba(186, 200, 224, 255);
+	color: white;
+	font: 700 20pt  &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
+}
+
+QPushButton:pressed
+{
+	border-radius:15px;
+	background-color:rgba(106, 133, 182, 255);
+	color: white;
+	font: 700 20pt &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
 }</string>
             </property>
             <property name="text">
@@ -2443,20 +2469,46 @@ background-color: rgb(115, 199, 255);
            <widget class="QPushButton" name="Rematch">
             <property name="maximumSize">
              <size>
-              <width>500</width>
+              <width>220</width>
               <height>500</height>
              </size>
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton
 {
-color:black;
-background-color: rgb(115, 199, 255);
- font: 700 14pt &quot;Segoe UI&quot;;
+	border-radius:15px;
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0.8, x2:0.5, y2:0.0, stop:0 rgba(84, 204, 190, 255), 			stop:1 				    rgba(164, 227, 207, 255));
+	color: white;
+	font: 700 20pt &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
+}
+
+QPushButton:hover
+{
+	border-radius:15px;
+	background-color: rgba(164, 227, 207, 255);
+	color: white;
+	font: 700 20pt  &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
+}
+
+QPushButton:pressed
+{
+	border-radius:15px;
+	background-color: rgba(84, 204, 190, 255);
+	color: white;
+	font: 700 20pt &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
 }</string>
             </property>
             <property name="text">
-             <string>RE_MATCH</string>
+             <string>Re-Match</string>
             </property>
            </widget>
           </item>
@@ -2464,20 +2516,46 @@ background-color: rgb(115, 199, 255);
            <widget class="QPushButton" name="GameReview">
             <property name="maximumSize">
              <size>
-              <width>500</width>
+              <width>220</width>
               <height>500</height>
              </size>
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton
 {
-color:black;
-background-color: rgb(115, 199, 255);
- font: 700 14pt &quot;Segoe UI&quot;;
+	border-radius:15px;
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(222, 152, 227, 255), stop:1 rgba(162,    	84, 204, 255));
+	color: white;
+	font: 700 20pt &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
+}
+
+QPushButton:hover
+{
+	border-radius:15px;
+	background-color: rgba(222, 152, 227, 255);
+	color: white;
+	font: 700 20pt  &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
+}
+
+QPushButton:pressed
+{
+	border-radius:15px;
+	background-color: rgba(162, 84, 204, 255);
+	color: white;
+	font: 700 20pt &quot;Montserrat&quot;;
+	min-width: 220px;
+	max-width: 220px;
+	min-height: 50px;
 }</string>
             </property>
             <property name="text">
-             <string>REVIEW GAME</string>
+             <string>Review Game</string>
             </property>
            </widget>
           </item>
