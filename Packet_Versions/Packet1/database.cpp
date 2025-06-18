@@ -259,7 +259,7 @@ void saveGameHistory(sqlite3* db, string result , int HistoryMoves[9]) {
 void viewGameHistory(sqlite3* db, QTableWidget* table) {
 
     QString username = QString::fromStdString(G_UserName);  // assuming G_UserName is std::string
-    std::string sql = "SELECT result, timestamp, moves FROM game_history WHERE username='" + G_UserName + "' ORDER BY timestamp DESC LIMIT 5;";
+    std::string sql = "SELECT result, timestamp, moves FROM game_history WHERE username='" + G_UserName + "' ORDER BY timestamp DESC LIMIT 10;";
     sqlite3_stmt* stmt;
 
     int rc = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, 0);

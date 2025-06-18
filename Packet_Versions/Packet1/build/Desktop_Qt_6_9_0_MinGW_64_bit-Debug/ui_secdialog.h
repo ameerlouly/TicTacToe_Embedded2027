@@ -1918,28 +1918,67 @@ public:
         QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
         historyTable->setItem(2, 2, __qtablewidgetitem7);
         historyTable->setObjectName("historyTable");
+        QSizePolicy sizePolicy2(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(historyTable->sizePolicy().hasHeightForWidth());
+        historyTable->setSizePolicy(sizePolicy2);
         historyTable->setSizeIncrement(QSize(0, 1));
-        historyTable->setStyleSheet(QString::fromUtf8("QTableWidget\n"
-" {\n"
-"    background-color: #f0f0f0;\n"
-"    gridline-color: black;\n"
+        historyTable->setStyleSheet(QString::fromUtf8("QTableWidget \n"
+"{\n"
+"    background-color: White;\n"
+"    color: black;\n"
+"   	gridline-color: #555555;\n"
+"    border-radius: 10px;\n"
+"    border: 1px solid #444444;\n"
+"	font: 200 10pt \"Montserrat\";\n"
 "}\n"
 "\n"
 "QHeaderView::section\n"
+" {\n"
+"    background-color: #444444;\n"
+"    color: #FFFFFF;	\n"
+"    margin: 10px;\n"
+"    font-size: 700 14px \"Montserrat\";\n"
+"	border-radius: 10px;\n"
+"}\n"
+"\n"
+"QTableWidget::item\n"
+" {\n"
+"    padding: 6px;\n"
+"    border-bottom: 1px solid #555555;\n"
+"}\n"
+"\n"
+"QTableWidget::item:selected \n"
 "{\n"
-"	font: 400 9pt \"Montserrat\";\n"
-"    background-color: black;\n"
-"    color: white;\n"
-"	padding: 10px;\n"
-"    border:1px  solid white;\n"
+"    background-color: #555555;\n"
+"    color: #FFD700;\n"
+"}\n"
+"\n"
+"QTableCornerButton::section\n"
+" {\n"
+"    background-color: rgba(0, 0, 0,  0);\n"
+"	border: none;\n"
 "}"));
         historyTable->setFrameShape(QFrame::Shape::NoFrame);
-        historyTable->setFrameShadow(QFrame::Shadow::Sunken);
-        historyTable->setLineWidth(1);
+        historyTable->setFrameShadow(QFrame::Shadow::Plain);
+        historyTable->setLineWidth(0);
         historyTable->setTextElideMode(Qt::TextElideMode::ElideMiddle);
+        historyTable->setShowGrid(true);
         historyTable->setGridStyle(Qt::PenStyle::SolidLine);
         historyTable->setSortingEnabled(false);
+        historyTable->setWordWrap(true);
+        historyTable->setCornerButtonEnabled(true);
+        historyTable->horizontalHeader()->setVisible(true);
+        historyTable->horizontalHeader()->setCascadingSectionResizes(false);
         historyTable->horizontalHeader()->setMinimumSectionSize(36);
+        historyTable->horizontalHeader()->setProperty("showSortIndicator", QVariant(false));
+        historyTable->horizontalHeader()->setStretchLastSection(true);
+        historyTable->verticalHeader()->setVisible(true);
+        historyTable->verticalHeader()->setCascadingSectionResizes(true);
+        historyTable->verticalHeader()->setHighlightSections(true);
+        historyTable->verticalHeader()->setProperty("showSortIndicator", QVariant(false));
+        historyTable->verticalHeader()->setStretchLastSection(false);
 
         verticalLayout_12->addWidget(historyTable);
 
