@@ -47,6 +47,36 @@ jobs:
     
         Write-Host "Found test executable at: $($exe.FullName)"
     
+        # Define Qt bin directory (adjust if needed)
+        $qtBin = "C:\a\TicTacToe_Embedded2027\Qt\6.8.3\mingw_64\bin"
+    
+        # List of required DLLs (core + GUI + Widgets)
+        $qtDlls = @(
+          "Qt6Core.dll",
+          "Qt6Test.dll",
+          "Qt6Gui.dll",
+          "Qt6Widgets.dll",
+          "libstdc++-6.dll",
+          "libgcc_s_seh-1.dll",
+          "libwinpthread-1.dll"
+        )
+    
+        # Destination: same folder as the test executable
+        $exeDir = Split-Path -Parent $exe.FullName
+    
+        # Copy Qt DLLs to the executable directory
+        foreach ($dll in $qtDlls) {
+          $source = Join-Path $qtBin $dll
+          $destination = Join-Path $exeDir $dll
+    
+          if (Test-Path $source) {
+            Copy-Item $source $destination -Force
+            Write-Host "Copied $dll to test folder."
+          } else {
+            Write-Warning "$dll not found in $qtBin"
+          }
+        }
+    
         # Run the executable and capture output
         & $exe.FullName | Tee-Object -FilePath test_output.txt
     
@@ -55,5 +85,3 @@ jobs:
           Write-Error "Tests failed with exit code $LASTEXITCODE"
           exit $LASTEXITCODE
         }
-    
-    
