@@ -38,7 +38,7 @@ jobs:
         cd Packet_Versions/Packet1
         Xvfb :99 &
         export DISPLAY=:99
-        ./debug/test_0 > test_output.txt
+        /debug/test_0 > test_output.txt
 
     - name: Run tests and display output
       run: |
