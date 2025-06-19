@@ -3,7 +3,8 @@
 #include "main.h"
 
 
-gametest::gametest() {
+gametest::gametest()
+{
 
     // if (QFile::exists(AuthPath)) {
     //     if (QFile::remove(AuthPath)) {
@@ -18,7 +19,8 @@ gametest::gametest() {
 
 }
 
-void gametest::TestSignUp (){
+void gametest::TestSignUp ()
+{
 
 
     LoginWindow->show();
@@ -34,7 +36,8 @@ void gametest::TestSignUp (){
     QVERIFY(file.exists());
 }
 
-void gametest::TestLogout(){
+void gametest::TestLogout()
+{
     QTest::mouseClick(Gamewindow2->Profile, Qt::LeftButton);
     QTest::mouseClick(Gamewindow2->LogOut, Qt::LeftButton);
 
@@ -42,7 +45,8 @@ void gametest::TestLogout(){
     QVERIFY(!file.exists());
 }
 
-void gametest::TestSignIn(){
+void gametest::TestSignIn()
+{
     QTest::mouseClick(LoginWindow->LoginButton, Qt::LeftButton);
     QTest::keyClicks(LoginWindow->NameInput, "999");
     QTest::keyClicks(LoginWindow->PassInput, "999");
@@ -52,12 +56,13 @@ void gametest::TestSignIn(){
     QVERIFY(file.exists());
 }
 
-void gametest::TestBlankBoardCase1(){
+void gametest::TestBlankBoardCase1()
+{
     QTest::mouseClick(Gamewindow2->StartGame, Qt::LeftButton);
     QTest::mouseClick(Gamewindow2->PVP, Qt::LeftButton);
     QTest::mouseClick(Gamewindow2->Normal, Qt::LeftButton);
 
-    bool IsBlank=true;
+    bool IsBlank = true;
 
     qDebug() << "File does not exist:" ;
     qDebug() << "File does not exist:" ;
@@ -65,33 +70,38 @@ void gametest::TestBlankBoardCase1(){
 
     //QTest::qWait(1000);  // Waits for 1 second
 
-    for(int i=0; i<9; i++){
+    for(int i=0; i<9; i++)
+    {
          IsBlank &= (Gamewindow2->GridButtons[i]->text()=="");
     }
 
     QVERIFY(false);
 }
 
-void gametest::TestGamePlay(){  // to test player turns switching , validate button clicks to be X or O
+void gametest::TestGamePlay() // to test player turns switching , validate button clicks to be X or O
+{
     int playsequence[9] ={0,2,5,3,1,4,6,7,8};  // the game to be played
     QString GameScenario[9] = {"X","X","O","O","O","X","X","O","X"};
     QString Moves[9]; // i will check here the moves sequence to be X , O alternativly and also test if the buttons text has changed at all
 
-    for(int i=0; i<9; i++){
+    for(int i=0; i<9; i++)
+    {
         QTest::mouseClick(Gamewindow2->GridButtons[playsequence[i]], Qt::LeftButton);
         Moves[i] =Gamewindow2->GridButtons[playsequence[i]]->text();
     }
 
     bool trueMoves=true;
 
-    for(int i=0; i<9; i++){
+    for(int i=0; i<9; i++)
+    {
         trueMoves &= (Gamewindow2->GridButtons[i]->text()== GameScenario[i]);
     }
 
     QVERIFY(trueMoves);
 }
 
-void gametest::TestBoardLocking(){
+void gametest::TestBoardLocking()
+{
 
     /* here we will use another game scenatio put we note  that we didn't clear the board after the previous test
        so the board must be locked and the buttons must not take any input from the new scenario
@@ -102,14 +112,16 @@ void gametest::TestBoardLocking(){
     QString OldGameScenario[9] = {"X","X","O","O","O","X","X","O","X"};
     QString Moves[9]; // i will check here the moves sequence to be X , O alternativly and also test if the buttons text is changed at all
 
-    for(int i=0; i<9; i++){
+    for(int i=0; i<9; i++)
+    {
         QTest::mouseClick(Gamewindow2->GridButtons[playsequence[i]], Qt::LeftButton);
         Moves[i] =Gamewindow2->GridButtons[playsequence[i]]->text();
     }
 
     bool trueMoves=true;
 
-    for(int i=0; i<9; i++){
+    for(int i=0; i<9; i++)
+    {
         trueMoves &= (Gamewindow2->GridButtons[i]->text() == OldGameScenario[i]); // all buttons must not accept the new scenario
     }
 
@@ -117,19 +129,22 @@ void gametest::TestBoardLocking(){
 
 }
 
-void gametest::TestReMatch(){
+void gametest::TestReMatch()
+{
     QTest::mouseClick(Gamewindow2->ReMatchButton, Qt::LeftButton);
 
     bool IsBlank=true;
 
-    for(int i=0; i<9; i++){
+    for(int i=0; i<9; i++)
+    {
         IsBlank &= (Gamewindow2->GridButtons[i]->text()=="");
     }
 
     QVERIFY(IsBlank);
 }
 
-void gametest::TestCheckWin(){
+void gametest::TestCheckWin()
+{
     bool correct = true;
     int playsequence1[9] ={0,1,3,4,6,0,0,0,0};  //case 1 player x collected the first coulmn////////////////////
     int playsequence2[9] ={0,3,1,4,6,5,0,0,0};  //case 2 player o collected the second coulmn///////////////////
@@ -140,68 +155,76 @@ void gametest::TestCheckWin(){
     int playsequence7[9] ={0,3,4,6,8,0,0,0,0};  //case 7 player x collected the first diagonal
     int playsequence8[9] ={0,2,1,4,5,6,0,0,0};  //case 8 player o collected the second diagonal
 
-    for(int i=0; i<9; i++){
+    for(int i=0; i<9; i++)
+    {
         QTest::mouseClick(Gamewindow2->GridButtons[playsequence1[i]], Qt::LeftButton);
     }
 
-    correct&= (Gamewindow2->WinnerText->text() == "Player X Win!");
+    correct &= (Gamewindow2->WinnerText->text() == "Player X Win!");
     QTest::mouseClick(Gamewindow2->ReMatchButton, Qt::LeftButton);
     QTest::qWait(1000);  // Waits for 1 second
 
 
-    for(int i=0; i<9; i++){
+    for(int i=0; i<9; i++)
+    {
         QTest::mouseClick(Gamewindow2->GridButtons[playsequence2[i]], Qt::LeftButton);
     }
 
-    correct&= (Gamewindow2->WinnerText->text() == "Player O Win!");
+    correct &= (Gamewindow2->WinnerText->text() == "Player O Win!");
     QTest::mouseClick(Gamewindow2->ReMatchButton, Qt::LeftButton);
     QTest::qWait(1000);  // Waits for 1 second
 
-    for(int i=0; i<9; i++){
+    for(int i=0; i<9; i++)
+    {
         QTest::mouseClick(Gamewindow2->GridButtons[playsequence3[i]], Qt::LeftButton);
     }
 
-    correct&= (Gamewindow2->WinnerText->text() == "Player X Win!");
+    correct &= (Gamewindow2->WinnerText->text() == "Player X Win!");
     QTest::mouseClick(Gamewindow2->ReMatchButton, Qt::LeftButton);
     QTest::qWait(1000);  // Waits for 1 second
 
-    for(int i=0; i<9; i++){
+    for(int i=0; i<9; i++)
+    {
         QTest::mouseClick(Gamewindow2->GridButtons[playsequence4[i]], Qt::LeftButton);
     }
 
-    correct&= (Gamewindow2->WinnerText->text() == "Player O Win!");
+    correct &= (Gamewindow2->WinnerText->text() == "Player O Win!");
     QTest::mouseClick(Gamewindow2->ReMatchButton, Qt::LeftButton);
     QTest::qWait(1000);  // Waits for 1 second
 
-    for(int i=0; i<9; i++){
+    for(int i=0; i<9; i++)
+    {
         QTest::mouseClick(Gamewindow2->GridButtons[playsequence5[i]], Qt::LeftButton);
     }
 
-    correct&= (Gamewindow2->WinnerText->text() == "Player X Win!");
+    correct &= (Gamewindow2->WinnerText->text() == "Player X Win!");
     QTest::mouseClick(Gamewindow2->ReMatchButton, Qt::LeftButton);
     QTest::qWait(1000);  // Waits for 1 second
 
-    for(int i=0; i<9; i++){
+    for(int i=0; i<9; i++)
+    {
         QTest::mouseClick(Gamewindow2->GridButtons[playsequence6[i]], Qt::LeftButton);
     }
 
-    correct&= (Gamewindow2->WinnerText->text() == "Player O Win!");
+    correct &= (Gamewindow2->WinnerText->text() == "Player O Win!");
     QTest::mouseClick(Gamewindow2->ReMatchButton, Qt::LeftButton);
     QTest::qWait(1000);  // Waits for 1 second
 
-    for(int i=0; i<9; i++){
+    for(int i=0; i<9; i++)
+    {
         QTest::mouseClick(Gamewindow2->GridButtons[playsequence7[i]], Qt::LeftButton);
     }
 
-    correct&= (Gamewindow2->WinnerText->text() == "Player X Win!");
+    correct &= (Gamewindow2->WinnerText->text() == "Player X Win!");
     QTest::mouseClick(Gamewindow2->ReMatchButton, Qt::LeftButton);
     QTest::qWait(1000);  // Waits for 1 second
 
-    for(int i=0; i<9; i++){
+    for(int i=0; i<9; i++)
+    {
         QTest::mouseClick(Gamewindow2->GridButtons[playsequence8[i]], Qt::LeftButton);
     }
 
-    correct&= (Gamewindow2->WinnerText->text() == "Player O Win!");
+    correct &= (Gamewindow2->WinnerText->text() == "Player O Win!");
     QTest::mouseClick(Gamewindow2->ReMatchButton, Qt::LeftButton);
     QTest::qWait(1000);  // Waits for 1 second
 
@@ -218,12 +241,14 @@ void gametest::TestHistorySave(){  // this test always fails if we checked for t
     sqlite3_stmt* stmt;
 
     int rc = sqlite3_prepare_v2(Testdb, sql.c_str(), -1, &stmt, 0);
-    if (rc != SQLITE_OK) {
+    if (rc != SQLITE_OK)
+    {
         qDebug() << "Failed to fetch game history:" << sqlite3_errmsg(Testdb);
         return;
     }
 
-    while (sqlite3_step(stmt) == SQLITE_ROW) {
+    while (sqlite3_step(stmt) == SQLITE_ROW)
+    {
         // Get the moves string from the database
         const unsigned char* movesText = sqlite3_column_text(stmt, 2);
         std::string movesStr = movesText ? reinterpret_cast<const char*>(movesText) : "";
@@ -236,7 +261,8 @@ void gametest::TestHistorySave(){  // this test always fails if we checked for t
         // std::cout << "movesStr: '" << movesStr << "'" << std::endl;
 
 
-        while (std::getline(ss, token, ',') && index < 9) {
+        while (std::getline(ss, token, ',') && index < 9)
+        {
             his[gameNumber-1][index++] = std::stoi(token);
         }
         // for(int i=0; i<9; i++){

@@ -16,7 +16,7 @@ public:
     explicit SecDialog(QWidget *parent = nullptr);
     ~SecDialog();
     void returnBacktoPage0InGame();
-        void OldGameHistory(int his[9]);
+        void OldGameHistory(const int his[9]);
 
     void isGuest();
     void initiailzeButtons();

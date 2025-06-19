@@ -88,14 +88,15 @@ void SecDialog::isGuest()
     }
 }
 
-void SecDialog::OldGameHistory(int his[9])
+void SecDialog::OldGameHistory(const int his[9])
 {
     ShowGrid();
     //ui->tableWidget_history->hide();
     ui->stackedWidget->setCurrentIndex(4);
+    ui->history->setDisabled(true);
 
 
-    for(int i=0; i<9; i++)
+    for(int i=0; i< 9; i++)
     {
         if(myTimer[i] != nullptr)
         {
@@ -121,6 +122,8 @@ void SecDialog::OldGameHistory(int his[9])
         connect(myTimer[i], &QTimer::timeout, Gamewindow2, [=]() {nextHistorymove(ToBePlayed[i], GridButtons);});
         myTimer[i]->start();
     }
+
+    ui->history->setDisabled(false);
 }
 
 void  SecDialog::ShowGrid()
@@ -399,12 +402,16 @@ void SecDialog::on_Rematch_clicked()
 
 void SecDialog::on_GameReview_clicked()
 {
+    ui->history->setDisabled(true);
+
     ShowGrid();
     for (int i = 0; i < 9; i++)
     {
         int delay = 500 + i * 500;
         QTimer::singleShot(delay, Gamewindow2, [=]() {nextHistorymove(HistoryRecorder[i], GridButtons);});
     }
+
+    ui->history->setDisabled(false);
 }
 
 

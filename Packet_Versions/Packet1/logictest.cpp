@@ -1,11 +1,13 @@
 #include "logictest.h"
 
-LogicTest::LogicTest() {
+LogicTest::LogicTest()
+{
 
 
 }
 
-bool LogicTest::isWinningMove(int board[3][3], std::pair<int, int> move, int player) {
+bool LogicTest::isWinningMove(int board[3][3], std::pair<int, int> move, int player)
+{
     int tempBoard[3][3];
 
     // Copy original board
@@ -20,25 +22,33 @@ bool LogicTest::isWinningMove(int board[3][3], std::pair<int, int> move, int pla
     return (player == 2 && score == 10) || (player == 1 && score == -10);
 }
 
-void LogicTest::testAIMove(int board[3][3], const QString& testName) {
+void LogicTest::testAIMove(int board[3][3], const QString& testName)
+{
     auto move = findBestMove(board, HARD);
 
     // Winning move
-    if (isWinningMove(board, move, 2)) {
+    if (isWinningMove(board, move, 2))
+    {
         qDebug() << "✓" << testName << "PASSED: AI picked winning move at" << move;
         QVERIFY(true);
         return;
     }
 
     // Block player
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            if (board[i][j] == 0 && isWinningMove(board, {i, j}, 1)) {
-                if (move.first == i && move.second == j) {
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            if (board[i][j] == 0 && isWinningMove(board, {i, j}, 1))
+            {
+                if (move.first == i && move.second == j)
+                {
                     qDebug() << "✓" << testName << "PASSED: AI blocked player's win at" << move;
                     QVERIFY(true);
                     return;
-                } else {
+                }
+                else
+                {
                     qDebug() << "✗" << testName << "FAILED: AI did not block at" << move;
                     QVERIFY(false);
                     return;
@@ -54,7 +64,8 @@ void LogicTest::testAIMove(int board[3][3], const QString& testName) {
             if (board[i][j] == 0)
                 emptyCount++;
 
-    if (emptyCount == 1) {
+    if (emptyCount == 1)
+    {
         qDebug() << "✓" << testName << "PASSED: AI played the only available move" << move;
         return;
     }
@@ -63,7 +74,8 @@ void LogicTest::testAIMove(int board[3][3], const QString& testName) {
     QVERIFY(false);
 }
 
-void LogicTest::runQuickTests() {
+void LogicTest::runQuickTests()
+{
     qDebug() << "Running generalized AI minimax tests";
 
     int board1[3][3] = {

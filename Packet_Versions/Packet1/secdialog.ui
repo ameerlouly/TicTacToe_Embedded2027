@@ -989,7 +989,7 @@ QPushButton:pressed
 {
 	border-radius:15px;
 	color: white;
-	font: 500 30pt &quot;Montserrat&quot;;
+	font: 700 30pt &quot;Montserrat&quot;;
 	background-color:qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(186, 200, 224, 255), stop:1 rgba(106, 133, 182, 255));
 	border-color:black;
 }
@@ -998,7 +998,7 @@ QPushButton:hover
 {
 	border-radius:15px;
 	color: white;
-	font: 500 30pt &quot;Montserrat&quot;;
+	font: 700 30pt &quot;Montserrat&quot;;
 	background-color: rgba(186, 200, 224, 255);
 	border-color:black;
 }
@@ -1007,7 +1007,7 @@ QPushButton:pressed
 {
 	border-radius:15px;
 	color: white;
-	font: 500 30pt &quot;Montserrat&quot;;
+	font: 700 30pt &quot;Montserrat&quot;;
 	background-color: rgba(106, 133, 182, 255);
 	border-color:black;
 }</string>
@@ -2804,19 +2804,19 @@ QPushButton:pressed
                <string notr="true">QTableWidget 
 {
     background-color: White;
-    color: black;
+    color: #21344D;
    	gridline-color: #555555;
     border-radius: 10px;
     border: 1px solid #444444;
-	font: 200 10pt &quot;Montserrat&quot;;
+	font: 300 10pt &quot;Montserrat&quot;;
 }
 
 QHeaderView::section
  {
-    background-color: #444444;
-    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(255, 255, 255, 255);
     margin: 10px;
-    font-size: 700 14px &quot;Montserrat&quot;;
+    font: 700 15px &quot;Montserrat&quot;;
 	border-radius: 10px;
 }
 
@@ -2831,22 +2831,28 @@ QTableWidget::item
 	min-height: 10px;
 }
 
-QTableWidget::item:selected
- {
-	background-color: rgb(221, 221, 221);
-	border: none;
-	border-radius: 10px;
-    color: black;
-	margin: 3px;
-    padding: 6px;
+QPushButton
+{
+	border-radius:15px;
+	background-color:qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:0.7, stop:0 rgba(186, 200, 224, 255), stop:1 rgba(106, 133, 182, 255));
+	color: white;
+	font: 300 &quot;Montserrat&quot;;
 }
 
+QPushButton:hover
+{
+	border-radius:15px;
+	background-color:rgba(186, 200, 224, 255);
+	color: white;
+	font: 300 &quot;Montserrat&quot;;
+}
 
-QTableCornerButton::section
- {
-    background-color: rgba(0, 0, 0,  0);
-	border: none;
-	border-radius: 10px;
+QPushButton:pressed
+{
+	border-radius:15px;
+	background-color:rgba(106, 133, 182, 255);
+	color: white;
+	font: 300 &quot;Montserrat&quot;;
 }</string>
               </property>
               <property name="frameShape">
@@ -2892,7 +2898,7 @@ QTableCornerButton::section
                <bool>true</bool>
               </attribute>
               <attribute name="verticalHeaderVisible">
-               <bool>true</bool>
+               <bool>false</bool>
               </attribute>
               <attribute name="verticalHeaderCascadingSectionResizes">
                <bool>true</bool>

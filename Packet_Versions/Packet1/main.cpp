@@ -61,7 +61,8 @@ int TotalDraws = 0;
 //SecDialog* win=nullptr;
 
 #if(1 == TestMode)
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
     QApplication app(argc, argv);
     //QCoreApplication app(argc, argv);
 
@@ -126,7 +127,8 @@ int main(int argc, char *argv[])
     QString dbPath = appDataDir + "/DATA.db";
 
     // Step 3: If it's the first run, copy the DB from the install folder
-    if (!QFile::exists(dbPath)) {
+    if (!QFile::exists(dbPath))
+    {
         QString installedPath = QCoreApplication::applicationDirPath() + "/db/DATA.db";
         QFile::copy(installedPath, dbPath);
     }
@@ -134,7 +136,8 @@ int main(int argc, char *argv[])
     // Step 4: Open the database
     int rc = sqlite3_open(dbPath.toStdString().c_str(), &db);
 
-    if (rc != SQLITE_OK) {
+    if (rc != SQLITE_OK)
+    {
         qDebug() << "Failed to open database:" << sqlite3_errmsg(db);
         return -1;
     }
@@ -214,7 +217,8 @@ void onButtonClicked(int *x , QPushButton *button , int num, int *MoveNum, sqlit
                 }
 
                 QPushButton *remove = PlayerXQ.push(Grid[num]);
-                if (remove != nullptr) {
+                if (remove != nullptr)
+                {
                     remove->setEnabled(true);
                     remove->setText("");
                     clicked[GridToNum(remove,Grid)] = 0;
@@ -282,7 +286,8 @@ void onButtonClicked(int *x , QPushButton *button , int num, int *MoveNum, sqlit
 void AIPlay(int *MoveNum ,int*x,QPushButton * Grid[9],QPushButton* Rematch,QPushButton* ReView,QLabel* GameResultLabel){
     // AI plays immediately
     int grid[3][3];
-    for (int i = 0; i < 9; ++i) {
+    for (int i = 0; i < 9; ++i)
+    {
         if (clicked[i] == 1) grid[i / 3][i % 3] = 1;
         else if (clicked[i] == 2) grid[i / 3][i % 3] = 2;
         else grid[i / 3][i % 3] = 0;
