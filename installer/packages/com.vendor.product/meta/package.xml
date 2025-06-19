@@ -1,0 +1,8 @@
+<Package>
+    <DisplayName>Tic Tac Toe</DisplayName>
+    <Description>Installs Tic Tac Toe</Description>
+    <Version>1.0.0</Version>
+    <ReleaseDate>2025-06-19</ReleaseDate>
+    <Default>true</Default>
+    <Essential>true</Essential>
+</Package>

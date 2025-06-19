@@ -1,0 +1,10 @@
+<Installer>
+    <Name>Tic Tac Toe</Name>
+    <Version>1.0.0</Version>
+    <Title>Tic Tac Toe Installer</Title>
+    <Publisher>Legends</Publisher>
+    <StartMenuDir>Tic Tac Toe</StartMenuDir>
+    <TargetDir>@ApplicationsDir@/Tic Tac Toe</TargetDir>
+	<InstallerApplicationIcon>installer_icon</InstallerApplicationIcon>
+	<InstallerWindowIcon>installer_window_icon.png</InstallerWindowIcon>
+</Installer>

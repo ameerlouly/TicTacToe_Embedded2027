@@ -1,0 +1,14 @@
+release/AI_Code.o
+release/PasswordHash.o
+release/database.o
+release/gametest.o
+release/logictest.o
+release/main.o
+release/mainwindow1.o
+release/secdialog.o
+release/sqlite3.o
+release/qrc_images.o
+release/moc_gametest.o
+release/moc_logictest.o
+release/moc_mainwindow1.o
+release/moc_secdialog.o
