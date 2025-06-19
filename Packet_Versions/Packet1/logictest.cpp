@@ -1,3 +1,4 @@
+
 #include "logictest.h"
 
 LogicTest::LogicTest()
