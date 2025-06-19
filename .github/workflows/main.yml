@@ -34,46 +34,4 @@ jobs:
         qmake test_0.pro CONFIG-=no_main CONFIG+=console
         mingw32-make
 
-    - name: Run Qt tests and capture output
-      shell: pwsh
-      run: |
-        $exeDir = "C:\a\TicTacToe_Embedded2027\TicTacToe_Embedded2027\Packet_Versions\Packet1\build\Desktop_Qt_6_9_0_MinGW_64_bit-Debug\debug"
-        $exePath = Join-Path $exeDir "test_0.exe"
-        $qtBin = "C:\a\TicTacToe_Embedded2027\Qt\6.8.3\mingw_64\bin"
-        $qtPlugins = "C:\a\TicTacToe_Embedded2027\Qt\6.8.3\mingw_64\plugins"
-    
-        if (-not (Test-Path $exePath)) {
-          Write-Error "Executable test_0.exe not found at $exePath"
-          exit 1
-        }
-    
-        $qtDlls = @( )
-    
-        foreach ($dll in $qtDlls) {
-          $src = Join-Path $qtBin $dll
-          $dst = Join-Path $exeDir $dll
-          if (Test-Path $src) { Copy-Item $src $dst -Force }
-        }
-    
-        $platformsSrc = Join-Path $qtPlugins "platforms"
-        $platformsDst = Join-Path $exeDir "platforms"
-        New-Item -Path $platformsDst -ItemType Directory -Force | Out-Null
-        Copy-Item -Path (Join-Path $platformsSrc "qwindows.dll") -Destination $platformsDst -Force
-    
-        # Create the output file
-        New-Item -Path "$exeDir\test_output.txt" -ItemType File -Force | Out-Null
-    
-        # Run the test
-        & $exePath 2>&1 | Tee-Object -FilePath "$exeDir\test_output.txt"
-    
-        if ($LASTEXITCODE -ne 0) {
-          Write-Error "Tests failed with exit code $LASTEXITCODE"
-          exit $LASTEXITCODE
-        }
-    
-        
-    - name: Upload test output log
-      uses: actions/upload-artifact@v4
-      with:
-        name: test_output
-        path: C:\a\TicTacToe_Embedded2027\TicTacToe_Embedded2027\Packet_Versions\Packet1\build\Desktop_Qt_6_9_0_MinGW_64_bit-Debug\debug\test_output.txt
+   
