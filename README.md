@@ -33,7 +33,7 @@ Developed by:
 Make sure you have Qt's binary creator installer on your machine and its BIN folder added to your PATH
 
 Then excuted the following command:
-```bash
+```cmddirecho
 binarycreator -c config/config.xml -p packages TicTacToeInstaller.exe
 ```
 
