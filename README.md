@@ -7,16 +7,27 @@
 ![Forks](https://img.shields.io/github/forks/ameerlouly/TicTacToe_Embedded2027?style=social)
 ![Contributors](https://img.shields.io/github/contributors/ameerlouly/TicTacToe_Embedded2027?style=social)
 
-by @ameerlouly @AmirSameh1 @capo35 @RolaRefaat @Nouramf
+Developed by:
 
 <a href="https://github.com/ameerlouly">
   <img src="https://github.com/ameerlouly.png" width="40" />
 </a>
-
+<a href="https://github.com/AmirSameh1">
+  <img src="https://github.com/AmirSameh1.png" width="40" />
+</a>
+<a href="https://github.com/capo35">
+  <img src="https://github.com/capo35.png" width="40" />
+</a>
+<a href="https://github.com/RolaRefaat">
+  <img src="https://github.com/RolaRefaat.png" width="40" />
+</a>
+<a href="https://github.com/Nouramf">
+  <img src="https://github.com/Nouramf.png" width="40" />
+</a>
 
 
 >[!NOTE]
->Contains everything related to the TicTacToe project for the Embedded Systems Course Taught by Dr Omar Nasr at the Faculty of Engineering Cairo Unviersity
+>This Repo contains everything related to the TicTacToe project for the Embedded Systems Course Taught by Dr Omar Nasr at the Faculty of Engineering Cairo Unviersity
 
 ### How to create installer:
 Make sure you have Qt's binary creator installer on your machine and its BIN folder added to your PATH
