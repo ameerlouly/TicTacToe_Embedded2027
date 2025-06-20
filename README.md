@@ -9,6 +9,11 @@
 
 by @ameerlouly @AmirSameh1 @capo35 @RolaRefaat @Nouramf
 
+<a href="https://github.com/ameerlouly">
+  <img src="https://github.com/ameerlouly.png" width="40" />
+</a>
+
+
 
 >[!NOTE]
 >Contains everything related to the TicTacToe project for the Embedded Systems Course Taught by Dr Omar Nasr at the Faculty of Engineering Cairo Unviersity
