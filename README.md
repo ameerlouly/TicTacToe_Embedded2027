@@ -7,6 +7,8 @@
 ![Forks](https://img.shields.io/github/forks/ameerlouly/TicTacToe_Embedded2027?style=social)
 ![Contributors](https://img.shields.io/github/contributors/ameerlouly/TicTacToe_Embedded2027?style=social)
 
+by @ameerlouly @AmirSameh1 @capo35 @RolaRefaat @Nouramf
+
 
 >[!NOTE]
 >Contains everything related to the TicTacToe project for the Embedded Systems Course Taught by Dr Omar Nasr at the Faculty of Engineering Cairo Unviersity
