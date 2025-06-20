@@ -2,13 +2,11 @@
 
 # Tic Tac Toe Embedded System 2027
 
-![App Logo](graphics/Game_Icon_Transparent.png)
-
-[![Repo Stats](https://github-readme-stats.vercel.app/api/pin/?username=ameerlouly&repo=TicTacToe_Embedded2027)](https://github.com/ameerlouly/TicTacToe_Embedded2027)
+![App Logo](Graphics/Game_Icon_Transparent.png)
 
 ![Forks](https://img.shields.io/github/forks/ameerlouly/TicTacToe_Embedded2027?style=social)
 ![Contributors](https://img.shields.io/github/contributors/ameerlouly/TicTacToe_Embedded2027?style=social)
-![Branches](https://img.shields.io/github/branches/ameerlouly/TicTacToe_Embedded2027)
+
 
 >[!NOTE]
 >Contains everything related to the TicTacToe project for the Embedded Systems Course Taught by Dr Omar Nasr at the Faculty of Engineering Cairo Unviersity
